@@ -8,5 +8,6 @@ int main()
 {
     //Janelle's code
     cout << "Hello World!\n";
+    cout << "hello";
 }
 
