@@ -1,0 +1,11 @@
+<RCC>
+    <qresource prefix="/resources">
+        <file>pomegranates.png</file>
+        <file>gold cats.png</file>
+        <file>duneBookCover.png</file>
+        <file>bloodCottage.png</file>
+        <file>50shadesofGray.png</file>
+        <file>another50shadesofgray.png</file>
+        <file>MicrosoftTeams-image.png</file>
+    </qresource>
+</RCC>
