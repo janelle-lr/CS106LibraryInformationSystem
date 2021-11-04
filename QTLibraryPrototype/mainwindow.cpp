@@ -6,6 +6,7 @@ MainWindow::MainWindow(QWidget *parent)
     , ui(new Ui::MainWindow)
 {
     ui->setupUi(this);
+    sysLib->buildDatabase();
 }
 
 MainWindow::~MainWindow()
@@ -18,10 +19,16 @@ void MainWindow::on_pushButton_clicked()
 {
     QString username = ui->lineEdit->text();
     QString password = ui->lineEdit_2->text();
-    if(sysLib->checkAdminAccount(username,password)){
+
+    bool login = sysLib->checkAdminAccount(password,username);
+
+    if(login){
         QMessageBox::information(this, "Log In", "Login successfully!");
     }else
         QMessageBox::warning(this, "Log In", "Invalid account!");
+
+    qDebug() << login;
+
 }
 void MainWindow::on_pushButton_2_clicked()
 {

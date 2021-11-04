@@ -272,7 +272,8 @@ bool LibraryDatabase::checkAccount(QString username,QString pass){
     while(!in.atEnd()){
         line = file.readLine().replace("\n","");
         list.append(line.split(","));
-        if(list[0] == username){
+        qDebug() << list[1] << " " << username << "\n";
+        if(list[1] == username){
             if(list[3] == pass){
                 exist = true;
                 break;
