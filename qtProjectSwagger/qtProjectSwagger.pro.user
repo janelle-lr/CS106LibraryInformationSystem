@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE QtCreatorProject>
-<!-- Written by QtCreator 4.15.0, 2021-11-04T14:29:30. -->
+<!-- Written by QtCreator 4.15.0, 2021-11-04T15:12:49. -->
 <qtcreator>
  <data>
   <variable>EnvironmentId</variable>
@@ -68,8 +68,8 @@
    <value type="int" key="ProjectExplorer.Target.ActiveRunConfiguration">0</value>
    <valuemap type="QVariantMap" key="ProjectExplorer.Target.BuildConfiguration.0">
     <value type="int" key="EnableQmlDebugging">0</value>
-    <value type="QString" key="ProjectExplorer.BuildConfiguration.BuildDirectory">C:\Users\270025286\OneDrive - UP Education\Documents\build-qtProjectSwagger-Desktop_Qt_5_12_11_MinGW_64_bit-Debug</value>
-    <value type="QString" key="ProjectExplorer.BuildConfiguration.BuildDirectory.shadowDir">C:/Users/270025286/OneDrive - UP Education/Documents/build-qtProjectSwagger-Desktop_Qt_5_12_11_MinGW_64_bit-Debug</value>
+    <value type="QString" key="ProjectExplorer.BuildConfiguration.BuildDirectory">C:\Users\270025286\OneDrive - UP Education\Documents\GitHub\CS106LibraryInformationSystem\build-qtProjectSwagger-Desktop_Qt_5_12_11_MinGW_64_bit-Debug</value>
+    <value type="QString" key="ProjectExplorer.BuildConfiguration.BuildDirectory.shadowDir">C:/Users/270025286/OneDrive - UP Education/Documents/GitHub/CS106LibraryInformationSystem/build-qtProjectSwagger-Desktop_Qt_5_12_11_MinGW_64_bit-Debug</value>
     <valuemap type="QVariantMap" key="ProjectExplorer.BuildConfiguration.BuildStepList.0">
      <valuemap type="QVariantMap" key="ProjectExplorer.BuildStepList.Step.0">
       <value type="bool" key="ProjectExplorer.BuildStep.Enabled">true</value>
@@ -106,8 +106,8 @@
     <value type="int" key="Qt4ProjectManager.Qt4BuildConfiguration.BuildConfiguration">2</value>
    </valuemap>
    <valuemap type="QVariantMap" key="ProjectExplorer.Target.BuildConfiguration.1">
-    <value type="QString" key="ProjectExplorer.BuildConfiguration.BuildDirectory">C:\Users\270025286\OneDrive - UP Education\Documents\build-qtProjectSwagger-Desktop_Qt_5_12_11_MinGW_64_bit-Release</value>
-    <value type="QString" key="ProjectExplorer.BuildConfiguration.BuildDirectory.shadowDir">C:/Users/270025286/OneDrive - UP Education/Documents/build-qtProjectSwagger-Desktop_Qt_5_12_11_MinGW_64_bit-Release</value>
+    <value type="QString" key="ProjectExplorer.BuildConfiguration.BuildDirectory">C:\Users\270025286\OneDrive - UP Education\Documents\GitHub\CS106LibraryInformationSystem\build-qtProjectSwagger-Desktop_Qt_5_12_11_MinGW_64_bit-Release</value>
+    <value type="QString" key="ProjectExplorer.BuildConfiguration.BuildDirectory.shadowDir">C:/Users/270025286/OneDrive - UP Education/Documents/GitHub/CS106LibraryInformationSystem/build-qtProjectSwagger-Desktop_Qt_5_12_11_MinGW_64_bit-Release</value>
     <valuemap type="QVariantMap" key="ProjectExplorer.BuildConfiguration.BuildStepList.0">
      <valuemap type="QVariantMap" key="ProjectExplorer.BuildStepList.Step.0">
       <value type="bool" key="ProjectExplorer.BuildStep.Enabled">true</value>
@@ -146,8 +146,8 @@
    </valuemap>
    <valuemap type="QVariantMap" key="ProjectExplorer.Target.BuildConfiguration.2">
     <value type="int" key="EnableQmlDebugging">0</value>
-    <value type="QString" key="ProjectExplorer.BuildConfiguration.BuildDirectory">C:\Users\270025286\OneDrive - UP Education\Documents\build-qtProjectSwagger-Desktop_Qt_5_12_11_MinGW_64_bit-Profile</value>
-    <value type="QString" key="ProjectExplorer.BuildConfiguration.BuildDirectory.shadowDir">C:/Users/270025286/OneDrive - UP Education/Documents/build-qtProjectSwagger-Desktop_Qt_5_12_11_MinGW_64_bit-Profile</value>
+    <value type="QString" key="ProjectExplorer.BuildConfiguration.BuildDirectory">C:\Users\270025286\OneDrive - UP Education\Documents\GitHub\CS106LibraryInformationSystem\build-qtProjectSwagger-Desktop_Qt_5_12_11_MinGW_64_bit-Profile</value>
+    <value type="QString" key="ProjectExplorer.BuildConfiguration.BuildDirectory.shadowDir">C:/Users/270025286/OneDrive - UP Education/Documents/GitHub/CS106LibraryInformationSystem/build-qtProjectSwagger-Desktop_Qt_5_12_11_MinGW_64_bit-Profile</value>
     <valuemap type="QVariantMap" key="ProjectExplorer.BuildConfiguration.BuildStepList.0">
      <valuemap type="QVariantMap" key="ProjectExplorer.BuildStepList.Step.0">
       <value type="bool" key="ProjectExplorer.BuildStep.Enabled">true</value>
