@@ -58,8 +58,10 @@ public:
     QLineEdit *lineEdit_Username;
     QLabel *label_7;
     QLineEdit *lineEdit_Password;
+    QLabel *label_10;
     QLineEdit *lineEdit_VerifyPass;
     QPushButton *pushButton_3;
+    QLabel *img;
     QMenuBar *menubar;
     QStatusBar *statusbar;
 
@@ -72,7 +74,7 @@ public:
         centralwidget->setObjectName(QString::fromUtf8("centralwidget"));
         tabWidget = new QTabWidget(centralwidget);
         tabWidget->setObjectName(QString::fromUtf8("tabWidget"));
-        tabWidget->setGeometry(QRect(80, 50, 651, 421));
+        tabWidget->setGeometry(QRect(80, 110, 651, 421));
         tabWidget->setTabPosition(QTabWidget::North);
         tabWidget->setTabShape(QTabWidget::Triangular);
         tab_2 = new QWidget();
@@ -191,6 +193,11 @@ public:
 
         verticalLayout_2->addWidget(lineEdit_Password);
 
+        label_10 = new QLabel(groupBox_2);
+        label_10->setObjectName(QString::fromUtf8("label_10"));
+
+        verticalLayout_2->addWidget(label_10);
+
         lineEdit_VerifyPass = new QLineEdit(groupBox_2);
         lineEdit_VerifyPass->setObjectName(QString::fromUtf8("lineEdit_VerifyPass"));
 
@@ -205,6 +212,9 @@ public:
         horizontalLayout->addWidget(groupBox_2);
 
         tabWidget->addTab(tab, QString());
+        img = new QLabel(centralwidget);
+        img->setObjectName(QString::fromUtf8("img"));
+        img->setGeometry(QRect(20, 0, 651, 101));
         MainWindow->setCentralWidget(centralwidget);
         menubar = new QMenuBar(MainWindow);
         menubar->setObjectName(QString::fromUtf8("menubar"));
@@ -229,7 +239,7 @@ public:
         label_8->setText(QApplication::translate("MainWindow", "Username", nullptr));
         label_9->setText(QApplication::translate("MainWindow", "Password", nullptr));
         lineEdit_2->setInputMask(QString());
-        pushButton->setText(QApplication::translate("MainWindow", "Login Test", nullptr));
+        pushButton->setText(QApplication::translate("MainWindow", "Login", nullptr));
         tabWidget->setTabText(tabWidget->indexOf(tab_2), QApplication::translate("MainWindow", "Log in", nullptr));
         groupBox_2->setTitle(QApplication::translate("MainWindow", "Account Creation", nullptr));
         label->setText(QApplication::translate("MainWindow", "Name", nullptr));
@@ -239,8 +249,10 @@ public:
         label_5->setText(QApplication::translate("MainWindow", "Mobile Number", nullptr));
         label_6->setText(QApplication::translate("MainWindow", "Username", nullptr));
         label_7->setText(QApplication::translate("MainWindow", "Password", nullptr));
+        label_10->setText(QApplication::translate("MainWindow", "Re-enter Password", nullptr));
         pushButton_3->setText(QApplication::translate("MainWindow", "Test Add Acc", nullptr));
-        tabWidget->setTabText(tabWidget->indexOf(tab), QApplication::translate("MainWindow", "Create New Account", nullptr));
+        tabWidget->setTabText(tabWidget->indexOf(tab), QApplication::translate("MainWindow", "( THIS IS ONLY FOR ADMIN ) Create New Account", nullptr));
+        img->setText(QApplication::translate("MainWindow", "Logo", nullptr));
     } // retranslateUi
 
 };

@@ -1,0 +1,121 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>Catalogue</class>
+ <widget class="QMainWindow" name="Catalogue">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>1007</width>
+    <height>600</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>MainWindow</string>
+  </property>
+  <widget class="QWidget" name="centralwidget">
+   <widget class="QLabel" name="label">
+    <property name="geometry">
+     <rect>
+      <x>740</x>
+      <y>0</y>
+      <width>261</width>
+      <height>21</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>SECOND PAGE after logging in</string>
+    </property>
+   </widget>
+   <widget class="QScrollArea" name="scrollArea">
+    <property name="geometry">
+     <rect>
+      <x>10</x>
+      <y>120</y>
+      <width>991</width>
+      <height>431</height>
+     </rect>
+    </property>
+    <property name="widgetResizable">
+     <bool>true</bool>
+    </property>
+    <widget class="QWidget" name="scrollAreaWidgetContents">
+     <property name="geometry">
+      <rect>
+       <x>0</x>
+       <y>0</y>
+       <width>989</width>
+       <height>429</height>
+      </rect>
+     </property>
+     <widget class="QLabel" name="label_2">
+      <property name="geometry">
+       <rect>
+        <x>40</x>
+        <y>30</y>
+        <width>47</width>
+        <height>91</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>TextLabel</string>
+      </property>
+     </widget>
+    </widget>
+   </widget>
+   <widget class="QLabel" name="img">
+    <property name="geometry">
+     <rect>
+      <x>10</x>
+      <y>10</y>
+      <width>651</width>
+      <height>101</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>Logo</string>
+    </property>
+   </widget>
+  </widget>
+  <widget class="QMenuBar" name="menubar">
+   <property name="geometry">
+    <rect>
+     <x>0</x>
+     <y>0</y>
+     <width>1007</width>
+     <height>21</height>
+    </rect>
+   </property>
+   <widget class="QMenu" name="menuAccounr">
+    <property name="title">
+     <string>Account</string>
+    </property>
+    <addaction name="actionView_Account"/>
+   </widget>
+   <widget class="QMenu" name="menuCatalogue">
+    <property name="title">
+     <string>Catalogue</string>
+    </property>
+    <addaction name="actionView_Catalogue"/>
+   </widget>
+   <addaction name="menuAccounr"/>
+   <addaction name="menuCatalogue"/>
+  </widget>
+  <widget class="QStatusBar" name="statusbar"/>
+  <action name="actionView_Account">
+   <property name="checkable">
+    <bool>false</bool>
+   </property>
+   <property name="text">
+    <string>View Account</string>
+   </property>
+  </action>
+  <action name="actionView_Catalogue">
+   <property name="text">
+    <string>View Catalogue</string>
+   </property>
+  </action>
+ </widget>
+ <resources/>
+ <connections/>
+</ui>
