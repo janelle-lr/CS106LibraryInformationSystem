@@ -898,7 +898,7 @@ your test is over. The test will begin on the word start. On your mark, get read
      <x>0</x>
      <y>0</y>
      <width>1057</width>
-     <height>21</height>
+     <height>20</height>
     </rect>
    </property>
    <widget class="QMenu" name="menuCatalouge">

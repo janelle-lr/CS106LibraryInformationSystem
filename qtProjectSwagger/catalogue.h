@@ -3,6 +3,7 @@
 
 #include <QMainWindow>
 #include "useraccount.h"
+#include "mainwindow.h"
 
 namespace Ui {
 class Catalogue;
@@ -19,10 +20,12 @@ public:
 private slots:
     void on_actionView_Account_triggered();
 
+    void on_actionSign_Out_triggered();
+
 private:
     Ui::Catalogue *ui;
     userAccount *useraccount;
-
+    //MainWindow *mainwindow;
 };
 
 #endif // CATALOGUE_H
