@@ -1,12 +1,19 @@
 #include "mainwindow.h"
 #include "ui_mainwindow.h"
 #include <QMessageBox>
+
 MainWindow::MainWindow(QWidget *parent)
     : QMainWindow(parent)
     , ui(new Ui::MainWindow)
 {
     ui->setupUi(this);
     sysLib->buildDatabase();
+
+    hide();
+    login = new class login(this);
+    connect(login, SIGNAL(openLogin()), this, SLOT(openMainWindow()));
+    login->show();
+
 }
 
 MainWindow::~MainWindow()
@@ -92,4 +99,14 @@ void MainWindow::on_pushButton_4_clicked()
         qDebug() << members[i].getMemberId() << " " << members[i].getAccId() << " " << members[i].getName() << " " << members[i].getPassword() << " " << members[i].getDateCreated() << "\n";
     }
 }
+
+
+void MainWindow::on_pushButton_5_clicked()
+{
+    hide();
+    login = new class login(this);
+    connect(login, SIGNAL(openLogin()), this, SLOT(openMainWindow()));
+    login->show();
+}
+
 
