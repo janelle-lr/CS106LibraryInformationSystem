@@ -7,6 +7,7 @@ Book::Book()
     this->name = defStr;
     this->genre = defStr;
     this->imageFilePath = defStr;
+    this->bookDescription = defStr;
     this->inStock = 0;
     this->bookCopies = 0;
     this->availStatus = 0;
@@ -22,6 +23,9 @@ QString Book::getGenre(){
 }
 QString Book::getBookImageFilePath(){
     return this->imageFilePath;
+}
+QString Book::getBookDescription(){
+    return this->bookDescription;
 }
 int Book::getStock(){
     return this->inStock;
@@ -40,6 +44,9 @@ void Book::setBookName(QString name){
 }
 void Book::setGenre(QString genre){
     this->genre = genre;
+}
+void Book::setBookDescription(QString description){
+    this->bookDescription = description;
 }
 void Book::setStock(int stock){
     this->inStock = stock;

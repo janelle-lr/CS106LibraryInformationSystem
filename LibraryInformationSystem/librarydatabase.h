@@ -15,7 +15,7 @@
 class LibraryDatabase
 {
 private:
-    int daysOfAccess = 1;//The days the book can be loaned
+    const int daysOfAccess = 1;//The days the book can be loaned
 public:
     LibraryDatabase();
     void buildDatabase();
@@ -29,10 +29,9 @@ public:
     Admin getAdminDeatils();
     void updateAdminDetails(Admin);
     void addBook(Book);
-    void updateBook(Book);
     QVector<Book> getAllBooks();
     void updateAllBookDetails(QVector<Book>);
-    void removeBookRecord(int);
+    void removeBookRecord(QString);
     void loanBook(BookItem);
     void preOrderBook(PreOrderBook);
     QVector<BookItem> getAllBookItem();
@@ -41,9 +40,10 @@ public:
     void updateAllPreOrderDetails(QVector<PreOrderBook>);
     void returnBook(QString,QString);
     QStringList getAllMemberLoanedBooks(QString);
-    void setDaysOfAcess(int);
     void checkPreorders();
     void checkLoanedBooks();
+    bool isLoaned(QString,QString);
+    bool isPreBook(QString, QString);
 };
 
 #endif // LIBRARYDATABASE_H

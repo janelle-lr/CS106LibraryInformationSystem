@@ -9,25 +9,36 @@ CONFIG += c++11
 #DEFINES += QT_DISABLE_DEPRECATED_BEFORE=0x060000    # disables all the APIs deprecated before Qt 6.0.0
 
 SOURCES += \
-    admincatalogue.cpp \
+    account.cpp \
+    admin.cpp \
+    author.cpp \
+    book.cpp \
+    bookitem.cpp \
+    librarydatabase.cpp \
     main.cpp \
     mainwindow.cpp \
-    window2.cpp
+    member.cpp \
+    preorderbook.cpp \
+    publisher.cpp \
+    systemlibrary.cpp
 
 HEADERS += \
-    admincatalogue.h \
+    account.h \
+    admin.h \
+    author.h \
+    book.h \
+    bookitem.h \
+    librarydatabase.h \
     mainwindow.h \
-    window2.h
+    member.h \
+    preorderbook.h \
+    publisher.h \
+    systemlibrary.h
 
 FORMS += \
-    admincatalogue.ui \
-    mainwindow.ui \
-    window2.ui
+    mainwindow.ui
 
 # Default rules for deployment.
 qnx: target.path = /tmp/$${TARGET}/bin
 else: unix:!android: target.path = /opt/$${TARGET}/bin
 !isEmpty(target.path): INSTALLS += target
-
-RESOURCES += \
-    resources.qrc
