@@ -11,6 +11,7 @@ private:
     QString name;
     QString genre;
     QString imageFilePath;
+    QString bookDescription;
     int inStock;
     int bookCopies;
     bool availStatus;
@@ -20,6 +21,7 @@ public:
     QString getBookName();
     QString getGenre();
     QString getBookImageFilePath();
+    QString getBookDescription();
     int getStock();
     int getBookCopies();
     bool getAvailStatus();
@@ -27,6 +29,7 @@ public:
     void setBookName(QString);
     void setGenre(QString);
     void setBookImageFilePath(QString);
+    void setBookDescription(QString);
     void setStock(int);
     void setBookCopies(int);
     void setAvailStatus(bool);
