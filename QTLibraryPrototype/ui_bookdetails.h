@@ -10,7 +10,7 @@
 #define UI_BOOKDETAILS_H
 
 #include <QtCore/QVariant>
-#include <QtGui/QAction>
+//#include <QtGui/QAction>
 #include <QtWidgets/QApplication>
 #include <QtWidgets/QFrame>
 #include <QtWidgets/QGroupBox>

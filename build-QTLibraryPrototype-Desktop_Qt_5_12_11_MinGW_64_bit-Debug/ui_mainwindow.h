@@ -58,6 +58,7 @@ public:
     QLineEdit *lineEdit_VerifyPass;
     QPushButton *pushButton_3;
     QPushButton *pushButton_4;
+    QPushButton *pushButton_5;
     QMenuBar *menubar;
     QStatusBar *statusbar;
 
@@ -194,6 +195,9 @@ public:
         pushButton_4 = new QPushButton(centralwidget);
         pushButton_4->setObjectName(QString::fromUtf8("pushButton_4"));
         pushButton_4->setGeometry(QRect(580, 280, 80, 21));
+        pushButton_5 = new QPushButton(centralwidget);
+        pushButton_5->setObjectName(QString::fromUtf8("pushButton_5"));
+        pushButton_5->setGeometry(QRect(320, 140, 121, 31));
         MainWindow->setCentralWidget(centralwidget);
         menubar = new QMenuBar(MainWindow);
         menubar->setObjectName(QString::fromUtf8("menubar"));
@@ -230,6 +234,7 @@ public:
         pushButton_3->setText(QApplication::translate("MainWindow", "Test Add Acc", nullptr));
         tabWidget->setTabText(tabWidget->indexOf(tab), QApplication::translate("MainWindow", "Create New Account", nullptr));
         pushButton_4->setText(QApplication::translate("MainWindow", "PushButton", nullptr));
+        pushButton_5->setText(QApplication::translate("MainWindow", "test", nullptr));
     } // retranslateUi
 
 };
