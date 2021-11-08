@@ -8,10 +8,12 @@ MainWindow::MainWindow(QWidget *parent)
 {
     ui->setupUi(this);
     sysLib->buildDatabase();
+
     hide();
     login = new class login(this);
     connect(login, SIGNAL(openLogin()), this, SLOT(openMainWindow()));
     login->show();
+
 }
 
 MainWindow::~MainWindow()
@@ -106,4 +108,5 @@ void MainWindow::on_pushButton_5_clicked()
     connect(login, SIGNAL(openLogin()), this, SLOT(openMainWindow()));
     login->show();
 }
+
 

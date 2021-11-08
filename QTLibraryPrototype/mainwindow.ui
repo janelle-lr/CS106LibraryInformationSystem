@@ -192,6 +192,7 @@
      <string>PushButton</string>
     </property>
    </widget>
+
    <widget class="QPushButton" name="pushButton_5">
     <property name="geometry">
      <rect>
@@ -205,6 +206,7 @@
      <string>test</string>
     </property>
    </widget>
+
   </widget>
   <widget class="QMenuBar" name="menubar">
    <property name="geometry">
