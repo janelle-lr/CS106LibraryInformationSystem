@@ -6,6 +6,8 @@ userAccount::userAccount(QWidget *parent) :
     ui(new Ui::userAccount)
 {
     ui->setupUi(this);
+    QPixmap Img(":/MicrosoftTeams-image.png");
+    ui->img->setPixmap(Img.scaled(600,600, Qt::KeepAspectRatio));
 }
 
 userAccount::~userAccount()
