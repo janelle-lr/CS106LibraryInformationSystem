@@ -50,8 +50,13 @@ public:
         if (bookdetails->objectName().isEmpty())
             bookdetails->setObjectName(QString::fromUtf8("bookdetails"));
         bookdetails->resize(800, 600);
-        bookdetails->setStyleSheet(QString::fromUtf8("QMainWindow {\n"
-"/*background: #fff;*/\n"
+        bookdetails->setStyleSheet(QString::fromUtf8(""));
+        actionLog_Out = new QAction(bookdetails);
+        actionLog_Out->setObjectName(QString::fromUtf8("actionLog_Out"));
+        centralwidget = new QWidget(bookdetails);
+        centralwidget->setObjectName(QString::fromUtf8("centralwidget"));
+        centralwidget->setStyleSheet(QString::fromUtf8("QWidget {\n"
+"background: #fff;\n"
 "font-family: Century Gothic;\n"
 "}\n"
 "\n"
@@ -59,10 +64,6 @@ public:
 "border-radius: 15px; \n"
 "font-size: 13px;\n"
 "}"));
-        actionLog_Out = new QAction(bookdetails);
-        actionLog_Out->setObjectName(QString::fromUtf8("actionLog_Out"));
-        centralwidget = new QWidget(bookdetails);
-        centralwidget->setObjectName(QString::fromUtf8("centralwidget"));
         label_4 = new QLabel(centralwidget);
         label_4->setObjectName(QString::fromUtf8("label_4"));
         label_4->setGeometry(QRect(30, 10, 231, 51));
