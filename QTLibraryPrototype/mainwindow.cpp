@@ -16,7 +16,7 @@ MainWindow::MainWindow(QWidget *parent)
     login->show();
 
 }
-
+L
 MainWindow::~MainWindow()
 {
     delete ui;

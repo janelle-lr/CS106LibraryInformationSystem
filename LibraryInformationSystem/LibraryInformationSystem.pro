@@ -13,6 +13,7 @@ SOURCES += \
     admin.cpp \
     author.cpp \
     book.cpp \
+    bookdetails.cpp \
     bookitem.cpp \
     librarydatabase.cpp \
     main.cpp \
@@ -27,6 +28,7 @@ HEADERS += \
     admin.h \
     author.h \
     book.h \
+    bookdetails.h \
     bookitem.h \
     librarydatabase.h \
     mainwindow.h \
@@ -36,9 +38,13 @@ HEADERS += \
     systemlibrary.h
 
 FORMS += \
+    bookdetails.ui \
     mainwindow.ui
 
 # Default rules for deployment.
 qnx: target.path = /tmp/$${TARGET}/bin
 else: unix:!android: target.path = /opt/$${TARGET}/bin
 !isEmpty(target.path): INSTALLS += target
+
+RESOURCES += \
+    resources.qrc

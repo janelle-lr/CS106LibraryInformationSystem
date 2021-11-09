@@ -14,8 +14,12 @@
    <string>MainWindow</string>
   </property>
   <property name="styleSheet">
-   <string notr="true">QMainWindow {
-/*background: #fff;*/
+   <string notr="true"/>
+  </property>
+  <widget class="QWidget" name="centralwidget">
+   <property name="styleSheet">
+    <string notr="true">QWidget {
+background: #fff;
 font-family: Century Gothic;
 }
 
@@ -23,8 +27,7 @@ QPushButton {
 border-radius: 15px; 
 font-size: 13px;
 }</string>
-  </property>
-  <widget class="QWidget" name="centralwidget">
+   </property>
    <widget class="QLabel" name="label_4">
     <property name="geometry">
      <rect>

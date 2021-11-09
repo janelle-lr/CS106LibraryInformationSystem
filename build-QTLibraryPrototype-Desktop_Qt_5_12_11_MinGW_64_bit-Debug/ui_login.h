@@ -44,10 +44,7 @@ public:
         login->resize(683, 600);
         login->setMinimumSize(QSize(683, 600));
         login->setMaximumSize(QSize(683, 600));
-        login->setStyleSheet(QString::fromUtf8("QMainWindow {\n"
-"/*background: #fff;*/\n"
-"font-family: Century Gothic;\n"
-"}"));
+        login->setStyleSheet(QString::fromUtf8(""));
         centralwidget = new QWidget(login);
         centralwidget->setObjectName(QString::fromUtf8("centralwidget"));
         centralwidget->setStyleSheet(QString::fromUtf8(""));

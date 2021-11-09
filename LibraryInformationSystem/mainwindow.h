@@ -2,6 +2,8 @@
 #define MAINWINDOW_H
 
 #include <QMainWindow>
+#include "systemlibrary.h"
+#include "bookdetails.h"
 
 QT_BEGIN_NAMESPACE
 namespace Ui { class MainWindow; }
@@ -15,7 +17,13 @@ public:
     MainWindow(QWidget *parent = nullptr);
     ~MainWindow();
 
+private slots:
+    void on_loginPushButton_clicked();
+
 private:
     Ui::MainWindow *ui;
+
+    SystemLibrary *sysLib;
+    BookDetails *bookDetails;
 };
 #endif // MAINWINDOW_H
