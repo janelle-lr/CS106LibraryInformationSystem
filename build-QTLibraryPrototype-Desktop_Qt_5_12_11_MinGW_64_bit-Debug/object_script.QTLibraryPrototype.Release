@@ -1,4 +1,3 @@
-release/account.o
 release/admin.o
 release/author.o
 release/book.o

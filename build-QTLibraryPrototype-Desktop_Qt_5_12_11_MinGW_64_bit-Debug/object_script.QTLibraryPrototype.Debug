@@ -1,4 +1,3 @@
-debug/account.o
 debug/admin.o
 debug/author.o
 debug/book.o
