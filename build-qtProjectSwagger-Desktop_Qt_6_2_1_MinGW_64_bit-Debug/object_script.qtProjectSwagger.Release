@@ -1,0 +1,10 @@
+release/admineditaccount.o
+release/catalogue.o
+release/main.o
+release/mainwindow.o
+release/useraccount.o
+release/qrc_resources.o
+release/moc_admineditaccount.o
+release/moc_catalogue.o
+release/moc_mainwindow.o
+release/moc_useraccount.o

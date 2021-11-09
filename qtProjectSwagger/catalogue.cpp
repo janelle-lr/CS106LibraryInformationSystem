@@ -10,7 +10,7 @@ Catalogue::Catalogue(QWidget *parent) :
     ui(new Ui::Catalogue)
 {
     ui->setupUi(this);
-
+    setWindowTitle("Catalogue");
 
     //logo image
     QPixmap Img(":/MicrosoftTeams-image.png");

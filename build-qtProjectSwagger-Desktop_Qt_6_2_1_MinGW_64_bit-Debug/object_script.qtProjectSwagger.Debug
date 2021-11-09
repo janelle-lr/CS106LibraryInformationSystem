@@ -1,0 +1,10 @@
+debug/admineditaccount.o
+debug/catalogue.o
+debug/main.o
+debug/mainwindow.o
+debug/useraccount.o
+debug/qrc_resources.o
+debug/moc_admineditaccount.o
+debug/moc_catalogue.o
+debug/moc_mainwindow.o
+debug/moc_useraccount.o
