@@ -31,7 +31,7 @@ void MainWindow::on_loginPushButton_clicked()
 {
     QString username = ui->usernameLineEdit->text();
     QString password = ui->passwordLineEdit->text();
-
+    //ui->loginLabel->setText("lmao");
     bool login = sysLib->checkAdminAccount(password,username);
 
     hide();

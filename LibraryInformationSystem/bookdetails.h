@@ -15,6 +15,11 @@ public:
     explicit BookDetails(QWidget *parent = nullptr);
     ~BookDetails();
 
+private slots:
+    void on_pushButton_clicked();
+
+    void on_reservePushButton_clicked();
+
 private:
     Ui::BookDetails *ui;
 };

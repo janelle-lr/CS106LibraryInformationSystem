@@ -16,3 +16,10 @@ BookDetails::~BookDetails()
 {
     delete ui;
 }
+
+
+void BookDetails::on_reservePushButton_clicked()
+{
+
+}
+
