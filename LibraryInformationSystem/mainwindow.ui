@@ -89,6 +89,9 @@ background-color: palette(base);
 padding: 0px 5px;
 }</string>
      </property>
+     <property name="echoMode">
+      <enum>QLineEdit::Password</enum>
+     </property>
     </widget>
     <widget class="QLineEdit" name="usernameLineEdit">
      <property name="geometry">
@@ -188,6 +191,19 @@ font: 24px &quot;Montserrat Medium&quot;;
      </property>
      <property name="alignment">
       <set>Qt::AlignCenter</set>
+     </property>
+    </widget>
+    <widget class="QCheckBox" name="checkBox">
+     <property name="geometry">
+      <rect>
+       <x>100</x>
+       <y>120</y>
+       <width>91</width>
+       <height>17</height>
+      </rect>
+     </property>
+     <property name="text">
+      <string>Show Pass</string>
      </property>
     </widget>
    </widget>

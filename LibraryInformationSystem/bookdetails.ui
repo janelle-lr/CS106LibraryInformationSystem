@@ -416,7 +416,13 @@ font: 13px &quot;Montserrat&quot;;
      <string>Account</string>
     </property>
    </widget>
+   <widget class="QMenu" name="menuCatalogue">
+    <property name="title">
+     <string>Catalogue</string>
+    </property>
+   </widget>
    <addaction name="menuAccount"/>
+   <addaction name="menuCatalogue"/>
   </widget>
   <widget class="QStatusBar" name="statusbar"/>
  </widget>

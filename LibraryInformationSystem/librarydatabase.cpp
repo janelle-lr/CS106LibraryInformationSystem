@@ -263,18 +263,16 @@ bool LibraryDatabase::checkAccount(QString username,QString pass){
     if(!file.open(QFile::ReadOnly | QFile::Text)){
         qDebug() << "Error cant open file";
     }
-
     //reference to your file
     QTextStream in(&file);
     QStringList list;
     QString line;
     //loop through csv data
-    qDebug() << " " << username;
     while(!in.atEnd()){
         line = file.readLine().replace("\n","");
         list.append(line.split(","));
-        qDebug() << list[1] << " " << username;
         if(list[1] == username){
+            qDebug() << "hello";
             if(list[3] == pass){
                 exist = true;
                 break;
