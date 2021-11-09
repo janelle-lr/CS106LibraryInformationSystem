@@ -15,9 +15,9 @@ MainWindow::MainWindow(QWidget *parent)
     ui->logoImage->setPixmap(logo.scaled(450, 74, Qt::KeepAspectRatio));
 
     hide();
-    bookDetails = new BookDetails(this);
-    connect(bookDetails, SIGNAL(openBookDetails()), this, SLOT(openLogin())); //connect(pointerName, SIGNAL(openWindowYouWantToOpen()), this, SLOT(openWindowUrOpeningFrom()));
-    bookDetails->show();
+    adminBookDetails = new AdminBookDetails(this);
+    connect(adminBookDetails, SIGNAL(openAdminBookDetails()), this, SLOT(openMainWindow())); //connect(pointerName, SIGNAL(openWindowYouWantToOpen()), this, SLOT(openWindowUrOpeningFrom()));
+    adminBookDetails->show();
 
 }
 

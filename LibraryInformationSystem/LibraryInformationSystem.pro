@@ -11,6 +11,7 @@ CONFIG += c++11
 SOURCES += \
     account.cpp \
     admin.cpp \
+    adminbookdetails.cpp \
     author.cpp \
     book.cpp \
     bookdetails.cpp \
@@ -26,6 +27,7 @@ SOURCES += \
 HEADERS += \
     account.h \
     admin.h \
+    adminbookdetails.h \
     author.h \
     book.h \
     bookdetails.h \
@@ -38,6 +40,7 @@ HEADERS += \
     systemlibrary.h
 
 FORMS += \
+    adminbookdetails.ui \
     bookdetails.ui \
     mainwindow.ui
 

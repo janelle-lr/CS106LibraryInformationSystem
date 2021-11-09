@@ -4,6 +4,7 @@
 #include <QMainWindow>
 #include "systemlibrary.h"
 #include "bookdetails.h"
+#include "adminbookdetails.h"
 
 QT_BEGIN_NAMESPACE
 namespace Ui { class MainWindow; }
@@ -25,5 +26,6 @@ private:
 
     SystemLibrary *sysLib;
     BookDetails *bookDetails;
+    AdminBookDetails *adminBookDetails;
 };
 #endif // MAINWINDOW_H
