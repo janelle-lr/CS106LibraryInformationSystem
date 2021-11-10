@@ -9,35 +9,35 @@ CONFIG += c++11
 #DEFINES += QT_DISABLE_DEPRECATED_BEFORE=0x060000    # disables all the APIs deprecated before Qt 6.0.0
 
 SOURCES += \
-    account.cpp \
-    admin.cpp \
-    author.cpp \
-    book.cpp \
+    #account.cpp \
+    #admin.cpp \
+    #author.cpp \
+    #book.cpp \
     bookdetails.cpp \
-    bookitem.cpp \
-    librarydatabase.cpp \
+    #bookitem.cpp \
+    #librarydatabase.cpp \
     login.cpp \
     main.cpp \
     mainwindow.cpp \
-    member.cpp \
-    preorderbook.cpp \
-    publisher.cpp \
-    systemlibrary.cpp
+    #member.cpp \
+    #preorderbook.cpp \
+    #publisher.cpp \
+    #systemlibrary.cpp
 
 HEADERS += \
-    account.h \
-    admin.h \
-    author.h \
-    book.h \
+    #account.h \
+    #admin.h \
+    #author.h \
+    #book.h \
     bookdetails.h \
-    bookitem.h \
-    librarydatabase.h \
+    #bookitem.h \
+    #librarydatabase.h \
     login.h \
     mainwindow.h \
-    member.h \
-    preorderbook.h \
-    publisher.h \
-    systemlibrary.h
+    #member.h \
+    #preorderbook.h \
+    #publisher.h \
+    #systemlibrary.h
 
 FORMS += \
     bookdetails.ui \

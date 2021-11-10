@@ -1,4 +1,5 @@
 #include "useraccount.h"
+#include "catalogue.h"
 #include "ui_useraccount.h"
 
 userAccount::userAccount(QWidget *parent) :
@@ -14,3 +15,5 @@ userAccount::~userAccount()
 {
     delete ui;
 }
+
+

@@ -32,6 +32,7 @@ QT_BEGIN_NAMESPACE
 class Ui_userAccount
 {
 public:
+    QAction *actionView_Account;
     QWidget *centralwidget;
     QTabWidget *tabWidget;
     QWidget *tab;
@@ -141,6 +142,8 @@ public:
         if (userAccount->objectName().isEmpty())
             userAccount->setObjectName(QString::fromUtf8("userAccount"));
         userAccount->resize(1092, 724);
+        actionView_Account = new QAction(userAccount);
+        actionView_Account->setObjectName(QString::fromUtf8("actionView_Account"));
         centralwidget = new QWidget(userAccount);
         centralwidget->setObjectName(QString::fromUtf8("centralwidget"));
         tabWidget = new QTabWidget(centralwidget);
@@ -685,7 +688,7 @@ public:
         userAccount->setCentralWidget(centralwidget);
         menubar = new QMenuBar(userAccount);
         menubar->setObjectName(QString::fromUtf8("menubar"));
-        menubar->setGeometry(QRect(0, 0, 1092, 20));
+        menubar->setGeometry(QRect(0, 0, 1092, 21));
         menuAccount = new QMenu(menubar);
         menuAccount->setObjectName(QString::fromUtf8("menuAccount"));
         menuCatalogue = new QMenu(menubar);
@@ -697,6 +700,7 @@ public:
 
         menubar->addAction(menuAccount->menuAction());
         menubar->addAction(menuCatalogue->menuAction());
+        menuCatalogue->addAction(actionView_Account);
 
         retranslateUi(userAccount);
 
@@ -709,6 +713,7 @@ public:
     void retranslateUi(QMainWindow *userAccount)
     {
         userAccount->setWindowTitle(QApplication::translate("userAccount", "MainWindow", nullptr));
+        actionView_Account->setText(QApplication::translate("userAccount", "View Catalogue", nullptr));
         label->setText(QApplication::translate("userAccount", "User #20013896", nullptr));
         label_6->setText(QApplication::translate("userAccount", "Log-in Details", nullptr));
         label_4->setText(QApplication::translate("userAccount", "Username", nullptr));

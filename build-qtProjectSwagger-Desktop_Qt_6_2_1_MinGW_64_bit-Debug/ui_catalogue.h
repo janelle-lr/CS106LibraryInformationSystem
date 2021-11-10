@@ -663,7 +663,7 @@ public:
         Catalogue->setCentralWidget(centralwidget);
         menubar = new QMenuBar(Catalogue);
         menubar->setObjectName(QString::fromUtf8("menubar"));
-        menubar->setGeometry(QRect(0, 0, 1327, 20));
+        menubar->setGeometry(QRect(0, 0, 1327, 21));
         menuAccounr = new QMenu(menubar);
         menuAccounr->setObjectName(QString::fromUtf8("menuAccounr"));
         menuCatalogue = new QMenu(menubar);

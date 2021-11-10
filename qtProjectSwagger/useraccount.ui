@@ -23,6 +23,9 @@
       <height>541</height>
      </rect>
     </property>
+    <property name="tabShape">
+     <enum>QTabWidget::Triangular</enum>
+    </property>
     <property name="currentIndex">
      <number>0</number>
     </property>
@@ -917,7 +920,7 @@ your test is over. The test will begin on the word start. On your mark, get read
      <x>0</x>
      <y>0</y>
      <width>1092</width>
-     <height>20</height>
+     <height>21</height>
     </rect>
    </property>
    <widget class="QMenu" name="menuAccount">
@@ -929,11 +932,17 @@ your test is over. The test will begin on the word start. On your mark, get read
     <property name="title">
      <string>Catalogue</string>
     </property>
+    <addaction name="actionView_Account"/>
    </widget>
    <addaction name="menuAccount"/>
    <addaction name="menuCatalogue"/>
   </widget>
   <widget class="QStatusBar" name="statusbar"/>
+  <action name="actionView_Account">
+   <property name="text">
+    <string>View Catalogue</string>
+   </property>
+  </action>
  </widget>
  <resources/>
  <connections/>
