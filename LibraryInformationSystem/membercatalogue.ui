@@ -7,7 +7,7 @@
     <x>0</x>
     <y>0</y>
     <width>1052</width>
-    <height>650</height>
+    <height>634</height>
    </rect>
   </property>
   <property name="minimumSize">
@@ -59,7 +59,7 @@ QMenuBar::item:pressed {
      <string/>
     </property>
     <property name="pixmap">
-     <pixmap>:/resources/images/bblLogo.png</pixmap>
+     <pixmap resource="resources.qrc">:/resources/images/bblLogo.png</pixmap>
     </property>
    </widget>
    <widget class="QComboBox" name="comboBox">
@@ -798,12 +798,13 @@ your test is over. The test will begin on the word start. On your mark, get read
     <property name="title">
      <string>Catalogue</string>
     </property>
+    <addaction name="actionView_Catalogue"/>
    </widget>
    <widget class="QMenu" name="menuAccount">
     <property name="title">
      <string>Account</string>
     </property>
-    <addaction name="actiontest"/>
+    <addaction name="viewAccount"/>
     <addaction name="actiontest_2"/>
     <addaction name="separator"/>
     <addaction name="actiontest_3"/>
@@ -812,9 +813,9 @@ your test is over. The test will begin on the word start. On your mark, get read
    <addaction name="menuCatalogue"/>
   </widget>
   <widget class="QStatusBar" name="statusbar"/>
-  <action name="actiontest">
+  <action name="viewAccount">
    <property name="text">
-    <string>test</string>
+    <string>View account</string>
    </property>
   </action>
   <action name="actiontest_2">
@@ -824,10 +825,17 @@ your test is over. The test will begin on the word start. On your mark, get read
   </action>
   <action name="actiontest_3">
    <property name="text">
-    <string>test 3</string>
+    <string>Log-Out</string>
+   </property>
+  </action>
+  <action name="actionView_Catalogue">
+   <property name="text">
+    <string>View Catalogue</string>
    </property>
   </action>
  </widget>
- <resources/>
+ <resources>
+  <include location="resources.qrc"/>
+ </resources>
  <connections/>
 </ui>

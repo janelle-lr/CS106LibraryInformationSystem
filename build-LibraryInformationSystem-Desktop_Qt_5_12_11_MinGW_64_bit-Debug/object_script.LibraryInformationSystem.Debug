@@ -1,5 +1,6 @@
 debug/account.o
 debug/admin.o
+debug/admineditcatalogue.o
 debug/author.o
 debug/book.o
 debug/bookdetails.o
@@ -8,11 +9,14 @@ debug/librarydatabase.o
 debug/main.o
 debug/mainwindow.o
 debug/member.o
+debug/memberaccountview.o
 debug/membercatalogue.o
 debug/preorderbook.o
 debug/publisher.o
 debug/systemlibrary.o
 debug/qrc_resources.o
+debug/moc_admineditcatalogue.o
 debug/moc_bookdetails.o
 debug/moc_mainwindow.o
+debug/moc_memberaccountview.o
 debug/moc_membercatalogue.o

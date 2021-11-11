@@ -1,6 +1,7 @@
 #include "membercatalogue.h"
 #include "ui_membercatalogue.h"
 
+
 memberCatalogue::memberCatalogue(QWidget *parent) :
     QMainWindow(parent),
     ui(new Ui::memberCatalogue)
@@ -32,3 +33,16 @@ memberCatalogue::~memberCatalogue()
 {
     delete ui;
 }
+
+
+// when view account is selected from menu
+void memberCatalogue::on_viewAccount_triggered()
+{
+    hide();
+    memberaccountview = new memberAccountView(this);
+    connect(memberaccountview, SIGNAL(openmemberAccountView()), this, SLOT(openmemberCatalogue())); //connect(pointerName, SIGNAL(openWindowYouWantToOpen()), this, SLOT(openWindowUrOpeningFrom()));
+    memberaccountview->show();
+
+
+}
+

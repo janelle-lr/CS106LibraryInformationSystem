@@ -1,1 +1,6 @@
 BookID,Book Name,Genre,InStock,Book Copies,Available Status,Book Image Filepath,Book Description
+310136GE,ui->bookTitle->text(),ui->bookGenre->text(),9,9,1,filePath,ui->bookDescription->text()
+310185AE,awefawefa,awefawefa,0,0,1,,awefawef
+310100SQ,awefawefa,awefawefa,0,0,1,,awefawef
+310146UJ,awefawefa,awefawefa,0,0,1,,awefawef
+310199ZP,awefawefa,awefawefa,123,123,1,,awefawef
