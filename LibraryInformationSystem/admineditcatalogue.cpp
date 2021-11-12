@@ -36,12 +36,6 @@ void adminEditCatalogue::on_comboBox_activated(const QString &arg1)
     }
 }
 
-void adminEditCatalogue::on_pushButton_clicked()
-{
-
-}
-
-
 void adminEditCatalogue::on_confirmBookDetails_clicked()
 {
     Book book;

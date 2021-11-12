@@ -87,24 +87,6 @@ QMenuBar::item:pressed {
      <attribute name="title">
       <string>Add Books</string>
      </attribute>
-     <widget class="QPushButton" name="pushButton">
-      <property name="geometry">
-       <rect>
-        <x>460</x>
-        <y>410</y>
-        <width>171</width>
-        <height>41</height>
-       </rect>
-      </property>
-      <property name="styleSheet">
-       <string notr="true">QPushButton{
-	
-}</string>
-      </property>
-      <property name="text">
-       <string>Add Book</string>
-      </property>
-     </widget>
      <widget class="QWidget" name="verticalLayoutWidget">
       <property name="geometry">
        <rect>
@@ -349,14 +331,14 @@ QMenuBar::item:pressed {
      <widget class="QPushButton" name="confirmBookDetails">
       <property name="geometry">
        <rect>
-        <x>410</x>
-        <y>360</y>
+        <x>530</x>
+        <y>380</y>
         <width>75</width>
         <height>23</height>
        </rect>
       </property>
       <property name="text">
-       <string>PushButton</string>
+       <string>Add Book</string>
       </property>
      </widget>
     </widget>

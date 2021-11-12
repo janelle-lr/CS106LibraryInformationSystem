@@ -38,7 +38,6 @@ public:
     QLabel *logoImage;
     QTabWidget *tabWidget;
     QWidget *tab;
-    QPushButton *pushButton;
     QWidget *verticalLayoutWidget;
     QVBoxLayout *verticalLayout;
     QLabel *label_6;
@@ -178,12 +177,6 @@ public:
         tabWidget->setTabShape(QTabWidget::Triangular);
         tab = new QWidget();
         tab->setObjectName(QString::fromUtf8("tab"));
-        pushButton = new QPushButton(tab);
-        pushButton->setObjectName(QString::fromUtf8("pushButton"));
-        pushButton->setGeometry(QRect(460, 410, 171, 41));
-        pushButton->setStyleSheet(QString::fromUtf8("QPushButton{\n"
-"	\n"
-"}"));
         verticalLayoutWidget = new QWidget(tab);
         verticalLayoutWidget->setObjectName(QString::fromUtf8("verticalLayoutWidget"));
         verticalLayoutWidget->setGeometry(QRect(10, 70, 1021, 251));
@@ -744,7 +737,6 @@ public:
     {
         adminEditCatalogue->setWindowTitle(QApplication::translate("adminEditCatalogue", "MainWindow", nullptr));
         logoImage->setText(QString());
-        pushButton->setText(QApplication::translate("adminEditCatalogue", "Add Book", nullptr));
         label_6->setText(QApplication::translate("adminEditCatalogue", "Book Details", nullptr));
         label_4->setText(QApplication::translate("adminEditCatalogue", "Enter Book TItle", nullptr));
         label_5->setText(QApplication::translate("adminEditCatalogue", "Enter Genre", nullptr));
@@ -759,7 +751,7 @@ public:
         label_20->setText(QApplication::translate("adminEditCatalogue", "Enter Author Name", nullptr));
         label_21->setText(QApplication::translate("adminEditCatalogue", "Enter Publisher Name", nullptr));
         label->setText(QApplication::translate("adminEditCatalogue", "TextLabel", nullptr));
-        confirmBookDetails->setText(QApplication::translate("adminEditCatalogue", "PushButton", nullptr));
+        confirmBookDetails->setText(QApplication::translate("adminEditCatalogue", "Add Book", nullptr));
         tabWidget->setTabText(tabWidget->indexOf(tab), QApplication::translate("adminEditCatalogue", "Add Books", nullptr));
         label_2->setText(QApplication::translate("adminEditCatalogue", "Books You Have", nullptr));
         img_2->setText(QApplication::translate("adminEditCatalogue", "Book 1", nullptr));
