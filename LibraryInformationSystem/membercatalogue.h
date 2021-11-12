@@ -16,7 +16,7 @@ public:
     ~memberCatalogue();
 
 private slots:
-    void on_actiontest_triggered();
+   // void on_actiontest_triggered();
 
     void on_viewAccount_triggered();
 
