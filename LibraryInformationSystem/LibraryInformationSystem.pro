@@ -11,7 +11,7 @@ CONFIG += c++11
 SOURCES += \
     account.cpp \
     admin.cpp \
-    admineditcatalogue.cpp \
+    adminbookdetails.cpp \
     author.cpp \
     book.cpp \
     bookdetails.cpp \
@@ -20,8 +20,6 @@ SOURCES += \
     main.cpp \
     mainwindow.cpp \
     member.cpp \
-    memberaccountview.cpp \
-    membercatalogue.cpp \
     preorderbook.cpp \
     publisher.cpp \
     systemlibrary.cpp
@@ -29,7 +27,7 @@ SOURCES += \
 HEADERS += \
     account.h \
     admin.h \
-    admineditcatalogue.h \
+    adminbookdetails.h \
     author.h \
     book.h \
     bookdetails.h \
@@ -37,18 +35,14 @@ HEADERS += \
     librarydatabase.h \
     mainwindow.h \
     member.h \
-    memberaccountview.h \
-    membercatalogue.h \
     preorderbook.h \
     publisher.h \
     systemlibrary.h
 
 FORMS += \
-    admineditcatalogue.ui \
+    adminbookdetails.ui \
     bookdetails.ui \
-    mainwindow.ui \
-    memberaccountview.ui \
-    membercatalogue.ui
+    mainwindow.ui
 
 # Default rules for deployment.
 qnx: target.path = /tmp/$${TARGET}/bin

@@ -58,7 +58,6 @@ void LibraryDatabase::buildDatabase(){
         //reference to your file
         QTextStream out(&bookFile);
         out << "BookID" << "," << "Book Name" << "," << "Genre" << "," << "InStock" << "," << "Book Copies" << "," << "Available Status" << "," << "Book Image Filepath" << "," << "Book Description" << "\n";
-
         //flush the file after and close
         bookFile.flush();
         bookFile.close();
@@ -154,8 +153,8 @@ void LibraryDatabase::createTestAccount(){
     QTextStream accOut(&accFile);
     QDate date = QDate::currentDate();
     accOut << "AccountID" << "," << "User ID" << "," << "Account Type"  << "," << "Password" << "," << "Date Created" << "," << "Account Status" << "\n";
-    accOut << "230069BB" << "," << "210Admin" << "," << "@Admin" << "," << "AdminPass" << "," << date.toString() << "," << 1 << "\n";
-    accOut << "230020SJ" << "," << "220Member" << "," << "@Member" << "," << "MemberPass" << "," << date.toString() << "," << 1 << "\n";
+    accOut << "230069BB" << "," << "Admin" << "," << "@Admin" << "," << "AdminPass" << "," << date.toString() << "," << 1 << "\n";
+    accOut << "230020SJ" << "," << "TestMember" << "," << "@Member" << "," << "MemberPass" << "," << date.toString() << "," << 1 << "\n";
 }
 //This function updates the Admin details
 void LibraryDatabase::updateAdminDetails(Admin admin){
@@ -264,14 +263,17 @@ bool LibraryDatabase::checkAccount(QString username,QString pass){
     if(!file.open(QFile::ReadOnly | QFile::Text)){
         qDebug() << "Error cant open file";
     }
+
     //reference to your file
     QTextStream in(&file);
     QStringList list;
     QString line;
     //loop through csv data
+    qDebug() << " " << username;
     while(!in.atEnd()){
         line = file.readLine().replace("\n","");
         list.append(line.split(","));
+        qDebug() << list[1] << " " << username;
         if(list[1] == username){
             if(list[3] == pass){
                 exist = true;
@@ -448,7 +450,6 @@ void LibraryDatabase::updateAllMemberDetails(QVector<Member>member){
 }
 //This function adds a book record in the database
 void LibraryDatabase::addBook(Book book){
-    qDebug() << "hello";
     //add record to database
     QFile file("LibraryDB/Book.csv");
     //if the file is not open
