@@ -11,7 +11,7 @@ CONFIG += c++11
 SOURCES += \
     account.cpp \
     admin.cpp \
-    adminbookdetails.cpp \
+    admineditcatalogue.cpp \
     author.cpp \
     book.cpp \
     bookdetails.cpp \
@@ -20,6 +20,7 @@ SOURCES += \
     main.cpp \
     mainwindow.cpp \
     member.cpp \
+    memberaccountview.cpp \
     membercatalogue.cpp \
     preorderbook.cpp \
     publisher.cpp \
@@ -28,7 +29,7 @@ SOURCES += \
 HEADERS += \
     account.h \
     admin.h \
-    adminbookdetails.h \
+    admineditcatalogue.h \
     author.h \
     book.h \
     bookdetails.h \
@@ -36,15 +37,17 @@ HEADERS += \
     librarydatabase.h \
     mainwindow.h \
     member.h \
+    memberaccountview.h \
     membercatalogue.h \
     preorderbook.h \
     publisher.h \
     systemlibrary.h
 
 FORMS += \
-    adminbookdetails.ui \
+    admineditcatalogue.ui \
     bookdetails.ui \
     mainwindow.ui \
+    memberaccountview.ui \
     membercatalogue.ui
 
 # Default rules for deployment.

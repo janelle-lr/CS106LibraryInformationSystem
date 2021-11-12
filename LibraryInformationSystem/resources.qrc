@@ -7,5 +7,8 @@
         <file>images/duneBookCover.png</file>
         <file>images/gold cats.png</file>
         <file>images/pomegranates.png</file>
+        <file>images/testImage.jpg</file>
+        <file>images/testImage2.jpg</file>
+        <file>images/testImage3.jfif</file>
     </qresource>
 </RCC>

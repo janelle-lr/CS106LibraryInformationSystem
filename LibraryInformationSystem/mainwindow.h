@@ -4,6 +4,7 @@
 #include <QMainWindow>
 #include "systemlibrary.h"
 #include "membercatalogue.h"
+#include "admineditcatalogue.h"
 
 QT_BEGIN_NAMESPACE
 namespace Ui { class MainWindow; }
@@ -27,5 +28,6 @@ private:
 
     SystemLibrary *sysLib;
     memberCatalogue *membercatalogue;
+    adminEditCatalogue *admineditcatalogue;
 };
 #endif // MAINWINDOW_H

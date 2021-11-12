@@ -2,7 +2,7 @@
 #define MEMBERCATALOGUE_H
 
 #include <QMainWindow>
-
+#include "memberaccountview.h"
 namespace Ui {
 class memberCatalogue;
 }
@@ -15,8 +15,14 @@ public:
     explicit memberCatalogue(QWidget *parent = nullptr);
     ~memberCatalogue();
 
+private slots:
+    void on_actiontest_triggered();
+
+    void on_viewAccount_triggered();
+
 private:
     Ui::memberCatalogue *ui;
+    memberAccountView *memberaccountview;
 };
 
 #endif // MEMBERCATALOGUE_H

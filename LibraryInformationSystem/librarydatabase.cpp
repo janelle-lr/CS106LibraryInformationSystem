@@ -58,6 +58,7 @@ void LibraryDatabase::buildDatabase(){
         //reference to your file
         QTextStream out(&bookFile);
         out << "BookID" << "," << "Book Name" << "," << "Genre" << "," << "InStock" << "," << "Book Copies" << "," << "Available Status" << "," << "Book Image Filepath" << "," << "Book Description" << "\n";
+
         //flush the file after and close
         bookFile.flush();
         bookFile.close();
@@ -153,8 +154,8 @@ void LibraryDatabase::createTestAccount(){
     QTextStream accOut(&accFile);
     QDate date = QDate::currentDate();
     accOut << "AccountID" << "," << "User ID" << "," << "Account Type"  << "," << "Password" << "," << "Date Created" << "," << "Account Status" << "\n";
-    accOut << "230069BB" << "," << "Admin" << "," << "@Admin" << "," << "AdminPass" << "," << date.toString() << "," << 1 << "\n";
-    accOut << "230020SJ" << "," << "TestMember" << "," << "@Member" << "," << "MemberPass" << "," << date.toString() << "," << 1 << "\n";
+    accOut << "230069BB" << "," << "210Admin" << "," << "@Admin" << "," << "AdminPass" << "," << date.toString() << "," << 1 << "\n";
+    accOut << "230020SJ" << "," << "220Member" << "," << "@Member" << "," << "MemberPass" << "," << date.toString() << "," << 1 << "\n";
 }
 //This function updates the Admin details
 void LibraryDatabase::updateAdminDetails(Admin admin){
@@ -272,7 +273,6 @@ bool LibraryDatabase::checkAccount(QString username,QString pass){
         line = file.readLine().replace("\n","");
         list.append(line.split(","));
         if(list[1] == username){
-            qDebug() << "hello";
             if(list[3] == pass){
                 exist = true;
                 break;
@@ -448,6 +448,7 @@ void LibraryDatabase::updateAllMemberDetails(QVector<Member>member){
 }
 //This function adds a book record in the database
 void LibraryDatabase::addBook(Book book){
+    qDebug() << "hello";
     //add record to database
     QFile file("LibraryDB/Book.csv");
     //if the file is not open
