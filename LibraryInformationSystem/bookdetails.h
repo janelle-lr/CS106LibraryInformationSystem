@@ -16,7 +16,7 @@ public:
     ~BookDetails();
 
 private slots:
-    void on_pushButton_clicked();
+    //void on_pushButton_clicked();
 
     void on_reservePushButton_clicked();
 
