@@ -3,6 +3,7 @@
 
 #include <QMainWindow>
 
+
 namespace Ui {
 class userAccount;
 }
@@ -15,8 +16,12 @@ public:
     explicit userAccount(QWidget *parent = nullptr);
     ~userAccount();
 
+private slots:
+    void on_actionView_Account_triggered();
+
 private:
     Ui::userAccount *ui;
+
 };
 
 #endif // USERACCOUNT_H

@@ -2,8 +2,8 @@
 #define MAINWINDOW_H
 
 #include <QMainWindow>
-#include "systemlibrary.h"
-#include "member.h"
+//#include "systemlibrary.h"
+//#include "member.h"
 
 #include "login.h"
 
@@ -35,8 +35,8 @@ private slots:
 
 private:
     Ui::MainWindow *ui;
-    SystemLibrary *sysLib;
-    Member member;
+    //SystemLibrary *sysLib;
+    //Member member;
 
     login *login;
 

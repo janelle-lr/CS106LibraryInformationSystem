@@ -4,11 +4,13 @@
 #include "mainwindow.h"
 #include <QMessageBox>
 
+#include <QDebug>
 Catalogue::Catalogue(QWidget *parent) :
     QMainWindow(parent),
     ui(new Ui::Catalogue)
 {
     ui->setupUi(this);
+    setWindowTitle("Catalogue");
 
     //logo image
     QPixmap Img(":/MicrosoftTeams-image.png");
@@ -50,9 +52,9 @@ void Catalogue::on_actionView_Account_triggered()
 void Catalogue::on_actionSign_Out_triggered()
 {
     QMessageBox::warning(this,"Later pussy","fuck outta here");
-    //mainwindow = new MainWindow(this);
-    //connect(mainwindow, SIGNAL())
-    hide();
-    //mainwindow->show();
+   logout();
 }
 
+void Catalogue::logout(){
+    qDebug() << "Test";
+}

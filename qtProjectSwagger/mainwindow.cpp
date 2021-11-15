@@ -24,6 +24,7 @@ void MainWindow::on_pushButton_clicked()
     QMessageBox::information(this,"Thanks for logging in!","Thank you for logging in, User!");
 
     catalogue = new Catalogue(this);
+    connect(catalogue,SIGNAL(logout()),this,SLOT(show()));
     hide();
     catalogue->show();
 }

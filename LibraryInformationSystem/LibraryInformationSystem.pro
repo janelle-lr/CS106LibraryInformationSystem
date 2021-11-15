@@ -11,13 +11,19 @@ CONFIG += c++11
 SOURCES += \
     account.cpp \
     admin.cpp \
+    admineditcatalogue.cpp \
     author.cpp \
     book.cpp \
+    bookdetails.cpp \
     bookitem.cpp \
     librarydatabase.cpp \
     main.cpp \
     mainwindow.cpp \
     member.cpp \
+    memberaccountview.cpp \
+    memberaccountviewv2.cpp \
+    membercatalogue.cpp \
+    membercataloguev2.cpp \
     preorderbook.cpp \
     publisher.cpp \
     systemlibrary.cpp
@@ -25,20 +31,35 @@ SOURCES += \
 HEADERS += \
     account.h \
     admin.h \
+    admineditcatalogue.h \
     author.h \
     book.h \
+    bookdetails.h \
     bookitem.h \
     librarydatabase.h \
     mainwindow.h \
     member.h \
+    memberaccountview.h \
+    memberaccountviewv2.h \
+    membercatalogue.h \
+    membercataloguev2.h \
     preorderbook.h \
     publisher.h \
     systemlibrary.h
 
 FORMS += \
-    mainwindow.ui
+    admineditcatalogue.ui \
+    bookdetails.ui \
+    mainwindow.ui \
+    memberaccountview.ui \
+    memberaccountviewv2.ui \
+    membercatalogue.ui \
+    membercataloguev2.ui
 
 # Default rules for deployment.
 qnx: target.path = /tmp/$${TARGET}/bin
 else: unix:!android: target.path = /opt/$${TARGET}/bin
 !isEmpty(target.path): INSTALLS += target
+
+RESOURCES += \
+    resources.qrc

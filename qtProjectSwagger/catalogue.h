@@ -3,7 +3,7 @@
 
 #include <QMainWindow>
 #include "useraccount.h"
-#include "mainwindow.h"
+
 
 namespace Ui {
 class Catalogue;
@@ -17,15 +17,17 @@ public:
     explicit Catalogue(QWidget *parent = nullptr);
     ~Catalogue();
 
+signals:
+
 private slots:
     void on_actionView_Account_triggered();
-
     void on_actionSign_Out_triggered();
+    void logout();
 
 private:
     Ui::Catalogue *ui;
     userAccount *useraccount;
-    //MainWindow *mainwindow;
+
 };
 
 #endif // CATALOGUE_H
