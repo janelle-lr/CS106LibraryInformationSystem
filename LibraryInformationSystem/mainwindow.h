@@ -4,6 +4,7 @@
 #include <QMainWindow>
 #include "systemlibrary.h"
 #include "membercatalogue.h"
+#include "membercataloguev2.h"
 #include "admineditcatalogue.h"
 
 QT_BEGIN_NAMESPACE
@@ -28,6 +29,7 @@ private:
 
     SystemLibrary *sysLib;
     memberCatalogue *membercatalogue;
+    memberCatalogueV2 *membercataloguev2;
     adminEditCatalogue *admineditcatalogue;
 };
 #endif // MAINWINDOW_H

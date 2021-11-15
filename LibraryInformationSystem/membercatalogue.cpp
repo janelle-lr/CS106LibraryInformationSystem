@@ -39,9 +39,9 @@ memberCatalogue::~memberCatalogue()
 void memberCatalogue::on_viewAccount_triggered()
 {
     hide();
-    memberaccountview = new memberAccountView(this);
-    connect(memberaccountview, SIGNAL(openmemberAccountView()), this, SLOT(openmemberCatalogue())); //connect(pointerName, SIGNAL(openWindowYouWantToOpen()), this, SLOT(openWindowUrOpeningFrom()));
-    memberaccountview->show();
+//    memberaccountview = new memberAccountView(this);
+//    connect(memberaccountview, SIGNAL(openmemberAccountView()), this, SLOT(openmemberCatalogue())); //connect(pointerName, SIGNAL(openWindowYouWantToOpen()), this, SLOT(openWindowUrOpeningFrom()));
+//    memberaccountview->show();
 
 
 }

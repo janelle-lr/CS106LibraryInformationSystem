@@ -3,6 +3,7 @@
 
 #include <QMainWindow>
 #include "memberaccountview.h"
+
 namespace Ui {
 class memberCatalogue;
 }
@@ -16,13 +17,13 @@ public:
     ~memberCatalogue();
 
 private slots:
-    void on_actiontest_triggered();
+    //void on_actiontest_triggered();
 
     void on_viewAccount_triggered();
 
 private:
     Ui::memberCatalogue *ui;
-    memberAccountView *memberaccountview;
+  //  memberAccountView *memberaccountview;
 };
 
 #endif // MEMBERCATALOGUE_H

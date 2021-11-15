@@ -47,9 +47,9 @@ void MainWindow::on_loginPushButton_clicked()
 
         }else if(subString == "220"){
             qDebug() << "member has logged in";
-            membercatalogue = new memberCatalogue(this);
-            connect(membercatalogue, SIGNAL(openmemberCatalogue()), this, SLOT(openMainWindow())); //connect(pointerName, SIGNAL(openWindowYouWantToOpen()), this, SLOT(openWindowUrOpeningFrom()));
-            membercatalogue->show();
+            membercataloguev2 = new memberCatalogueV2(this);
+            connect(membercataloguev2, SIGNAL(openmemberCatalogueV2()), this, SLOT(openMainWindow())); //connect(pointerName, SIGNAL(openWindowYouWantToOpen()), this, SLOT(openWindowUrOpeningFrom()));
+            membercataloguev2->show();
         }
 
     }else{

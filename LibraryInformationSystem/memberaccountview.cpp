@@ -15,3 +15,12 @@ memberAccountView::~memberAccountView()
 {
     delete ui;
 }
+
+void memberAccountView::on_actionView_Catalogue_triggered()
+{
+//    hide();
+//    membercatalogue = new memberCatalogue(this);
+//    connect(membercatalogue, SIGNAL(openmemberCatalogue()), this, SLOT(openmemberAccountView())); //connect(pointerName, SIGNAL(openWindowYouWantToOpen()), this, SLOT(openWindowUrOpeningFrom()));
+//    membercatalogue->show();
+}
+
