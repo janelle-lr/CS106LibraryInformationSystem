@@ -34,8 +34,9 @@ memberCatalogueV2::~memberCatalogueV2()
 
 void memberCatalogueV2::on_viewAccount_clicked()
 {
-    memberAcc = new memberAccountViewV2();
-    memberAcc->show();
-    connect(memberAcc,SIGNAL(showMemberAccWindow()), this,SLOT(show()));
+    hide();
+//    memberaccountview = new memberAccountView(this);
+//    connect(memberaccountview, SIGNAL(openmemberAccountView()), this, SLOT(show())); //connect(pointerName, SIGNAL(openWindowYouWantToOpen()), this, SLOT(openWindowUrOpeningFrom()));
+//    memberaccountview->show();
 }
 

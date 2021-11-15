@@ -1,6 +1,7 @@
 #include "mainwindow.h"
 #include "ui_mainwindow.h"
 #include <QMessageBox>
+//#include <QStringRef>
 #include "QDebug"
 MainWindow::MainWindow(QWidget *parent)
     : QMainWindow(parent)
@@ -36,20 +37,18 @@ void MainWindow::on_loginPushButton_clicked()
     qDebug() << login;
     if(sysLib->checkAccount(username,password)){
         QMessageBox::information(this,"Thank You for logging in", "User, " + username + " has logged in.");
-        QStringRef subString(&username, 0,3);
         hide();
-        //qDebug() << subString;
-        if(subString == "210"){
+        if(username.left(3) == "210"){
             //qDebug() << "admin has logged in";
             admineditcatalogue = new adminEditCatalogue(this);
             connect(admineditcatalogue, SIGNAL(openadminEditCatalogue()), this, SLOT(openMainWindow())); //connect(pointerName, SIGNAL(openWindowYouWantToOpen()), this, SLOT(openWindowUrOpeningFrom()));
             admineditcatalogue->show();
 
-        }else if(subString == "220"){
+        }else if(username.left(3) == "220"){
             qDebug() << "member has logged in";
-            membercataloguev2 = new memberCatalogueV2(this);
-            connect(membercataloguev2, SIGNAL(openmemberCatalogueV2()), this, SLOT(openMainWindow())); //connect(pointerName, SIGNAL(openWindowYouWantToOpen()), this, SLOT(openWindowUrOpeningFrom()));
-            membercataloguev2->show();
+            membercatalogue = new memberCatalogue(this);
+            connect(membercatalogue, SIGNAL(openmemberCatalogue()), this, SLOT(openMainWindow())); //connect(pointerName, SIGNAL(openWindowYouWantToOpen()), this, SLOT(openWindowUrOpeningFrom()));
+            membercatalogue->show();           
         }
 
     }else{

@@ -3,7 +3,6 @@
 
 #include <QMainWindow>
 #include "memberaccountview.h"
-
 namespace Ui {
 class memberCatalogue;
 }
@@ -23,7 +22,7 @@ private slots:
 
 private:
     Ui::memberCatalogue *ui;
-  //  memberAccountView *memberaccountview;
+    memberAccountView *memberaccountview;
 };
 
 #endif // MEMBERCATALOGUE_H

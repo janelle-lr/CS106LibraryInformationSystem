@@ -19,14 +19,7 @@ memberAccountViewV2::~memberAccountViewV2()
 
 void memberAccountViewV2::on_viewCatalogue_clicked()
 {
-    emit showMemberAccWindow();
-//    memb = new memberAccountViewV2(this);
-//    connect(memberaccountviewv2, SIGNAL(on_viewCatalogue_clicked()), this, SLOT(show())); //connect(pointerName, SIGNAL(openWindowYouWantToOpen()), this, SLOT(openWindowUrOpeningFrom()));
-//    memberaccountviewv2->show();
-//    hide();
+    emit openmemberAccountView();
+    hide();
 }
-
-//void memberAccountViewV2::showMemberAccWindow(){
-//    em
-//}
 

@@ -16,6 +16,8 @@ public:
     explicit memberAccountView(QWidget *parent = nullptr);
     ~memberAccountView();
 
+signals:
+    void openmemberAccountView();
 private slots:
     void on_actionView_Catalogue_triggered();
 

@@ -21,7 +21,7 @@ private slots:
 
 private:
     Ui::memberCatalogueV2 *ui;
-    memberAccountViewV2* memberAcc;
+    //memberAccountViewV2* memberaccountview;
 };
 
 #endif // MEMBERCATALOGUEV2_H
