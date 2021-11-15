@@ -9,6 +9,9 @@ memberCatalogue::memberCatalogue(QWidget *parent) :
     ui->setupUi(this);
     setWindowTitle("Catalogue");
 
+    //for database
+    sysLib->buildDatabase();
+
     //for logo in UI
     QPixmap logo(":/resources/images/bblLogo.png");
     ui->logoImage->setPixmap(logo.scaled(450, 74, Qt::KeepAspectRatio));
@@ -44,5 +47,11 @@ void memberCatalogue::on_viewAccount_triggered()
     memberaccountview->show();
 
 
+}
+
+
+void memberCatalogue::on_pushButton_clicked()
+{
+    QVector<Book> getAllBooks();
 }
 

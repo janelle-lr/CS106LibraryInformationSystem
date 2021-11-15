@@ -3,8 +3,9 @@
 
 #include <QMainWindow>
 #include "systemlibrary.h"
-#include "bookdetails.h"
-#include "adminbookdetails.h"
+#include "membercatalogue.h"
+#include "admineditcatalogue.h"
+#include "admincatalogue.h"
 
 QT_BEGIN_NAMESPACE
 namespace Ui { class MainWindow; }
@@ -21,11 +22,14 @@ public:
 private slots:
     void on_loginPushButton_clicked();
 
+    void on_checkBox_stateChanged(int arg1);
+
 private:
     Ui::MainWindow *ui;
 
     SystemLibrary *sysLib;
-    BookDetails *bookDetails;
-    AdminBookDetails *adminBookDetails;
+    memberCatalogue *membercatalogue;
+    adminEditCatalogue *admineditcatalogue;
+    adminCatalogue *admincatalogue;
 };
 #endif // MAINWINDOW_H

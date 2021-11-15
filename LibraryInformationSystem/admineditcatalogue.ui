@@ -50,6 +50,21 @@ QMenuBar::item:pressed {
    <property name="styleSheet">
     <string notr="true">QWidget{
 	background: #FFE5D0;
+	font-family: Montserrat;
+}
+
+QLineEdit {
+	border: 1px solid;
+	border-radius: 15px;
+	border-color: #e5e5e5;
+	background-color: palette(base);
+	padding: 0px 5px;
+	font-size: 13px;
+}
+
+QPushButton {
+	border-radius: 15px; 
+	font-size: 13px;
 }</string>
    </property>
    <widget class="QLabel" name="logoImage">
@@ -111,7 +126,7 @@ QMenuBar::item:pressed {
         <x>10</x>
         <y>70</y>
         <width>1021</width>
-        <height>251</height>
+        <height>312</height>
        </rect>
       </property>
       <layout class="QVBoxLayout" name="verticalLayout">
@@ -145,7 +160,17 @@ QMenuBar::item:pressed {
           </widget>
          </item>
          <item row="0" column="1">
-          <widget class="QLineEdit" name="bookTitle"/>
+          <widget class="QLineEdit" name="bookTitle">
+           <property name="minimumSize">
+            <size>
+             <width>0</width>
+             <height>31</height>
+            </size>
+           </property>
+           <property name="text">
+            <string/>
+           </property>
+          </widget>
          </item>
          <item row="1" column="0">
           <widget class="QLabel" name="label_5">
@@ -155,7 +180,14 @@ QMenuBar::item:pressed {
           </widget>
          </item>
          <item row="1" column="1">
-          <widget class="QLineEdit" name="bookGenre"/>
+          <widget class="QLineEdit" name="bookGenre">
+           <property name="minimumSize">
+            <size>
+             <width>0</width>
+             <height>31</height>
+            </size>
+           </property>
+          </widget>
          </item>
          <item row="2" column="0">
           <widget class="QLabel" name="label_13">
@@ -165,7 +197,14 @@ QMenuBar::item:pressed {
           </widget>
          </item>
          <item row="2" column="1">
-          <widget class="QLineEdit" name="bookCopies"/>
+          <widget class="QLineEdit" name="bookCopies">
+           <property name="minimumSize">
+            <size>
+             <width>0</width>
+             <height>31</height>
+            </size>
+           </property>
+          </widget>
          </item>
          <item row="3" column="0">
           <widget class="QLabel" name="label_14">
@@ -188,6 +227,20 @@ QMenuBar::item:pressed {
          </item>
          <item row="3" column="1">
           <widget class="QComboBox" name="selectedImage">
+           <property name="minimumSize">
+            <size>
+             <width>0</width>
+             <height>31</height>
+            </size>
+           </property>
+           <property name="styleSheet">
+            <string notr="true">QComboBox {
+border-radius: 15px;
+background-color: palette(base);
+font-size: 13px;
+}
+</string>
+           </property>
            <item>
             <property name="text">
              <string>Image 1</string>
@@ -218,6 +271,14 @@ QMenuBar::item:pressed {
              <width>0</width>
              <height>60</height>
             </size>
+           </property>
+           <property name="styleSheet">
+            <string notr="true">QLineEdit {
+	padding: 5px;
+}</string>
+           </property>
+           <property name="alignment">
+            <set>Qt::AlignLeading|Qt::AlignLeft|Qt::AlignTop</set>
            </property>
           </widget>
          </item>
@@ -283,7 +344,7 @@ QMenuBar::item:pressed {
            <property name="minimumSize">
             <size>
              <width>0</width>
-             <height>20</height>
+             <height>31</height>
             </size>
            </property>
           </widget>
@@ -324,7 +385,7 @@ QMenuBar::item:pressed {
            <property name="minimumSize">
             <size>
              <width>0</width>
-             <height>20</height>
+             <height>31</height>
             </size>
            </property>
           </widget>
@@ -349,15 +410,41 @@ QMenuBar::item:pressed {
      <widget class="QPushButton" name="confirmBookDetails">
       <property name="geometry">
        <rect>
-        <x>410</x>
-        <y>360</y>
-        <width>75</width>
-        <height>23</height>
+        <x>260</x>
+        <y>410</y>
+        <width>141</width>
+        <height>31</height>
        </rect>
       </property>
-      <property name="text">
-       <string>PushButton</string>
+      <property name="styleSheet">
+       <string notr="true">QPushButton {
+background-color: #E78A6B;
+color:  #fff;
+font-weight: 500;
+}
+
+QPushButton:hover {
+background-color: rgba(231, 138, 107, 0.8);
+}
+
+QPushButton:pressed {
+background-color: rgb(196, 116, 90);
+}</string>
       </property>
+      <property name="text">
+       <string>Add Book</string>
+      </property>
+     </widget>
+     <widget class="QWidget" name="gridLayoutWidget">
+      <property name="geometry">
+       <rect>
+        <x>730</x>
+        <y>390</y>
+        <width>160</width>
+        <height>80</height>
+       </rect>
+      </property>
+      <layout class="QGridLayout" name="gridLayout"/>
      </widget>
     </widget>
     <widget class="QWidget" name="tab_2">

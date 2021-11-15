@@ -37,7 +37,7 @@ font-family: Montserrat;
       <x>360</x>
       <y>200</y>
       <width>331</width>
-      <height>251</height>
+      <height>281</height>
      </rect>
     </property>
     <property name="styleSheet">
@@ -89,6 +89,9 @@ background-color: palette(base);
 padding: 0px 5px;
 }</string>
      </property>
+     <property name="echoMode">
+      <enum>QLineEdit::Password</enum>
+     </property>
     </widget>
     <widget class="QLineEdit" name="usernameLineEdit">
      <property name="geometry">
@@ -126,7 +129,7 @@ padding: 0px 5px;
      <property name="geometry">
       <rect>
        <x>30</x>
-       <y>200</y>
+       <y>220</y>
        <width>271</width>
        <height>31</height>
       </rect>
@@ -141,10 +144,6 @@ font-weight: 500;
 
 QPushButton:hover {
 background-color: rgba(231, 138, 107, 0.8);
-}
-
-QPushButton:pressed {
-background-color: rgb(196, 116, 90);
 }
 
 /* for secondary button
@@ -192,6 +191,19 @@ font: 24px &quot;Montserrat Medium&quot;;
      </property>
      <property name="alignment">
       <set>Qt::AlignCenter</set>
+     </property>
+    </widget>
+    <widget class="QCheckBox" name="checkBox">
+     <property name="geometry">
+      <rect>
+       <x>30</x>
+       <y>180</y>
+       <width>111</width>
+       <height>17</height>
+      </rect>
+     </property>
+     <property name="text">
+      <string>Show Password</string>
      </property>
     </widget>
    </widget>

@@ -187,7 +187,7 @@ QScrollBar::add-line:vertical:pressed{
        <rect>
         <x>0</x>
         <y>0</y>
-        <width>975</width>
+        <width>972</width>
         <height>918</height>
        </rect>
       </property>
@@ -783,6 +783,19 @@ your test is over. The test will begin on the word start. On your mark, get read
       </layout>
      </widget>
     </widget>
+   </widget>
+   <widget class="QPushButton" name="pushButton">
+    <property name="geometry">
+     <rect>
+      <x>650</x>
+      <y>30</y>
+      <width>75</width>
+      <height>23</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>PushButton</string>
+    </property>
    </widget>
   </widget>
   <widget class="QMenuBar" name="menubar">

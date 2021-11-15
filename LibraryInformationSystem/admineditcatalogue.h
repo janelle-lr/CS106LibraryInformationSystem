@@ -4,6 +4,11 @@
 #include <QMainWindow>
 #include "systemlibrary.h"
 #include "book.h"
+#include <QPushButton>
+#include <QMessageBox>
+#include <QGridLayout>
+#include <QLabel>
+#include <QGroupBox>
 
 namespace Ui {
 class adminEditCatalogue;
@@ -19,10 +24,7 @@ public:
 
 private slots:
     void on_comboBox_activated(const QString &arg1);
-
     void on_pushButton_clicked();
-
-
     void on_confirmBookDetails_clicked();
 
 private:

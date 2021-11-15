@@ -1,11 +1,14 @@
 #include "mainwindow.h"
 #include "ui_mainwindow.h"
-
+#include <QMessageBox>
+#include "QDebug"
 MainWindow::MainWindow(QWidget *parent)
     : QMainWindow(parent)
     , ui(new Ui::MainWindow)
 {
     ui->setupUi(this);
+    // pls remember to delete this before handing it in
+    setWindowTitle("BiblioThicc Libraries - ver. 69");
 
     //for database
     sysLib->buildDatabase();
@@ -15,10 +18,9 @@ MainWindow::MainWindow(QWidget *parent)
     ui->logoImage->setPixmap(logo.scaled(450, 74, Qt::KeepAspectRatio));
 
     hide();
-    adminBookDetails = new AdminBookDetails(this);
-    connect(adminBookDetails, SIGNAL(openAdminBookDetails()), this, SLOT(openMainWindow())); //connect(pointerName, SIGNAL(openWindowYouWantToOpen()), this, SLOT(openWindowUrOpeningFrom()));
-    adminBookDetails->show();
-
+    admincatalogue = new adminCatalogue(this);
+    connect(admincatalogue, SIGNAL(openaadminCatalogue()), this, SLOT(openMainWindow())); //connect(pointerName, SIGNAL(openWindowYouWantToOpen()), this, SLOT(openWindowUrOpeningFrom()));
+    admincatalogue->show();
 }
 
 MainWindow::~MainWindow()
@@ -26,17 +28,48 @@ MainWindow::~MainWindow()
     delete ui;
 }
 
-
+// check if input details are inside the accounts database
 void MainWindow::on_loginPushButton_clicked()
 {
+    QString compareId;
     QString username = ui->usernameLineEdit->text();
     QString password = ui->passwordLineEdit->text();
     //ui->loginLabel->setText("lmao");
-    bool login = sysLib->checkAdminAccount(password,username);
+    bool login = sysLib->checkAccount(password,username);
+    qDebug() << login;
+    if(sysLib->checkAccount(username,password)){
+        QMessageBox::information(this,"Thank You for logging in", "User, " + username + " has logged in.");
+        QStringRef subString(&username, 0,3);
+        hide();
+        //qDebug() << subString;
+        if(subString == "210"){
+            //qDebug() << "admin has logged in";
+            admineditcatalogue = new adminEditCatalogue(this);
+            connect(admineditcatalogue, SIGNAL(openadminEditCatalogue()), this, SLOT(openMainWindow())); //connect(pointerName, SIGNAL(openWindowYouWantToOpen()), this, SLOT(openWindowUrOpeningFrom()));
+            admineditcatalogue->show();
 
-    hide();
-    bookDetails = new BookDetails(this);
-    connect(bookDetails, SIGNAL(openBookDetails()), this, SLOT(openLogin())); //connect(pointerName, SIGNAL(openWindowYouWantToOpen()), this, SLOT(openWindowUrOpeningFrom()));
-    bookDetails->show();
+        }else if(subString == "220"){
+            qDebug() << "member has logged in";
+            membercatalogue = new memberCatalogue(this);
+            connect(membercatalogue, SIGNAL(openmemberCatalogue()), this, SLOT(openMainWindow())); //connect(pointerName, SIGNAL(openWindowYouWantToOpen()), this, SLOT(openWindowUrOpeningFrom()));
+            membercatalogue->show();
+        }
+
+    }else{
+        QMessageBox::warning(this,"Failed Log in Attempt","Sorry wrong username or password");
+    }
+
+}
+
+// this is to change 'view password'
+void MainWindow::on_checkBox_stateChanged(int arg1)
+{
+    switch(arg1){
+    case 0:
+        ui->passwordLineEdit->setEchoMode(QLineEdit::Password); //shows it as password
+        break;
+    case 2:
+        ui->passwordLineEdit->setEchoMode(QLineEdit::Normal); //shows it as regular text
+    }
 }
 

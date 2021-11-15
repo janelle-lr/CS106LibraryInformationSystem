@@ -41,7 +41,7 @@ void adminEditCatalogue::on_pushButton_clicked()
 
 }
 
-
+//adding books to database
 void adminEditCatalogue::on_confirmBookDetails_clicked()
 {
     Book book;
@@ -57,6 +57,6 @@ void adminEditCatalogue::on_confirmBookDetails_clicked()
 
     systemlibrary.addBook(book);
 
-    QMessageBox::warning(this,"Book Created","You have now created" + ui->bookTitle->text() + " and added it to the catalogue");
+    QMessageBox::information(this,"Book Created","You have now created " + ui->bookTitle->text() + " and added it to the catalogue");
 }
 

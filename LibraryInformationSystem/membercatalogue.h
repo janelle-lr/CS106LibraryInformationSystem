@@ -3,6 +3,8 @@
 
 #include <QMainWindow>
 #include "memberaccountview.h"
+#include "systemlibrary.h"
+
 namespace Ui {
 class memberCatalogue;
 }
@@ -18,9 +20,13 @@ public:
 private slots:
     void on_viewAccount_triggered();
 
+    void on_pushButton_clicked();
+
 private:
     Ui::memberCatalogue *ui;
     memberAccountView *memberaccountview;
+
+    SystemLibrary *sysLib;
 };
 
 #endif // MEMBERCATALOGUE_H
