@@ -17,15 +17,14 @@ public:
     ~memberAccountViewV2();
 
 signals:
-    void showMemberAccWindow();
+    void openmemberAccountView();
 
 private slots:
     void on_viewCatalogue_clicked();
 
 private:
     Ui::memberAccountViewV2 *ui;
-    memberCatalogueV2 memberCat;
-
+  //  memberCatalogueV2 memberCat;
 };
 
 #endif // MEMBERACCOUNTVIEWV2_H
