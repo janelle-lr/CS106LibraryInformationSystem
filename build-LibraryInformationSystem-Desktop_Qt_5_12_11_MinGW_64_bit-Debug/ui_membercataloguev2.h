@@ -31,8 +31,6 @@ public:
     QLabel *logoImage;
     QGroupBox *groupBox;
     QComboBox *comboBox;
-    QPushButton *viewCatalogue;
-    QPushButton *viewAccount;
     QScrollArea *scrollArea;
     QWidget *scrollAreaWidgetContents;
     QVBoxLayout *verticalLayout;
@@ -97,23 +95,26 @@ public:
     QSpacerItem *horizontalSpacer_8;
     QPushButton *pushButton_8;
     QPushButton *pushButton_9;
+    QPushButton *viewCatalogue;
+    QPushButton *viewAccount;
+    QPushButton *viewCatalogue_2;
 
     void setupUi(QDialog *memberCatalogueV2)
     {
         if (memberCatalogueV2->objectName().isEmpty())
             memberCatalogueV2->setObjectName(QString::fromUtf8("memberCatalogueV2"));
-        memberCatalogueV2->resize(1250, 900);
+        memberCatalogueV2->resize(1250, 1014);
         memberCatalogueV2->setStyleSheet(QString::fromUtf8("QDialog{\n"
 "	background: #FFE5D0;\n"
 "	font-family: Montserrat;\n"
 "}"));
         logoImage = new QLabel(memberCatalogueV2);
         logoImage->setObjectName(QString::fromUtf8("logoImage"));
-        logoImage->setGeometry(QRect(404, 20, 441, 61));
+        logoImage->setGeometry(QRect(404, 70, 441, 61));
         logoImage->setPixmap(QPixmap(QString::fromUtf8(":/resources/images/bblLogo.png")));
         groupBox = new QGroupBox(memberCatalogueV2);
         groupBox->setObjectName(QString::fromUtf8("groupBox"));
-        groupBox->setGeometry(QRect(30, 130, 1181, 491));
+        groupBox->setGeometry(QRect(30, 240, 1181, 761));
         groupBox->setStyleSheet(QString::fromUtf8("QGroupBox{\n"
 "	font-weight: bold;\n"
 "	font-size: 18px;\n"
@@ -131,31 +132,9 @@ public:
         comboBox->addItem(QString());
         comboBox->setObjectName(QString::fromUtf8("comboBox"));
         comboBox->setGeometry(QRect(1040, 0, 131, 22));
-        viewCatalogue = new QPushButton(memberCatalogueV2);
-        viewCatalogue->setObjectName(QString::fromUtf8("viewCatalogue"));
-        viewCatalogue->setGeometry(QRect(700, 90, 191, 41));
-        QFont font;
-        font.setFamily(QString::fromUtf8("Montserrat"));
-        font.setBold(true);
-        font.setItalic(false);
-        font.setWeight(62);
-        viewCatalogue->setFont(font);
-        viewCatalogue->setStyleSheet(QString::fromUtf8("QPushButton{\n"
-"	background-color: rgba(255, 229, 208,0);\n"
-"	color: rgb(255, 136, 108);\n"
-"	font: 500 14px \"Montserrat\";\n"
-"}"));
-        viewAccount = new QPushButton(memberCatalogueV2);
-        viewAccount->setObjectName(QString::fromUtf8("viewAccount"));
-        viewAccount->setGeometry(QRect(300, 90, 191, 41));
-        viewAccount->setStyleSheet(QString::fromUtf8("QPushButton{\n"
-"	background-color: rgba(255, 229, 208,0);\n"
-"	color: rgb(255, 136, 108);\n"
-"	font: 500 14px \"Montserrat\";\n"
-"}"));
-        scrollArea = new QScrollArea(memberCatalogueV2);
+        scrollArea = new QScrollArea(groupBox);
         scrollArea->setObjectName(QString::fromUtf8("scrollArea"));
-        scrollArea->setGeometry(QRect(30, 170, 1181, 711));
+        scrollArea->setGeometry(QRect(0, 40, 1181, 711));
         scrollArea->setStyleSheet(QString::fromUtf8("QScrollArea{\n"
 "	background-color: rgb(255, 229, 208);\n"
 "}\n"
@@ -578,6 +557,37 @@ public:
         verticalLayout->addWidget(frame);
 
         scrollArea->setWidget(scrollAreaWidgetContents);
+        viewCatalogue = new QPushButton(memberCatalogueV2);
+        viewCatalogue->setObjectName(QString::fromUtf8("viewCatalogue"));
+        viewCatalogue->setGeometry(QRect(450, 190, 101, 41));
+        QFont font;
+        font.setFamily(QString::fromUtf8("Montserrat"));
+        font.setBold(true);
+        font.setItalic(false);
+        font.setWeight(62);
+        viewCatalogue->setFont(font);
+        viewCatalogue->setStyleSheet(QString::fromUtf8("QPushButton{\n"
+"	background-color: rgba(255, 229, 208,0);\n"
+"	color: rgb(255, 136, 108);\n"
+"	font: 500 14px \"Montserrat\";\n"
+"}"));
+        viewAccount = new QPushButton(memberCatalogueV2);
+        viewAccount->setObjectName(QString::fromUtf8("viewAccount"));
+        viewAccount->setGeometry(QRect(590, 190, 81, 41));
+        viewAccount->setStyleSheet(QString::fromUtf8("QPushButton{\n"
+"	background-color: rgba(255, 229, 208,0);\n"
+"	color: rgb(255, 136, 108);\n"
+"	font: 500 14px \"Montserrat\";\n"
+"}"));
+        viewCatalogue_2 = new QPushButton(memberCatalogueV2);
+        viewCatalogue_2->setObjectName(QString::fromUtf8("viewCatalogue_2"));
+        viewCatalogue_2->setGeometry(QRect(710, 190, 81, 41));
+        viewCatalogue_2->setFont(font);
+        viewCatalogue_2->setStyleSheet(QString::fromUtf8("QPushButton{\n"
+"	background-color: rgba(255, 229, 208,0);\n"
+"	color: rgb(255, 136, 108);\n"
+"	font: 500 14px \"Montserrat\";\n"
+"}"));
 
         retranslateUi(memberCatalogueV2);
 
@@ -588,15 +598,13 @@ public:
     {
         memberCatalogueV2->setWindowTitle(QApplication::translate("memberCatalogueV2", "Dialog", nullptr));
         logoImage->setText(QString());
-        groupBox->setTitle(QApplication::translate("memberCatalogueV2", "Catalogue", nullptr));
+        groupBox->setTitle(QString());
         comboBox->setItemText(0, QApplication::translate("memberCatalogueV2", "Sort By", nullptr));
         comboBox->setItemText(1, QApplication::translate("memberCatalogueV2", "Title", nullptr));
         comboBox->setItemText(2, QApplication::translate("memberCatalogueV2", "Author", nullptr));
         comboBox->setItemText(3, QApplication::translate("memberCatalogueV2", "Genre", nullptr));
         comboBox->setItemText(4, QApplication::translate("memberCatalogueV2", "Release date", nullptr));
 
-        viewCatalogue->setText(QApplication::translate("memberCatalogueV2", "VIEW CATALOGUE", nullptr));
-        viewAccount->setText(QApplication::translate("memberCatalogueV2", "VIEW ACCOUNT", nullptr));
         img_2->setText(QApplication::translate("memberCatalogueV2", "Book 1", nullptr));
         label_17->setText(QApplication::translate("memberCatalogueV2", "50 Shades of Swag", nullptr));
         label_7->setText(QApplication::translate("memberCatalogueV2", "The FitnessGram\342\204\242 Pacer Test is a multistage aerobic capacity test that progressively \n"
@@ -641,6 +649,9 @@ public:
         label_22->setText(QApplication::translate("memberCatalogueV2", "Available", nullptr));
         pushButton_8->setText(QApplication::translate("memberCatalogueV2", "READ", nullptr));
         pushButton_9->setText(QApplication::translate("memberCatalogueV2", "RESERVE", nullptr));
+        viewCatalogue->setText(QApplication::translate("memberCatalogueV2", "CATALOGUE", nullptr));
+        viewAccount->setText(QApplication::translate("memberCatalogueV2", "ACCOUNT", nullptr));
+        viewCatalogue_2->setText(QApplication::translate("memberCatalogueV2", "LOG OUT", nullptr));
     } // retranslateUi
 
 };

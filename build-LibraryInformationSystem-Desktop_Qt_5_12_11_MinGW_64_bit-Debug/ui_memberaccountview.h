@@ -14,7 +14,7 @@
 #include <QtWidgets/QApplication>
 #include <QtWidgets/QDateEdit>
 #include <QtWidgets/QFormLayout>
-#include <QtWidgets/QFrame>
+#include <QtWidgets/QGroupBox>
 #include <QtWidgets/QHBoxLayout>
 #include <QtWidgets/QLabel>
 #include <QtWidgets/QLineEdit>
@@ -38,6 +38,7 @@ public:
     QAction *actionSign_Out;
     QWidget *centralwidget;
     QLabel *logoImage;
+    QGroupBox *groupBox;
     QTabWidget *tabWidget;
     QWidget *tab;
     QLabel *label;
@@ -70,38 +71,6 @@ public:
     QLabel *label_2;
     QScrollArea *scrollArea;
     QWidget *scrollAreaWidgetContents;
-    QVBoxLayout *verticalLayout_5;
-    QFrame *frame;
-    QWidget *horizontalLayoutWidget_2;
-    QHBoxLayout *book_1;
-    QLabel *img_2;
-    QVBoxLayout *verticalLayout_4;
-    QLabel *label_17;
-    QLabel *label_7;
-    QSpacerItem *verticalSpacer;
-    QHBoxLayout *horizontalLayout_3;
-    QLabel *label_8;
-    QLabel *label_9;
-    QSpacerItem *horizontalSpacer;
-    QHBoxLayout *horizontalLayout_7;
-    QSpacerItem *horizontalSpacer_4;
-    QPushButton *pushButton_2;
-    QPushButton *pushButton_3;
-    QWidget *horizontalLayoutWidget_3;
-    QHBoxLayout *book_2;
-    QLabel *img_3;
-    QVBoxLayout *verticalLayout_6;
-    QLabel *label_18;
-    QLabel *label_10;
-    QSpacerItem *verticalSpacer_2;
-    QHBoxLayout *horizontalLayout_4;
-    QLabel *label_11;
-    QLabel *label_19;
-    QSpacerItem *horizontalSpacer_2;
-    QHBoxLayout *horizontalLayout_8;
-    QSpacerItem *horizontalSpacer_5;
-    QPushButton *pushButton_4;
-    QPushButton *pushButton_5;
     QWidget *tab_3;
     QLabel *label_3;
     QWidget *horizontalLayoutWidget_5;
@@ -148,8 +117,10 @@ public:
     {
         if (memberAccountView->objectName().isEmpty())
             memberAccountView->setObjectName(QString::fromUtf8("memberAccountView"));
-        memberAccountView->resize(1040, 634);
-        memberAccountView->setStyleSheet(QString::fromUtf8("QMenuBar {\n"
+        memberAccountView->resize(1440, 953);
+        memberAccountView->setStyleSheet(QString::fromUtf8("\n"
+"\n"
+"QMenuBar {\n"
 "    background-color: qlineargradient(x1:0, y1:0, x2:0, y2:1,\n"
 "                                      stop:0 lightgray, stop:1 darkgray);\n"
 "    spacing: 3px; /* spacing between menu bar items */\n"
@@ -176,17 +147,30 @@ public:
         centralwidget->setObjectName(QString::fromUtf8("centralwidget"));
         centralwidget->setStyleSheet(QString::fromUtf8("QWidget{\n"
 "	background: #FFE5D0;\n"
+"\n"
+"	font-family: Montserrat;\n"
+"\n"
 "}"));
         logoImage = new QLabel(centralwidget);
         logoImage->setObjectName(QString::fromUtf8("logoImage"));
         logoImage->setGeometry(QRect(30, 20, 441, 61));
         logoImage->setPixmap(QPixmap(QString::fromUtf8(":/resources/images/bblLogo.png")));
-        tabWidget = new QTabWidget(centralwidget);
+        groupBox = new QGroupBox(centralwidget);
+        groupBox->setObjectName(QString::fromUtf8("groupBox"));
+        groupBox->setGeometry(QRect(29, 120, 1381, 771));
+        groupBox->setStyleSheet(QString::fromUtf8("QGroupBox {\n"
+"	border-radius: 15px;\n"
+"	background-color: rgb(255, 213, 178)\n"
+"}"));
+        tabWidget = new QTabWidget(groupBox);
         tabWidget->setObjectName(QString::fromUtf8("tabWidget"));
-        tabWidget->setGeometry(QRect(0, 110, 1041, 461));
-        tabWidget->setTabShape(QTabWidget::Triangular);
+        tabWidget->setGeometry(QRect(50, 140, 1281, 531));
+        tabWidget->setStyleSheet(QString::fromUtf8(""));
+        tabWidget->setTabPosition(QTabWidget::North);
+        tabWidget->setTabShape(QTabWidget::Rounded);
         tab = new QWidget();
         tab->setObjectName(QString::fromUtf8("tab"));
+        tab->setStyleSheet(QString::fromUtf8(""));
         label = new QLabel(tab);
         label->setObjectName(QString::fromUtf8("label"));
         label->setGeometry(QRect(30, 20, 601, 61));
@@ -196,7 +180,7 @@ public:
 "}"));
         verticalLayoutWidget = new QWidget(tab);
         verticalLayoutWidget->setObjectName(QString::fromUtf8("verticalLayoutWidget"));
-        verticalLayoutWidget->setGeometry(QRect(30, 80, 871, 81));
+        verticalLayoutWidget->setGeometry(QRect(30, 80, 1221, 81));
         verticalLayout = new QVBoxLayout(verticalLayoutWidget);
         verticalLayout->setObjectName(QString::fromUtf8("verticalLayout"));
         verticalLayout->setContentsMargins(0, 0, 0, 0);
@@ -219,6 +203,12 @@ public:
         formLayout->setObjectName(QString::fromUtf8("formLayout"));
         label_4 = new QLabel(verticalLayoutWidget);
         label_4->setObjectName(QString::fromUtf8("label_4"));
+        QSizePolicy sizePolicy1(QSizePolicy::Preferred, QSizePolicy::Preferred);
+        sizePolicy1.setHorizontalStretch(0);
+        sizePolicy1.setVerticalStretch(0);
+        sizePolicy1.setHeightForWidth(label_4->sizePolicy().hasHeightForWidth());
+        label_4->setSizePolicy(sizePolicy1);
+        label_4->setMinimumSize(QSize(0, 0));
 
         formLayout->setWidget(0, QFormLayout::LabelRole, label_4);
 
@@ -242,7 +232,7 @@ public:
 
         verticalLayoutWidget_2 = new QWidget(tab);
         verticalLayoutWidget_2->setObjectName(QString::fromUtf8("verticalLayoutWidget_2"));
-        verticalLayoutWidget_2->setGeometry(QRect(30, 170, 871, 106));
+        verticalLayoutWidget_2->setGeometry(QRect(30, 170, 1221, 106));
         verticalLayout_2 = new QVBoxLayout(verticalLayoutWidget_2);
         verticalLayout_2->setObjectName(QString::fromUtf8("verticalLayout_2"));
         verticalLayout_2->setContentsMargins(0, 0, 0, 0);
@@ -295,7 +285,7 @@ public:
 
         verticalLayoutWidget_3 = new QWidget(tab);
         verticalLayoutWidget_3->setObjectName(QString::fromUtf8("verticalLayoutWidget_3"));
-        verticalLayoutWidget_3->setGeometry(QRect(30, 280, 871, 61));
+        verticalLayoutWidget_3->setGeometry(QRect(30, 280, 1221, 61));
         verticalLayout_3 = new QVBoxLayout(verticalLayoutWidget_3);
         verticalLayout_3->setObjectName(QString::fromUtf8("verticalLayout_3"));
         verticalLayout_3->setContentsMargins(0, 0, 0, 0);
@@ -317,12 +307,12 @@ public:
         label_16 = new QLabel(verticalLayoutWidget_3);
         label_16->setObjectName(QString::fromUtf8("label_16"));
         label_16->setEnabled(true);
-        QSizePolicy sizePolicy1(QSizePolicy::Preferred, QSizePolicy::Preferred);
-        sizePolicy1.setHorizontalStretch(124);
-        sizePolicy1.setVerticalStretch(0);
-        sizePolicy1.setHeightForWidth(label_16->sizePolicy().hasHeightForWidth());
-        label_16->setSizePolicy(sizePolicy1);
-        label_16->setMinimumSize(QSize(36, 0));
+        QSizePolicy sizePolicy2(QSizePolicy::Preferred, QSizePolicy::Preferred);
+        sizePolicy2.setHorizontalStretch(124);
+        sizePolicy2.setVerticalStretch(0);
+        sizePolicy2.setHeightForWidth(label_16->sizePolicy().hasHeightForWidth());
+        label_16->setSizePolicy(sizePolicy2);
+        label_16->setMinimumSize(QSize(46, 0));
 
         formLayout_5->setWidget(0, QFormLayout::LabelRole, label_16);
 
@@ -338,7 +328,11 @@ public:
 
         pushButton = new QPushButton(tab);
         pushButton->setObjectName(QString::fromUtf8("pushButton"));
-        pushButton->setGeometry(QRect(310, 360, 281, 61));
+        pushButton->setGeometry(QRect(500, 390, 281, 61));
+        pushButton->setStyleSheet(QString::fromUtf8("QPushButton {\n"
+"	border-radius: 25px;\n"
+"	background-color: rgb(255, 212, 181)\n"
+"}"));
         tabWidget->addTab(tab, QString());
         tab_2 = new QWidget();
         tab_2->setObjectName(QString::fromUtf8("tab_2"));
@@ -351,195 +345,11 @@ public:
 "}"));
         scrollArea = new QScrollArea(tab_2);
         scrollArea->setObjectName(QString::fromUtf8("scrollArea"));
-        scrollArea->setGeometry(QRect(0, 90, 1031, 351));
+        scrollArea->setGeometry(QRect(10, 90, 1261, 401));
         scrollArea->setWidgetResizable(true);
         scrollAreaWidgetContents = new QWidget();
         scrollAreaWidgetContents->setObjectName(QString::fromUtf8("scrollAreaWidgetContents"));
-        scrollAreaWidgetContents->setGeometry(QRect(0, 0, 1012, 818));
-        verticalLayout_5 = new QVBoxLayout(scrollAreaWidgetContents);
-        verticalLayout_5->setObjectName(QString::fromUtf8("verticalLayout_5"));
-        frame = new QFrame(scrollAreaWidgetContents);
-        frame->setObjectName(QString::fromUtf8("frame"));
-        frame->setMinimumSize(QSize(0, 800));
-        frame->setFrameShape(QFrame::StyledPanel);
-        frame->setFrameShadow(QFrame::Raised);
-        horizontalLayoutWidget_2 = new QWidget(frame);
-        horizontalLayoutWidget_2->setObjectName(QString::fromUtf8("horizontalLayoutWidget_2"));
-        horizontalLayoutWidget_2->setGeometry(QRect(0, 10, 951, 171));
-        book_1 = new QHBoxLayout(horizontalLayoutWidget_2);
-        book_1->setObjectName(QString::fromUtf8("book_1"));
-        book_1->setContentsMargins(0, 0, 0, 0);
-        img_2 = new QLabel(horizontalLayoutWidget_2);
-        img_2->setObjectName(QString::fromUtf8("img_2"));
-
-        book_1->addWidget(img_2);
-
-        verticalLayout_4 = new QVBoxLayout();
-        verticalLayout_4->setObjectName(QString::fromUtf8("verticalLayout_4"));
-        label_17 = new QLabel(horizontalLayoutWidget_2);
-        label_17->setObjectName(QString::fromUtf8("label_17"));
-        label_17->setStyleSheet(QString::fromUtf8("QLabel {\n"
-"	font-weight:bold;\n"
-"	font-size: 14px;\n"
-"\n"
-"	\n"
-"}"));
-
-        verticalLayout_4->addWidget(label_17);
-
-        label_7 = new QLabel(horizontalLayoutWidget_2);
-        label_7->setObjectName(QString::fromUtf8("label_7"));
-
-        verticalLayout_4->addWidget(label_7);
-
-        verticalSpacer = new QSpacerItem(20, 40, QSizePolicy::Minimum, QSizePolicy::Expanding);
-
-        verticalLayout_4->addItem(verticalSpacer);
-
-        horizontalLayout_3 = new QHBoxLayout();
-        horizontalLayout_3->setObjectName(QString::fromUtf8("horizontalLayout_3"));
-        label_8 = new QLabel(horizontalLayoutWidget_2);
-        label_8->setObjectName(QString::fromUtf8("label_8"));
-
-        horizontalLayout_3->addWidget(label_8);
-
-        label_9 = new QLabel(horizontalLayoutWidget_2);
-        label_9->setObjectName(QString::fromUtf8("label_9"));
-        label_9->setStyleSheet(QString::fromUtf8("QLabel{\n"
-"	color: rgb(85, 170, 0);\n"
-"}"));
-
-        horizontalLayout_3->addWidget(label_9);
-
-        horizontalSpacer = new QSpacerItem(40, 20, QSizePolicy::Expanding, QSizePolicy::Minimum);
-
-        horizontalLayout_3->addItem(horizontalSpacer);
-
-
-        verticalLayout_4->addLayout(horizontalLayout_3);
-
-
-        book_1->addLayout(verticalLayout_4);
-
-        horizontalLayout_7 = new QHBoxLayout();
-        horizontalLayout_7->setObjectName(QString::fromUtf8("horizontalLayout_7"));
-        horizontalSpacer_4 = new QSpacerItem(40, 20, QSizePolicy::Expanding, QSizePolicy::Minimum);
-
-        horizontalLayout_7->addItem(horizontalSpacer_4);
-
-        pushButton_2 = new QPushButton(horizontalLayoutWidget_2);
-        pushButton_2->setObjectName(QString::fromUtf8("pushButton_2"));
-        pushButton_2->setStyleSheet(QString::fromUtf8("QPushButton{\n"
-"	background-color:rgb(85, 170, 0);\n"
-"	font-weight: bold;\n"
-"	color: rgb(0, 85, 0);\n"
-"}"));
-
-        horizontalLayout_7->addWidget(pushButton_2);
-
-        pushButton_3 = new QPushButton(horizontalLayoutWidget_2);
-        pushButton_3->setObjectName(QString::fromUtf8("pushButton_3"));
-        pushButton_3->setStyleSheet(QString::fromUtf8("QPushButton{\n"
-"	background-color: rgb(255, 0, 0);\n"
-"	color: rgb(170, 0, 0);\n"
-"	font-weight: bold;\n"
-"}"));
-
-        horizontalLayout_7->addWidget(pushButton_3);
-
-
-        book_1->addLayout(horizontalLayout_7);
-
-        horizontalLayoutWidget_3 = new QWidget(frame);
-        horizontalLayoutWidget_3->setObjectName(QString::fromUtf8("horizontalLayoutWidget_3"));
-        horizontalLayoutWidget_3->setGeometry(QRect(0, 190, 951, 171));
-        book_2 = new QHBoxLayout(horizontalLayoutWidget_3);
-        book_2->setObjectName(QString::fromUtf8("book_2"));
-        book_2->setContentsMargins(0, 0, 0, 0);
-        img_3 = new QLabel(horizontalLayoutWidget_3);
-        img_3->setObjectName(QString::fromUtf8("img_3"));
-
-        book_2->addWidget(img_3);
-
-        verticalLayout_6 = new QVBoxLayout();
-        verticalLayout_6->setObjectName(QString::fromUtf8("verticalLayout_6"));
-        label_18 = new QLabel(horizontalLayoutWidget_3);
-        label_18->setObjectName(QString::fromUtf8("label_18"));
-        label_18->setStyleSheet(QString::fromUtf8("QLabel {\n"
-"	font-weight:bold;\n"
-"	font-size: 14px;\n"
-"\n"
-"	\n"
-"}"));
-
-        verticalLayout_6->addWidget(label_18);
-
-        label_10 = new QLabel(horizontalLayoutWidget_3);
-        label_10->setObjectName(QString::fromUtf8("label_10"));
-
-        verticalLayout_6->addWidget(label_10);
-
-        verticalSpacer_2 = new QSpacerItem(20, 40, QSizePolicy::Minimum, QSizePolicy::Expanding);
-
-        verticalLayout_6->addItem(verticalSpacer_2);
-
-        horizontalLayout_4 = new QHBoxLayout();
-        horizontalLayout_4->setObjectName(QString::fromUtf8("horizontalLayout_4"));
-        label_11 = new QLabel(horizontalLayoutWidget_3);
-        label_11->setObjectName(QString::fromUtf8("label_11"));
-
-        horizontalLayout_4->addWidget(label_11);
-
-        label_19 = new QLabel(horizontalLayoutWidget_3);
-        label_19->setObjectName(QString::fromUtf8("label_19"));
-        label_19->setStyleSheet(QString::fromUtf8("QLabel{\n"
-"	color: rgb(85, 170, 0);\n"
-"}"));
-
-        horizontalLayout_4->addWidget(label_19);
-
-        horizontalSpacer_2 = new QSpacerItem(40, 20, QSizePolicy::Expanding, QSizePolicy::Minimum);
-
-        horizontalLayout_4->addItem(horizontalSpacer_2);
-
-
-        verticalLayout_6->addLayout(horizontalLayout_4);
-
-
-        book_2->addLayout(verticalLayout_6);
-
-        horizontalLayout_8 = new QHBoxLayout();
-        horizontalLayout_8->setObjectName(QString::fromUtf8("horizontalLayout_8"));
-        horizontalSpacer_5 = new QSpacerItem(40, 20, QSizePolicy::Expanding, QSizePolicy::Minimum);
-
-        horizontalLayout_8->addItem(horizontalSpacer_5);
-
-        pushButton_4 = new QPushButton(horizontalLayoutWidget_3);
-        pushButton_4->setObjectName(QString::fromUtf8("pushButton_4"));
-        pushButton_4->setStyleSheet(QString::fromUtf8("QPushButton{\n"
-"	background-color:rgb(85, 170, 0);\n"
-"	font-weight: bold;\n"
-"	color: rgb(0, 85, 0);\n"
-"}"));
-
-        horizontalLayout_8->addWidget(pushButton_4);
-
-        pushButton_5 = new QPushButton(horizontalLayoutWidget_3);
-        pushButton_5->setObjectName(QString::fromUtf8("pushButton_5"));
-        pushButton_5->setStyleSheet(QString::fromUtf8("QPushButton{\n"
-"	background-color: rgb(255, 0, 0);\n"
-"	color: rgb(170, 0, 0);\n"
-"	font-weight: bold;\n"
-"}"));
-
-        horizontalLayout_8->addWidget(pushButton_5);
-
-
-        book_2->addLayout(horizontalLayout_8);
-
-
-        verticalLayout_5->addWidget(frame);
-
+        scrollAreaWidgetContents->setGeometry(QRect(0, 0, 1259, 399));
         scrollArea->setWidget(scrollAreaWidgetContents);
         tabWidget->addTab(tab_2, QString());
         tab_3 = new QWidget();
@@ -739,7 +549,7 @@ public:
         memberAccountView->setCentralWidget(centralwidget);
         menubar = new QMenuBar(memberAccountView);
         menubar->setObjectName(QString::fromUtf8("menubar"));
-        menubar->setGeometry(QRect(0, 0, 1040, 18));
+        menubar->setGeometry(QRect(0, 0, 1440, 18));
         menuAccount = new QMenu(menubar);
         menuAccount->setObjectName(QString::fromUtf8("menuAccount"));
         menuCatalogue = new QMenu(menubar);
@@ -768,7 +578,8 @@ public:
         actionView_Catalogue->setText(QApplication::translate("memberAccountView", "View Catalogue", nullptr));
         actionSign_Out->setText(QApplication::translate("memberAccountView", "Sign-Out", nullptr));
         logoImage->setText(QString());
-        label->setText(QApplication::translate("memberAccountView", "User #20013896", nullptr));
+        groupBox->setTitle(QString());
+        label->setText(QApplication::translate("memberAccountView", "Member Name / ID", nullptr));
         label_6->setText(QApplication::translate("memberAccountView", "Log-in Details", nullptr));
         label_4->setText(QApplication::translate("memberAccountView", "Username", nullptr));
         label_5->setText(QApplication::translate("memberAccountView", "Password", nullptr));
@@ -779,30 +590,8 @@ public:
         label_15->setText(QApplication::translate("memberAccountView", "Email", nullptr));
         label_16->setText(QApplication::translate("memberAccountView", "email", nullptr));
         pushButton->setText(QApplication::translate("memberAccountView", "DONE", nullptr));
-        tabWidget->setTabText(tabWidget->indexOf(tab), QApplication::translate("memberAccountView", "Edit Account Details", nullptr));
+        tabWidget->setTabText(tabWidget->indexOf(tab), QApplication::translate("memberAccountView", "Account Details", nullptr));
         label_2->setText(QApplication::translate("memberAccountView", "Books You Have", nullptr));
-        img_2->setText(QApplication::translate("memberAccountView", "Book 1", nullptr));
-        label_17->setText(QApplication::translate("memberAccountView", "50 Shades of Swag", nullptr));
-        label_7->setText(QApplication::translate("memberAccountView", "The FitnessGram\342\204\242 Pacer Test is a multistage aerobic capacity test that progressively \n"
-"gets more difficult as it continues. \n"
-"The second time you fail to complete a lap before the sound, \n"
-"your test is over. The test will begin on the word start. On your mark, get ready, start.\n"
-"", nullptr));
-        label_8->setText(QApplication::translate("memberAccountView", "Status:", nullptr));
-        label_9->setText(QApplication::translate("memberAccountView", "12 Days", nullptr));
-        pushButton_2->setText(QApplication::translate("memberAccountView", "READ", nullptr));
-        pushButton_3->setText(QApplication::translate("memberAccountView", "RESERVE", nullptr));
-        img_3->setText(QApplication::translate("memberAccountView", "Book 1", nullptr));
-        label_18->setText(QApplication::translate("memberAccountView", "50 Shades of Swag", nullptr));
-        label_10->setText(QApplication::translate("memberAccountView", "The FitnessGram\342\204\242 Pacer Test is a multistage aerobic capacity test that progressively \n"
-"gets more difficult as it continues. \n"
-"The second time you fail to complete a lap before the sound, \n"
-"your test is over. The test will begin on the word start. On your mark, get ready, start.\n"
-"", nullptr));
-        label_11->setText(QApplication::translate("memberAccountView", "Status:", nullptr));
-        label_19->setText(QApplication::translate("memberAccountView", "12 Days", nullptr));
-        pushButton_4->setText(QApplication::translate("memberAccountView", "READ", nullptr));
-        pushButton_5->setText(QApplication::translate("memberAccountView", "RESERVE", nullptr));
         tabWidget->setTabText(tabWidget->indexOf(tab_2), QApplication::translate("memberAccountView", "Books on Hand", nullptr));
         label_3->setText(QApplication::translate("memberAccountView", "Books in Reserve", nullptr));
         img_4->setText(QApplication::translate("memberAccountView", "Book 3", nullptr));

@@ -34,13 +34,12 @@ memberCatalogue::~memberCatalogue()
     delete ui;
 }
 
-
 // when view account is selected from menu
 void memberCatalogue::on_viewAccount_triggered()
 {
     hide();
     memberaccountview = new memberAccountView(this);
-    connect(memberaccountview, SIGNAL(openmemberAccountView()), this, SLOT(show())); //connect(pointerName, SIGNAL(openWindowYouWantToOpen()), this, SLOT(openWindowUrOpeningFrom()));
+    connect(memberaccountview, SIGNAL(showMemberAccWindow()), this, SLOT(show())); //connect(pointerName, SIGNAL(openWindowYouWantToOpen()), this, SLOT(openWindowUrOpeningFrom()));
     memberaccountview->show();
 }
 

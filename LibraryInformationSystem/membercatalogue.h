@@ -16,6 +16,8 @@ public:
     explicit memberCatalogue(QWidget *parent = nullptr);
     ~memberCatalogue();
 
+signals:
+    void showMemberAccWindow();
 private slots:
     //void on_actiontest_triggered();
 
@@ -23,7 +25,7 @@ private slots:
 
 private:
     Ui::memberCatalogue *ui;
-  //  memberAccountView *memberaccountview;
+    memberAccountView *memberaccountview;
 };
 
 #endif // MEMBERCATALOGUE_H

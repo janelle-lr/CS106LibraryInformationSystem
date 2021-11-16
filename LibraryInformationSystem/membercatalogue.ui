@@ -6,8 +6,8 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>1052</width>
-    <height>634</height>
+    <width>1440</width>
+    <height>953</height>
    </rect>
   </property>
   <property name="minimumSize">
@@ -102,8 +102,8 @@ QMenuBar::item:pressed {
      <rect>
       <x>30</x>
       <y>100</y>
-      <width>991</width>
-      <height>491</height>
+      <width>1381</width>
+      <height>801</height>
      </rect>
     </property>
     <property name="styleSheet">
@@ -120,8 +120,8 @@ QMenuBar::item:pressed {
       <rect>
        <x>0</x>
        <y>30</y>
-       <width>991</width>
-       <height>461</height>
+       <width>1381</width>
+       <height>771</height>
       </rect>
      </property>
      <property name="styleSheet">
@@ -186,8 +186,8 @@ QScrollBar::add-line:vertical:pressed{
       <property name="geometry">
        <rect>
         <x>0</x>
-        <y>0</y>
-        <width>975</width>
+        <y>-2</y>
+        <width>1362</width>
         <height>918</height>
        </rect>
       </property>
@@ -790,7 +790,7 @@ your test is over. The test will begin on the word start. On your mark, get read
     <rect>
      <x>0</x>
      <y>0</y>
-     <width>1052</width>
+     <width>1440</width>
      <height>18</height>
     </rect>
    </property>
