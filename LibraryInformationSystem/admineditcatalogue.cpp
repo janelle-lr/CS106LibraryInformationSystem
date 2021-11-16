@@ -23,16 +23,20 @@ adminEditCatalogue::~adminEditCatalogue()
 
 void adminEditCatalogue::on_comboBox_activated(const QString &arg1)
 {
+    qDebug() << "\niam in on_comboBox_activated\n arg1 = " << arg1;
     if(arg1 == "Image 1"){
         //qDebug() << "Image 1 has been selected";
         filePath = ":/resources/images/testImage.jpg";
+        qDebug() << filePath;
     }
     else if(arg1 == "Image 2"){
         //qDebug() << "Image 2 has been selected";
         filePath = ":/resources/images/testImage2.jpg";
+        qDebug() << filePath;
     }
     else if (arg1 == "Image 3"){
         filePath = ":/resources/images/testImage3.jpg";
+        qDebug() << filePath;
     }
 }
 
@@ -43,7 +47,7 @@ void adminEditCatalogue::on_pushButton_clicked()
 
 //adding books to database
 void adminEditCatalogue::on_confirmBookDetails_clicked()
-{
+{    
     Book book;
 
     book.setBookName(ui->bookTitle->text());
@@ -56,7 +60,14 @@ void adminEditCatalogue::on_confirmBookDetails_clicked()
     book.setBookid(systemlibrary.generateID(4));
 
     systemlibrary.addBook(book);
-
+    qDebug() << filePath;
     QMessageBox::information(this,"Book Created","You have now created " + ui->bookTitle->text() + " and added it to the catalogue");
-}
 
+    //setting line edits back to blank
+    ui->bookTitle->setText("");
+    ui->bookGenre->setText("");
+    ui->bookCopies->setText("");
+    ui->bookAuthor->setText("");
+    ui->bookPublisher->setText("");
+    ui->bookDescription->setText("");
+}

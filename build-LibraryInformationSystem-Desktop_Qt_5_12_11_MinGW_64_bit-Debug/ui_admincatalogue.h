@@ -11,8 +11,8 @@
 
 #include <QtCore/QVariant>
 #include <QtWidgets/QApplication>
-#include <QtWidgets/QFrame>
 #include <QtWidgets/QGridLayout>
+#include <QtWidgets/QHBoxLayout>
 #include <QtWidgets/QMainWindow>
 #include <QtWidgets/QMenuBar>
 #include <QtWidgets/QPushButton>
@@ -26,14 +26,12 @@ class Ui_adminCatalogue
 {
 public:
     QWidget *centralwidget;
-    QScrollArea *scrollArea;
-    QWidget *scrollAreaWidgetContents;
-    QGridLayout *gridLayout;
-    QFrame *frame;
-    QWidget *gridLayoutWidget;
-    QGridLayout *gridLayout_2;
     QPushButton *pushButton;
     QPushButton *pushButton_2;
+    QScrollArea *scrollArea;
+    QWidget *scrollAreaWidgetContents;
+    QHBoxLayout *horizontalLayout;
+    QGridLayout *gridLayout_3;
     QMenuBar *menubar;
     QStatusBar *statusbar;
 
@@ -41,43 +39,39 @@ public:
     {
         if (adminCatalogue->objectName().isEmpty())
             adminCatalogue->setObjectName(QString::fromUtf8("adminCatalogue"));
-        adminCatalogue->resize(800, 600);
+        adminCatalogue->resize(1440, 953);
+        adminCatalogue->setMinimumSize(QSize(1440, 953));
+        adminCatalogue->setMaximumSize(QSize(1440, 953));
         centralwidget = new QWidget(adminCatalogue);
         centralwidget->setObjectName(QString::fromUtf8("centralwidget"));
-        scrollArea = new QScrollArea(centralwidget);
-        scrollArea->setObjectName(QString::fromUtf8("scrollArea"));
-        scrollArea->setGeometry(QRect(10, 40, 781, 501));
-        scrollArea->setWidgetResizable(true);
-        scrollAreaWidgetContents = new QWidget();
-        scrollAreaWidgetContents->setObjectName(QString::fromUtf8("scrollAreaWidgetContents"));
-        scrollAreaWidgetContents->setGeometry(QRect(0, 0, 762, 779));
-        gridLayout = new QGridLayout(scrollAreaWidgetContents);
-        gridLayout->setObjectName(QString::fromUtf8("gridLayout"));
-        frame = new QFrame(scrollAreaWidgetContents);
-        frame->setObjectName(QString::fromUtf8("frame"));
-        frame->setMinimumSize(QSize(591, 761));
-        frame->setFrameShape(QFrame::StyledPanel);
-        frame->setFrameShadow(QFrame::Raised);
-        gridLayoutWidget = new QWidget(frame);
-        gridLayoutWidget->setObjectName(QString::fromUtf8("gridLayoutWidget"));
-        gridLayoutWidget->setGeometry(QRect(0, -1, 741, 491));
-        gridLayout_2 = new QGridLayout(gridLayoutWidget);
-        gridLayout_2->setObjectName(QString::fromUtf8("gridLayout_2"));
-        gridLayout_2->setContentsMargins(0, 0, 0, 0);
-
-        gridLayout->addWidget(frame, 0, 0, 1, 1);
-
-        scrollArea->setWidget(scrollAreaWidgetContents);
+        centralwidget->setStyleSheet(QString::fromUtf8("QWidget {\n"
+"font-family: Montserrat;\n"
+"}"));
         pushButton = new QPushButton(centralwidget);
         pushButton->setObjectName(QString::fromUtf8("pushButton"));
         pushButton->setGeometry(QRect(70, 10, 75, 23));
         pushButton_2 = new QPushButton(centralwidget);
         pushButton_2->setObjectName(QString::fromUtf8("pushButton_2"));
         pushButton_2->setGeometry(QRect(230, 10, 75, 23));
+        scrollArea = new QScrollArea(centralwidget);
+        scrollArea->setObjectName(QString::fromUtf8("scrollArea"));
+        scrollArea->setGeometry(QRect(10, 50, 1421, 851));
+        scrollArea->setWidgetResizable(true);
+        scrollAreaWidgetContents = new QWidget();
+        scrollAreaWidgetContents->setObjectName(QString::fromUtf8("scrollAreaWidgetContents"));
+        scrollAreaWidgetContents->setGeometry(QRect(0, 0, 1419, 849));
+        horizontalLayout = new QHBoxLayout(scrollAreaWidgetContents);
+        horizontalLayout->setObjectName(QString::fromUtf8("horizontalLayout"));
+        gridLayout_3 = new QGridLayout();
+        gridLayout_3->setObjectName(QString::fromUtf8("gridLayout_3"));
+
+        horizontalLayout->addLayout(gridLayout_3);
+
+        scrollArea->setWidget(scrollAreaWidgetContents);
         adminCatalogue->setCentralWidget(centralwidget);
         menubar = new QMenuBar(adminCatalogue);
         menubar->setObjectName(QString::fromUtf8("menubar"));
-        menubar->setGeometry(QRect(0, 0, 800, 21));
+        menubar->setGeometry(QRect(0, 0, 1440, 21));
         adminCatalogue->setMenuBar(menubar);
         statusbar = new QStatusBar(adminCatalogue);
         statusbar->setObjectName(QString::fromUtf8("statusbar"));

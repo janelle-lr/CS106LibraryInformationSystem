@@ -1,6 +1,7 @@
 #include "admincatalogue.h"
 #include "ui_admincatalogue.h"
 #include <QGridLayout>
+#include <QSpacerItem>
 
 
 adminCatalogue::adminCatalogue(QWidget *parent) :
@@ -15,7 +16,7 @@ adminCatalogue::~adminCatalogue()
     delete ui;
 }
 
-void adminCatalogue::createWidgets(int row, int col, QString title, QString author){
+void adminCatalogue::createWidgets(int row, int col, QString title, QString author, QPixmap bookCover){
     //Creating a gridlayout
     QGridLayout* group = new QGridLayout();
 
@@ -28,6 +29,13 @@ void adminCatalogue::createWidgets(int row, int col, QString title, QString auth
     QLabel* label2 = new QLabel(title);
     QLabel* label3 = new QLabel(author);
 
+    label->setStyleSheet("QLabel{background: white;}");
+    label2->setStyleSheet("QLabel{font-size: 20px;}");
+    label3->setStyleSheet("QLabel{font-size: 15px; margin-bottom: 80px;}");
+
+    QPixmap image(bookCover);
+    label->setPixmap(image.scaled(177, 235, Qt::KeepAspectRatio));
+
     //adding widgets to gridlayout
     group->addWidget(label,0,0);
     group->addWidget(label2,0,1);
@@ -35,14 +43,17 @@ void adminCatalogue::createWidgets(int row, int col, QString title, QString auth
     group->addWidget(button,2,1);
     group->addWidget(button2,2,2);
 
+    //QSpacerItem* verticalSpacer
+
     //creating group box widget
     QGroupBox* groupBox = new QGroupBox();
     //putting gridlayout inside group box
     groupBox->setLayout(group);
-    groupBox->setMaximumSize(QSize(350,150));//QSize(width, height)
-    groupBox->setMinimumSize(QSize(350,150));
-    //qApp->setStylesheet("QGroupBox{margin:90px}");
-    ui->gridLayout_2->addWidget(groupBox,row,col);
+    groupBox->setMaximumSize(QSize(579,285));//QSize(width, height)
+    groupBox->setMinimumSize(QSize(579,285));
+    groupBox->setStyleSheet("QGroupBox{margin-bottom: 10px;}");
+
+    ui->gridLayout_3->addWidget(groupBox,row,col);
     //ui->scrollArea->addWidget(groupBox,row,col);
 }
 
@@ -56,12 +67,13 @@ void adminCatalogue::addRecords(){
         qDebug() << book[i].getBookId() << "\n" << book[i].getBookName() << "\n i = " << i << "\n i % 2 ==" << i % 2;//prints in application output
         QString title = book[i].getBookName();
         QString author = book[i].getAuthorName();
+        QPixmap image = book[i].getBookImageFilePath();
 
         if (i % 2 == 0) {
-            createWidgets(i,0,title,author);
+            createWidgets(i,0,title,author,image);
         }
         else {
-            createWidgets(i - 1,1,title,author);
+            createWidgets(i - 1,1,title,author,image);
         }
 
     }

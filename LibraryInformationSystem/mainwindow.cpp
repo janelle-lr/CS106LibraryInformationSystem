@@ -8,7 +8,7 @@ MainWindow::MainWindow(QWidget *parent)
 {
     ui->setupUi(this);
     // pls remember to delete this before handing it in
-    setWindowTitle("BiblioThicc Libraries - ver. 69");
+    setWindowTitle("BiblioThicc Libraries - Log In");
 
     //for database
     sysLib->buildDatabase();
@@ -16,6 +16,9 @@ MainWindow::MainWindow(QWidget *parent)
     //for logo in UI
     QPixmap logo(":/resources/images/bblLogo.png");
     ui->logoImage->setPixmap(logo.scaled(450, 74, Qt::KeepAspectRatio));
+
+    ui->usernameLineEdit->setText("210Admin");
+    ui->passwordLineEdit->setText("AdminPass");
 
     hide();
     admincatalogue = new adminCatalogue(this);
@@ -34,7 +37,7 @@ void MainWindow::on_loginPushButton_clicked()
     QString compareId;
     QString username = ui->usernameLineEdit->text();
     QString password = ui->passwordLineEdit->text();
-    //ui->loginLabel->setText("lmao");
+
     bool login = sysLib->checkAccount(password,username);
     qDebug() << login;
     if(sysLib->checkAccount(username,password)){

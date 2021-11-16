@@ -28,7 +28,7 @@ private slots:
 
 private:
     Ui::adminCatalogue *ui;
-    void createWidgets(int, int, QString, QString);
+    void createWidgets(int, int, QString, QString, QPixmap bookCover);
     void addRecords();
     QPushButton* button;
     QPushButton* button2;

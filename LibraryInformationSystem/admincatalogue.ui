@@ -6,66 +6,31 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>800</width>
-    <height>600</height>
+    <width>1440</width>
+    <height>953</height>
    </rect>
+  </property>
+  <property name="minimumSize">
+   <size>
+    <width>1440</width>
+    <height>953</height>
+   </size>
+  </property>
+  <property name="maximumSize">
+   <size>
+    <width>1440</width>
+    <height>953</height>
+   </size>
   </property>
   <property name="windowTitle">
    <string>MainWindow</string>
   </property>
   <widget class="QWidget" name="centralwidget">
-   <widget class="QScrollArea" name="scrollArea">
-    <property name="geometry">
-     <rect>
-      <x>10</x>
-      <y>40</y>
-      <width>781</width>
-      <height>501</height>
-     </rect>
-    </property>
-    <property name="widgetResizable">
-     <bool>true</bool>
-    </property>
-    <widget class="QWidget" name="scrollAreaWidgetContents">
-     <property name="geometry">
-      <rect>
-       <x>0</x>
-       <y>0</y>
-       <width>762</width>
-       <height>779</height>
-      </rect>
-     </property>
-     <layout class="QGridLayout" name="gridLayout">
-      <item row="0" column="0">
-       <widget class="QFrame" name="frame">
-        <property name="minimumSize">
-         <size>
-          <width>591</width>
-          <height>761</height>
-         </size>
-        </property>
-        <property name="frameShape">
-         <enum>QFrame::StyledPanel</enum>
-        </property>
-        <property name="frameShadow">
-         <enum>QFrame::Raised</enum>
-        </property>
-        <widget class="QWidget" name="gridLayoutWidget">
-         <property name="geometry">
-          <rect>
-           <x>0</x>
-           <y>-1</y>
-           <width>741</width>
-           <height>491</height>
-          </rect>
-         </property>
-         <layout class="QGridLayout" name="gridLayout_2"/>
-        </widget>
-       </widget>
-      </item>
-     </layout>
-    </widget>
-   </widget>
+   <property name="styleSheet">
+    <string notr="true">QWidget {
+font-family: Montserrat;
+}</string>
+   </property>
    <widget class="QPushButton" name="pushButton">
     <property name="geometry">
      <rect>
@@ -92,13 +57,41 @@
      <string>delete record</string>
     </property>
    </widget>
+   <widget class="QScrollArea" name="scrollArea">
+    <property name="geometry">
+     <rect>
+      <x>10</x>
+      <y>50</y>
+      <width>1421</width>
+      <height>851</height>
+     </rect>
+    </property>
+    <property name="widgetResizable">
+     <bool>true</bool>
+    </property>
+    <widget class="QWidget" name="scrollAreaWidgetContents">
+     <property name="geometry">
+      <rect>
+       <x>0</x>
+       <y>0</y>
+       <width>1419</width>
+       <height>849</height>
+      </rect>
+     </property>
+     <layout class="QHBoxLayout" name="horizontalLayout">
+      <item>
+       <layout class="QGridLayout" name="gridLayout_3"/>
+      </item>
+     </layout>
+    </widget>
+   </widget>
   </widget>
   <widget class="QMenuBar" name="menubar">
    <property name="geometry">
     <rect>
      <x>0</x>
      <y>0</y>
-     <width>800</width>
+     <width>1440</width>
      <height>21</height>
     </rect>
    </property>

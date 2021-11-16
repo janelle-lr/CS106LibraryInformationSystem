@@ -43,9 +43,9 @@ public:
     {
         if (MainWindow->objectName().isEmpty())
             MainWindow->setObjectName(QString::fromUtf8("MainWindow"));
-        MainWindow->resize(1052, 634);
-        MainWindow->setMinimumSize(QSize(1052, 634));
-        MainWindow->setMaximumSize(QSize(1052, 634));
+        MainWindow->resize(1440, 953);
+        MainWindow->setMinimumSize(QSize(1440, 953));
+        MainWindow->setMaximumSize(QSize(1440, 953));
         centralwidget = new QWidget(MainWindow);
         centralwidget->setObjectName(QString::fromUtf8("centralwidget"));
         centralwidget->setStyleSheet(QString::fromUtf8("QWidget {\n"
@@ -143,7 +143,7 @@ public:
         MainWindow->setCentralWidget(centralwidget);
         menubar = new QMenuBar(MainWindow);
         menubar->setObjectName(QString::fromUtf8("menubar"));
-        menubar->setGeometry(QRect(0, 0, 1052, 21));
+        menubar->setGeometry(QRect(0, 0, 1440, 21));
         MainWindow->setMenuBar(menubar);
         statusbar = new QStatusBar(MainWindow);
         statusbar->setObjectName(QString::fromUtf8("statusbar"));
