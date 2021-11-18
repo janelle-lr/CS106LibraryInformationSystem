@@ -34,7 +34,7 @@ memberCatalogue::~memberCatalogue()
     delete ui;
 }
 
-// when view account is selected from menu
+// when view account is elected from menu
 void memberCatalogue::on_viewAccount_triggered()
 {
     hide();

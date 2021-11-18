@@ -7,6 +7,9 @@ memberAccountView::memberAccountView(QWidget *parent) :
     ui(new Ui::memberAccountView)
 {
     ui->setupUi(this);
+
+    setWindowTitle("Account");
+
     //for logo in UI
     QPixmap logo(":/resources/images/bblLogo.png");
     ui->logoImage->setPixmap(logo.scaled(450, 74, Qt::KeepAspectRatio));

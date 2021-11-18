@@ -3,6 +3,8 @@
 
 #include <QMainWindow>
 #include "memberaccountview.h"
+#include "systemlibrary.h"
+#include "preorderbook.h"
 
 namespace Ui {
 class memberCatalogue;

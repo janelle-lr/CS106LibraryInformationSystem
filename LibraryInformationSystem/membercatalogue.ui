@@ -65,7 +65,7 @@ QMenuBar::item:pressed {
    <widget class="QComboBox" name="comboBox">
     <property name="geometry">
      <rect>
-      <x>890</x>
+      <x>1280</x>
       <y>70</y>
       <width>131</width>
       <height>22</height>
@@ -186,8 +186,8 @@ QScrollBar::add-line:vertical:pressed{
       <property name="geometry">
        <rect>
         <x>0</x>
-        <y>-2</y>
-        <width>1362</width>
+        <y>0</y>
+        <width>1365</width>
         <height>918</height>
        </rect>
       </property>
@@ -563,11 +563,11 @@ your test is over. The test will begin on the word start. On your mark, get read
                 <widget class="QLabel" name="label_15">
                  <property name="styleSheet">
                   <string notr="true">QLabel{
-	color: rgb(85, 170, 0);
+	color:rgb(255, 0, 0);
 }</string>
                  </property>
                  <property name="text">
-                  <string>Available</string>
+                  <string>Not vailable</string>
                  </property>
                 </widget>
                </item>
