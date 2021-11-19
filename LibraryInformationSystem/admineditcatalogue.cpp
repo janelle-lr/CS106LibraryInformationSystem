@@ -71,3 +71,4 @@ void adminEditCatalogue::on_confirmBookDetails_clicked()
     ui->bookPublisher->setText("");
     ui->bookDescription->setText("");
 }
+
