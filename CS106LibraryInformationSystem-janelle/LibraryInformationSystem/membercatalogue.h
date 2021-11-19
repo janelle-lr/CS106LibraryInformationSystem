@@ -1,0 +1,32 @@
+#ifndef MEMBERCATALOGUE_H
+#define MEMBERCATALOGUE_H
+
+#include <QMainWindow>
+#include "memberaccountview.h"
+#include "systemlibrary.h"
+
+namespace Ui {
+class memberCatalogue;
+}
+
+class memberCatalogue : public QMainWindow
+{
+    Q_OBJECT
+
+public:
+    explicit memberCatalogue(QWidget *parent = nullptr);
+    ~memberCatalogue();
+
+private slots:
+    void on_viewAccount_triggered();
+
+    void on_pushButton_clicked();
+
+private:
+    Ui::memberCatalogue *ui;
+    memberAccountView *memberaccountview;
+
+    SystemLibrary *sysLib;
+};
+
+#endif // MEMBERCATALOGUE_H
