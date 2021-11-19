@@ -21,28 +21,28 @@ adminEditCatalogue::~adminEditCatalogue()
     delete ui;
 }
 
-void adminEditCatalogue::on_comboBox_activated(const QString &arg1)
+void adminEditCatalogue::on_pushButton_clicked()
 {
-    qDebug() << "\niam in on_comboBox_activated\n arg1 = " << arg1;
+
+}
+
+
+void adminEditCatalogue::on_selectedImage_activated(const QString &arg1)
+{
     if(arg1 == "Image 1"){
         //qDebug() << "Image 1 has been selected";
-        filePath = ":/resources/images/testImage.jpg";
+        filePath = ":/resources/images/50shadesofGray.png";
         qDebug() << filePath;
     }
     else if(arg1 == "Image 2"){
         //qDebug() << "Image 2 has been selected";
-        filePath = ":/resources/images/testImage2.jpg";
+        filePath = ":/resources/images/another50shadesofgray.png";
         qDebug() << filePath;
     }
     else if (arg1 == "Image 3"){
-        filePath = ":/resources/images/testImage3.jpg";
+        filePath = ":/resources/images/50shadesofGray.png";
         qDebug() << filePath;
     }
-}
-
-void adminEditCatalogue::on_pushButton_clicked()
-{
-
 }
 
 //adding books to database

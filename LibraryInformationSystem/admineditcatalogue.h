@@ -23,9 +23,10 @@ public:
     ~adminEditCatalogue();
 
 private slots:
-    void on_comboBox_activated(const QString &arg1);
     void on_pushButton_clicked();
     void on_confirmBookDetails_clicked();
+
+    void on_selectedImage_activated(const QString &arg1);
 
 private:
     Ui::adminEditCatalogue *ui;

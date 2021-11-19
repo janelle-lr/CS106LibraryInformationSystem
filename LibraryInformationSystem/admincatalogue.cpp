@@ -116,12 +116,17 @@ void adminCatalogue::editButtonClicked(){
         }
     }
     QMessageBox::information(this,"Button",QString::number(num));
-
-
-
+    admineditbook = new adminEditBook();
+    admineditbook->show();
+    admineditbook->setNum(num);
 }
 
 void adminCatalogue::deleteButtonClicked(){
+    SystemLibrary sysLib;
+
+    QVector<Book> book;
+    book = sysLib.getAllBooks();
+
     int num = 8;
     QPushButton *button = (QPushButton *)sender();
     for(int i = 0; i < btn.size(); i++){
@@ -131,28 +136,20 @@ void adminCatalogue::deleteButtonClicked(){
         }
     }
     QMessageBox::information(this,"Button",QString::number(num) + " From button 2");
-    SystemLibrary sysLib;
-
-    QVector<Book> book;
-    book = sysLib.getAllBooks();
+    //QMessageBox::question(this,"Delete Book", "Are you sure you want to permanently delete " + book[num].getBookName() + " from library records?");
 
     while ( QLayoutItem* item = ui->gridLayout_3->layout()->takeAt( 0 ) )
     {
-//        if(btn2[num] == button){
-
-//        }
         for(int i = 0; i < book.size(); i++) {
             if(num == i){
                 QString id = book[i].getBookId();
-                   qDebug() << id << " title: " << book[i].getBookName();
                 sysLib.removeBookRecord(id);
+                Q_ASSERT( ! item->layout() );
+                delete item->widget();//clears whole widget like a 'refresh' of page
+                delete item;
                 break;
             }
         }
-        Q_ASSERT( ! item->layout() );
-        delete item->widget();//clears whole widget like a 'refresh' of page
-        delete item;
-        break;
     }
     btn.clear();
     btn2.clear();

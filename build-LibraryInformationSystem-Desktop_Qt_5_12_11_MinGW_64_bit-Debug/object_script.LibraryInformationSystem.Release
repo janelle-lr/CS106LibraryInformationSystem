@@ -1,6 +1,7 @@
 release/account.o
 release/admin.o
 release/admincatalogue.o
+release/admineditbook.o
 release/admineditcatalogue.o
 release/author.o
 release/book.o
@@ -17,6 +18,7 @@ release/publisher.o
 release/systemlibrary.o
 release/qrc_resources.o
 release/moc_admincatalogue.o
+release/moc_admineditbook.o
 release/moc_admineditcatalogue.o
 release/moc_bookdetails.o
 release/moc_mainwindow.o
