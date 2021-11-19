@@ -20,11 +20,15 @@ class adminCatalogue : public QMainWindow
 public:
     explicit adminCatalogue(QWidget *parent = nullptr);
     ~adminCatalogue();
+    QVector<QPushButton *>btn;
+    QVector<QPushButton *>btn2;
 
 private slots:
     void on_pushButton_clicked();
-
     void on_pushButton_2_clicked();
+    void editButtonClicked();
+    void deleteButtonClicked();
+
 
 private:
     Ui::adminCatalogue *ui;

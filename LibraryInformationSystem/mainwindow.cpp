@@ -40,27 +40,27 @@ void MainWindow::on_loginPushButton_clicked()
 
     bool login = sysLib->checkAccount(password,username);
     qDebug() << login;
-    if(sysLib->checkAccount(username,password)){
-        QMessageBox::information(this,"Thank You for logging in", "User, " + username + " has logged in.");
-        QStringRef subString(&username, 0,3);
-        hide();
-        //qDebug() << subString;
-        if(subString == "210"){
-            //qDebug() << "admin has logged in";
-            admineditcatalogue = new adminEditCatalogue(this);
-            connect(admineditcatalogue, SIGNAL(openadminEditCatalogue()), this, SLOT(openMainWindow())); //connect(pointerName, SIGNAL(openWindowYouWantToOpen()), this, SLOT(openWindowUrOpeningFrom()));
-            admineditcatalogue->show();
+//    if(sysLib->checkAccount(username,password)){
+//        QMessageBox::information(this,"Thank You for logging in", "User, " + username + " has logged in.");
+//        QStringRef subString(&username, 0,3);
+//        hide();
+//        //qDebug() << subString;
+//        if(subString == "210"){
+//            //qDebug() << "admin has logged in";
+//            admineditcatalogue = new adminEditCatalogue(this);
+//            connect(admineditcatalogue, SIGNAL(openadminEditCatalogue()), this, SLOT(openMainWindow())); //connect(pointerName, SIGNAL(openWindowYouWantToOpen()), this, SLOT(openWindowUrOpeningFrom()));
+//            admineditcatalogue->show();
 
-        }else if(subString == "220"){
-            qDebug() << "member has logged in";
-            membercatalogue = new memberCatalogue(this);
-            connect(membercatalogue, SIGNAL(openmemberCatalogue()), this, SLOT(openMainWindow())); //connect(pointerName, SIGNAL(openWindowYouWantToOpen()), this, SLOT(openWindowUrOpeningFrom()));
-            membercatalogue->show();
-        }
+//        }else if(subString == "220"){
+//            qDebug() << "member has logged in";
+//            membercatalogue = new memberCatalogue(this);
+//            connect(membercatalogue, SIGNAL(openmemberCatalogue()), this, SLOT(openMainWindow())); //connect(pointerName, SIGNAL(openWindowYouWantToOpen()), this, SLOT(openWindowUrOpeningFrom()));
+//            membercatalogue->show();
+//        }
 
-    }else{
-        QMessageBox::warning(this,"Failed Log in Attempt","Sorry wrong username or password");
-    }
+//    }else{
+//        QMessageBox::warning(this,"Failed Log in Attempt","Sorry wrong username or password");
+//    }
 
 }
 

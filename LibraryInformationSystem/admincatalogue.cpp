@@ -55,6 +55,8 @@ void adminCatalogue::createWidgets(int row, int col, QString title, QString auth
 
     ui->gridLayout_3->addWidget(groupBox,row,col);
     //ui->scrollArea->addWidget(groupBox,row,col);
+    btn.push_back(button);
+    btn2.push_back(button2);
 }
 
 void adminCatalogue::addRecords(){
@@ -75,8 +77,17 @@ void adminCatalogue::addRecords(){
         else {
             createWidgets(i - 1,1,title,author,image);
         }
-
     }
+
+    //looping through button vector to make buttons work
+    for(int i = 0; i < btn.size(); i++){
+            connect(btn[i],SIGNAL(released()),this,SLOT(editButtonClicked()));
+        }
+
+    for(int i = 0; i < btn2.size(); i++){
+            connect(btn2[i],SIGNAL(released()),this,SLOT(deleteButtonClicked()));
+    }
+
 
 
     //createWidgets(0,0,title);//book title
@@ -95,6 +106,62 @@ void adminCatalogue::addRecords(){
 //    createWidgets(4,1,"Tinoloan");
 }
 
+void adminCatalogue::editButtonClicked(){
+    int num = 7;
+    QPushButton *button = (QPushButton *)sender();
+    for(int i = 0; i < btn.size(); i++){
+        if(btn[i] == button){
+            num = i;
+            break;
+        }
+    }
+    QMessageBox::information(this,"Button",QString::number(num));
+
+
+
+}
+
+void adminCatalogue::deleteButtonClicked(){
+    int num = 8;
+    QPushButton *button = (QPushButton *)sender();
+    for(int i = 0; i < btn.size(); i++){
+        if(btn2[i] == button){
+            num = i;
+            break;
+        }
+    }
+    QMessageBox::information(this,"Button",QString::number(num) + " From button 2");
+    SystemLibrary sysLib;
+
+    QVector<Book> book;
+    book = sysLib.getAllBooks();
+
+    while ( QLayoutItem* item = ui->gridLayout_3->layout()->takeAt( 0 ) )
+    {
+//        if(btn2[num] == button){
+
+//        }
+        for(int i = 0; i < book.size(); i++) {
+            if(num == i){
+                QString id = book[i].getBookId();
+                   qDebug() << id << " title: " << book[i].getBookName();
+                sysLib.removeBookRecord(id);
+                break;
+            }
+        }
+        Q_ASSERT( ! item->layout() );
+        delete item->widget();//clears whole widget like a 'refresh' of page
+        delete item;
+        break;
+    }
+    btn.clear();
+    btn2.clear();
+    addRecords();//reprints updated catalogue
+}
+
+
+
+
 void adminCatalogue::on_pushButton_clicked()
 {
     addRecords();
@@ -103,7 +170,15 @@ void adminCatalogue::on_pushButton_clicked()
 
 void adminCatalogue::on_pushButton_2_clicked()
 {
-    hide();
+    while ( QLayoutItem* item = ui->gridLayout_3->layout()->takeAt( 0 ) )
+        {
+            Q_ASSERT( ! item->layout() );
+            delete item->widget();
+            delete item;
+        }
+
+    btn.clear();
+    btn2.clear();
 
 }
 
