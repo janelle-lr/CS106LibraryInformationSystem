@@ -43,6 +43,7 @@ public:
     {
         if (MainWindow->objectName().isEmpty())
             MainWindow->setObjectName(QString::fromUtf8("MainWindow"));
+<<<<<<< HEAD
         MainWindow->resize(1022, 589);
         QSizePolicy sizePolicy(QSizePolicy::Preferred, QSizePolicy::Preferred);
         sizePolicy.setHorizontalStretch(0);
@@ -50,6 +51,10 @@ public:
         sizePolicy.setHeightForWidth(MainWindow->sizePolicy().hasHeightForWidth());
         MainWindow->setSizePolicy(sizePolicy);
         MainWindow->setMinimumSize(QSize(0, 0));
+=======
+        MainWindow->resize(1440, 953);
+        MainWindow->setMinimumSize(QSize(1440, 953));
+>>>>>>> 2f747572dcb20e883f439ba5722f45ddb2727113
         MainWindow->setMaximumSize(QSize(1440, 953));
         centralwidget = new QWidget(MainWindow);
         centralwidget->setObjectName(QString::fromUtf8("centralwidget"));
@@ -148,7 +153,11 @@ public:
         MainWindow->setCentralWidget(centralwidget);
         menubar = new QMenuBar(MainWindow);
         menubar->setObjectName(QString::fromUtf8("menubar"));
+<<<<<<< HEAD
         menubar->setGeometry(QRect(0, 0, 1022, 21));
+=======
+        menubar->setGeometry(QRect(0, 0, 1440, 21));
+>>>>>>> 2f747572dcb20e883f439ba5722f45ddb2727113
         MainWindow->setMenuBar(menubar);
         statusbar = new QStatusBar(MainWindow);
         statusbar->setObjectName(QString::fromUtf8("statusbar"));

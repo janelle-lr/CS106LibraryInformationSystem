@@ -1,4 +1,5 @@
 BookID,Book Name,Genre,InStock,Book Copies,Available Status,Book Image Filepath,Book Description
+<<<<<<< HEAD
 310174LD,awefaewf,awefawef,0,0,1,,efawefawefawef
 310135WS,awefawef,awefawef,0,0,1,,fawefawef
 310165OG,awefaewf,awefawef,0,0,1,,wefawefawefaewf
@@ -9,3 +10,17 @@ BookID,Book Name,Genre,InStock,Book Copies,Available Status,Book Image Filepath,
 310179NA,awefawe,fawefawe,0,0,1,,fawef
 310195FN,aewfawef,awefaef,0,0,1,,fawefawef
 310113AC,awefawef,awefawef,0,0,1,,
+=======
+310186NR,LMAO,CCCCCCCCC,0,0,1,:/resources/images/gold cats.png,CCCCCCCCC
+310155BM,Hunger Games,ssssssssss,2,2,1,:/resources/images/gold cats.png,ssssssssss
+310197BK,the hungey caterpillar,ssssssssssGGGGGGGGGG,0,0,1,:/resources/images/gold cats.png,ssssssssssGGGGGGGGGG
+310159VH,Twilght,BBBB,0,0,1,:/resources/images/gold cats.png,BBBB
+310130SY,Breaking dawn,EEEEEEEEEEEEEEE,2,2,1,:/resources/images/gold cats.png,EEEEEEEEEEEEEEE
+310136MX,Eclipse,ahhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhh,1,1,1,:/resources/images/gold cats.png,ahhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhh
+310186MG,The Holy Bible,Religion,1,1,1,:/resources/images/gold cats.png,i <3 jesus
+310126ZZ,Clown hours,jjjjjjjjjjjjjjjjjjjjjjjjjjjj,2,2,1,:/resources/images/gold cats.png,jjjjjjjjjjjjjjjjjjjjjjjjjjjj
+310175TU,Crying hours,kkkkkkkkkkkkkk,1,1,1,:/resources/images/gold cats.png,kkkkkkkkkkkkkk
+310117KS,Dying hours,llllllllllllllllllllll,1,1,1,:/resources/images/gold cats.png,llllllllllllllllllllll
+310156ZO,This is so sad,ooooooooooooooooo,2,2,1,:/resources/images/gold cats.png,ooooooooooooooooo
+310195OS,Boafoonery,rrrrr,1,1,1,:/resources/images/gold cats.png,rrrrrrrrrrrrrrrrrrr
+>>>>>>> 2f747572dcb20e883f439ba5722f45ddb2727113

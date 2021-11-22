@@ -22,7 +22,7 @@ QT_WARNING_PUSH
 QT_WARNING_DISABLE_DEPRECATED
 struct qt_meta_stringdata_adminEditCatalogue_t {
     QByteArrayData data[6];
-    char stringdata0[99];
+    char stringdata0[104];
 };
 #define QT_MOC_LITERAL(idx, ofs, len) \
     Q_STATIC_BYTE_ARRAY_DATA_HEADER_INITIALIZER_WITH_OFFSET(len, \
@@ -32,16 +32,16 @@ struct qt_meta_stringdata_adminEditCatalogue_t {
 static const qt_meta_stringdata_adminEditCatalogue_t qt_meta_stringdata_adminEditCatalogue = {
     {
 QT_MOC_LITERAL(0, 0, 18), // "adminEditCatalogue"
-QT_MOC_LITERAL(1, 19, 21), // "on_comboBox_activated"
+QT_MOC_LITERAL(1, 19, 21), // "on_pushButton_clicked"
 QT_MOC_LITERAL(2, 41, 0), // ""
-QT_MOC_LITERAL(3, 42, 4), // "arg1"
-QT_MOC_LITERAL(4, 47, 21), // "on_pushButton_clicked"
-QT_MOC_LITERAL(5, 69, 29) // "on_confirmBookDetails_clicked"
+QT_MOC_LITERAL(3, 42, 29), // "on_confirmBookDetails_clicked"
+QT_MOC_LITERAL(4, 72, 26), // "on_selectedImage_activated"
+QT_MOC_LITERAL(5, 99, 4) // "arg1"
 
     },
-    "adminEditCatalogue\0on_comboBox_activated\0"
-    "\0arg1\0on_pushButton_clicked\0"
-    "on_confirmBookDetails_clicked"
+    "adminEditCatalogue\0on_pushButton_clicked\0"
+    "\0on_confirmBookDetails_clicked\0"
+    "on_selectedImage_activated\0arg1"
 };
 #undef QT_MOC_LITERAL
 
@@ -59,14 +59,14 @@ static const uint qt_meta_data_adminEditCatalogue[] = {
        0,       // signalCount
 
  // slots: name, argc, parameters, tag, flags
-       1,    1,   29,    2, 0x08 /* Private */,
-       4,    0,   32,    2, 0x08 /* Private */,
-       5,    0,   33,    2, 0x08 /* Private */,
+       1,    0,   29,    2, 0x08 /* Private */,
+       3,    0,   30,    2, 0x08 /* Private */,
+       4,    1,   31,    2, 0x08 /* Private */,
 
  // slots: parameters
-    QMetaType::Void, QMetaType::QString,    3,
     QMetaType::Void,
     QMetaType::Void,
+    QMetaType::Void, QMetaType::QString,    5,
 
        0        // eod
 };
@@ -77,9 +77,9 @@ void adminEditCatalogue::qt_static_metacall(QObject *_o, QMetaObject::Call _c, i
         auto *_t = static_cast<adminEditCatalogue *>(_o);
         Q_UNUSED(_t)
         switch (_id) {
-        case 0: _t->on_comboBox_activated((*reinterpret_cast< const QString(*)>(_a[1]))); break;
-        case 1: _t->on_pushButton_clicked(); break;
-        case 2: _t->on_confirmBookDetails_clicked(); break;
+        case 0: _t->on_pushButton_clicked(); break;
+        case 1: _t->on_confirmBookDetails_clicked(); break;
+        case 2: _t->on_selectedImage_activated((*reinterpret_cast< const QString(*)>(_a[1]))); break;
         default: ;
         }
     }

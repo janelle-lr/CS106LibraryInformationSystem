@@ -6,8 +6,13 @@
    <rect>
     <x>0</x>
     <y>0</y>
+<<<<<<< HEAD:CS106LibraryInformationSystem-janelle/LibraryInformationSystem/mainwindow.ui
     <width>1022</width>
     <height>589</height>
+=======
+    <width>1080</width>
+    <height>640</height>
+>>>>>>> 2f747572dcb20e883f439ba5722f45ddb2727113:LibraryInformationSystem/mainwindow.ui
    </rect>
   </property>
   <property name="sizePolicy">
@@ -18,14 +23,24 @@
   </property>
   <property name="minimumSize">
    <size>
+<<<<<<< HEAD:CS106LibraryInformationSystem-janelle/LibraryInformationSystem/mainwindow.ui
     <width>0</width>
     <height>0</height>
+=======
+    <width>1080</width>
+    <height>640</height>
+>>>>>>> 2f747572dcb20e883f439ba5722f45ddb2727113:LibraryInformationSystem/mainwindow.ui
    </size>
   </property>
   <property name="maximumSize">
    <size>
+<<<<<<< HEAD:CS106LibraryInformationSystem-janelle/LibraryInformationSystem/mainwindow.ui
     <width>1440</width>
     <height>953</height>
+=======
+    <width>1080</width>
+    <height>640</height>
+>>>>>>> 2f747572dcb20e883f439ba5722f45ddb2727113:LibraryInformationSystem/mainwindow.ui
    </size>
   </property>
   <property name="windowTitle">
@@ -204,7 +219,11 @@ font: 24px &quot;Montserrat Medium&quot;;
       <rect>
        <x>30</x>
        <y>180</y>
+<<<<<<< HEAD:CS106LibraryInformationSystem-janelle/LibraryInformationSystem/mainwindow.ui
        <width>111</width>
+=======
+       <width>121</width>
+>>>>>>> 2f747572dcb20e883f439ba5722f45ddb2727113:LibraryInformationSystem/mainwindow.ui
        <height>17</height>
       </rect>
      </property>
@@ -235,7 +254,11 @@ font: 24px &quot;Montserrat Medium&quot;;
     <rect>
      <x>0</x>
      <y>0</y>
+<<<<<<< HEAD:CS106LibraryInformationSystem-janelle/LibraryInformationSystem/mainwindow.ui
      <width>1022</width>
+=======
+     <width>1080</width>
+>>>>>>> 2f747572dcb20e883f439ba5722f45ddb2727113:LibraryInformationSystem/mainwindow.ui
      <height>21</height>
     </rect>
    </property>

@@ -6,7 +6,11 @@
 ** WARNING! All changes made in this file will be lost!
 *****************************************************************************/
 
+<<<<<<< HEAD
 #include "../../CS106LibraryInformationSystem-janelle/LibraryInformationSystem/bookdetails.h"
+=======
+#include "../../../libraryInformationSystem/LibraryInformationSystem/bookdetails.h"
+>>>>>>> 2f747572dcb20e883f439ba5722f45ddb2727113
 #include <QtCore/qbytearray.h>
 #include <QtCore/qmetatype.h>
 #if !defined(Q_MOC_OUTPUT_REVISION)

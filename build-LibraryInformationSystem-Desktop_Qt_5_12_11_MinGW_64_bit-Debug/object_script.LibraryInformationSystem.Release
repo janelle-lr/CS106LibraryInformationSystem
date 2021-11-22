@@ -1,7 +1,12 @@
 release/account.o
 release/admin.o
+<<<<<<< HEAD
 release/adminaddmember.o
 release/admincatalogue.o
+=======
+release/admincatalogue.o
+release/admineditbook.o
+>>>>>>> 2f747572dcb20e883f439ba5722f45ddb2727113
 release/admineditcatalogue.o
 release/author.o
 release/book.o
@@ -17,8 +22,13 @@ release/preorderbook.o
 release/publisher.o
 release/systemlibrary.o
 release/qrc_resources.o
+<<<<<<< HEAD
 release/moc_adminaddmember.o
 release/moc_admincatalogue.o
+=======
+release/moc_admincatalogue.o
+release/moc_admineditbook.o
+>>>>>>> 2f747572dcb20e883f439ba5722f45ddb2727113
 release/moc_admineditcatalogue.o
 release/moc_bookdetails.o
 release/moc_mainwindow.o

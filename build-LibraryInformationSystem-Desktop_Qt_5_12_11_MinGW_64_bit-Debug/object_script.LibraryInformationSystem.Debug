@@ -1,7 +1,12 @@
 debug/account.o
 debug/admin.o
+<<<<<<< HEAD
 debug/adminaddmember.o
 debug/admincatalogue.o
+=======
+debug/admincatalogue.o
+debug/admineditbook.o
+>>>>>>> 2f747572dcb20e883f439ba5722f45ddb2727113
 debug/admineditcatalogue.o
 debug/author.o
 debug/book.o
@@ -17,8 +22,13 @@ debug/preorderbook.o
 debug/publisher.o
 debug/systemlibrary.o
 debug/qrc_resources.o
+<<<<<<< HEAD
 debug/moc_adminaddmember.o
 debug/moc_admincatalogue.o
+=======
+debug/moc_admincatalogue.o
+debug/moc_admineditbook.o
+>>>>>>> 2f747572dcb20e883f439ba5722f45ddb2727113
 debug/moc_admineditcatalogue.o
 debug/moc_bookdetails.o
 debug/moc_mainwindow.o

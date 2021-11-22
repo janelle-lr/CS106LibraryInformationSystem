@@ -6,7 +6,11 @@
 ** WARNING! All changes made in this file will be lost!
 *****************************************************************************/
 
+<<<<<<< HEAD:build-LibraryInformationSystem-Desktop_Qt_5_12_11_MinGW_64_bit-Debug/debug/moc_admincatalogue.cpp
 #include "../../CS106LibraryInformationSystem-janelle/LibraryInformationSystem/admincatalogue.h"
+=======
+#include "../../LibraryInformationSystem/admincatalogue.h"
+>>>>>>> 2f747572dcb20e883f439ba5722f45ddb2727113:build-QTLibraryPrototype-Desktop_Qt_5_12_11_MinGW_64_bit-Debug/debug/moc_mainwindow.cpp
 #include <QtCore/qbytearray.h>
 #include <QtCore/qmetatype.h>
 #if !defined(Q_MOC_OUTPUT_REVISION)

@@ -48,12 +48,12 @@ public:
     QLineEdit *bookCopies;
     QLabel *label_14;
     QComboBox *selectedImage;
-    QLineEdit *bookDescription;
-    QLabel *label_16;
     QLabel *label_20;
     QLineEdit *bookAuthor;
     QLabel *label_21;
     QLineEdit *bookPublisher;
+    QLabel *label_16;
+    QLineEdit *bookDescription;
     QLabel *label;
     QPushButton *confirmBookDetails;
     QWidget *gridLayoutWidget;
@@ -128,7 +128,11 @@ public:
 "}"));
         verticalLayoutWidget = new QWidget(tab);
         verticalLayoutWidget->setObjectName(QString::fromUtf8("verticalLayoutWidget"));
+<<<<<<< HEAD
         verticalLayoutWidget->setGeometry(QRect(10, 70, 1021, 312));
+=======
+        verticalLayoutWidget->setGeometry(QRect(10, 70, 1021, 349));
+>>>>>>> 2f747572dcb20e883f439ba5722f45ddb2727113
         verticalLayout = new QVBoxLayout(verticalLayoutWidget);
         verticalLayout->setObjectName(QString::fromUtf8("verticalLayout"));
         verticalLayout->setContentsMargins(0, 0, 0, 0);
@@ -208,11 +212,12 @@ public:
 
         formLayout->setWidget(3, QFormLayout::FieldRole, selectedImage);
 
-        bookDescription = new QLineEdit(verticalLayoutWidget);
-        bookDescription->setObjectName(QString::fromUtf8("bookDescription"));
+        label_20 = new QLabel(verticalLayoutWidget);
+        label_20->setObjectName(QString::fromUtf8("label_20"));
         QSizePolicy sizePolicy2(QSizePolicy::Preferred, QSizePolicy::Preferred);
         sizePolicy2.setHorizontalStretch(0);
         sizePolicy2.setVerticalStretch(0);
+<<<<<<< HEAD
         sizePolicy2.setHeightForWidth(bookDescription->sizePolicy().hasHeightForWidth());
         bookDescription->setSizePolicy(sizePolicy2);
         bookDescription->setMinimumSize(QSize(0, 60));
@@ -234,6 +239,8 @@ public:
 
         label_20 = new QLabel(verticalLayoutWidget);
         label_20->setObjectName(QString::fromUtf8("label_20"));
+=======
+>>>>>>> 2f747572dcb20e883f439ba5722f45ddb2727113
         sizePolicy2.setHeightForWidth(label_20->sizePolicy().hasHeightForWidth());
         label_20->setSizePolicy(sizePolicy2);
         label_20->setMinimumSize(QSize(0, 0));
@@ -265,6 +272,27 @@ public:
         bookPublisher->setMinimumSize(QSize(0, 31));
 
         formLayout->setWidget(5, QFormLayout::FieldRole, bookPublisher);
+
+        label_16 = new QLabel(verticalLayoutWidget);
+        label_16->setObjectName(QString::fromUtf8("label_16"));
+        sizePolicy2.setHeightForWidth(label_16->sizePolicy().hasHeightForWidth());
+        label_16->setSizePolicy(sizePolicy2);
+        label_16->setMinimumSize(QSize(0, 0));
+        label_16->setMaximumSize(QSize(16777185, 16777215));
+
+        formLayout->setWidget(6, QFormLayout::LabelRole, label_16);
+
+        bookDescription = new QLineEdit(verticalLayoutWidget);
+        bookDescription->setObjectName(QString::fromUtf8("bookDescription"));
+        sizePolicy2.setHeightForWidth(bookDescription->sizePolicy().hasHeightForWidth());
+        bookDescription->setSizePolicy(sizePolicy2);
+        bookDescription->setMinimumSize(QSize(0, 60));
+        bookDescription->setStyleSheet(QString::fromUtf8("QLineEdit {\n"
+"	padding: 5px;\n"
+"}"));
+        bookDescription->setAlignment(Qt::AlignLeading|Qt::AlignLeft|Qt::AlignTop);
+
+        formLayout->setWidget(6, QFormLayout::FieldRole, bookDescription);
 
 
         verticalLayout->addLayout(formLayout);
@@ -337,10 +365,10 @@ public:
         selectedImage->setItemText(1, QApplication::translate("adminEditCatalogue", "Image 2", nullptr));
         selectedImage->setItemText(2, QApplication::translate("adminEditCatalogue", "Image 3", nullptr));
 
-        label_16->setText(QApplication::translate("adminEditCatalogue", "Enter book \n"
-" desription", nullptr));
         label_20->setText(QApplication::translate("adminEditCatalogue", "Enter Author Name", nullptr));
         label_21->setText(QApplication::translate("adminEditCatalogue", "Enter Publisher Name", nullptr));
+        label_16->setText(QApplication::translate("adminEditCatalogue", "Enter book \n"
+" desription", nullptr));
         label->setText(QApplication::translate("adminEditCatalogue", "TextLabel", nullptr));
         confirmBookDetails->setText(QApplication::translate("adminEditCatalogue", "Add Book", nullptr));
         tabWidget->setTabText(tabWidget->indexOf(tab), QApplication::translate("adminEditCatalogue", "Add Books", nullptr));

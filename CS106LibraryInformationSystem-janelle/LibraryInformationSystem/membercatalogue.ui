@@ -6,14 +6,20 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>1052</width>
-    <height>634</height>
+    <width>1080</width>
+    <height>640</height>
    </rect>
   </property>
   <property name="minimumSize">
    <size>
-    <width>1052</width>
-    <height>634</height>
+    <width>1080</width>
+    <height>640</height>
+   </size>
+  </property>
+  <property name="maximumSize">
+   <size>
+    <width>1080</width>
+    <height>640</height>
    </size>
   </property>
   <property name="windowTitle">
@@ -65,8 +71,8 @@ QMenuBar::item:pressed {
    <widget class="QComboBox" name="comboBox">
     <property name="geometry">
      <rect>
-      <x>890</x>
-      <y>70</y>
+      <x>880</x>
+      <y>30</y>
       <width>131</width>
       <height>22</height>
      </rect>
@@ -102,84 +108,62 @@ QMenuBar::item:pressed {
      </property>
     </item>
    </widget>
-   <widget class="QGroupBox" name="groupBox">
+   <widget class="QPushButton" name="pushButton">
     <property name="geometry">
      <rect>
-      <x>30</x>
-      <y>100</y>
-      <width>991</width>
-      <height>491</height>
+      <x>650</x>
+      <y>30</y>
+      <width>75</width>
+      <height>23</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>PushButton</string>
+    </property>
+   </widget>
+   <widget class="QScrollArea" name="scrollArea">
+    <property name="geometry">
+     <rect>
+      <x>0</x>
+      <y>90</y>
+      <width>1081</width>
+      <height>461</height>
      </rect>
     </property>
     <property name="styleSheet">
-     <string notr="true">QGroupBox{
-	font-weight: bold;
-	font-size: 18px;
-}</string>
+     <string notr="true">QScrollArea {
+	border: none;
+}
+</string>
     </property>
-    <property name="title">
-     <string>Catalogue</string>
+    <property name="widgetResizable">
+     <bool>true</bool>
     </property>
-    <widget class="QScrollArea" name="scrollArea">
+    <widget class="QWidget" name="scrollAreaWidgetContents">
      <property name="geometry">
       <rect>
        <x>0</x>
-       <y>30</y>
-       <width>991</width>
+       <y>0</y>
+       <width>1081</width>
        <height>461</height>
       </rect>
      </property>
      <property name="styleSheet">
-      <string notr="true">
-
-/* vertical scrollbar*/
-QScrollBar:vertical{
-	border: none;
-	background-color: rgb(255, 229, 208);
-	margin: 15px 0 15px 0;
-	width: 14px;
+      <string notr="true">QWidget {
+	background-color: #FFE5D0;
+	/*border: none;*/
 }
 
-/* hande bar verticall */
-QScrollBar::handle:vertical{
-	border-radius: 5px;
-	background-color: rgb(255, 213, 164);
-	min-height: 30px;
-}
-QScrollBar::handle:vertical:hover{
-	background-color: rgb(255, 210, 158);
+QGridLayout {
+	/*border: none;*/
 }
 
-/* top button scrollbar */
-QScrollBar::sub-line:vertical{
-	border: none;
-	background-color: rgb(255, 180, 126);
-	height: 15px;
-	border-top-left-radius: 7px;
-	border-top-right-radius: 7px;
-	subcontrol-position: top;
-	subcontrol-origin: margin;
+QPushButton {
+	margin-right: 10px; 
+	height: 31px; 
+	/*max-width: 100px; */
 }
-QScrollBar::sub-line:vertical:hover{
-	background-color: rgb(255, 85, 127);
-}
-QScrollBar::sub-line:vertical:pressed{
-	background-color: rgb(255, 0, 127);
-}
-
-/* bottom button scrollbar */
-QScrollBar::add-line:vertical{
-	border: none;
-	background-color: rgb(255, 180, 126);
-	height: 15px;
-	border-bottom-left-radius: 7px;
-	border-bottom-right-radius: 7px;
-	subcontrol-position: bottom;
-	subcontrol-origin: margin;
-}
-QScrollBar::add-line:vertical:hover{
-	background-color: rgb(255, 85, 127);
-}
+<<<<<<< HEAD:CS106LibraryInformationSystem-janelle/LibraryInformationSystem/membercatalogue.ui
 QScrollBar::add-line:vertical:pressed{
 	background-color: rgb(255, 0, 127);
 }</string>
@@ -395,398 +379,15 @@ your test is over. The test will begin on the word start. On your mark, get read
 gets more difficult as it continues. 
 The second time you fail to complete a lap before the sound, 
 your test is over. The test will begin on the word start. On your mark, get ready, start.
+=======
+>>>>>>> 2f747572dcb20e883f439ba5722f45ddb2727113:LibraryInformationSystem/membercatalogue.ui
 </string>
-               </property>
-              </widget>
-             </item>
-             <item>
-              <spacer name="verticalSpacer_2">
-               <property name="orientation">
-                <enum>Qt::Vertical</enum>
-               </property>
-               <property name="sizeHint" stdset="0">
-                <size>
-                 <width>20</width>
-                 <height>40</height>
-                </size>
-               </property>
-              </spacer>
-             </item>
-             <item>
-              <layout class="QHBoxLayout" name="horizontalLayout_4">
-               <item>
-                <widget class="QLabel" name="label_11">
-                 <property name="text">
-                  <string>Status:</string>
-                 </property>
-                </widget>
-               </item>
-               <item>
-                <widget class="QLabel" name="label_12">
-                 <property name="styleSheet">
-                  <string notr="true">QLabel{
-	color: rgb(85, 170, 0);
-}</string>
-                 </property>
-                 <property name="text">
-                  <string>Available</string>
-                 </property>
-                </widget>
-               </item>
-               <item>
-                <spacer name="horizontalSpacer_2">
-                 <property name="orientation">
-                  <enum>Qt::Horizontal</enum>
-                 </property>
-                 <property name="sizeHint" stdset="0">
-                  <size>
-                   <width>40</width>
-                   <height>20</height>
-                  </size>
-                 </property>
-                </spacer>
-               </item>
-              </layout>
-             </item>
-            </layout>
-           </item>
-           <item>
-            <layout class="QHBoxLayout" name="horizontalLayout_8">
-             <item>
-              <spacer name="horizontalSpacer_5">
-               <property name="orientation">
-                <enum>Qt::Horizontal</enum>
-               </property>
-               <property name="sizeHint" stdset="0">
-                <size>
-                 <width>40</width>
-                 <height>20</height>
-                </size>
-               </property>
-              </spacer>
-             </item>
-             <item>
-              <widget class="QPushButton" name="pushButton_4">
-               <property name="styleSheet">
-                <string notr="true">QPushButton{
-	background-color:rgb(85, 170, 0);
-	font-weight: bold;
-	color: rgb(0, 85, 0);
-}</string>
-               </property>
-               <property name="text">
-                <string>READ</string>
-               </property>
-              </widget>
-             </item>
-             <item>
-              <widget class="QPushButton" name="pushButton_5">
-               <property name="styleSheet">
-                <string notr="true">QPushButton{
-	background-color: rgb(255, 0, 0);
-	color: rgb(170, 0, 0);
-	font-weight: bold;
-}</string>
-               </property>
-               <property name="text">
-                <string>RESERVE</string>
-               </property>
-              </widget>
-             </item>
-            </layout>
-           </item>
-          </layout>
-         </widget>
-         <widget class="QWidget" name="horizontalLayoutWidget_4">
-          <property name="geometry">
-           <rect>
-            <x>0</x>
-            <y>360</y>
-            <width>951</width>
-            <height>171</height>
-           </rect>
-          </property>
-          <layout class="QHBoxLayout" name="book_3">
-           <item>
-            <widget class="QLabel" name="img_4">
-             <property name="text">
-              <string>Book 3</string>
-             </property>
-            </widget>
-           </item>
-           <item>
-            <layout class="QVBoxLayout" name="verticalLayout_6">
-             <item>
-              <widget class="QLabel" name="label_19">
-               <property name="styleSheet">
-                <string notr="true">QLabel {
-	font-weight:bold;
-	font-size: 14px;
-
-	
-}</string>
-               </property>
-               <property name="text">
-                <string>50 Shades of Swag</string>
-               </property>
-              </widget>
-             </item>
-             <item>
-              <widget class="QLabel" name="label_13">
-               <property name="text">
-                <string>The FitnessGram™ Pacer Test is a multistage aerobic capacity test that progressively 
-gets more difficult as it continues. 
-The second time you fail to complete a lap before the sound, 
-your test is over. The test will begin on the word start. On your mark, get ready, start.
-</string>
-               </property>
-              </widget>
-             </item>
-             <item>
-              <spacer name="verticalSpacer_3">
-               <property name="orientation">
-                <enum>Qt::Vertical</enum>
-               </property>
-               <property name="sizeHint" stdset="0">
-                <size>
-                 <width>20</width>
-                 <height>40</height>
-                </size>
-               </property>
-              </spacer>
-             </item>
-             <item>
-              <layout class="QHBoxLayout" name="horizontalLayout_5">
-               <item>
-                <widget class="QLabel" name="label_14">
-                 <property name="text">
-                  <string>Status:</string>
-                 </property>
-                </widget>
-               </item>
-               <item>
-                <widget class="QLabel" name="label_15">
-                 <property name="styleSheet">
-                  <string notr="true">QLabel{
-	color: rgb(85, 170, 0);
-}</string>
-                 </property>
-                 <property name="text">
-                  <string>Available</string>
-                 </property>
-                </widget>
-               </item>
-               <item>
-                <spacer name="horizontalSpacer_3">
-                 <property name="orientation">
-                  <enum>Qt::Horizontal</enum>
-                 </property>
-                 <property name="sizeHint" stdset="0">
-                  <size>
-                   <width>40</width>
-                   <height>20</height>
-                  </size>
-                 </property>
-                </spacer>
-               </item>
-              </layout>
-             </item>
-            </layout>
-           </item>
-           <item>
-            <layout class="QHBoxLayout" name="horizontalLayout_9">
-             <item>
-              <spacer name="horizontalSpacer_6">
-               <property name="orientation">
-                <enum>Qt::Horizontal</enum>
-               </property>
-               <property name="sizeHint" stdset="0">
-                <size>
-                 <width>40</width>
-                 <height>20</height>
-                </size>
-               </property>
-              </spacer>
-             </item>
-             <item>
-              <widget class="QPushButton" name="pushButton_6">
-               <property name="styleSheet">
-                <string notr="true">QPushButton{
-	background-color:rgb(85, 170, 0);
-	font-weight: bold;
-	color: rgb(0, 85, 0);
-}</string>
-               </property>
-               <property name="text">
-                <string>READ</string>
-               </property>
-              </widget>
-             </item>
-             <item>
-              <widget class="QPushButton" name="pushButton_7">
-               <property name="styleSheet">
-                <string notr="true">QPushButton{
-	background-color: rgb(255, 0, 0);
-	color: rgb(170, 0, 0);
-	font-weight: bold;
-}</string>
-               </property>
-               <property name="text">
-                <string>RESERVE</string>
-               </property>
-              </widget>
-             </item>
-            </layout>
-           </item>
-          </layout>
-         </widget>
-         <widget class="QWidget" name="horizontalLayoutWidget_5">
-          <property name="geometry">
-           <rect>
-            <x>0</x>
-            <y>540</y>
-            <width>951</width>
-            <height>171</height>
-           </rect>
-          </property>
-          <layout class="QHBoxLayout" name="book_4">
-           <item>
-            <widget class="QLabel" name="img_5">
-             <property name="text">
-              <string>Book 4</string>
-             </property>
-            </widget>
-           </item>
-           <item>
-            <layout class="QVBoxLayout" name="verticalLayout_7">
-             <item>
-              <widget class="QLabel" name="label_20">
-               <property name="styleSheet">
-                <string notr="true">QLabel {
-	font-weight:bold;
-	font-size: 14px;
-
-	
-}</string>
-               </property>
-               <property name="text">
-                <string>50 Shades of Swag</string>
-               </property>
-              </widget>
-             </item>
-             <item>
-              <widget class="QLabel" name="label_16">
-               <property name="text">
-                <string>The FitnessGram™ Pacer Test is a multistage aerobic capacity test that progressively 
-gets more difficult as it continues. 
-The second time you fail to complete a lap before the sound, 
-your test is over. The test will begin on the word start. On your mark, get ready, start.
-</string>
-               </property>
-              </widget>
-             </item>
-             <item>
-              <spacer name="verticalSpacer_4">
-               <property name="orientation">
-                <enum>Qt::Vertical</enum>
-               </property>
-               <property name="sizeHint" stdset="0">
-                <size>
-                 <width>20</width>
-                 <height>40</height>
-                </size>
-               </property>
-              </spacer>
-             </item>
-             <item>
-              <layout class="QHBoxLayout" name="horizontalLayout_6">
-               <item>
-                <widget class="QLabel" name="label_21">
-                 <property name="text">
-                  <string>Status:</string>
-                 </property>
-                </widget>
-               </item>
-               <item>
-                <widget class="QLabel" name="label_22">
-                 <property name="styleSheet">
-                  <string notr="true">QLabel{
-	color: rgb(85, 170, 0);
-}</string>
-                 </property>
-                 <property name="text">
-                  <string>Available</string>
-                 </property>
-                </widget>
-               </item>
-               <item>
-                <spacer name="horizontalSpacer_7">
-                 <property name="orientation">
-                  <enum>Qt::Horizontal</enum>
-                 </property>
-                 <property name="sizeHint" stdset="0">
-                  <size>
-                   <width>40</width>
-                   <height>20</height>
-                  </size>
-                 </property>
-                </spacer>
-               </item>
-              </layout>
-             </item>
-            </layout>
-           </item>
-           <item>
-            <layout class="QHBoxLayout" name="horizontalLayout_10">
-             <item>
-              <spacer name="horizontalSpacer_8">
-               <property name="orientation">
-                <enum>Qt::Horizontal</enum>
-               </property>
-               <property name="sizeHint" stdset="0">
-                <size>
-                 <width>40</width>
-                 <height>20</height>
-                </size>
-               </property>
-              </spacer>
-             </item>
-             <item>
-              <widget class="QPushButton" name="pushButton_8">
-               <property name="styleSheet">
-                <string notr="true">QPushButton{
-	background-color:rgb(85, 170, 0);
-	font-weight: bold;
-	color: rgb(0, 85, 0);
-}</string>
-               </property>
-               <property name="text">
-                <string>READ</string>
-               </property>
-              </widget>
-             </item>
-             <item>
-              <widget class="QPushButton" name="pushButton_9">
-               <property name="styleSheet">
-                <string notr="true">QPushButton{
-	background-color: rgb(255, 0, 0);
-	color: rgb(170, 0, 0);
-	font-weight: bold;
-}</string>
-               </property>
-               <property name="text">
-                <string>RESERVE</string>
-               </property>
-              </widget>
-             </item>
-            </layout>
-           </item>
-          </layout>
-         </widget>
-        </widget>
-       </item>
-      </layout>
-     </widget>
+     </property>
+     <layout class="QHBoxLayout" name="horizontalLayout">
+      <item>
+       <layout class="QGridLayout" name="gridLayout_3"/>
+      </item>
+     </layout>
     </widget>
    </widget>
    <widget class="QPushButton" name="pushButton">
@@ -808,7 +409,7 @@ your test is over. The test will begin on the word start. On your mark, get read
     <rect>
      <x>0</x>
      <y>0</y>
-     <width>1052</width>
+     <width>1080</width>
      <height>18</height>
     </rect>
    </property>

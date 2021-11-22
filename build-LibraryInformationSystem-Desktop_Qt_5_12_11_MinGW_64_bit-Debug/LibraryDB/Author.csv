@@ -1,4 +1,5 @@
 AuthorID,BookID,Author Name,Biography,Date of Birth
+<<<<<<< HEAD
 default,310174LD,fawefaw,default,default
 default,310135WS,fawefawef,default,default
 default,310165OG,wefawefawef,default,default
@@ -9,3 +10,17 @@ default,310156QJ,,default,default
 default,310179NA,fawefawe,default,default
 default,310195FN,,default,default
 default,310113AC,awefawefawefa,default,default
+=======
+default,310186NR,Bob Ross,default,default
+default,310155BM,John smith,default,default
+default,310197BK,Kim Possible,default,default
+default,310159VH,Beyonce,default,default
+default,310130SY,Taylor Swift,default,default
+default,310136MX,Michael Jordan,default,default
+default,310186MG,Matthew,default,default
+default,310126ZZ,Yeet,default,default
+default,310175TU,Jessica,default,default
+default,310117KS,Damon,default,default
+default,310156ZO,Ajjdnvi,default,default
+default,310195OS,ajdjkdji,default,default
+>>>>>>> 2f747572dcb20e883f439ba5722f45ddb2727113

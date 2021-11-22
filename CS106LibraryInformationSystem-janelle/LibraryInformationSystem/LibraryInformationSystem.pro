@@ -11,8 +11,13 @@ CONFIG += c++11
 SOURCES += \
     account.cpp \
     admin.cpp \
+<<<<<<< HEAD:CS106LibraryInformationSystem-janelle/LibraryInformationSystem/LibraryInformationSystem.pro
     adminaddmember.cpp \
     admincatalogue.cpp \
+=======
+    admincatalogue.cpp \
+    admineditbook.cpp \
+>>>>>>> 2f747572dcb20e883f439ba5722f45ddb2727113:LibraryInformationSystem/LibraryInformationSystem.pro
     admineditcatalogue.cpp \
     author.cpp \
     book.cpp \
@@ -31,8 +36,13 @@ SOURCES += \
 HEADERS += \
     account.h \
     admin.h \
+<<<<<<< HEAD:CS106LibraryInformationSystem-janelle/LibraryInformationSystem/LibraryInformationSystem.pro
     adminaddmember.h \
     admincatalogue.h \
+=======
+    admincatalogue.h \
+    admineditbook.h \
+>>>>>>> 2f747572dcb20e883f439ba5722f45ddb2727113:LibraryInformationSystem/LibraryInformationSystem.pro
     admineditcatalogue.h \
     author.h \
     book.h \
@@ -48,8 +58,13 @@ HEADERS += \
     systemlibrary.h
 
 FORMS += \
+<<<<<<< HEAD:CS106LibraryInformationSystem-janelle/LibraryInformationSystem/LibraryInformationSystem.pro
     adminaddmember.ui \
     admincatalogue.ui \
+=======
+    admincatalogue.ui \
+    admineditbook.ui \
+>>>>>>> 2f747572dcb20e883f439ba5722f45ddb2727113:LibraryInformationSystem/LibraryInformationSystem.pro
     admineditcatalogue.ui \
     bookdetails.ui \
     mainwindow.ui \

@@ -8,6 +8,7 @@
 #include <QLabel>
 #include <QGroupBox>
 #include "systemlibrary.h"
+#include "admineditbook.h"
 
 namespace Ui {
 class adminCatalogue;
@@ -36,7 +37,8 @@ private:
     void addRecords();
     QPushButton* button;
     QPushButton* button2;
-    SystemLibrary systemlibrary;
+    SystemLibrary* systemlibrary;
+    adminEditBook* admineditbook;
 };
 
 #endif // ADMINCATALOGUE_H

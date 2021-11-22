@@ -21,30 +21,51 @@ adminEditCatalogue::~adminEditCatalogue()
     delete ui;
 }
 
-void adminEditCatalogue::on_comboBox_activated(const QString &arg1)
-{
-    qDebug() << "\niam in on_comboBox_activated\n arg1 = " << arg1;
-    if(arg1 == "Image 1"){
-        //qDebug() << "Image 1 has been selected";
-        filePath = ":/resources/images/testImage.jpg";
-        qDebug() << filePath;
-    }
-    else if(arg1 == "Image 2"){
-        //qDebug() << "Image 2 has been selected";
-        filePath = ":/resources/images/testImage2.jpg";
-        qDebug() << filePath;
-    }
-    else if (arg1 == "Image 3"){
-        filePath = ":/resources/images/testImage3.jpg";
-        qDebug() << filePath;
-    }
-}
-
 void adminEditCatalogue::on_pushButton_clicked()
 {
 
 }
 
+
+void adminEditCatalogue::on_selectedImage_activated(const QString &arg1)
+{
+    qDebug() << "\niam in on_comboBox_activated\n arg1 = " << arg1;
+    if(arg1 == "Image 1"){
+        //qDebug() << "Image 1 has been selected";
+<<<<<<< HEAD:CS106LibraryInformationSystem-janelle/LibraryInformationSystem/admineditcatalogue.cpp
+        filePath = ":/resources/images/testImage.jpg";
+=======
+        filePath = ":/resources/images/50shadesofGray.png";
+>>>>>>> 2f747572dcb20e883f439ba5722f45ddb2727113:LibraryInformationSystem/admineditcatalogue.cpp
+        qDebug() << filePath;
+    }
+    else if(arg1 == "Image 2"){
+        //qDebug() << "Image 2 has been selected";
+<<<<<<< HEAD:CS106LibraryInformationSystem-janelle/LibraryInformationSystem/admineditcatalogue.cpp
+        filePath = ":/resources/images/testImage2.jpg";
+        qDebug() << filePath;
+    }
+    else if (arg1 == "Image 3"){
+        filePath = ":/resources/images/testImage3.jpg";
+=======
+        filePath = ":/resources/images/another50shadesofgray.png";
+        qDebug() << filePath;
+    }
+    else if (arg1 == "Image 3"){
+        filePath = ":/resources/images/50shadesofGray.png";
+>>>>>>> 2f747572dcb20e883f439ba5722f45ddb2727113:LibraryInformationSystem/admineditcatalogue.cpp
+        qDebug() << filePath;
+    }
+}
+
+<<<<<<< HEAD:CS106LibraryInformationSystem-janelle/LibraryInformationSystem/admineditcatalogue.cpp
+void adminEditCatalogue::on_pushButton_clicked()
+{
+
+}
+
+=======
+>>>>>>> 2f747572dcb20e883f439ba5722f45ddb2727113:LibraryInformationSystem/admineditcatalogue.cpp
 //adding books to database
 void adminEditCatalogue::on_confirmBookDetails_clicked()
 {    

@@ -21,9 +21,15 @@ MainWindow::MainWindow(QWidget *parent)
     ui->passwordLineEdit->setText("AdminPass");
 
     hide();
+<<<<<<< HEAD:CS106LibraryInformationSystem-janelle/LibraryInformationSystem/mainwindow.cpp
     admincatalogue = new adminCatalogue(this);
     connect(admincatalogue, SIGNAL(openaadminCatalogue()), this, SLOT(openMainWindow())); //connect(pointerName, SIGNAL(openWindowYouWantToOpen()), this, SLOT(openWindowUrOpeningFrom()));
     admincatalogue->show();
+=======
+    membercatalogue = new memberCatalogue(this);
+    connect(membercatalogue, SIGNAL(openamemberCatalogue()), this, SLOT(openMainWindow())); //connect(pointerName, SIGNAL(openWindowYouWantToOpen()), this, SLOT(openWindowUrOpeningFrom()));
+    membercatalogue->show();
+>>>>>>> 2f747572dcb20e883f439ba5722f45ddb2727113:LibraryInformationSystem/mainwindow.cpp
 }
 
 MainWindow::~MainWindow()
@@ -57,7 +63,6 @@ void MainWindow::on_loginPushButton_clicked()
             connect(membercatalogue, SIGNAL(openmemberCatalogue()), this, SLOT(openMainWindow())); //connect(pointerName, SIGNAL(openWindowYouWantToOpen()), this, SLOT(openWindowUrOpeningFrom()));
             membercatalogue->show();
         }
-
     }else{
         QMessageBox::warning(this,"Failed Log in Attempt","Sorry wrong username or password");
     }
