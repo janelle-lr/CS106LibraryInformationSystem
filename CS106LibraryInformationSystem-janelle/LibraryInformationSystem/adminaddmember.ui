@@ -111,7 +111,7 @@ QMenuBar::item:pressed {
            </widget>
           </item>
           <item row="0" column="1">
-           <widget class="QLineEdit" name="firstName">
+           <widget class="QLineEdit" name="lineEdit_10">
             <property name="minimumSize">
              <size>
               <width>0</width>
@@ -128,7 +128,7 @@ QMenuBar::item:pressed {
            </widget>
           </item>
           <item row="1" column="1">
-           <widget class="QLineEdit" name="lastName">
+           <widget class="QLineEdit" name="lineEdit_11">
             <property name="sizePolicy">
              <sizepolicy hsizetype="Expanding" vsizetype="Fixed">
               <horstretch>0</horstretch>
@@ -151,7 +151,7 @@ QMenuBar::item:pressed {
            </widget>
           </item>
           <item row="2" column="1">
-           <widget class="QDateEdit" name="DOB">
+           <widget class="QDateEdit" name="dateEdit_2">
             <property name="enabled">
              <bool>true</bool>
             </property>
@@ -223,7 +223,7 @@ QMenuBar::item:pressed {
            </widget>
           </item>
           <item row="0" column="1">
-           <widget class="QLineEdit" name="email">
+           <widget class="QLineEdit" name="lineEdit_12">
             <property name="sizePolicy">
              <sizepolicy hsizetype="Preferred" vsizetype="Fixed">
               <horstretch>0</horstretch>
@@ -286,7 +286,7 @@ QMenuBar::item:pressed {
            </widget>
           </item>
           <item row="0" column="1">
-           <widget class="QLineEdit" name="userName">
+           <widget class="QLineEdit" name="lineEdit_3">
             <property name="minimumSize">
              <size>
               <width>0</width>
@@ -303,7 +303,7 @@ QMenuBar::item:pressed {
            </widget>
           </item>
           <item row="1" column="1">
-           <widget class="QLineEdit" name="passWord">
+           <widget class="QLineEdit" name="lineEdit_4">
             <property name="minimumSize">
              <size>
               <width>0</width>
@@ -315,7 +315,7 @@ QMenuBar::item:pressed {
          </layout>
         </item>
         <item>
-         <widget class="QPushButton" name="addNewMember">
+         <widget class="QPushButton" name="pushButton">
           <property name="sizePolicy">
            <sizepolicy hsizetype="Minimum" vsizetype="MinimumExpanding">
             <horstretch>0</horstretch>

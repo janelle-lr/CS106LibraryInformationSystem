@@ -2,9 +2,6 @@
 #define ADMINADDMEMBER_H
 
 #include <QMainWindow>
-#include "systemlibrary.h"
-#include "account.h"
-#include "member.h"
 
 namespace Ui {
 class adminAddMember;
@@ -18,13 +15,8 @@ public:
     explicit adminAddMember(QWidget *parent = nullptr);
     ~adminAddMember();
 
-private slots:
-    void on_addNewMember_clicked();
-
 private:
     Ui::adminAddMember *ui;
-    SystemLibrary systemlibrary;
-
 };
 
 #endif // ADMINADDMEMBER_H

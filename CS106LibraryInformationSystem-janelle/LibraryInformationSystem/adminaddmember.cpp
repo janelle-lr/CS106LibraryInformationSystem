@@ -12,6 +12,7 @@ adminAddMember::~adminAddMember()
 {
     delete ui;
 }
+<<<<<<< HEAD
 
 void adminAddMember::on_addNewMember_clicked()
 {
@@ -31,3 +32,5 @@ void adminAddMember::on_addNewMember_clicked()
 
 }
 
+=======
+>>>>>>> parent of 62a1817 (added member code, shit broke tho)

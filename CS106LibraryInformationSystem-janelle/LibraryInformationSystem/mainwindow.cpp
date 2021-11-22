@@ -42,7 +42,7 @@ void MainWindow::on_loginPushButton_clicked()
     qDebug() << login;
     if(sysLib->checkAccount(username,password)){
         QMessageBox::information(this,"Thank You for logging in", "User, " + username + " has logged in.");
-        QStringRef subString(&username, 0,3); //aye bruh this bitch brOOOKen !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+        QStringRef subString(&username, 0,3);
         hide();
         //qDebug() << subString;
         if(subString == "210"){
