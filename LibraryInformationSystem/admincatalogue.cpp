@@ -135,9 +135,11 @@ void adminCatalogue::editButtonClicked(){
         }
     }
     QMessageBox::information(this,"Button",QString::number(num));
-    admineditbook = new adminEditBook();
+    admineditbook = new adminEditBook(this);
+    connect(admineditbook, SIGNAL(showadminEditBook()), this, SLOT(show()));
     admineditbook->show();
     admineditbook->setNum(num);
+    //hide();
 }
 
 void adminCatalogue::deleteButtonClicked(){

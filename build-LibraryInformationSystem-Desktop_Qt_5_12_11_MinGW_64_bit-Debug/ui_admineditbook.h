@@ -19,7 +19,6 @@
 #include <QtWidgets/QMenuBar>
 #include <QtWidgets/QPushButton>
 #include <QtWidgets/QScrollArea>
-#include <QtWidgets/QStatusBar>
 #include <QtWidgets/QWidget>
 
 QT_BEGIN_NAMESPACE
@@ -36,39 +35,54 @@ public:
     QPushButton *cancelPushButton_2;
     QPushButton *savePushButton_2;
     QLabel *availabilityLabel_2;
-    QFrame *line_2;
     QLabel *publisherLabel_2;
     QLabel *descriptionLabel;
-    QLabel *logoImage_2;
     QLabel *genreLabel_2;
     QLineEdit *titleLineEdit_2;
     QLineEdit *authorLineEdit_2;
     QLineEdit *publisherLineEdit_2;
     QLineEdit *genreLineEdit_2;
     QLineEdit *descriptionLineEdit;
+    QPushButton *savePushButton_3;
     QMenuBar *menubar;
-    QStatusBar *statusbar;
 
     void setupUi(QMainWindow *adminEditBook)
     {
         if (adminEditBook->objectName().isEmpty())
             adminEditBook->setObjectName(QString::fromUtf8("adminEditBook"));
         adminEditBook->resize(1135, 600);
+        adminEditBook->setStyleSheet(QString::fromUtf8("QMainWindow {\n"
+" 	background: #FFE5D0;\n"
+"}"));
         centralwidget = new QWidget(adminEditBook);
         centralwidget->setObjectName(QString::fromUtf8("centralwidget"));
+        centralwidget->setStyleSheet(QString::fromUtf8("QWidget {\n"
+"	background: #FFE5D0;\n"
+"	font-family: Montserrat;\n"
+"}\n"
+"\n"
+"QPushButton {\n"
+"border-radius: 15px; \n"
+"font-size: 13px;\n"
+"}"));
         scrollArea = new QScrollArea(centralwidget);
         scrollArea->setObjectName(QString::fromUtf8("scrollArea"));
-        scrollArea->setGeometry(QRect(20, 20, 1101, 531));
-        scrollArea->setStyleSheet(QString::fromUtf8(""));
+        scrollArea->setGeometry(QRect(0, 0, 1131, 511));
+        scrollArea->setStyleSheet(QString::fromUtf8("QScrollArea {\n"
+"	border: none;\n"
+"}"));
         scrollArea->setWidgetResizable(true);
         scrollAreaWidgetContents_2 = new QWidget();
         scrollAreaWidgetContents_2->setObjectName(QString::fromUtf8("scrollAreaWidgetContents_2"));
-        scrollAreaWidgetContents_2->setGeometry(QRect(0, 0, 2246, 918));
+        scrollAreaWidgetContents_2->setGeometry(QRect(0, 0, 1117, 918));
         gridLayout = new QGridLayout(scrollAreaWidgetContents_2);
         gridLayout->setObjectName(QString::fromUtf8("gridLayout"));
         frame = new QFrame(scrollAreaWidgetContents_2);
         frame->setObjectName(QString::fromUtf8("frame"));
         frame->setMinimumSize(QSize(0, 900));
+        frame->setStyleSheet(QString::fromUtf8("QFrame {\n"
+"	border: none;\n"
+"}"));
         frame->setFrameShape(QFrame::StyledPanel);
         frame->setFrameShadow(QFrame::Raised);
         bookImage_2 = new QLabel(frame);
@@ -121,11 +135,6 @@ public:
 "font: 16px \"Montserrat Medium\";\n"
 "}"));
         availabilityLabel_2->setAlignment(Qt::AlignLeading|Qt::AlignLeft|Qt::AlignVCenter);
-        line_2 = new QFrame(frame);
-        line_2->setObjectName(QString::fromUtf8("line_2"));
-        line_2->setGeometry(QRect(40, 340, 941, 16));
-        line_2->setFrameShape(QFrame::HLine);
-        line_2->setFrameShadow(QFrame::Sunken);
         publisherLabel_2 = new QLabel(frame);
         publisherLabel_2->setObjectName(QString::fromUtf8("publisherLabel_2"));
         publisherLabel_2->setGeometry(QRect(40, 370, 331, 21));
@@ -142,10 +151,6 @@ public:
 "font: 16px \"Montserrat Medium\";\n"
 "}"));
         descriptionLabel->setAlignment(Qt::AlignLeading|Qt::AlignLeft|Qt::AlignVCenter);
-        logoImage_2 = new QLabel(frame);
-        logoImage_2->setObjectName(QString::fromUtf8("logoImage_2"));
-        logoImage_2->setGeometry(QRect(20, 10, 441, 61));
-        logoImage_2->setPixmap(QPixmap(QString::fromUtf8(":/resources/images/bblLogo.png")));
         genreLabel_2 = new QLabel(frame);
         genreLabel_2->setObjectName(QString::fromUtf8("genreLabel_2"));
         genreLabel_2->setGeometry(QRect(40, 460, 331, 21));
@@ -178,7 +183,7 @@ public:
 "}"));
         publisherLineEdit_2 = new QLineEdit(frame);
         publisherLineEdit_2->setObjectName(QString::fromUtf8("publisherLineEdit_2"));
-        publisherLineEdit_2->setGeometry(QRect(40, 400, 941, 41));
+        publisherLineEdit_2->setGeometry(QRect(40, 400, 941, 31));
         publisherLineEdit_2->setStyleSheet(QString::fromUtf8("QLineEdit {\n"
 "border: 1px solid;\n"
 "border-radius: 15px;\n"
@@ -190,7 +195,7 @@ public:
         publisherLineEdit_2->setAlignment(Qt::AlignLeading|Qt::AlignLeft|Qt::AlignTop);
         genreLineEdit_2 = new QLineEdit(frame);
         genreLineEdit_2->setObjectName(QString::fromUtf8("genreLineEdit_2"));
-        genreLineEdit_2->setGeometry(QRect(40, 490, 941, 41));
+        genreLineEdit_2->setGeometry(QRect(40, 490, 941, 31));
         genreLineEdit_2->setStyleSheet(QString::fromUtf8("QLineEdit {\n"
 "border: 1px solid;\n"
 "border-radius: 15px;\n"
@@ -202,7 +207,7 @@ public:
         genreLineEdit_2->setAlignment(Qt::AlignLeading|Qt::AlignLeft|Qt::AlignTop);
         descriptionLineEdit = new QLineEdit(frame);
         descriptionLineEdit->setObjectName(QString::fromUtf8("descriptionLineEdit"));
-        descriptionLineEdit->setGeometry(QRect(40, 590, 941, 81));
+        descriptionLineEdit->setGeometry(QRect(40, 590, 941, 121));
         descriptionLineEdit->setStyleSheet(QString::fromUtf8("QLineEdit {\n"
 "border: 1px solid;\n"
 "border-radius: 15px;\n"
@@ -212,6 +217,13 @@ public:
 "font-size: 13px;\n"
 "}"));
         descriptionLineEdit->setAlignment(Qt::AlignLeading|Qt::AlignLeft|Qt::AlignTop);
+        savePushButton_3 = new QPushButton(frame);
+        savePushButton_3->setObjectName(QString::fromUtf8("savePushButton_3"));
+        savePushButton_3->setGeometry(QRect(40, 340, 941, 2));
+        savePushButton_3->setStyleSheet(QString::fromUtf8("QPushButton {\n"
+"background-color: #FF886C;\n"
+"border-radius: 1px;\n"
+"}"));
 
         gridLayout->addWidget(frame, 0, 0, 1, 1);
 
@@ -221,9 +233,6 @@ public:
         menubar->setObjectName(QString::fromUtf8("menubar"));
         menubar->setGeometry(QRect(0, 0, 1135, 21));
         adminEditBook->setMenuBar(menubar);
-        statusbar = new QStatusBar(adminEditBook);
-        statusbar->setObjectName(QString::fromUtf8("statusbar"));
-        adminEditBook->setStatusBar(statusbar);
 
         retranslateUi(adminEditBook);
 
@@ -239,13 +248,13 @@ public:
         availabilityLabel_2->setText(QApplication::translate("adminEditBook", "Availability", nullptr));
         publisherLabel_2->setText(QApplication::translate("adminEditBook", "Publisher", nullptr));
         descriptionLabel->setText(QApplication::translate("adminEditBook", "Description", nullptr));
-        logoImage_2->setText(QString());
         genreLabel_2->setText(QApplication::translate("adminEditBook", "Genre(s)", nullptr));
         titleLineEdit_2->setText(QApplication::translate("adminEditBook", "Book Title", nullptr));
         authorLineEdit_2->setText(QApplication::translate("adminEditBook", "Book Author", nullptr));
         publisherLineEdit_2->setText(QString());
         genreLineEdit_2->setText(QString());
         descriptionLineEdit->setText(QString());
+        savePushButton_3->setText(QString());
     } // retranslateUi
 
 };

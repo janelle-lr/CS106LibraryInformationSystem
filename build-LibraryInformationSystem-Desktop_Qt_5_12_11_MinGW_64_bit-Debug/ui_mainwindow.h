@@ -43,9 +43,9 @@ public:
     {
         if (MainWindow->objectName().isEmpty())
             MainWindow->setObjectName(QString::fromUtf8("MainWindow"));
-        MainWindow->resize(1440, 953);
-        MainWindow->setMinimumSize(QSize(1440, 953));
-        MainWindow->setMaximumSize(QSize(1440, 953));
+        MainWindow->resize(1080, 640);
+        MainWindow->setMinimumSize(QSize(1080, 640));
+        MainWindow->setMaximumSize(QSize(1080, 640));
         centralwidget = new QWidget(MainWindow);
         centralwidget->setObjectName(QString::fromUtf8("centralwidget"));
         centralwidget->setStyleSheet(QString::fromUtf8("QWidget {\n"
@@ -135,7 +135,7 @@ public:
         loginLabel->setAlignment(Qt::AlignCenter);
         checkBox = new QCheckBox(groupBox);
         checkBox->setObjectName(QString::fromUtf8("checkBox"));
-        checkBox->setGeometry(QRect(30, 180, 111, 17));
+        checkBox->setGeometry(QRect(30, 180, 121, 17));
         logoImage = new QLabel(centralwidget);
         logoImage->setObjectName(QString::fromUtf8("logoImage"));
         logoImage->setGeometry(QRect(300, 110, 441, 81));
@@ -143,7 +143,7 @@ public:
         MainWindow->setCentralWidget(centralwidget);
         menubar = new QMenuBar(MainWindow);
         menubar->setObjectName(QString::fromUtf8("menubar"));
-        menubar->setGeometry(QRect(0, 0, 1440, 21));
+        menubar->setGeometry(QRect(0, 0, 1080, 21));
         MainWindow->setMenuBar(menubar);
         statusbar = new QStatusBar(MainWindow);
         statusbar->setObjectName(QString::fromUtf8("statusbar"));

@@ -1,5 +1,6 @@
 debug/account.o
 debug/admin.o
+debug/adminaddmember.o
 debug/admincatalogue.o
 debug/admineditbook.o
 debug/admineditcatalogue.o
@@ -17,6 +18,7 @@ debug/preorderbook.o
 debug/publisher.o
 debug/systemlibrary.o
 debug/qrc_resources.o
+debug/moc_adminaddmember.o
 debug/moc_admincatalogue.o
 debug/moc_admineditbook.o
 debug/moc_admineditcatalogue.o

@@ -10,7 +10,6 @@
 #define UI_ADMINEDITCATALOGUE_H
 
 #include <QtCore/QVariant>
-#include <QtWidgets/QAction>
 #include <QtWidgets/QApplication>
 #include <QtWidgets/QComboBox>
 #include <QtWidgets/QFormLayout>
@@ -18,10 +17,7 @@
 #include <QtWidgets/QLabel>
 #include <QtWidgets/QLineEdit>
 #include <QtWidgets/QMainWindow>
-#include <QtWidgets/QMenu>
-#include <QtWidgets/QMenuBar>
 #include <QtWidgets/QPushButton>
-#include <QtWidgets/QStatusBar>
 #include <QtWidgets/QTabWidget>
 #include <QtWidgets/QVBoxLayout>
 #include <QtWidgets/QWidget>
@@ -59,18 +55,14 @@ public:
     QWidget *gridLayoutWidget;
     QGridLayout *gridLayout;
     QWidget *tab_2;
-    QMenuBar *menubar;
-    QMenu *menuAccount;
-    QMenu *menuCatalogue;
-    QStatusBar *statusbar;
 
     void setupUi(QMainWindow *adminEditCatalogue)
     {
         if (adminEditCatalogue->objectName().isEmpty())
             adminEditCatalogue->setObjectName(QString::fromUtf8("adminEditCatalogue"));
-        adminEditCatalogue->resize(1052, 634);
-        adminEditCatalogue->setMinimumSize(QSize(1052, 634));
-        adminEditCatalogue->setMaximumSize(QSize(1052, 634));
+        adminEditCatalogue->resize(1080, 640);
+        adminEditCatalogue->setMinimumSize(QSize(1080, 640));
+        adminEditCatalogue->setMaximumSize(QSize(1080, 640));
         adminEditCatalogue->setStyleSheet(QString::fromUtf8("QMenuBar {\n"
 "    background-color: qlineargradient(x1:0, y1:0, x2:0, y2:1,\n"
 "                                      stop:0 lightgray, stop:1 darkgray);\n"
@@ -299,20 +291,6 @@ public:
         tab_2->setObjectName(QString::fromUtf8("tab_2"));
         tabWidget->addTab(tab_2, QString());
         adminEditCatalogue->setCentralWidget(centralwidget);
-        menubar = new QMenuBar(adminEditCatalogue);
-        menubar->setObjectName(QString::fromUtf8("menubar"));
-        menubar->setGeometry(QRect(0, 0, 1052, 18));
-        menuAccount = new QMenu(menubar);
-        menuAccount->setObjectName(QString::fromUtf8("menuAccount"));
-        menuCatalogue = new QMenu(menubar);
-        menuCatalogue->setObjectName(QString::fromUtf8("menuCatalogue"));
-        adminEditCatalogue->setMenuBar(menubar);
-        statusbar = new QStatusBar(adminEditCatalogue);
-        statusbar->setObjectName(QString::fromUtf8("statusbar"));
-        adminEditCatalogue->setStatusBar(statusbar);
-
-        menubar->addAction(menuAccount->menuAction());
-        menubar->addAction(menuCatalogue->menuAction());
 
         retranslateUi(adminEditCatalogue);
 
@@ -345,8 +323,6 @@ public:
         confirmBookDetails->setText(QApplication::translate("adminEditCatalogue", "Add Book", nullptr));
         tabWidget->setTabText(tabWidget->indexOf(tab), QApplication::translate("adminEditCatalogue", "Add Books", nullptr));
         tabWidget->setTabText(tabWidget->indexOf(tab_2), QApplication::translate("adminEditCatalogue", "Book Catalogue", nullptr));
-        menuAccount->setTitle(QApplication::translate("adminEditCatalogue", "Account", nullptr));
-        menuCatalogue->setTitle(QApplication::translate("adminEditCatalogue", "Catalogue", nullptr));
     } // retranslateUi
 
 };
