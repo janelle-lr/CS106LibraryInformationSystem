@@ -1,4 +1,5 @@
 #include "member.h"
+#include <QDateEdit>
 
 Member::Member()
 {
@@ -36,6 +37,7 @@ void Member::setName(QString name){
 }
 void Member::setAge(int age){
     this->age = age;
+    // this sets the day, month, and year.
 }
 void Member::setDob(QString dob){
     this->dob = dob;

@@ -15,7 +15,7 @@ adminAddMember::~adminAddMember()
 
 void adminAddMember::on_addNewMember_clicked()
 {
-    Account newAcc;
+    //Account newAcc;
     Member newMember;
 
     QString id = systemlibrary.generateID(2);
@@ -23,7 +23,7 @@ void adminAddMember::on_addNewMember_clicked()
 
     newMember.setMemberID(id);
     newMember.setAccId(accID);
-    newMember.setName(ui->firstName->text());
+    newMember.setName(ui->firstName->text() + ui->lastName->text());
     //newMember.setAge(ui->DOB->date());
     newMember.setEmail(ui->email->text());
     newMember.setPassword(ui->passWord->text());
