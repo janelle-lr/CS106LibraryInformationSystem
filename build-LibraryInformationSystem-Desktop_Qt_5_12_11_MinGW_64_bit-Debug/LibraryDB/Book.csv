@@ -1,13 +1,13 @@
 BookID,Book Name,Genre,InStock,Book Copies,Available Status,Book Image Filepath,Book Description
-310186NR,CCCCCCCCC,CCCCCCCCC,0,0,1,,CCCCCCCCC
-310155BM,ssssssssss,ssssssssss,2,2,1,,ssssssssss
-310197BK,ssssssssssGGGGGGGGGG,ssssssssssGGGGGGGGGG,0,0,1,,ssssssssssGGGGGGGGGG
-310159VH,BBBB,BBBB,0,0,1,,BBBB
-310130SY,EEEEEEEEEEEEEEE,EEEEEEEEEEEEEEE,2,2,1,,EEEEEEEEEEEEEEE
-310136MX,ahhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhh,ahhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhh,1,1,1,:/resources/images/testImage.jpg,ahhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhh
-310186MG,The Holy Bible,Religion,1,1,1,:/resources/images/testImage2.jpg,i <3 jesus
-310126ZZ,jjjjjjjjjjjjjjjjjjjjjjjjjjjj,jjjjjjjjjjjjjjjjjjjjjjjjjjjj,2,2,1,:/resources/images/50shadesofGray.png,jjjjjjjjjjjjjjjjjjjjjjjjjjjj
-310175TU,kkkkkkkkkkkkkk,kkkkkkkkkkkkkk,1,1,1,:/resources/images/another50shadesofGray.png,kkkkkkkkkkkkkk
-310117KS,llllllllllllllllllllll,llllllllllllllllllllll,1,1,1,:/resources/images/50shadesofGray.png,llllllllllllllllllllll
-310156ZO,ooooooooooooooooo,ooooooooooooooooo,2,2,1,:/resources/images/another50shadesofGray.png,ooooooooooooooooo
-310195OS,rrrrrrrrrrrrrrrrrrr,rrrrr,1,1,1,:/resources/images/50shadesofGray.png,rrrrrrrrrrrrrrrrrrr
+310186NR,LMAO,CCCCCCCCC,0,0,1,:/resources/images/gold cats.png,CCCCCCCCC
+310155BM,Hunger Games,ssssssssss,2,2,1,:/resources/images/gold cats.png,ssssssssss
+310197BK,the hungey caterpillar,ssssssssssGGGGGGGGGG,0,0,1,:/resources/images/gold cats.png,ssssssssssGGGGGGGGGG
+310159VH,Twilght,BBBB,0,0,1,:/resources/images/gold cats.png,BBBB
+310130SY,Breaking dawn,EEEEEEEEEEEEEEE,2,2,1,:/resources/images/gold cats.png,EEEEEEEEEEEEEEE
+310136MX,Eclipse,ahhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhh,1,1,1,:/resources/images/gold cats.png,ahhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhh
+310186MG,The Holy Bible,Religion,1,1,1,:/resources/images/gold cats.png,i <3 jesus
+310126ZZ,Clown hours,jjjjjjjjjjjjjjjjjjjjjjjjjjjj,2,2,1,:/resources/images/gold cats.png,jjjjjjjjjjjjjjjjjjjjjjjjjjjj
+310175TU,Crying hours,kkkkkkkkkkkkkk,1,1,1,:/resources/images/gold cats.png,kkkkkkkkkkkkkk
+310117KS,Dying hours,llllllllllllllllllllll,1,1,1,:/resources/images/gold cats.png,llllllllllllllllllllll
+310156ZO,This is so sad,ooooooooooooooooo,2,2,1,:/resources/images/gold cats.png,ooooooooooooooooo
+310195OS,Boafoonery,rrrrr,1,1,1,:/resources/images/gold cats.png,rrrrrrrrrrrrrrrrrrr

@@ -37,7 +37,7 @@ private:
     void addRecords();
     QPushButton* button;
     QPushButton* button2;
-    SystemLibrary systemlibrary;
+    SystemLibrary* systemlibrary;
     adminEditBook* admineditbook;
 };
 

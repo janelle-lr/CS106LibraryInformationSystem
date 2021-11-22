@@ -21,9 +21,9 @@ MainWindow::MainWindow(QWidget *parent)
     ui->passwordLineEdit->setText("AdminPass");
 
     hide();
-    admincatalogue = new adminCatalogue(this);
-    connect(admincatalogue, SIGNAL(openaadminCatalogue()), this, SLOT(openMainWindow())); //connect(pointerName, SIGNAL(openWindowYouWantToOpen()), this, SLOT(openWindowUrOpeningFrom()));
-    admincatalogue->show();
+    membercatalogue = new memberCatalogue(this);
+    connect(membercatalogue, SIGNAL(openamemberCatalogue()), this, SLOT(openMainWindow())); //connect(pointerName, SIGNAL(openWindowYouWantToOpen()), this, SLOT(openWindowUrOpeningFrom()));
+    membercatalogue->show();
 }
 
 MainWindow::~MainWindow()
@@ -57,7 +57,6 @@ void MainWindow::on_loginPushButton_clicked()
             connect(membercatalogue, SIGNAL(openmemberCatalogue()), this, SLOT(openMainWindow())); //connect(pointerName, SIGNAL(openWindowYouWantToOpen()), this, SLOT(openWindowUrOpeningFrom()));
             membercatalogue->show();
         }
-
     }else{
         QMessageBox::warning(this,"Failed Log in Attempt","Sorry wrong username or password");
     }
