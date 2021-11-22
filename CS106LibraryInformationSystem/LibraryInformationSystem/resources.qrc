@@ -1,0 +1,14 @@
+<RCC>
+    <qresource prefix="/resources">
+        <file>images/bblLogo.png</file>
+        <file>images/50shadesofGray.png</file>
+        <file>images/another50shadesofgray.png</file>
+        <file>images/bloodCottage.png</file>
+        <file>images/duneBookCover.png</file>
+        <file>images/gold cats.png</file>
+        <file>images/pomegranates.png</file>
+        <file>images/testImage.jpg</file>
+        <file>images/testImage2.jpg</file>
+        <file>images/testImage3.jfif</file>
+    </qresource>
+</RCC>
