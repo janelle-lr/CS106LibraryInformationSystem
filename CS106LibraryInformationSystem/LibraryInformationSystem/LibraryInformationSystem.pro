@@ -11,6 +11,7 @@ CONFIG += c++11
 SOURCES += \
     account.cpp \
     admin.cpp \
+    adminaddmember.cpp \
     admincatalogue.cpp \
     admineditbook.cpp \
     admineditcatalogue.cpp \
@@ -31,6 +32,7 @@ SOURCES += \
 HEADERS += \
     account.h \
     admin.h \
+    adminaddmember.h \
     admincatalogue.h \
     admineditbook.h \
     admineditcatalogue.h \
@@ -48,6 +50,7 @@ HEADERS += \
     systemlibrary.h
 
 FORMS += \
+    adminaddmember.ui \
     admincatalogue.ui \
     admineditbook.ui \
     admineditcatalogue.ui \

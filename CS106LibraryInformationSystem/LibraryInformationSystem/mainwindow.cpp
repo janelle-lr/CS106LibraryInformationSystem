@@ -21,9 +21,9 @@ MainWindow::MainWindow(QWidget *parent)
     ui->passwordLineEdit->setText("AdminPass");
 
     hide();
-    membercatalogue = new memberCatalogue(this);
-    connect(membercatalogue, SIGNAL(openamemberCatalogue()), this, SLOT(openMainWindow())); //connect(pointerName, SIGNAL(openWindowYouWantToOpen()), this, SLOT(openWindowUrOpeningFrom()));
-    membercatalogue->show();
+    adminaddmember = new adminAddMember(this);
+    connect(adminaddmember, SIGNAL(openadminAddMember()), this, SLOT(openMainWindow())); //connect(pointerName, SIGNAL(openWindowYouWantToOpen()), this, SLOT(openWindowUrOpeningFrom()));
+    adminaddmember->show();
 }
 
 MainWindow::~MainWindow()
