@@ -11,8 +11,21 @@ adminCatalogue::adminCatalogue(QWidget *parent) :
     ui->setupUi(this);
 
     //for logo in UI
-    QPixmap logo(":/resources/images/bblLogo.png");
-    ui->logoImage->setPixmap(logo.scaled(350, 74, Qt::KeepAspectRatio));
+    QPixmap logo(":/resources/images/miniLogo.png");
+    ui->logoImage->setPixmap(logo.scaled(300, 75, Qt::KeepAspectRatio));
+
+    //for icons in UI
+    QPixmap img(":/resources/images/catalogue.png");
+    ui->catalogueIcon->setPixmap(img.scaled(40, 40, Qt::KeepAspectRatio));
+
+    QPixmap img2(":/resources/images/viewMembers.png");
+    ui->memberIcon->setPixmap(img2.scaled(40, 40, Qt::KeepAspectRatio));
+
+    QPixmap img3(":/resources/images/account.png");
+    ui->accountIcon->setPixmap(img3.scaled(40, 40, Qt::KeepAspectRatio));
+
+    QPixmap img4(":/resources/images/uis_signout.png");
+    ui->signoutIcon->setPixmap(img4.scaled(40, 40, Qt::KeepAspectRatio));
 
     addRecords();
 }
@@ -38,7 +51,7 @@ void adminCatalogue::createWidgets(int row, int col, QString title, QString auth
     //Styling buttons and labels
     //label->setStyleSheet("QLabel{background: white;}");
     label2->setStyleSheet("QLabel{font-size: 18px; font-weight: 500; margin-left: 5px;}");
-    label3->setStyleSheet("QLabel{font-size: 15px; margin-bottom: 65px; margin-left: 5px;}");
+    label3->setStyleSheet("QLabel{font-size: 15px; margin-bottom: 55px; margin-left: 5px;}");
     button->setStyleSheet("QPushButton{max-width: 105px; background-color: #E78A6B; color:  #fff; font-weight: 500;}");
     //button->setMaximumWidth(160);
     //button2->setMaximumWidth(140);

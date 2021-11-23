@@ -44,22 +44,23 @@ QString SystemLibrary::generateID(int id){
 
     return uniqueID;
 }
+
 //This function calculates the age of the person
-int SystemLibrary::calculateAge(int day,int month,int year){
+int SystemLibrary::calculateAge(QDate date){
     QDate currentDate = QDate::currentDate();
     //year, month, day
-    QDate birthDay = QDate(year,month,day);
+    //QDate birthDay = QDate(year,month,day);
     //QDate daysBetween
-    int age = currentDate.year() - birthDay.year();
+    int age = currentDate.year() - date.year();
 
     return age;
 }
 
 //This function checks if date is valid
-bool SystemLibrary::isDateValid(int day,int month,int year){
+bool SystemLibrary::isDateValid(QDate date){
     bool isValid = false;
     //year, month, day
-    QDate date = QDate(year,month,day);
+    //QDate date = QDate(year,month,day);
     //QDate daysBetween
     if(date.isValid())
         isValid = true;
