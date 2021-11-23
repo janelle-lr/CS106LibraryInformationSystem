@@ -151,10 +151,6 @@ void memberCatalogue::issueButtonClicked(){
             break;
         }
     }
-
-
-
-
     //admineditbook = new adminEditBook();
     //admineditbook->show();
     //admineditbook->setNum(num);
