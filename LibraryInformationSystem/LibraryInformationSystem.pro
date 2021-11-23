@@ -15,6 +15,8 @@ SOURCES += \
     admincatalogue.cpp \
     admineditbook.cpp \
     admineditcatalogue.cpp \
+    adminmembercatalogue.cpp \
+    adminmemberedit.cpp \
     author.cpp \
     book.cpp \
     bookdetails.cpp \
@@ -36,6 +38,8 @@ HEADERS += \
     admincatalogue.h \
     admineditbook.h \
     admineditcatalogue.h \
+    adminmembercatalogue.h \
+    adminmemberedit.h \
     author.h \
     book.h \
     bookdetails.h \
@@ -54,6 +58,8 @@ FORMS += \
     admincatalogue.ui \
     admineditbook.ui \
     admineditcatalogue.ui \
+    adminmembercatalogue.ui \
+    adminmemberedit.ui \
     bookdetails.ui \
     mainwindow.ui \
     memberaccountview.ui \

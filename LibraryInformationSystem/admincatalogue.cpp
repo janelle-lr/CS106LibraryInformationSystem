@@ -38,7 +38,7 @@ void adminCatalogue::createWidgets(int row, int col, QString title, QString auth
     //Styling buttons and labels
     //label->setStyleSheet("QLabel{background: white;}");
     label2->setStyleSheet("QLabel{font-size: 18px; font-weight: 500; margin-left: 5px;}");
-    label3->setStyleSheet("QLabel{font-size: 15px; margin-bottom: 65px; margin-left: 5px;}");
+    label3->setStyleSheet("QLabel{font-size: 15px; margin-bottom: 55px; margin-left: 5px;}");
     button->setStyleSheet("QPushButton{max-width: 105px; background-color: #E78A6B; color:  #fff; font-weight: 500;}");
     //button->setMaximumWidth(160);
     //button2->setMaximumWidth(140);

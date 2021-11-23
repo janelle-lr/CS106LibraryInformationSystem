@@ -17,13 +17,13 @@ MainWindow::MainWindow(QWidget *parent)
     QPixmap logo(":/resources/images/bblLogo.png");
     ui->logoImage->setPixmap(logo.scaled(450, 74, Qt::KeepAspectRatio));
 
-    ui->usernameLineEdit->setText("210Admin");
-    ui->passwordLineEdit->setText("AdminPass");
+    ui->usernameLineEdit->setText("220164VZ");
+    ui->passwordLineEdit->setText("kimkardashian");
 
     hide();
-    adminaddmember = new adminAddMember(this);
-    connect(adminaddmember, SIGNAL(openadminAddMember()), this, SLOT(openMainWindow())); //connect(pointerName, SIGNAL(openWindowYouWantToOpen()), this, SLOT(openWindowUrOpeningFrom()));
-    adminaddmember->show();
+    admincatalogue = new adminCatalogue(this);
+    connect(admincatalogue, SIGNAL(openadminCatalogue()), this, SLOT(openMainWindow())); //connect(pointerName, SIGNAL(openWindowYouWantToOpen()), this, SLOT(openWindowUrOpeningFrom()));
+    admincatalogue->show();
 }
 
 MainWindow::~MainWindow()
@@ -41,21 +41,21 @@ void MainWindow::on_loginPushButton_clicked()
     bool login = sysLib->checkAccount(password,username);
     qDebug() << login;
     if(sysLib->checkAccount(username,password)){
-        QMessageBox::information(this,"Thank You for logging in", "User, " + username + " has logged in.");
-        QStringRef subString(&username, 0,3);
+        QMessageBox::information(this,"Thank You for logging in", "User, " + username + " has logged in.");    
         hide();
         //qDebug() << subString;
-        if(subString == "210"){
+        if(username.left(3) == "210"){
             //qDebug() << "admin has logged in";
             admineditcatalogue = new adminEditCatalogue(this);
             connect(admineditcatalogue, SIGNAL(openadminEditCatalogue()), this, SLOT(openMainWindow())); //connect(pointerName, SIGNAL(openWindowYouWantToOpen()), this, SLOT(openWindowUrOpeningFrom()));
             admineditcatalogue->show();
 
-        }else if(subString == "220"){
+        }else if(username.left(3) == "220"){
             qDebug() << "member has logged in";
             membercatalogue = new memberCatalogue(this);
             connect(membercatalogue, SIGNAL(openmemberCatalogue()), this, SLOT(openMainWindow())); //connect(pointerName, SIGNAL(openWindowYouWantToOpen()), this, SLOT(openWindowUrOpeningFrom()));
             membercatalogue->show();
+
         }
     }else{
         QMessageBox::warning(this,"Failed Log in Attempt","Sorry wrong username or password");

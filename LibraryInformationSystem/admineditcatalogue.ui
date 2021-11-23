@@ -435,17 +435,6 @@ background-color: rgb(196, 116, 90);
        <string>Add Book</string>
       </property>
      </widget>
-     <widget class="QWidget" name="gridLayoutWidget">
-      <property name="geometry">
-       <rect>
-        <x>730</x>
-        <y>390</y>
-        <width>160</width>
-        <height>80</height>
-       </rect>
-      </property>
-      <layout class="QGridLayout" name="gridLayout"/>
-     </widget>
     </widget>
     <widget class="QWidget" name="tab_2">
      <attribute name="title">
