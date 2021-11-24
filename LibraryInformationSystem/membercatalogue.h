@@ -10,7 +10,7 @@
 #include <QGroupBox>
 #include "systemlibrary.h"
 #include "memberaccountview.h"
-
+#include "duedatenotificationwindow.h"
 namespace Ui {
 class memberCatalogue;
 }

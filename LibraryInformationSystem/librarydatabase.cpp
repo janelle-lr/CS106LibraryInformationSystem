@@ -156,6 +156,22 @@ void LibraryDatabase::createTestAccount(){
     accOut << "AccountID" << "," << "User ID" << "," << "Account Type"  << "," << "Password" << "," << "Date Created" << "," << "Account Status" << "\n";
     accOut << "230069BB" << "," << "210Admin" << "," << "@Admin" << "," << "AdminPass" << "," << date.toString() << "," << 1 << "\n";
     accOut << "230020SJ" << "," << "220Member" << "," << "@Member" << "," << "MemberPass" << "," << date.toString() << "," << 1 << "\n";
+
+    accFile.flush();
+    accFile.close();
+
+    QFile memFile("LibraryDB/Member.csv");
+    //if the file is not open
+    if(!memFile.open(QFile:: WriteOnly | QFile::Text)){
+       qDebug() << "Error cant open file";
+    }
+    //reference to your file
+    QTextStream memOut(&memFile);
+    memOut << "MemberID" << "," << "Name" << "," << "Age" << "," << "Date of Birth" << "," << "Email" << "," << "Mobile number" << "\n";
+    memOut << "TestMember" << "," << "Giga Chad" << "," << "25" << "," << "20/10/1996" << "," << "@gmail.com" << "," << "0223038032" << "\n";
+
+    memFile.flush();
+    memFile.close();
 }
 //This function updates the Admin details
 void LibraryDatabase::updateAdminDetails(Admin admin){
@@ -209,7 +225,7 @@ Admin LibraryDatabase::getAdminDeatils(){
         while(!in.atEnd()){
             line = file.readLine().replace("\n","");
             list.append(line.split(","));
-            if(list[0]!="AccountID" && list[0] != ""){
+            if(list[2]=="@Admin"){
                 admin.setAccId(list[0]);
                 admin.setAdminId(list[1]);
                 admin.setAccType(list[2]);
@@ -412,6 +428,8 @@ QVector<Member> LibraryDatabase::getAllMemberDetails(){
 }
 //this function will update database with all the updated details of all members (Accounts.csv and Member.csv will be update)
 void LibraryDatabase::updateAllMemberDetails(QVector<Member>member){
+    Admin admin;
+    admin = getAdminDeatils();
     //update Member database
     QFile file("LibraryDB/Member.csv");
     //if the file is not open
@@ -435,8 +453,6 @@ void LibraryDatabase::updateAllMemberDetails(QVector<Member>member){
     }
     //reference to your file
     QTextStream accOut(&accFile);
-    Admin admin;
-    admin = getAdminDeatils();
     accOut << "AccountID" << "," << "User ID" << "," << "Account Type"  << "," << "Password" << "," << "Date Created" << "," << "Account Status" << "\n";
     accOut << admin.getAccId() << "," << admin.getAdminID() << "," << admin.getAccType() << "," << admin.getPassword() << "," << admin.getDateCreated() << "," << admin.getAccStatus() << "\n";
     for(int i = 0; i < member.size(); i++){
@@ -717,11 +733,14 @@ void LibraryDatabase::preOrderBook(PreOrderBook preOrder){
     QDate preOrderDate = QDate(2077,12,25);//year, month, day
     QDate compareDate;
     for(int i = 0; i < bookItem.size(); i++){
-        QString loanedDate = bookItem[i].getExpiryDate();
-        QStringList date =(loanedDate.split("/"));
-        compareDate = QDate(date[2].toInt(),date[1].toInt(),date[0].toInt());
-        if(preOrderDate > compareDate)
-            preOrderDate = compareDate;
+        if(preOrder.getPreBook_BookID() == bookItem[i].getBookItem_BookID()){
+            QString loanedDate = bookItem[i].getExpiryDate();
+            QStringList date =(loanedDate.split("/"));
+            compareDate = QDate(date[2].toInt(),date[1].toInt(),date[0].toInt());
+            if(preOrderDate > compareDate)
+                preOrderDate = compareDate;
+        }
+
     }
 
     //"PreBookID" << "," << "MemberID" << "," << "BookID" << "," << "Book Date" << "," << "isLoaned" << "\n";
@@ -992,4 +1011,24 @@ bool LibraryDatabase::isPreBook(QString memberID, QString bookID){
         }
     }
     return isPreBook;
+}
+//This function returns books that are near due date
+QStringList LibraryDatabase::getNearbyDueDateBooks(){
+    QStringList nearbyDueDateBook;
+    QStringList bookedList = getAllMemberLoanedBooks("220189JU");
+    QDate date(QDate::currentDate());
+    QVector<BookItem> bookitem = getAllBookItem();
+    for(int i = 0; i < bookedList.size(); i++){
+        for(int x = 0; x < bookitem.size(); x++){
+            if(bookitem[x].getBookItem_BookID() == bookedList[i]){
+                QString expiry = bookitem[x].getExpiryDate();
+                QStringList expDate = (expiry.split("/"));
+                QDate compareDate = QDate(expDate[2].toInt(), expDate[1].toInt(), expDate[0].toInt());
+                if(date.daysTo(compareDate) == 1){
+                    nearbyDueDateBook.append(bookitem[x].getBookItem_BookID());
+                }
+            }
+        }
+    }
+    return nearbyDueDateBook;
 }

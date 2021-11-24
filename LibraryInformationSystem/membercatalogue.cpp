@@ -17,6 +17,8 @@ memberCatalogue::memberCatalogue(QWidget *parent) :
     ui->logoImage->setPixmap(logo.scaled(450, 74, Qt::KeepAspectRatio));
 
     addRecords();
+    DuedateNotificationWindow* notification = new DuedateNotificationWindow(this);
+    notification->show();
 }
 
 memberCatalogue::~memberCatalogue()

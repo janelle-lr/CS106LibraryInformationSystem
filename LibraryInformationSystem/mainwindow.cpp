@@ -21,9 +21,9 @@ MainWindow::MainWindow(QWidget *parent)
     ui->passwordLineEdit->setText("kimkardashian");
 
     hide();
-    admincatalogue = new adminCatalogue(this);
-    connect(admincatalogue, SIGNAL(openadminCatalogue()), this, SLOT(openMainWindow())); //connect(pointerName, SIGNAL(openWindowYouWantToOpen()), this, SLOT(openWindowUrOpeningFrom()));
-    admincatalogue->show();
+    membercatalogue = new memberCatalogue(this);
+    connect(membercatalogue, SIGNAL(openadminCatalogue()), this, SLOT(openMainWindow())); //connect(pointerName, SIGNAL(openWindowYouWantToOpen()), this, SLOT(openWindowUrOpeningFrom()));
+    membercatalogue->show();
 }
 
 MainWindow::~MainWindow()
