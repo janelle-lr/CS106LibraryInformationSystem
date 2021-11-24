@@ -7,6 +7,7 @@
 #include "admineditcatalogue.h"
 #include "admincatalogue.h"
 #include "adminaddmember.h"
+#include "adminmembercatalogue.h"
 
 QT_BEGIN_NAMESPACE
 namespace Ui { class MainWindow; }
@@ -33,5 +34,6 @@ private:
     adminEditCatalogue *admineditcatalogue;
     adminCatalogue *admincatalogue;
     adminAddMember *adminaddmember;
+    adminMemberCatalogue *adminmembercatalogue;
 };
 #endif // MAINWINDOW_H

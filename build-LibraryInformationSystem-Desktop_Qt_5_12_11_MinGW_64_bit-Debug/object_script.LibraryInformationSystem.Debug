@@ -4,6 +4,8 @@ debug/adminaddmember.o
 debug/admincatalogue.o
 debug/admineditbook.o
 debug/admineditcatalogue.o
+debug/adminmembercatalogue.o
+debug/adminmemberedit.o
 debug/author.o
 debug/book.o
 debug/bookdetails.o
@@ -22,6 +24,8 @@ debug/moc_adminaddmember.o
 debug/moc_admincatalogue.o
 debug/moc_admineditbook.o
 debug/moc_admineditcatalogue.o
+debug/moc_adminmembercatalogue.o
+debug/moc_adminmemberedit.o
 debug/moc_bookdetails.o
 debug/moc_mainwindow.o
 debug/moc_memberaccountview.o

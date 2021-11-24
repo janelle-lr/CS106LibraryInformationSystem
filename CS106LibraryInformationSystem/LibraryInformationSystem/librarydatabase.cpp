@@ -209,7 +209,7 @@ Admin LibraryDatabase::getAdminDeatils(){
         while(!in.atEnd()){
             line = file.readLine().replace("\n","");
             list.append(line.split(","));
-            if(list[0]!="AdminID" && list[0] != ""){
+            if(list[0]!="AccountID" && list[0] != ""){
                 admin.setAccId(list[0]);
                 admin.setAdminId(list[1]);
                 admin.setAccType(list[2]);

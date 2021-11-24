@@ -31,16 +31,16 @@ void adminEditCatalogue::on_selectedImage_activated(const QString &arg1)
 {
     if(arg1 == "Image 1"){
         //qDebug() << "Image 1 has been selected";
-        filePath = ":/resources/images/50shadesofGray.png";
+        filePath = ":/resources/images/gold cats.png";
         qDebug() << filePath;
     }
     else if(arg1 == "Image 2"){
         //qDebug() << "Image 2 has been selected";
-        filePath = ":/resources/images/another50shadesofgray.png";
+        filePath = ":/resources/images/gold cats.png";
         qDebug() << filePath;
     }
     else if (arg1 == "Image 3"){
-        filePath = ":/resources/images/50shadesofGray.png";
+        filePath = ":/resources/images/gold cats.png";
         qDebug() << filePath;
     }
 }
