@@ -13,6 +13,7 @@
 #include <QtWidgets/QApplication>
 #include <QtWidgets/QComboBox>
 #include <QtWidgets/QFormLayout>
+#include <QtWidgets/QGridLayout>
 #include <QtWidgets/QLabel>
 #include <QtWidgets/QLineEdit>
 #include <QtWidgets/QMainWindow>
@@ -51,6 +52,8 @@ public:
     QLineEdit *bookDescription;
     QLabel *label;
     QPushButton *confirmBookDetails;
+    QWidget *gridLayoutWidget;
+    QGridLayout *gridLayout;
     QWidget *tab_2;
 
     void setupUi(QMainWindow *adminEditCatalogue)
@@ -277,6 +280,12 @@ public:
 "QPushButton:pressed {\n"
 "background-color: rgb(196, 116, 90);\n"
 "}"));
+        gridLayoutWidget = new QWidget(tab);
+        gridLayoutWidget->setObjectName(QString::fromUtf8("gridLayoutWidget"));
+        gridLayoutWidget->setGeometry(QRect(730, 390, 160, 80));
+        gridLayout = new QGridLayout(gridLayoutWidget);
+        gridLayout->setObjectName(QString::fromUtf8("gridLayout"));
+        gridLayout->setContentsMargins(0, 0, 0, 0);
         tabWidget->addTab(tab, QString());
         tab_2 = new QWidget();
         tab_2->setObjectName(QString::fromUtf8("tab_2"));
