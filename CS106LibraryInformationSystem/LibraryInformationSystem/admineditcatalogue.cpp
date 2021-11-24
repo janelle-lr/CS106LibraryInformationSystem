@@ -9,11 +9,15 @@ adminEditCatalogue::adminEditCatalogue(QWidget *parent) :
     ui(new Ui::adminEditCatalogue)
 {
     ui->setupUi(this);
-    setWindowTitle("BiblioThicc Libraries - Admin Page");
+    setWindowTitle("BiblioThicc Libraries - Add New Book Page");
 
     //for logo in UI
-    QPixmap logo(":/resources/images/bblLogo.png");
+    QPixmap logo(":/resources/images/miniLogo.png");
     ui->logoImage->setPixmap(logo.scaled(450, 74, Qt::KeepAspectRatio));
+
+    QPixmap img(":/resources/images/backIcon.png");
+    ui->backIcon_2->setPixmap(img.scaled(40, 40, Qt::KeepAspectRatio));
+
 }
 
 adminEditCatalogue::~adminEditCatalogue()
@@ -21,26 +25,22 @@ adminEditCatalogue::~adminEditCatalogue()
     delete ui;
 }
 
-void adminEditCatalogue::on_pushButton_clicked()
-{
-
-}
-
-
+// IMAGE RESOLUTION = 448 X 678
 void adminEditCatalogue::on_selectedImage_activated(const QString &arg1)
 {
     if(arg1 == "Image 1"){
-        //qDebug() << "Image 1 has been selected";
-        filePath = ":/resources/images/gold cats.png";
+        qDebug() << "Image 1 has been selected";
+        filePath = ":/resources/images/50shadesofGray.png";
         qDebug() << filePath;
     }
     else if(arg1 == "Image 2"){
-        //qDebug() << "Image 2 has been selected";
+        qDebug() << "Image 2 has been selected";
         filePath = ":/resources/images/gold cats.png";
         qDebug() << filePath;
     }
     else if (arg1 == "Image 3"){
-        filePath = ":/resources/images/gold cats.png";
+        qDebug() << "Image 3 has been selected";
+        filePath = ":/resources/images/bloodCottage.png";
         qDebug() << filePath;
     }
 }
@@ -50,25 +50,25 @@ void adminEditCatalogue::on_confirmBookDetails_clicked()
 {    
     Book book;
 
-    book.setBookName(ui->bookTitle->text());
-    book.setGenre(ui->bookGenre->text());
-    book.setBookCopies(ui->bookCopies->text().toInt());
+    book.setBookName(ui->bookTitle_3->text());
+    book.setGenre(ui->bookGenre_3->text());
+    book.setBookCopies(ui->bookCopies_3->text().toInt());
     book.setBookImageFilePath(filePath);
-    book.setAuthorName(ui->bookAuthor->text());
-    book.setPubName(ui->bookPublisher->text());
-    book.setBookDescription(ui->bookDescription->text());
+    book.setAuthorName(ui->bookAuthor_3->text());
+    book.setPubName(ui->bookPublisher_3->text());
+    book.setBookDescription(ui->bookDescription_3->text());
     book.setBookid(systemlibrary.generateID(4));
 
     systemlibrary.addBook(book);
     qDebug() << filePath;
-    QMessageBox::information(this,"Book Created","You have now created " + ui->bookTitle->text() + " and added it to the catalogue");
+    QMessageBox::information(this,"Book Created","You have now created " + ui->bookTitle_3->text() + " and added it to the catalogue");
 
     //setting line edits back to blank
-    ui->bookTitle->setText("");
-    ui->bookGenre->setText("");
-    ui->bookCopies->setText("");
-    ui->bookAuthor->setText("");
-    ui->bookPublisher->setText("");
-    ui->bookDescription->setText("");
+    ui->bookTitle_3->setText("");
+    ui->bookGenre_3->setText("");
+    ui->bookCopies_3->setText("");
+    ui->bookAuthor_3->setText("");
+    ui->bookPublisher_3->setText("");
+    ui->bookDescription_3->setText("");
 }
 

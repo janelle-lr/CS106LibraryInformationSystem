@@ -6,8 +6,8 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>1135</width>
-    <height>600</height>
+    <width>1280</width>
+    <height>661</height>
    </rect>
   </property>
   <property name="windowTitle">
@@ -19,6 +19,12 @@
 }</string>
   </property>
   <widget class="QWidget" name="centralwidget">
+   <property name="minimumSize">
+    <size>
+     <width>1280</width>
+     <height>640</height>
+    </size>
+   </property>
    <property name="styleSheet">
     <string notr="true">QWidget {
 	background: #FFE5D0;
@@ -33,10 +39,10 @@ font-size: 13px;
    <widget class="QScrollArea" name="scrollArea">
     <property name="geometry">
      <rect>
-      <x>0</x>
-      <y>0</y>
-      <width>1131</width>
-      <height>511</height>
+      <x>250</x>
+      <y>160</y>
+      <width>1011</width>
+      <height>471</height>
      </rect>
     </property>
     <property name="styleSheet">
@@ -52,8 +58,8 @@ font-size: 13px;
       <rect>
        <x>0</x>
        <y>0</y>
-       <width>1117</width>
-       <height>918</height>
+       <width>994</width>
+       <height>668</height>
       </rect>
      </property>
      <layout class="QGridLayout" name="gridLayout">
@@ -62,7 +68,7 @@ font-size: 13px;
         <property name="minimumSize">
          <size>
           <width>0</width>
-          <height>900</height>
+          <height>650</height>
          </size>
         </property>
         <property name="styleSheet">
@@ -79,8 +85,8 @@ font-size: 13px;
         <widget class="QLabel" name="bookImage_2">
          <property name="geometry">
           <rect>
-           <x>100</x>
-           <y>100</y>
+           <x>80</x>
+           <y>10</y>
            <width>161</width>
            <height>211</height>
           </rect>
@@ -95,8 +101,8 @@ font-size: 13px;
         <widget class="QPushButton" name="cancelPushButton_2">
          <property name="geometry">
           <rect>
-           <x>490</x>
-           <y>280</y>
+           <x>470</x>
+           <y>190</y>
            <width>171</width>
            <height>31</height>
           </rect>
@@ -124,8 +130,8 @@ background-color: rgba(231, 138, 107, 0.1);
         <widget class="QPushButton" name="savePushButton_2">
          <property name="geometry">
           <rect>
-           <x>300</x>
-           <y>281</y>
+           <x>280</x>
+           <y>191</y>
            <width>171</width>
            <height>31</height>
           </rect>
@@ -152,8 +158,8 @@ background-color: rgb(196, 116, 90);
         <widget class="QLabel" name="availabilityLabel_2">
          <property name="geometry">
           <rect>
-           <x>300</x>
-           <y>230</y>
+           <x>280</x>
+           <y>140</y>
            <width>331</width>
            <height>21</height>
           </rect>
@@ -182,8 +188,8 @@ font: 16px &quot;Montserrat Medium&quot;;
         <widget class="QLabel" name="publisherLabel_2">
          <property name="geometry">
           <rect>
-           <x>40</x>
-           <y>370</y>
+           <x>20</x>
+           <y>280</y>
            <width>331</width>
            <height>21</height>
           </rect>
@@ -212,8 +218,8 @@ font: 16px &quot;Montserrat Medium&quot;;
         <widget class="QLabel" name="descriptionLabel">
          <property name="geometry">
           <rect>
-           <x>40</x>
-           <y>560</y>
+           <x>20</x>
+           <y>470</y>
            <width>331</width>
            <height>21</height>
           </rect>
@@ -242,8 +248,8 @@ font: 16px &quot;Montserrat Medium&quot;;
         <widget class="QLabel" name="genreLabel_2">
          <property name="geometry">
           <rect>
-           <x>40</x>
-           <y>460</y>
+           <x>20</x>
+           <y>370</y>
            <width>331</width>
            <height>21</height>
           </rect>
@@ -272,8 +278,8 @@ font: 16px &quot;Montserrat Medium&quot;;
         <widget class="QLineEdit" name="titleLineEdit_2">
          <property name="geometry">
           <rect>
-           <x>300</x>
-           <y>100</y>
+           <x>280</x>
+           <y>30</y>
            <width>681</width>
            <height>31</height>
           </rect>
@@ -295,8 +301,8 @@ font-size: 13px;
         <widget class="QLineEdit" name="authorLineEdit_2">
          <property name="geometry">
           <rect>
-           <x>300</x>
-           <y>150</y>
+           <x>280</x>
+           <y>100</y>
            <width>681</width>
            <height>31</height>
           </rect>
@@ -318,8 +324,8 @@ font-size: 13px;
         <widget class="QLineEdit" name="publisherLineEdit_2">
          <property name="geometry">
           <rect>
-           <x>40</x>
-           <y>400</y>
+           <x>20</x>
+           <y>310</y>
            <width>941</width>
            <height>31</height>
           </rect>
@@ -344,8 +350,8 @@ font-size: 13px;
         <widget class="QLineEdit" name="genreLineEdit_2">
          <property name="geometry">
           <rect>
-           <x>40</x>
-           <y>490</y>
+           <x>20</x>
+           <y>400</y>
            <width>941</width>
            <height>31</height>
           </rect>
@@ -370,8 +376,8 @@ font-size: 13px;
         <widget class="QLineEdit" name="descriptionLineEdit">
          <property name="geometry">
           <rect>
-           <x>40</x>
-           <y>590</y>
+           <x>20</x>
+           <y>500</y>
            <width>941</width>
            <height>121</height>
           </rect>
@@ -396,8 +402,8 @@ font-size: 13px;
         <widget class="QPushButton" name="savePushButton_3">
          <property name="geometry">
           <rect>
-           <x>40</x>
-           <y>340</y>
+           <x>20</x>
+           <y>250</y>
            <width>941</width>
            <height>2</height>
           </rect>
@@ -412,10 +418,194 @@ border-radius: 1px;
           <string/>
          </property>
         </widget>
+        <widget class="QLabel" name="publisherLabel_3">
+         <property name="geometry">
+          <rect>
+           <x>280</x>
+           <y>0</y>
+           <width>331</width>
+           <height>21</height>
+          </rect>
+         </property>
+         <property name="font">
+          <font>
+           <family>Montserrat Medium</family>
+           <pointsize>-1</pointsize>
+           <weight>50</weight>
+           <italic>false</italic>
+           <bold>false</bold>
+          </font>
+         </property>
+         <property name="styleSheet">
+          <string notr="true">QLabel {
+font: 16px &quot;Montserrat Medium&quot;;
+}</string>
+         </property>
+         <property name="text">
+          <string>Book Title</string>
+         </property>
+         <property name="alignment">
+          <set>Qt::AlignLeading|Qt::AlignLeft|Qt::AlignVCenter</set>
+         </property>
+        </widget>
+        <widget class="QLabel" name="publisherLabel_4">
+         <property name="geometry">
+          <rect>
+           <x>280</x>
+           <y>70</y>
+           <width>331</width>
+           <height>21</height>
+          </rect>
+         </property>
+         <property name="font">
+          <font>
+           <family>Montserrat Medium</family>
+           <pointsize>-1</pointsize>
+           <weight>50</weight>
+           <italic>false</italic>
+           <bold>false</bold>
+          </font>
+         </property>
+         <property name="styleSheet">
+          <string notr="true">QLabel {
+font: 16px &quot;Montserrat Medium&quot;;
+}</string>
+         </property>
+         <property name="text">
+          <string>Author</string>
+         </property>
+         <property name="alignment">
+          <set>Qt::AlignLeading|Qt::AlignLeft|Qt::AlignVCenter</set>
+         </property>
+        </widget>
        </widget>
       </item>
      </layout>
     </widget>
+   </widget>
+   <widget class="QLabel" name="logoImage">
+    <property name="geometry">
+     <rect>
+      <x>10</x>
+      <y>20</y>
+      <width>221</width>
+      <height>71</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string/>
+    </property>
+    <property name="pixmap">
+     <pixmap resource="resources.qrc">:/resources/images/bblLogo.png</pixmap>
+    </property>
+   </widget>
+   <widget class="QLabel" name="pageTitle">
+    <property name="geometry">
+     <rect>
+      <x>290</x>
+      <y>50</y>
+      <width>331</width>
+      <height>51</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">QLabel{
+	font-size: 24px;
+	font-weight: bold;
+}</string>
+    </property>
+    <property name="text">
+     <string>Edit Book Details</string>
+    </property>
+   </widget>
+   <widget class="QLabel" name="pageDesc">
+    <property name="geometry">
+     <rect>
+      <x>290</x>
+      <y>110</y>
+      <width>971</width>
+      <height>51</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>Here admin can view all books that exist in the catalogue. You can choose to view, edit, and delete books. You can also choose to add books if you want to. You literally have all the 
+  power in the world as an admin. DONT ABUSE IT OR YOU USE LOSE YOUR PIZZA EATING PRIVLLAGES</string>
+    </property>
+   </widget>
+   <widget class="QWidget" name="layoutWidget">
+    <property name="geometry">
+     <rect>
+      <x>20</x>
+      <y>120</y>
+      <width>191</width>
+      <height>471</height>
+     </rect>
+    </property>
+    <layout class="QVBoxLayout" name="verticalLayout">
+     <item>
+      <widget class="QLabel" name="backIcon">
+       <property name="styleSheet">
+        <string notr="true">QLabel{
+	color: rgb(231, 138, 107);
+}</string>
+       </property>
+       <property name="text">
+        <string>go back</string>
+       </property>
+       <property name="alignment">
+        <set>Qt::AlignCenter</set>
+       </property>
+      </widget>
+     </item>
+     <item>
+      <widget class="QPushButton" name="backBtn">
+       <property name="styleSheet">
+        <string notr="true">QPushButton{
+	border-radius:15px;
+	font: 14px &quot;Montserrat&quot;;
+}
+
+QPushButton:hover {
+	text-decoration: underline;
+}</string>
+       </property>
+       <property name="text">
+        <string>Go Back</string>
+       </property>
+      </widget>
+     </item>
+     <item>
+      <spacer name="verticalSpacer">
+       <property name="orientation">
+        <enum>Qt::Vertical</enum>
+       </property>
+       <property name="sizeHint" stdset="0">
+        <size>
+         <width>20</width>
+         <height>40</height>
+        </size>
+       </property>
+      </spacer>
+     </item>
+    </layout>
+   </widget>
+   <widget class="Line" name="line">
+    <property name="geometry">
+     <rect>
+      <x>210</x>
+      <y>110</y>
+      <width>21</width>
+      <height>481</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">Line{
+	color:rgb(221, 46, 68);
+}</string>
+    </property>
+    <property name="orientation">
+     <enum>Qt::Vertical</enum>
+    </property>
    </widget>
   </widget>
   <widget class="QMenuBar" name="menubar">
@@ -423,7 +613,7 @@ border-radius: 1px;
     <rect>
      <x>0</x>
      <y>0</y>
-     <width>1135</width>
+     <width>1280</width>
      <height>21</height>
     </rect>
    </property>

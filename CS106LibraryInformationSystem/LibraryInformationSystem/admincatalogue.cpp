@@ -10,6 +10,8 @@ adminCatalogue::adminCatalogue(QWidget *parent) :
 {
     ui->setupUi(this);
 
+    setWindowTitle("BiblioThicc Libraries - View Catalogue Page");
+
     //for logo in UI
     QPixmap logo(":/resources/images/miniLogo.png");
     ui->logoImage->setPixmap(logo.scaled(300, 75, Qt::KeepAspectRatio));
@@ -26,6 +28,9 @@ adminCatalogue::adminCatalogue(QWidget *parent) :
 
     QPixmap img4(":/resources/images/uis_signout.png");
     ui->signoutIcon->setPixmap(img4.scaled(40, 40, Qt::KeepAspectRatio));
+
+    QPixmap img5(":/resources/images/addBook.png");
+    ui->addBookIcon->setPixmap(img5.scaled(25, 25, Qt::KeepAspectRatio));
 
     addRecords();
 }
@@ -72,12 +77,12 @@ void adminCatalogue::createWidgets(int row, int col, QString title, QString auth
     QVBoxLayout* labelLayout = new QVBoxLayout();
     QHBoxLayout* buttonRow = new QHBoxLayout();
 
-    labelGroup->setMaximumHeight(180);
-    labelGroup->setMinimumHeight(180);
-    buttonGroup->setMaximumHeight(50);
-    buttonGroup->setMinimumHeight(50);
-    labelGroup->setStyleSheet("QFrame{margin-right: 10px; /*border:none;*/}");
-    buttonGroup->setStyleSheet("QFrame{background: white; /*border:none;*/}");
+    labelGroup->setMaximumHeight(235);
+    labelGroup->setMinimumHeight(235);
+    //buttonGroup->setMaximumHeight(50);
+    //buttonGroup->setMinimumHeight(50);
+    labelGroup->setStyleSheet("QFrame{margin-right: 10px; border:none;}");
+    buttonGroup->setStyleSheet("QFrame{border:none;}");
 
     labelLayout->addWidget(label2);
     labelLayout->addWidget(label3);
@@ -98,9 +103,9 @@ void adminCatalogue::createWidgets(int row, int col, QString title, QString auth
     groupBox->setLayout(group);
 
     //styling groupBox
-    groupBox->setMaximumSize(QSize(450,200));//QSize(width, height)
-    groupBox->setMinimumSize(QSize(450,200));
-    groupBox->setStyleSheet("QGroupBox{margin-bottom: 10px; margin-right: 10px;/*border:none;*/}");
+    groupBox->setMaximumSize(QSize(450,225));//QSize(width, height)
+    groupBox->setMinimumSize(QSize(450,225));
+    groupBox->setStyleSheet("QGroupBox{margin-bottom: 10px; margin-right: 10px;border:none;}");
 
     ui->gridLayout_3->addWidget(groupBox,row,col);
     //ui->scrollArea->addWidget(groupBox,row,col);

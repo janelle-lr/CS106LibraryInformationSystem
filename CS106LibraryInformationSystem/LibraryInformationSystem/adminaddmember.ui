@@ -47,7 +47,7 @@ QWidget{
     <property name="geometry">
      <rect>
       <x>290</x>
-      <y>20</y>
+      <y>50</y>
       <width>331</width>
       <height>51</height>
      </rect>
@@ -66,14 +66,14 @@ QWidget{
     <property name="geometry">
      <rect>
       <x>290</x>
-      <y>80</y>
-      <width>511</width>
+      <y>90</y>
+      <width>971</width>
       <height>51</height>
      </rect>
     </property>
     <property name="text">
-     <string>Create a new member account with a predetermined username. This shit is honestly so wildin I'm shocked 
- that I still have my sanity</string>
+     <string>Create a new member account with a predetermined username. This shit is honestly so wildin I'm shocked that I still have my sanity the pacer ggram awfoehrunaewuighn 
+ aekdlfjhgaregjahdsk;jgfhartg</string>
     </property>
    </widget>
    <widget class="QGroupBox" name="groupBox">
@@ -90,11 +90,6 @@ QWidget{
 	border-radius: 25px;
 	background: rgb(255, 255, 255);
 }
-
-/*QLineEdit{
-	background:rgb(255, 229, 208);
-	border-radius: 15px;
-}*/
 
 QLabel{
 	background: rgb(255, 255, 255);
@@ -498,7 +493,7 @@ background-color: rgba(231, 138, 107, 0.8);
      <enum>Qt::Vertical</enum>
     </property>
    </widget>
-   <widget class="QWidget" name="">
+   <widget class="QWidget" name="layoutWidget">
     <property name="geometry">
      <rect>
       <x>20</x>
@@ -636,18 +631,11 @@ QPushButton:hover {
      </item>
     </layout>
    </widget>
+   <zorder>layoutWidget</zorder>
    <zorder>logoImage</zorder>
    <zorder>pageTitle</zorder>
    <zorder>pageDesc</zorder>
-   <zorder>memberIcon</zorder>
-   <zorder>accountIcon</zorder>
-   <zorder>signoutIcon</zorder>
    <zorder>groupBox</zorder>
-   <zorder>catalogueIcon</zorder>
-   <zorder>catalogueBtn</zorder>
-   <zorder>memberBtn</zorder>
-   <zorder>accountBtn</zorder>
-   <zorder>signoutBtn</zorder>
    <zorder>line</zorder>
   </widget>
   <widget class="QMenuBar" name="menubar">

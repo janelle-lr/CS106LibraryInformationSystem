@@ -6,20 +6,20 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>1080</width>
+    <width>1280</width>
     <height>640</height>
    </rect>
   </property>
   <property name="minimumSize">
    <size>
-    <width>1080</width>
+    <width>1280</width>
     <height>640</height>
    </size>
   </property>
   <property name="maximumSize">
    <size>
-    <width>1080</width>
-    <height>640</height>
+    <width>16777215</width>
+    <height>16777215</height>
    </size>
   </property>
   <property name="windowTitle">
@@ -70,10 +70,10 @@ QPushButton {
    <widget class="QLabel" name="logoImage">
     <property name="geometry">
      <rect>
-      <x>30</x>
+      <x>10</x>
       <y>20</y>
-      <width>441</width>
-      <height>61</height>
+      <width>221</width>
+      <height>71</height>
      </rect>
     </property>
     <property name="text">
@@ -83,341 +83,146 @@ QPushButton {
      <pixmap resource="resources.qrc">:/resources/images/bblLogo.png</pixmap>
     </property>
    </widget>
-   <widget class="QTabWidget" name="tabWidget">
+   <widget class="Line" name="line">
     <property name="geometry">
      <rect>
-      <x>0</x>
-      <y>70</y>
-      <width>1051</width>
-      <height>501</height>
+      <x>210</x>
+      <y>110</y>
+      <width>21</width>
+      <height>481</height>
      </rect>
     </property>
-    <property name="tabShape">
-     <enum>QTabWidget::Triangular</enum>
-    </property>
-    <property name="currentIndex">
-     <number>0</number>
-    </property>
-    <widget class="QWidget" name="tab">
-     <attribute name="title">
-      <string>Add Books</string>
-     </attribute>
-     <widget class="QPushButton" name="pushButton">
-      <property name="geometry">
-       <rect>
-        <x>460</x>
-        <y>410</y>
-        <width>171</width>
-        <height>41</height>
-       </rect>
-      </property>
-      <property name="styleSheet">
-       <string notr="true">QPushButton{
-	
+    <property name="styleSheet">
+     <string notr="true">Line{
+	color:rgb(221, 46, 68);
 }</string>
-      </property>
-      <property name="text">
-       <string>Add Book</string>
-      </property>
-     </widget>
-     <widget class="QWidget" name="verticalLayoutWidget">
-      <property name="geometry">
-       <rect>
-        <x>10</x>
-        <y>70</y>
-        <width>1021</width>
-        <height>349</height>
-       </rect>
-      </property>
-      <layout class="QVBoxLayout" name="verticalLayout">
-       <item>
-        <widget class="QLabel" name="label_6">
-         <property name="sizePolicy">
-          <sizepolicy hsizetype="Preferred" vsizetype="Fixed">
-           <horstretch>0</horstretch>
-           <verstretch>0</verstretch>
-          </sizepolicy>
-         </property>
-         <property name="styleSheet">
-          <string notr="true">QLabel{
-	font-weight: bold;
-	font-size: 14px;
+    </property>
+    <property name="orientation">
+     <enum>Qt::Vertical</enum>
+    </property>
+   </widget>
+   <widget class="QWidget" name="layoutWidget">
+    <property name="geometry">
+     <rect>
+      <x>20</x>
+      <y>120</y>
+      <width>191</width>
+      <height>471</height>
+     </rect>
+    </property>
+    <layout class="QVBoxLayout" name="verticalLayout_5">
+     <item>
+      <widget class="QLabel" name="backIcon_2">
+       <property name="styleSheet">
+        <string notr="true">QLabel{
+	color: rgb(231, 138, 107);
+}</string>
+       </property>
+       <property name="text">
+        <string>go back</string>
+       </property>
+       <property name="alignment">
+        <set>Qt::AlignCenter</set>
+       </property>
+      </widget>
+     </item>
+     <item>
+      <widget class="QPushButton" name="backBtn_2">
+       <property name="styleSheet">
+        <string notr="true">QPushButton{
+	border-radius:15px;
+	font: 14px &quot;Montserrat&quot;;
+}
 
+QPushButton:hover {
+	text-decoration: underline;
 }</string>
-         </property>
-         <property name="text">
-          <string>Book Details</string>
-         </property>
-        </widget>
-       </item>
-       <item>
-        <layout class="QFormLayout" name="formLayout">
-         <item row="0" column="0">
-          <widget class="QLabel" name="label_4">
-           <property name="text">
-            <string>Enter Book TItle</string>
-           </property>
-          </widget>
-         </item>
-         <item row="0" column="1">
-          <widget class="QLineEdit" name="bookTitle">
-           <property name="minimumSize">
-            <size>
-             <width>0</width>
-             <height>31</height>
-            </size>
-           </property>
-           <property name="text">
-            <string/>
-           </property>
-          </widget>
-         </item>
-         <item row="1" column="0">
-          <widget class="QLabel" name="label_5">
-           <property name="text">
-            <string>Enter Genre</string>
-           </property>
-          </widget>
-         </item>
-         <item row="1" column="1">
-          <widget class="QLineEdit" name="bookGenre">
-           <property name="minimumSize">
-            <size>
-             <width>0</width>
-             <height>31</height>
-            </size>
-           </property>
-          </widget>
-         </item>
-         <item row="2" column="0">
-          <widget class="QLabel" name="label_13">
-           <property name="text">
-            <string>Amount of Copies</string>
-           </property>
-          </widget>
-         </item>
-         <item row="2" column="1">
-          <widget class="QLineEdit" name="bookCopies">
-           <property name="minimumSize">
-            <size>
-             <width>0</width>
-             <height>31</height>
-            </size>
-           </property>
-          </widget>
-         </item>
-         <item row="3" column="0">
-          <widget class="QLabel" name="label_14">
-           <property name="sizePolicy">
-            <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
-             <horstretch>0</horstretch>
-             <verstretch>0</verstretch>
-            </sizepolicy>
-           </property>
-           <property name="maximumSize">
-            <size>
-             <width>73</width>
-             <height>16777215</height>
-            </size>
-           </property>
-           <property name="text">
-            <string>Select Image</string>
-           </property>
-          </widget>
-         </item>
-         <item row="3" column="1">
-          <widget class="QComboBox" name="selectedImage">
-           <property name="minimumSize">
-            <size>
-             <width>0</width>
-             <height>31</height>
-            </size>
-           </property>
-           <property name="styleSheet">
-            <string notr="true">QComboBox {
-border-radius: 15px;
-background-color: palette(base);
-font-size: 13px;
+       </property>
+       <property name="text">
+        <string>Go Back</string>
+       </property>
+      </widget>
+     </item>
+     <item>
+      <spacer name="verticalSpacer_3">
+       <property name="orientation">
+        <enum>Qt::Vertical</enum>
+       </property>
+       <property name="sizeHint" stdset="0">
+        <size>
+         <width>20</width>
+         <height>40</height>
+        </size>
+       </property>
+      </spacer>
+     </item>
+    </layout>
+   </widget>
+   <widget class="QGroupBox" name="groupBox">
+    <property name="geometry">
+     <rect>
+      <x>290</x>
+      <y>170</y>
+      <width>931</width>
+      <height>401</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">QGroupBox{
+	border-radius: 25px;
+	background: rgb(255, 255, 255);
+}
+
+QLabel{
+	background: rgb(255, 255, 255);
+	font-size: 14px;
+	font-weight: bold;
+
+}
+
+QLineEdit {
+	background:rgb(255, 229, 208);
+	border: 1px solid;
+	border-radius: 15px;
+	border-color: #e5e5e5;
+	background-color: palette(base);
+	padding: 0px 5px;
+}
+
+QComboBox{
+	background:rgb(255, 229, 208);
+	border: 1px solid;
+	border-radius: 15px;
+	border-color: #e5e5e5;
+	background-color: palette(base);
+	padding: 0px 5px;
+}
+
+QFormLayout{
+	color: rgb(255, 255, 255);
+}
+
+
+QPushButton {
+	border-radius: 15px; 
+	font-size: 13px;
 }
 </string>
-           </property>
-           <item>
-            <property name="text">
-             <string>Image 1</string>
-            </property>
-           </item>
-           <item>
-            <property name="text">
-             <string>Image 2</string>
-            </property>
-           </item>
-           <item>
-            <property name="text">
-             <string>Image 3</string>
-            </property>
-           </item>
-          </widget>
-         </item>
-         <item row="4" column="0">
-          <widget class="QLabel" name="label_20">
-           <property name="sizePolicy">
-            <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
-             <horstretch>0</horstretch>
-             <verstretch>0</verstretch>
-            </sizepolicy>
-           </property>
-           <property name="minimumSize">
-            <size>
-             <width>0</width>
-             <height>0</height>
-            </size>
-           </property>
-           <property name="maximumSize">
-            <size>
-             <width>16777185</width>
-             <height>16777215</height>
-            </size>
-           </property>
-           <property name="text">
-            <string>Enter Author Name</string>
-           </property>
-          </widget>
-         </item>
-         <item row="4" column="1">
-          <widget class="QLineEdit" name="bookAuthor">
-           <property name="sizePolicy">
-            <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
-             <horstretch>0</horstretch>
-             <verstretch>0</verstretch>
-            </sizepolicy>
-           </property>
-           <property name="minimumSize">
-            <size>
-             <width>0</width>
-             <height>31</height>
-            </size>
-           </property>
-          </widget>
-         </item>
-         <item row="5" column="0">
-          <widget class="QLabel" name="label_21">
-           <property name="sizePolicy">
-            <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
-             <horstretch>0</horstretch>
-             <verstretch>0</verstretch>
-            </sizepolicy>
-           </property>
-           <property name="minimumSize">
-            <size>
-             <width>0</width>
-             <height>0</height>
-            </size>
-           </property>
-           <property name="maximumSize">
-            <size>
-             <width>16777185</width>
-             <height>16777215</height>
-            </size>
-           </property>
-           <property name="text">
-            <string>Enter Publisher Name</string>
-           </property>
-          </widget>
-         </item>
-         <item row="5" column="1">
-          <widget class="QLineEdit" name="bookPublisher">
-           <property name="sizePolicy">
-            <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
-             <horstretch>0</horstretch>
-             <verstretch>0</verstretch>
-            </sizepolicy>
-           </property>
-           <property name="minimumSize">
-            <size>
-             <width>0</width>
-             <height>31</height>
-            </size>
-           </property>
-          </widget>
-         </item>
-         <item row="6" column="0">
-          <widget class="QLabel" name="label_16">
-           <property name="sizePolicy">
-            <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
-             <horstretch>0</horstretch>
-             <verstretch>0</verstretch>
-            </sizepolicy>
-           </property>
-           <property name="minimumSize">
-            <size>
-             <width>0</width>
-             <height>0</height>
-            </size>
-           </property>
-           <property name="maximumSize">
-            <size>
-             <width>16777185</width>
-             <height>16777215</height>
-            </size>
-           </property>
-           <property name="text">
-            <string>Enter book 
- desription</string>
-           </property>
-          </widget>
-         </item>
-         <item row="6" column="1">
-          <widget class="QLineEdit" name="bookDescription">
-           <property name="sizePolicy">
-            <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
-             <horstretch>0</horstretch>
-             <verstretch>0</verstretch>
-            </sizepolicy>
-           </property>
-           <property name="minimumSize">
-            <size>
-             <width>0</width>
-             <height>60</height>
-            </size>
-           </property>
-           <property name="styleSheet">
-            <string notr="true">QLineEdit {
-	padding: 5px;
-}</string>
-           </property>
-           <property name="alignment">
-            <set>Qt::AlignLeading|Qt::AlignLeft|Qt::AlignTop</set>
-           </property>
-          </widget>
-         </item>
-        </layout>
-       </item>
-      </layout>
-     </widget>
-     <widget class="QLabel" name="label">
-      <property name="geometry">
-       <rect>
-        <x>20</x>
-        <y>10</y>
-        <width>47</width>
-        <height>13</height>
-       </rect>
-      </property>
-      <property name="text">
-       <string>TextLabel</string>
-      </property>
-     </widget>
-     <widget class="QPushButton" name="confirmBookDetails">
-      <property name="geometry">
-       <rect>
-        <x>260</x>
-        <y>410</y>
-        <width>141</width>
-        <height>31</height>
-       </rect>
-      </property>
-      <property name="styleSheet">
-       <string notr="true">QPushButton {
+    </property>
+    <property name="title">
+     <string/>
+    </property>
+    <widget class="QPushButton" name="confirmBookDetails">
+     <property name="geometry">
+      <rect>
+       <x>370</x>
+       <y>350</y>
+       <width>241</width>
+       <height>31</height>
+      </rect>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">QPushButton {
 background-color: #E78A6B;
 color:  #fff;
 font-weight: 500;
@@ -430,17 +235,392 @@ background-color: rgba(231, 138, 107, 0.8);
 QPushButton:pressed {
 background-color: rgb(196, 116, 90);
 }</string>
-      </property>
+     </property>
+     <property name="text">
+      <string>Add Book</string>
+     </property>
+    </widget>
+    <widget class="QLabel" name="label_32">
+     <property name="geometry">
+      <rect>
+       <x>41</x>
+       <y>20</y>
+       <width>131</width>
+       <height>31</height>
+      </rect>
+     </property>
+     <property name="sizePolicy">
+      <sizepolicy hsizetype="Preferred" vsizetype="Fixed">
+       <horstretch>0</horstretch>
+       <verstretch>0</verstretch>
+      </sizepolicy>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">QLabel{
+	font-weight: bold;
+	font-size: 18px;
+
+}</string>
+     </property>
+     <property name="text">
+      <string>Book Details</string>
+     </property>
+    </widget>
+    <widget class="QLabel" name="label_39">
+     <property name="geometry">
+      <rect>
+       <x>42</x>
+       <y>282</y>
+       <width>151</width>
+       <height>51</height>
+      </rect>
+     </property>
+     <property name="sizePolicy">
+      <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
+       <horstretch>0</horstretch>
+       <verstretch>0</verstretch>
+      </sizepolicy>
+     </property>
+     <property name="minimumSize">
+      <size>
+       <width>0</width>
+       <height>0</height>
+      </size>
+     </property>
+     <property name="maximumSize">
+      <size>
+       <width>16777185</width>
+       <height>16777215</height>
+      </size>
+     </property>
+     <property name="text">
+      <string>Enter book 
+ description</string>
+     </property>
+    </widget>
+    <widget class="QLineEdit" name="bookDescription_3">
+     <property name="geometry">
+      <rect>
+       <x>280</x>
+       <y>282</y>
+       <width>601</width>
+       <height>60</height>
+      </rect>
+     </property>
+     <property name="sizePolicy">
+      <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
+       <horstretch>0</horstretch>
+       <verstretch>0</verstretch>
+      </sizepolicy>
+     </property>
+     <property name="minimumSize">
+      <size>
+       <width>0</width>
+       <height>60</height>
+      </size>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">QLineEdit {
+	padding: 5px;
+}</string>
+     </property>
+     <property name="alignment">
+      <set>Qt::AlignLeading|Qt::AlignLeft|Qt::AlignTop</set>
+     </property>
+    </widget>
+    <widget class="QLabel" name="label_34">
+     <property name="geometry">
+      <rect>
+       <x>42</x>
+       <y>97</y>
+       <width>151</width>
+       <height>16</height>
+      </rect>
+     </property>
+     <property name="text">
+      <string>Enter Genre</string>
+     </property>
+    </widget>
+    <widget class="QLineEdit" name="bookGenre_3">
+     <property name="geometry">
+      <rect>
+       <x>280</x>
+       <y>97</y>
+       <width>601</width>
+       <height>31</height>
+      </rect>
+     </property>
+     <property name="minimumSize">
+      <size>
+       <width>0</width>
+       <height>31</height>
+      </size>
+     </property>
+    </widget>
+    <widget class="QLabel" name="label_35">
+     <property name="geometry">
+      <rect>
+       <x>42</x>
+       <y>134</y>
+       <width>161</width>
+       <height>16</height>
+      </rect>
+     </property>
+     <property name="text">
+      <string>Amount of Copies</string>
+     </property>
+    </widget>
+    <widget class="QLineEdit" name="bookCopies_3">
+     <property name="geometry">
+      <rect>
+       <x>280</x>
+       <y>134</y>
+       <width>601</width>
+       <height>31</height>
+      </rect>
+     </property>
+     <property name="minimumSize">
+      <size>
+       <width>0</width>
+       <height>31</height>
+      </size>
+     </property>
+    </widget>
+    <widget class="QLabel" name="label_36">
+     <property name="geometry">
+      <rect>
+       <x>42</x>
+       <y>171</y>
+       <width>111</width>
+       <height>16</height>
+      </rect>
+     </property>
+     <property name="sizePolicy">
+      <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
+       <horstretch>0</horstretch>
+       <verstretch>0</verstretch>
+      </sizepolicy>
+     </property>
+     <property name="maximumSize">
+      <size>
+       <width>16777215</width>
+       <height>16777215</height>
+      </size>
+     </property>
+     <property name="text">
+      <string>Select Image</string>
+     </property>
+    </widget>
+    <widget class="QComboBox" name="selectedImage_3">
+     <property name="geometry">
+      <rect>
+       <x>280</x>
+       <y>171</y>
+       <width>121</width>
+       <height>31</height>
+      </rect>
+     </property>
+     <property name="minimumSize">
+      <size>
+       <width>0</width>
+       <height>31</height>
+      </size>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">QComboBox {
+border-radius: 15px;
+background-color: palette(base);
+font-size: 13px;
+}
+</string>
+     </property>
+     <item>
       <property name="text">
-       <string>Add Book</string>
+       <string>Image 1</string>
       </property>
-     </widget>
+     </item>
+     <item>
+      <property name="text">
+       <string>Image 2</string>
+      </property>
+     </item>
+     <item>
+      <property name="text">
+       <string>Image 3</string>
+      </property>
+     </item>
     </widget>
-    <widget class="QWidget" name="tab_2">
-     <attribute name="title">
-      <string>Book Catalogue</string>
-     </attribute>
+    <widget class="QLabel" name="label_33">
+     <property name="geometry">
+      <rect>
+       <x>42</x>
+       <y>60</y>
+       <width>161</width>
+       <height>16</height>
+      </rect>
+     </property>
+     <property name="text">
+      <string>Enter Book TItle</string>
+     </property>
     </widget>
+    <widget class="QLineEdit" name="bookTitle_3">
+     <property name="geometry">
+      <rect>
+       <x>280</x>
+       <y>60</y>
+       <width>601</width>
+       <height>31</height>
+      </rect>
+     </property>
+     <property name="minimumSize">
+      <size>
+       <width>0</width>
+       <height>31</height>
+      </size>
+     </property>
+     <property name="text">
+      <string/>
+     </property>
+    </widget>
+    <widget class="QLineEdit" name="bookAuthor_3">
+     <property name="geometry">
+      <rect>
+       <x>280</x>
+       <y>208</y>
+       <width>601</width>
+       <height>31</height>
+      </rect>
+     </property>
+     <property name="sizePolicy">
+      <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
+       <horstretch>0</horstretch>
+       <verstretch>0</verstretch>
+      </sizepolicy>
+     </property>
+     <property name="minimumSize">
+      <size>
+       <width>0</width>
+       <height>31</height>
+      </size>
+     </property>
+    </widget>
+    <widget class="QLabel" name="label_38">
+     <property name="geometry">
+      <rect>
+       <x>42</x>
+       <y>245</y>
+       <width>181</width>
+       <height>16</height>
+      </rect>
+     </property>
+     <property name="sizePolicy">
+      <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
+       <horstretch>0</horstretch>
+       <verstretch>0</verstretch>
+      </sizepolicy>
+     </property>
+     <property name="minimumSize">
+      <size>
+       <width>0</width>
+       <height>0</height>
+      </size>
+     </property>
+     <property name="maximumSize">
+      <size>
+       <width>16777185</width>
+       <height>16777215</height>
+      </size>
+     </property>
+     <property name="text">
+      <string>Enter Publisher Name</string>
+     </property>
+    </widget>
+    <widget class="QLineEdit" name="bookPublisher_3">
+     <property name="geometry">
+      <rect>
+       <x>280</x>
+       <y>245</y>
+       <width>601</width>
+       <height>31</height>
+      </rect>
+     </property>
+     <property name="sizePolicy">
+      <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
+       <horstretch>0</horstretch>
+       <verstretch>0</verstretch>
+      </sizepolicy>
+     </property>
+     <property name="minimumSize">
+      <size>
+       <width>0</width>
+       <height>31</height>
+      </size>
+     </property>
+    </widget>
+    <widget class="QLabel" name="label_37">
+     <property name="geometry">
+      <rect>
+       <x>42</x>
+       <y>208</y>
+       <width>171</width>
+       <height>16</height>
+      </rect>
+     </property>
+     <property name="sizePolicy">
+      <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
+       <horstretch>0</horstretch>
+       <verstretch>0</verstretch>
+      </sizepolicy>
+     </property>
+     <property name="minimumSize">
+      <size>
+       <width>0</width>
+       <height>0</height>
+      </size>
+     </property>
+     <property name="maximumSize">
+      <size>
+       <width>16777185</width>
+       <height>16777215</height>
+      </size>
+     </property>
+     <property name="text">
+      <string>Enter Author Name</string>
+     </property>
+    </widget>
+   </widget>
+   <widget class="QLabel" name="pageTitle">
+    <property name="geometry">
+     <rect>
+      <x>290</x>
+      <y>50</y>
+      <width>331</width>
+      <height>51</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">QLabel{
+	font-size: 24px;
+	font-weight: bold;
+}</string>
+    </property>
+    <property name="text">
+     <string>Add New Book</string>
+    </property>
+   </widget>
+   <widget class="QLabel" name="pageDesc">
+    <property name="geometry">
+     <rect>
+      <x>290</x>
+      <y>90</y>
+      <width>971</width>
+      <height>51</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>Enter the details of the new book you want to add to the library catalogue. a;owiehfaowieharotharuhaera 
+loremupsunmm or osmething</string>
+    </property>
    </widget>
   </widget>
  </widget>

@@ -28,6 +28,12 @@ MainWindow::MainWindow(QWidget *parent)
     admincatalogue = new adminCatalogue(this);
     connect(admincatalogue, SIGNAL(openadminCatalogue()), this, SLOT(openMainWindow())); //connect(pointerName, SIGNAL(openWindowYouWantToOpen()), this, SLOT(openWindowUrOpeningFrom()));
     admincatalogue->show();
+
+    adminmemberedit = new adminMemberEdit(this);
+    connect(adminmemberedit, SIGNAL(openadminMemberEdit()), this, SLOT(openMainWindow())); //connect(pointerName, SIGNAL(openWindowYouWantToOpen()), this, SLOT(openWindowUrOpeningFrom()));
+    adminmemberedit->show();
+
+
 }
 
 MainWindow::~MainWindow()

@@ -8,6 +8,9 @@ adminAddMember::adminAddMember(QWidget *parent) :
 {
     ui->setupUi(this);
 
+    ui->setupUi(this);
+    setWindowTitle("BiblioThicc Libraries - Add New Member Page");
+
     //for logo in UI
     QPixmap logo(":/resources/images/miniLogo.png");
     ui->logoImage->setPixmap(logo.scaled(300, 75, Qt::KeepAspectRatio));
@@ -24,7 +27,6 @@ adminAddMember::adminAddMember(QWidget *parent) :
 
     QPixmap img4(":/resources/images/uis_signout.png");
     ui->signoutIcon->setPixmap(img4.scaled(40, 40, Qt::KeepAspectRatio));
-
 
     QString accId = sysLib->generateID(3);
     ui->usernameLineEdit->setText(accId);

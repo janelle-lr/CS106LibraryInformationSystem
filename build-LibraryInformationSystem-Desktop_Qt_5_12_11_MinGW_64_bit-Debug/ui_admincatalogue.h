@@ -46,6 +46,13 @@ public:
     QWidget *scrollAreaWidgetContents;
     QHBoxLayout *horizontalLayout;
     QGridLayout *gridLayout_3;
+    QLabel *pageTitle;
+    QLabel *pageDesc;
+    QWidget *widget;
+    QHBoxLayout *horizontalLayout_2;
+    QSpacerItem *horizontalSpacer;
+    QLabel *addBookIcon;
+    QPushButton *addBookBtn;
     QMenuBar *menubar;
 
     void setupUi(QMainWindow *adminCatalogue)
@@ -79,7 +86,7 @@ public:
 "}"));
         layoutWidget = new QWidget(centralwidget);
         layoutWidget->setObjectName(QString::fromUtf8("layoutWidget"));
-        layoutWidget->setGeometry(QRect(20, 110, 191, 471));
+        layoutWidget->setGeometry(QRect(20, 120, 191, 471));
         verticalLayout = new QVBoxLayout(layoutWidget);
         verticalLayout->setObjectName(QString::fromUtf8("verticalLayout"));
         verticalLayout->setContentsMargins(0, 0, 0, 0);
@@ -168,11 +175,11 @@ public:
 
         logoImage = new QLabel(centralwidget);
         logoImage->setObjectName(QString::fromUtf8("logoImage"));
-        logoImage->setGeometry(QRect(10, 10, 221, 71));
+        logoImage->setGeometry(QRect(10, 20, 221, 71));
         logoImage->setPixmap(QPixmap(QString::fromUtf8(":/resources/images/bblLogo.png")));
         line = new QFrame(centralwidget);
         line->setObjectName(QString::fromUtf8("line"));
-        line->setGeometry(QRect(210, 100, 21, 481));
+        line->setGeometry(QRect(210, 110, 21, 481));
         line->setStyleSheet(QString::fromUtf8("Line{\n"
 "	color:rgb(221, 46, 68);\n"
 "}"));
@@ -180,15 +187,16 @@ public:
         line->setFrameShadow(QFrame::Sunken);
         scrollArea = new QScrollArea(centralwidget);
         scrollArea->setObjectName(QString::fromUtf8("scrollArea"));
-        scrollArea->setGeometry(QRect(230, 10, 1051, 591));
+        scrollArea->setGeometry(QRect(230, 140, 1051, 461));
         scrollArea->setStyleSheet(QString::fromUtf8("QScrollArea {\n"
 "	border: none;\n"
 "}\n"
+"\n"
 ""));
         scrollArea->setWidgetResizable(true);
         scrollAreaWidgetContents = new QWidget();
         scrollAreaWidgetContents->setObjectName(QString::fromUtf8("scrollAreaWidgetContents"));
-        scrollAreaWidgetContents->setGeometry(QRect(0, 0, 1051, 591));
+        scrollAreaWidgetContents->setGeometry(QRect(0, 0, 1051, 461));
         scrollAreaWidgetContents->setStyleSheet(QString::fromUtf8("QWidget {\n"
 "	background-color: #FFE5D0;\n"
 "	/*border: none;*/\n"
@@ -203,6 +211,7 @@ public:
 "	height: 31px; \n"
 "	/*max-width: 100px; */\n"
 "}\n"
+"\n"
 ""));
         horizontalLayout = new QHBoxLayout(scrollAreaWidgetContents);
         horizontalLayout->setObjectName(QString::fromUtf8("horizontalLayout"));
@@ -212,6 +221,48 @@ public:
         horizontalLayout->addLayout(gridLayout_3);
 
         scrollArea->setWidget(scrollAreaWidgetContents);
+        pageTitle = new QLabel(centralwidget);
+        pageTitle->setObjectName(QString::fromUtf8("pageTitle"));
+        pageTitle->setGeometry(QRect(290, 50, 331, 51));
+        pageTitle->setStyleSheet(QString::fromUtf8("QLabel{\n"
+"	font-size: 24px;\n"
+"	font-weight: bold;\n"
+"}"));
+        pageDesc = new QLabel(centralwidget);
+        pageDesc->setObjectName(QString::fromUtf8("pageDesc"));
+        pageDesc->setGeometry(QRect(290, 90, 971, 51));
+        widget = new QWidget(centralwidget);
+        widget->setObjectName(QString::fromUtf8("widget"));
+        widget->setGeometry(QRect(1000, 90, 189, 33));
+        horizontalLayout_2 = new QHBoxLayout(widget);
+        horizontalLayout_2->setObjectName(QString::fromUtf8("horizontalLayout_2"));
+        horizontalLayout_2->setContentsMargins(0, 0, 0, 0);
+        horizontalSpacer = new QSpacerItem(40, 20, QSizePolicy::Expanding, QSizePolicy::Minimum);
+
+        horizontalLayout_2->addItem(horizontalSpacer);
+
+        addBookIcon = new QLabel(widget);
+        addBookIcon->setObjectName(QString::fromUtf8("addBookIcon"));
+        addBookIcon->setStyleSheet(QString::fromUtf8("QLabel{\n"
+"	background:rgba(0,0,0,0);\n"
+"}"));
+
+        horizontalLayout_2->addWidget(addBookIcon);
+
+        addBookBtn = new QPushButton(widget);
+        addBookBtn->setObjectName(QString::fromUtf8("addBookBtn"));
+        addBookBtn->setStyleSheet(QString::fromUtf8("QPushButton{\n"
+"	border-radius:15px;\n"
+"	font: 12px \"Montserrat\";\n"
+"	background-color:rgba(0,0,0,0);\n"
+"}\n"
+"\n"
+"QPushButton:hover {\n"
+"	text-decoration: underline;\n"
+"}"));
+
+        horizontalLayout_2->addWidget(addBookBtn);
+
         adminCatalogue->setCentralWidget(centralwidget);
         menubar = new QMenuBar(adminCatalogue);
         menubar->setObjectName(QString::fromUtf8("menubar"));
@@ -235,6 +286,12 @@ public:
         signoutIcon->setText(QApplication::translate("adminCatalogue", "signOut", nullptr));
         signoutBtn->setText(QApplication::translate("adminCatalogue", "Sign Out", nullptr));
         logoImage->setText(QString());
+        pageTitle->setText(QApplication::translate("adminCatalogue", "Catalogue", nullptr));
+        pageDesc->setText(QApplication::translate("adminCatalogue", "Here admin can view all books that exist in the catalogue. You can choose to view, edit, and delete books. \n"
+" You can also choose to add books if you want to. You literally have all the power in the world as an admin. \n"
+"DONT ABUSE IT  OR YOU USE LOSE YOUR PIZZA EATING PRIVLLAGES", nullptr));
+        addBookIcon->setText(QApplication::translate("adminCatalogue", "TextLabel", nullptr));
+        addBookBtn->setText(QApplication::translate("adminCatalogue", "Add Book", nullptr));
     } // retranslateUi
 
 };
