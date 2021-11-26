@@ -55,7 +55,7 @@
 }</string>
     </property>
     <property name="text">
-     <string>edit Member</string>
+     <string>Edit Member</string>
     </property>
    </widget>
    <widget class="QGroupBox" name="groupBox">
