@@ -32,20 +32,11 @@ struct qt_meta_stringdata_BookDetails_t {
 static const qt_meta_stringdata_BookDetails_t qt_meta_stringdata_BookDetails = {
     {
 QT_MOC_LITERAL(0, 0, 11), // "BookDetails"
-<<<<<<< HEAD
 QT_MOC_LITERAL(1, 12, 22), // "on_issueButton_clicked"
 QT_MOC_LITERAL(2, 35, 0) // ""
 
     },
     "BookDetails\0on_issueButton_clicked\0"
-=======
-QT_MOC_LITERAL(1, 12, 28), // "on_reservePushButton_clicked"
-QT_MOC_LITERAL(2, 41, 0) // ""
-
-    },
-    "BookDetails\0on_reservePushButton_clicked\0"
-    ""
->>>>>>> jay
 };
 #undef QT_MOC_LITERAL
 
@@ -77,11 +68,7 @@ void BookDetails::qt_static_metacall(QObject *_o, QMetaObject::Call _c, int _id,
         auto *_t = static_cast<BookDetails *>(_o);
         Q_UNUSED(_t)
         switch (_id) {
-<<<<<<< HEAD
         case 0: _t->on_issueButton_clicked(); break;
-=======
-        case 0: _t->on_reservePushButton_clicked(); break;
->>>>>>> jay
         default: ;
         }
     }

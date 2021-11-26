@@ -35,20 +35,25 @@ void BookDetails::setNum(int num, QString userId) {
     ui->description->setText(book[num].getBookDescription());
 
     if (sysLib.isLoaned(userId, book[num].getBookId())) {
-            ui->issueButton->setText("Return");
-           //break;
-        }
-    else if (!sysLib.isPreBook(userId,  book[num].getBookId())) {
-        //for (auto element : book ){
-            if (book[num].getStock() == 0 && book[num].getAvailStatus() == 0) {
-                 ui->issueButton->setText("Reserve");
-                //break;
+        ui->issueButton->setText("Return");
+        //break;
+    }
+    else if (!sysLib.isPreBook(userId, book[num].getBookId())) {
+        for (int k = 0; k < book.size(); k++){
+            if (book[k].getStock() == 0 && book[k].getAvailStatus() == 0 && book[k].getBookId() == book[num].getBookId()) {
+                ui->issueButton->setText("Reserve");
+                break;
             }
-        //}
+            else
+                ui->issueButton->setText("Loan");
+        }
 
     }
+    else if (sysLib.isPreBook(userId, book[num].getBookId())) {
+        ui->issueButton->setText("Reserved");
+    }
     else {
-            ui->issueButton->setText("Loan");
+        ui->issueButton->setText("Loan");
     }
 
 }

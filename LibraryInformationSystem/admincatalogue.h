@@ -12,7 +12,7 @@
 #include "admineditcatalogue.h"
 #include "adminaddmember.h"
 #include "adminmembercatalogue.h"
-#include "mainwindow.h"
+//#include "mainwindow.h"
 
 namespace Ui {
 class adminCatalogue;

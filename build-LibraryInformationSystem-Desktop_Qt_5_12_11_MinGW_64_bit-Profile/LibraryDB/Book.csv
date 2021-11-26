@@ -1,7 +1,6 @@
 BookID,Book Name,Genre,InStock,Book Copies,Available Status,Book Image Filepath,Book Description
-<<<<<<< HEAD
 310186NR,LMAO,CCCCCCCCC,5,5,1,:/resources/images/gold cats.png,CCCCCCCCC
-310155BM,Hunger Games,ssssssssss,2,2,1,:/resources/images/gold cats.png,ssssssssss
+310155BM,Hunger Games,ssssssssss,0,1,0,:/resources/images/gold cats.png,ssssssssss
 310197BK,the hungey caterpillar,ssssssssssGGGGGGGGGG,3,3,1,:/resources/images/gold cats.png,ssssssssssGGGGGGGGGG
 310159VH,Twilght,BBBB,4,4,1,:/resources/images/gold cats.png,BBBB
 310130SY,Breaking dawn,EEEEEEEEEEEEEEE,5,5,1,:/resources/images/gold cats.png,EEEEEEEEEEEEEEE
@@ -11,11 +10,4 @@ BookID,Book Name,Genre,InStock,Book Copies,Available Status,Book Image Filepath,
 310175TU,Crying hours,kkkkkkkkkkkkkk,9,9,1,:/resources/images/gold cats.png,kkkkkkkkkkkkkk
 310117KS,Dying hours,llllllllllllllllllllll,10,10,1,:/resources/images/gold cats.png,llllllllllllllllllllll
 310156ZO,This is so sad,ooooooooooooooooo,11,11,1,:/resources/images/gold cats.png,ooooooooooooooooo
-310195OS,Boafoonery,rrrrr,12,12,0,:/resources/images/gold cats.png,rrrrrrrrrrrrrrrrrrr
-=======
-310192VF,holy bible,religion,1,1,1,:/resources/images/gold cats.png,holy bible
-310117KJ,holy bible,holy bible,1,1,1,:/resources/images/gold cats.png,holy bible
-310143RU,holy bible,holy bible,1,1,1,:/resources/images/gold cats.png,holy bible
-310172JA,holy bible,holy bible,1,1,1,:/resources/images/gold cats.png,holy bible
-310190TI,he,he,1,1,1,:/resources/images/gold cats.png,he
->>>>>>> jay
+310195OS,Boafoonery,rrrrr,12,12,1,:/resources/images/gold cats.png,rrrrrrrrrrrrrrrrrrr

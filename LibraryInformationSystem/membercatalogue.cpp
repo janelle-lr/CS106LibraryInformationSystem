@@ -15,13 +15,6 @@ memberCatalogue::memberCatalogue(QWidget *parent) :
     //for logo in UI
     QPixmap logo(":/resources/images/bblLogo.png");
     ui->logoImage->setPixmap(logo.scaled(450, 74, Qt::KeepAspectRatio));
-<<<<<<< HEAD
-=======
-
-    addRecords();
-    DuedateNotificationWindow* notification = new DuedateNotificationWindow(this);
-    notification->show();
->>>>>>> jay
 }
 
 memberCatalogue::~memberCatalogue()
@@ -39,7 +32,6 @@ void memberCatalogue::setAccID(QString username) {
 void memberCatalogue::createWidgets(int row, int col, QString title, QString author, QPixmap bookCover, QString bookId, QString bookStock){
     //Creating a gridlayout
     QHBoxLayout* group = new QHBoxLayout();
-
     //creating buttons
     SystemLibrary sysLib;
     BookItem bookItem;
@@ -50,23 +42,31 @@ void memberCatalogue::createWidgets(int row, int col, QString title, QString aut
 
     //for (int k = 0; k < book.size(); k++) {
     if (sysLib.isLoaned(userId, bookId)) {
-            button = new QPushButton("Return");
-           //break;
+        button = new QPushButton("Return");
+        button->setStyleSheet("QPushButton{max-width: 105px; background-color: #E78A6B; color:  #fff; font-weight: 500;}");
+        //break;
     }
     else if (!sysLib.isPreBook(userId, bookId)) {
         for (int k = 0; k < book.size(); k++){
             if (book[k].getStock() == 0 && book[k].getAvailStatus() == 0 && book[k].getBookId() == bookId) {
                 button = new QPushButton("Reserve");
+                button->setStyleSheet("QPushButton{max-width: 105px; background-color: #E78A6B; color:  #fff; font-weight: 500;}");
                 break;
             }
             else
                 button = new QPushButton("Loan");
+            button->setStyleSheet("QPushButton{max-width: 105px; background-color: #E78A6B; color:  #fff; font-weight: 500;}");
         }
 
     }
+    else if (sysLib.isPreBook(userId, bookId)) {
+        button = new QPushButton("Reserved");
+        button->setStyleSheet("QPushButton{max-width: 100px; border: 1px solid; border-color: #E78A6B; color:  #E78A6B; font-weight: 500;}");
+    }
     else {
-            button = new QPushButton("Loan");
-       //break;
+        button = new QPushButton("Loan");
+        button->setStyleSheet("QPushButton{max-width: 105px; background-color: #E78A6B; color:  #fff; font-weight: 500;}");
+        //break;
     }
     //}
     button2 = new QPushButton("View");
@@ -82,7 +82,7 @@ void memberCatalogue::createWidgets(int row, int col, QString title, QString aut
     label2->setStyleSheet("QLabel{font-size: 18px; font-weight: 500; margin-left: 5px;}");
     label3->setStyleSheet("QLabel{font-size: 15px; margin-bottom: 40px; margin-left: 5px;}");
     label4->setStyleSheet("QLabel{font-size: 15px; /*margin-bottom: 65px;*/ margin-left: 5px;}");
-    button->setStyleSheet("QPushButton{max-width: 105px; background-color: #E78A6B; color:  #fff; font-weight: 500;}");
+
     //button->setMaximumWidth(160);
     //button2->setMaximumWidth(140);
     button2->setStyleSheet("QPushButton{max-width: 100px; border: 1px solid; border-color: #E78A6B; color:  #E78A6B; font-weight: 500;}");
@@ -148,7 +148,7 @@ void memberCatalogue::addRecords(){
     QString stockString = "";
 
     for(int i = 0; i < book.size(); i++) {
-        qDebug() << book[i].getBookId() << "\n" << book[i].getBookName() << "\n" << book[i].getAuthorName();//prints in application output
+        //qDebug() << book[i].getBookId() << "\n" << book[i].getBookName() << "\n" << book[i].getAuthorName();//prints in application output
         QString title = book[i].getBookName();
         QString author = book[i].getAuthorName();
         QPixmap image = book[i].getBookImageFilePath();
@@ -165,11 +165,11 @@ void memberCatalogue::addRecords(){
 
     //looping through button vector to make buttons work
     for(int i = 0; i < btn.size(); i++){
-            connect(btn[i],SIGNAL(released()),this,SLOT(issueButtonClicked()));
+        connect(btn[i],SIGNAL(released()),this,SLOT(issueButtonClicked()));
     }
 
     for(int i = 0; i < btn2.size(); i++){
-            connect(btn2[i],SIGNAL(released()),this,SLOT(viewButtonClicked()));
+        connect(btn2[i],SIGNAL(released()),this,SLOT(viewButtonClicked()));
     }
 
 }
@@ -206,24 +206,20 @@ void memberCatalogue::issueButtonClicked(){
         QMessageBox::information(this, "Reserve Book", "You have successfully reserved " + book[num].getBookName());
     } else {
         if (book[num].getAvailStatus() != 0 && book[num].getStock() > 0) {
-        bookItem.setBookItemID(sysLib.generateID(7));
-        bookItem.setBookItem_MemberID(userId);
-        bookItem.setBookItem_BookID(book[num].getBookId());
-        sysLib.loanBook(bookItem);
-        QMessageBox::information(this, "Loaned", "You have loaned " + book[num].getBookName() + " for 7 days.");
+            bookItem.setBookItemID(sysLib.generateID(7));
+            bookItem.setBookItem_MemberID(userId);
+            bookItem.setBookItem_BookID(book[num].getBookId());
+            sysLib.loanBook(bookItem);
+            QMessageBox::information(this, "Loaned", "You have loaned " + book[num].getBookName() + " for 7 days.");
         }
     }
 
-<<<<<<< HEAD
     deleteRecords();
 }
-=======
->>>>>>> jay
 
 void memberCatalogue::viewButtonClicked(){
     SystemLibrary sysLib;
 
-<<<<<<< HEAD
     QVector<Book> book;
     book = sysLib.getAllBooks();
 
@@ -241,11 +237,6 @@ void memberCatalogue::viewButtonClicked(){
     connect(bookdetails, SIGNAL(showBookDetails()), this, SLOT(show()));
     bookdetails->show();
     bookdetails->setNum(num,userId);
-=======
-    //admineditbook = new adminEditBook();
-    //admineditbook->show();
-    //admineditbook->setNum(num);
->>>>>>> jay
 }
 
 void memberCatalogue::deleteRecords(){

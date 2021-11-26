@@ -12,22 +12,22 @@ DuedateNotificationWindow::DuedateNotificationWindow(QWidget *parent) :
 
     QVector<Book> book = sysLib.getAllBooks();
     QVector<BookItem> bookItem = sysLib.getAllBookItem();
-    QStringList dueList = sysLib.getNearbyDueDateBooks();
-    for(auto dueElement: dueList){
-        for(auto bookElement: book){
-            if(dueElement == bookElement.getBookId()){
-                for(auto bookItemElement: bookItem){
-                    if(bookItemElement.getBookItem_BookID() == bookElement.getBookId()){
-                        loanedDate = bookItemElement.getBookDate();
-                        dueDate = bookItemElement.getExpiryDate();
-                    }
-                }
-                ui->listWidget->addItem("Book Title: " + bookElement.getBookName() + "\n" + "Author: " + bookElement.getAuthorName() + "\n" + "Booked Date: " + loanedDate +
-                                        "\n" + "Expiry Date: " + dueDate + "\n");
-            }
-        }
-    }
-    ui->listWidget->addItem(sysLib.getAvailPreBookDate("123"));
+    //QStringList dueList = sysLib.getNearbyDueDateBooks();
+//    for(auto dueElement: dueList){
+//        for(auto bookElement: book){
+//            if(dueElement == bookElement.getBookId()){
+//                for(auto bookItemElement: bookItem){
+//                    if(bookItemElement.getBookItem_BookID() == bookElement.getBookId()){
+//                        loanedDate = bookItemElement.getBookDate();
+//                        dueDate = bookItemElement.getExpiryDate();
+//                    }
+//                }
+//                ui->listWidget->addItem("Book Title: " + bookElement.getBookName() + "\n" + "Author: " + bookElement.getAuthorName() + "\n" + "Booked Date: " + loanedDate +
+//                                        "\n" + "Expiry Date: " + dueDate + "\n");
+//            }
+//        }
+//    }
+//    ui->listWidget->addItem(sysLib.getAvailPreBookDate("123"));
 }
 
 DuedateNotificationWindow::~DuedateNotificationWindow()

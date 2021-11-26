@@ -10,12 +10,8 @@
 #include <QGroupBox>
 #include "systemlibrary.h"
 #include "memberaccountview.h"
-<<<<<<< HEAD
 #include "bookdetails.h"
 
-=======
-#include "duedatenotificationwindow.h"
->>>>>>> jay
 namespace Ui {
 class memberCatalogue;
 }
@@ -33,11 +29,7 @@ public:
 
 private slots:
     void issueButtonClicked();
-<<<<<<< HEAD
     void viewButtonClicked();
-=======
-
->>>>>>> jay
 
 private:
     Ui::memberCatalogue *ui;

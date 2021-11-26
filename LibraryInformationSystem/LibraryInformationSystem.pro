@@ -21,7 +21,6 @@ SOURCES += \
     book.cpp \
     bookdetails.cpp \
     bookitem.cpp \
-    duedatenotificationwindow.cpp \
     librarydatabase.cpp \
     main.cpp \
     mainwindow.cpp \
@@ -45,7 +44,6 @@ HEADERS += \
     book.h \
     bookdetails.h \
     bookitem.h \
-    duedatenotificationwindow.h \
     librarydatabase.h \
     mainwindow.h \
     member.h \
@@ -63,7 +61,6 @@ FORMS += \
     adminmembercatalogue.ui \
     adminmemberedit.ui \
     bookdetails.ui \
-    duedatenotificationwindow.ui \
     mainwindow.ui \
     memberaccountview.ui \
     membercatalogue.ui

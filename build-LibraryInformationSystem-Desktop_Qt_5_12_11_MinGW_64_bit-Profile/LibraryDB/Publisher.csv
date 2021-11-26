@@ -1,5 +1,4 @@
 PublisherID,BookID,Publisher Name,Publication Date,Location
-<<<<<<< HEAD
 default,310186NR,default,default,default
 default,310155BM,default,default,default
 default,310197BK,default,default,default
@@ -12,10 +11,3 @@ default,310175TU,default,default,default
 default,310117KS,default,default,default
 default,310156ZO,default,default,default
 default,310195OS,default,default,default
-=======
-default,310192VF,holy bible,default,default
-default,310117KJ,holy bible,default,default
-default,310143RU,holy bible,default,default
-default,310172JA,holy bible,default,default
-default,310190TI,he,default,default
->>>>>>> jay
