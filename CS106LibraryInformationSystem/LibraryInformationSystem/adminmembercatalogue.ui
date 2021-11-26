@@ -1,0 +1,343 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>adminMemberCatalogue</class>
+ <widget class="QMainWindow" name="adminMemberCatalogue">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>1280</width>
+    <height>640</height>
+   </rect>
+  </property>
+  <property name="minimumSize">
+   <size>
+    <width>1280</width>
+    <height>640</height>
+   </size>
+  </property>
+  <property name="maximumSize">
+   <size>
+    <width>1280</width>
+    <height>640</height>
+   </size>
+  </property>
+  <property name="windowTitle">
+   <string>MainWindow</string>
+  </property>
+  <widget class="QWidget" name="centralwidget">
+   <property name="styleSheet">
+    <string notr="true">QWidget{
+	background: #FFE5D0;
+	font-family: Montserrat;
+}
+
+QLineEdit {
+	border: 1px solid;
+	border-radius: 15px;
+	border-color: #e5e5e5;
+	background-color: palette(base);
+	padding: 0px 5px;
+	font-size: 13px;
+}
+
+QPushButton {
+	border-radius: 15px; 
+	font-size: 13px;
+	height: 31px; 
+}</string>
+   </property>
+   <widget class="QScrollArea" name="scrollArea">
+    <property name="geometry">
+     <rect>
+      <x>260</x>
+      <y>140</y>
+      <width>1011</width>
+      <height>471</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">QScrollArea {
+	border: none;
+}
+</string>
+    </property>
+    <property name="widgetResizable">
+     <bool>true</bool>
+    </property>
+    <widget class="QWidget" name="scrollAreaWidgetContents">
+     <property name="geometry">
+      <rect>
+       <x>0</x>
+       <y>0</y>
+       <width>1011</width>
+       <height>471</height>
+      </rect>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">QWidget {
+	background-color: #FFE5D0;
+	/*border: none;*/
+}
+
+QGridLayout {
+	/*border: none;*/
+}
+
+QPushButton {
+	margin-right: 10px; 
+	height: 31px; 
+	/*max-width: 100px; */
+}
+</string>
+     </property>
+     <layout class="QHBoxLayout" name="horizontalLayout">
+      <item>
+       <layout class="QGridLayout" name="gridLayout_3"/>
+      </item>
+     </layout>
+    </widget>
+   </widget>
+   <widget class="QPushButton" name="pushButton">
+    <property name="geometry">
+     <rect>
+      <x>784</x>
+      <y>40</y>
+      <width>131</width>
+      <height>23</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>PushButton</string>
+    </property>
+   </widget>
+   <widget class="QWidget" name="layoutWidget">
+    <property name="geometry">
+     <rect>
+      <x>20</x>
+      <y>120</y>
+      <width>191</width>
+      <height>471</height>
+     </rect>
+    </property>
+    <layout class="QVBoxLayout" name="verticalLayout_2">
+     <item>
+      <widget class="QLabel" name="catalogueIcon_2">
+       <property name="styleSheet">
+        <string notr="true">QLabel{
+	color: rgb(231, 138, 107);
+}</string>
+       </property>
+       <property name="text">
+        <string>Catalogue</string>
+       </property>
+       <property name="alignment">
+        <set>Qt::AlignCenter</set>
+       </property>
+      </widget>
+     </item>
+     <item>
+      <widget class="QPushButton" name="catalogueBtn_2">
+       <property name="styleSheet">
+        <string notr="true">QPushButton{
+	border-radius:15px;
+	font: 14px &quot;Montserrat&quot;;
+}
+
+QPushButton:hover {
+	text-decoration: underline;
+}</string>
+       </property>
+       <property name="text">
+        <string>Catalogue</string>
+       </property>
+      </widget>
+     </item>
+     <item>
+      <widget class="QLabel" name="memberIcon_2">
+       <property name="text">
+        <string>member</string>
+       </property>
+       <property name="alignment">
+        <set>Qt::AlignCenter</set>
+       </property>
+      </widget>
+     </item>
+     <item>
+      <widget class="QPushButton" name="memberBtn_2">
+       <property name="styleSheet">
+        <string notr="true">QPushButton{
+	border-radius:15px;
+	font: 14px &quot;Montserrat&quot;;
+}
+
+QPushButton:hover {
+	text-decoration: underline;
+}</string>
+       </property>
+       <property name="text">
+        <string>Member</string>
+       </property>
+      </widget>
+     </item>
+     <item>
+      <widget class="QLabel" name="accountIcon_2">
+       <property name="text">
+        <string>account</string>
+       </property>
+       <property name="alignment">
+        <set>Qt::AlignCenter</set>
+       </property>
+      </widget>
+     </item>
+     <item>
+      <widget class="QPushButton" name="accountBtn_2">
+       <property name="styleSheet">
+        <string notr="true">QPushButton{
+	border-radius:15px;
+	font: 14px &quot;Montserrat&quot;;
+}
+
+QPushButton:hover {
+	text-decoration: underline;
+}</string>
+       </property>
+       <property name="text">
+        <string>Account</string>
+       </property>
+      </widget>
+     </item>
+     <item>
+      <spacer name="verticalSpacer_2">
+       <property name="orientation">
+        <enum>Qt::Vertical</enum>
+       </property>
+       <property name="sizeHint" stdset="0">
+        <size>
+         <width>20</width>
+         <height>40</height>
+        </size>
+       </property>
+      </spacer>
+     </item>
+     <item>
+      <widget class="QLabel" name="signoutIcon_2">
+       <property name="text">
+        <string>signOut</string>
+       </property>
+       <property name="alignment">
+        <set>Qt::AlignCenter</set>
+       </property>
+      </widget>
+     </item>
+     <item>
+      <widget class="QPushButton" name="signoutBtn_2">
+       <property name="styleSheet">
+        <string notr="true">QPushButton{
+	border-radius:15px;
+	font: 14px &quot;Montserrat&quot;;
+}
+
+QPushButton:hover {
+	text-decoration: underline;
+}</string>
+       </property>
+       <property name="text">
+        <string>Sign Out</string>
+       </property>
+      </widget>
+     </item>
+    </layout>
+   </widget>
+   <widget class="QLabel" name="pageDesc">
+    <property name="geometry">
+     <rect>
+      <x>290</x>
+      <y>90</y>
+      <width>971</width>
+      <height>51</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>Here admin can view all books that exist in the catalogue. You can choose to view, edit, and delete books. 
+ You can also choose to add books if you want to. You literally have all the power in the world as an admin. 
+DONT ABUSE IT  OR YOU USE LOSE YOUR PIZZA EATING PRIVLLAGES</string>
+    </property>
+   </widget>
+   <widget class="Line" name="line">
+    <property name="geometry">
+     <rect>
+      <x>210</x>
+      <y>110</y>
+      <width>21</width>
+      <height>481</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">Line{
+	color:rgb(221, 46, 68);
+}</string>
+    </property>
+    <property name="orientation">
+     <enum>Qt::Vertical</enum>
+    </property>
+   </widget>
+   <widget class="QLabel" name="logoImage">
+    <property name="geometry">
+     <rect>
+      <x>10</x>
+      <y>20</y>
+      <width>221</width>
+      <height>71</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string/>
+    </property>
+    <property name="pixmap">
+     <pixmap resource="resources.qrc">:/resources/images/bblLogo.png</pixmap>
+    </property>
+   </widget>
+   <widget class="QLabel" name="pageTitle">
+    <property name="geometry">
+     <rect>
+      <x>290</x>
+      <y>50</y>
+      <width>331</width>
+      <height>51</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">QLabel{
+	font-size: 24px;
+	font-weight: bold;
+}</string>
+    </property>
+    <property name="text">
+     <string>View Existing Members</string>
+    </property>
+   </widget>
+   <zorder>scrollArea</zorder>
+   <zorder>pushButton</zorder>
+   <zorder>layoutWidget</zorder>
+   <zorder>line</zorder>
+   <zorder>logoImage</zorder>
+   <zorder>pageTitle</zorder>
+   <zorder>pageDesc</zorder>
+  </widget>
+  <widget class="QMenuBar" name="menubar">
+   <property name="geometry">
+    <rect>
+     <x>0</x>
+     <y>0</y>
+     <width>1280</width>
+     <height>21</height>
+    </rect>
+   </property>
+  </widget>
+ </widget>
+ <resources>
+  <include location="resources.qrc"/>
+ </resources>
+ <connections/>
+</ui>
