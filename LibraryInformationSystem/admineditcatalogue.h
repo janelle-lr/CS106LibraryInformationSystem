@@ -9,7 +9,6 @@
 #include <QGridLayout>
 #include <QLabel>
 #include <QGroupBox>
-
 namespace Ui {
 class adminEditCatalogue;
 }

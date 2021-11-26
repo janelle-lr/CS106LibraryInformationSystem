@@ -73,7 +73,10 @@ void memberCatalogue::qt_static_metacall(QObject *_o, QMetaObject::Call _c, int 
         Q_UNUSED(_t)
         switch (_id) {
         case 0: _t->issueButtonClicked(); break;
+<<<<<<< HEAD
         case 1: _t->viewButtonClicked(); break;
+=======
+>>>>>>> jay
         default: ;
         }
     }

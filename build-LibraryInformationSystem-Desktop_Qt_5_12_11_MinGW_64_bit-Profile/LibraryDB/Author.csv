@@ -1,4 +1,5 @@
 AuthorID,BookID,Author Name,Biography,Date of Birth
+<<<<<<< HEAD
 default,310186NR,Bob Ross,default,default
 default,310155BM,John smith,default,default
 default,310197BK,Kim Possible,default,default
@@ -11,3 +12,10 @@ default,310175TU,Jessica,default,default
 default,310117KS,Damon,default,default
 default,310156ZO,Ajjdnvi,default,default
 default,310195OS,ajdjkdji,default,default
+=======
+default,310192VF,holy bible,default,default
+default,310117KJ,holy bible,default,default
+default,310143RU,holy bible,default,default
+default,310172JA,holy bible,default,default
+default,310190TI,he,default,default
+>>>>>>> jay

@@ -44,6 +44,8 @@ public:
     void checkLoanedBooks();
     bool isLoaned(QString,QString);
     bool isPreBook(QString, QString);
+    QStringList getNearbyDueDateBooks();    
+    QString getAvailPreBookDate(QString);
 };
 
 #endif // LIBRARYDATABASE_H

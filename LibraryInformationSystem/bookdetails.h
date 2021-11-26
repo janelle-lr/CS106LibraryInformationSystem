@@ -18,7 +18,11 @@ public:
     void setNum (int, QString);
 
 private slots:
+<<<<<<< HEAD
     void on_issueButton_clicked();
+=======
+    void on_reservePushButton_clicked();
+>>>>>>> jay
 
 private:
     Ui::BookDetails *ui;

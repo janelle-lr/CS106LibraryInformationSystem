@@ -21,9 +21,15 @@ MainWindow::MainWindow(QWidget *parent)
     ui->passwordLineEdit->setText("kimkardashian");
 
     hide();
+<<<<<<< HEAD
 //    admincatalogue = new adminCatalogue(this);
 //    connect(admincatalogue, SIGNAL(openadminCatalogue()), this, SLOT(openMainWindow())); //connect(pointerName, SIGNAL(openWindowYouWantToOpen()), this, SLOT(openWindowUrOpeningFrom()));
 //    admincatalogue->show();
+=======
+    membercatalogue = new memberCatalogue(this);
+    connect(membercatalogue, SIGNAL(openadminCatalogue()), this, SLOT(openMainWindow())); //connect(pointerName, SIGNAL(openWindowYouWantToOpen()), this, SLOT(openWindowUrOpeningFrom()));
+    membercatalogue->show();
+>>>>>>> jay
 }
 
 MainWindow::~MainWindow()
@@ -41,7 +47,11 @@ void MainWindow::on_loginPushButton_clicked()
     bool login = sysLib->checkAccount(password,username);
     qDebug() << login;
     if(sysLib->checkAccount(username,password)){
+<<<<<<< HEAD
         QMessageBox::information(this,"Thank You for logging in", "User, " + username + " has logged in.");
+=======
+        QMessageBox::information(this,"Thank You for logging in", "User, " + username + " has logged in.");    
+>>>>>>> jay
         hide();
         //qDebug() << subString;
         if(username.left(3) == "210"){

@@ -15,6 +15,13 @@ memberCatalogue::memberCatalogue(QWidget *parent) :
     //for logo in UI
     QPixmap logo(":/resources/images/bblLogo.png");
     ui->logoImage->setPixmap(logo.scaled(450, 74, Qt::KeepAspectRatio));
+<<<<<<< HEAD
+=======
+
+    addRecords();
+    DuedateNotificationWindow* notification = new DuedateNotificationWindow(this);
+    notification->show();
+>>>>>>> jay
 }
 
 memberCatalogue::~memberCatalogue()
@@ -207,12 +214,16 @@ void memberCatalogue::issueButtonClicked(){
         }
     }
 
+<<<<<<< HEAD
     deleteRecords();
 }
+=======
+>>>>>>> jay
 
 void memberCatalogue::viewButtonClicked(){
     SystemLibrary sysLib;
 
+<<<<<<< HEAD
     QVector<Book> book;
     book = sysLib.getAllBooks();
 
@@ -230,6 +241,11 @@ void memberCatalogue::viewButtonClicked(){
     connect(bookdetails, SIGNAL(showBookDetails()), this, SLOT(show()));
     bookdetails->show();
     bookdetails->setNum(num,userId);
+=======
+    //admineditbook = new adminEditBook();
+    //admineditbook->show();
+    //admineditbook->setNum(num);
+>>>>>>> jay
 }
 
 void memberCatalogue::deleteRecords(){

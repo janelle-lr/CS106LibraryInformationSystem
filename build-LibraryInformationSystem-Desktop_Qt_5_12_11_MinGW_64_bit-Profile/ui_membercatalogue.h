@@ -21,6 +21,10 @@
 #include <QtWidgets/QMenuBar>
 #include <QtWidgets/QPushButton>
 #include <QtWidgets/QScrollArea>
+<<<<<<< HEAD
+=======
+#include <QtWidgets/QStatusBar>
+>>>>>>> jay
 #include <QtWidgets/QWidget>
 
 QT_BEGIN_NAMESPACE
@@ -43,14 +47,24 @@ public:
     QMenuBar *menubar;
     QMenu *menuCatalogue;
     QMenu *menuAccount;
+<<<<<<< HEAD
+=======
+    QStatusBar *statusbar;
+>>>>>>> jay
 
     void setupUi(QMainWindow *memberCatalogue)
     {
         if (memberCatalogue->objectName().isEmpty())
             memberCatalogue->setObjectName(QString::fromUtf8("memberCatalogue"));
+<<<<<<< HEAD
         memberCatalogue->resize(1280, 640);
         memberCatalogue->setMinimumSize(QSize(1280, 640));
         memberCatalogue->setMaximumSize(QSize(1280, 640));
+=======
+        memberCatalogue->resize(1080, 640);
+        memberCatalogue->setMinimumSize(QSize(1080, 640));
+        memberCatalogue->setMaximumSize(QSize(1080, 640));
+>>>>>>> jay
         memberCatalogue->setStyleSheet(QString::fromUtf8("QMenuBar {\n"
 "    background-color: qlineargradient(x1:0, y1:0, x2:0, y2:1,\n"
 "                                      stop:0 lightgray, stop:1 darkgray);\n"
@@ -82,6 +96,7 @@ public:
         centralwidget->setObjectName(QString::fromUtf8("centralwidget"));
         centralwidget->setStyleSheet(QString::fromUtf8("QWidget{\n"
 "	background: #FFE5D0;\n"
+<<<<<<< HEAD
 "	font-family: Montserrat;\n"
 "}\n"
 "\n"
@@ -102,6 +117,12 @@ public:
         logoImage = new QLabel(centralwidget);
         logoImage->setObjectName(QString::fromUtf8("logoImage"));
         logoImage->setGeometry(QRect(200, 30, 441, 61));
+=======
+"}"));
+        logoImage = new QLabel(centralwidget);
+        logoImage->setObjectName(QString::fromUtf8("logoImage"));
+        logoImage->setGeometry(QRect(30, 20, 441, 61));
+>>>>>>> jay
         logoImage->setPixmap(QPixmap(QString::fromUtf8(":/resources/images/bblLogo.png")));
         comboBox = new QComboBox(centralwidget);
         comboBox->addItem(QString());
@@ -110,6 +131,7 @@ public:
         comboBox->addItem(QString());
         comboBox->addItem(QString());
         comboBox->setObjectName(QString::fromUtf8("comboBox"));
+<<<<<<< HEAD
         comboBox->setGeometry(QRect(1100, 70, 131, 22));
         pushButton = new QPushButton(centralwidget);
         pushButton->setObjectName(QString::fromUtf8("pushButton"));
@@ -117,6 +139,15 @@ public:
         scrollArea = new QScrollArea(centralwidget);
         scrollArea->setObjectName(QString::fromUtf8("scrollArea"));
         scrollArea->setGeometry(QRect(230, 110, 1051, 511));
+=======
+        comboBox->setGeometry(QRect(880, 30, 131, 22));
+        pushButton = new QPushButton(centralwidget);
+        pushButton->setObjectName(QString::fromUtf8("pushButton"));
+        pushButton->setGeometry(QRect(650, 30, 75, 23));
+        scrollArea = new QScrollArea(centralwidget);
+        scrollArea->setObjectName(QString::fromUtf8("scrollArea"));
+        scrollArea->setGeometry(QRect(0, 90, 1081, 461));
+>>>>>>> jay
         scrollArea->setStyleSheet(QString::fromUtf8("QScrollArea {\n"
 "	border: none;\n"
 "}\n"
@@ -124,7 +155,11 @@ public:
         scrollArea->setWidgetResizable(true);
         scrollAreaWidgetContents = new QWidget();
         scrollAreaWidgetContents->setObjectName(QString::fromUtf8("scrollAreaWidgetContents"));
+<<<<<<< HEAD
         scrollAreaWidgetContents->setGeometry(QRect(0, 0, 1051, 511));
+=======
+        scrollAreaWidgetContents->setGeometry(QRect(0, 0, 1081, 461));
+>>>>>>> jay
         scrollAreaWidgetContents->setStyleSheet(QString::fromUtf8("QWidget {\n"
 "	background-color: #FFE5D0;\n"
 "	/*border: none;*/\n"
@@ -151,12 +186,22 @@ public:
         memberCatalogue->setCentralWidget(centralwidget);
         menubar = new QMenuBar(memberCatalogue);
         menubar->setObjectName(QString::fromUtf8("menubar"));
+<<<<<<< HEAD
         menubar->setGeometry(QRect(0, 0, 1280, 18));
+=======
+        menubar->setGeometry(QRect(0, 0, 1080, 18));
+>>>>>>> jay
         menuCatalogue = new QMenu(menubar);
         menuCatalogue->setObjectName(QString::fromUtf8("menuCatalogue"));
         menuAccount = new QMenu(menubar);
         menuAccount->setObjectName(QString::fromUtf8("menuAccount"));
         memberCatalogue->setMenuBar(menubar);
+<<<<<<< HEAD
+=======
+        statusbar = new QStatusBar(memberCatalogue);
+        statusbar->setObjectName(QString::fromUtf8("statusbar"));
+        memberCatalogue->setStatusBar(statusbar);
+>>>>>>> jay
 
         menubar->addAction(menuAccount->menuAction());
         menubar->addAction(menuCatalogue->menuAction());
