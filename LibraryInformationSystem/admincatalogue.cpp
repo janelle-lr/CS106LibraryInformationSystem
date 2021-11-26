@@ -21,9 +21,6 @@ adminCatalogue::adminCatalogue(QWidget *parent) :
     QPixmap img2(":/resources/images/viewMembers.png");
     ui->memberIcon->setPixmap(img2.scaled(40, 40, Qt::KeepAspectRatio));
 
-    QPixmap img3(":/resources/images/account.png");
-    ui->accountIcon->setPixmap(img3.scaled(40, 40, Qt::KeepAspectRatio));
-
     QPixmap img4(":/resources/images/uis_signout.png");
     ui->signoutIcon->setPixmap(img4.scaled(40, 40, Qt::KeepAspectRatio));
 
@@ -34,6 +31,21 @@ adminCatalogue::~adminCatalogue()
 {
     delete ui;
 }
+
+//NAV BAR CONNECTION START
+void adminCatalogue::on_memberBtn_clicked()
+{
+    adminmembercatalogue = new adminMemberCatalogue(this);
+    connect(adminmembercatalogue, SIGNAL(adminMemberCatalogue()), this, SLOT(show()));
+    adminmembercatalogue->show();
+    hide();
+}
+
+void adminCatalogue::on_signoutBtn_clicked()
+{
+    close();
+}
+//NAV BAR CONNECTION END
 
 void adminCatalogue::createWidgets(int row, int col, QString title, QString author, QPixmap bookCover){
 //Creating a gridlayout

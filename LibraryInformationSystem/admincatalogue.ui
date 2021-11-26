@@ -123,33 +123,6 @@ QPushButton:hover {
       </widget>
      </item>
      <item>
-      <widget class="QLabel" name="accountIcon">
-       <property name="text">
-        <string>account</string>
-       </property>
-       <property name="alignment">
-        <set>Qt::AlignCenter</set>
-       </property>
-      </widget>
-     </item>
-     <item>
-      <widget class="QPushButton" name="accountBtn">
-       <property name="styleSheet">
-        <string notr="true">QPushButton{
-	border-radius:15px;
-	font: 14px &quot;Montserrat&quot;;
-}
-
-QPushButton:hover {
-	text-decoration: underline;
-}</string>
-       </property>
-       <property name="text">
-        <string>Account</string>
-       </property>
-      </widget>
-     </item>
-     <item>
       <spacer name="verticalSpacer">
        <property name="orientation">
         <enum>Qt::Vertical</enum>

@@ -21,9 +21,9 @@ MainWindow::MainWindow(QWidget *parent)
     ui->passwordLineEdit->setText("kimkardashian");
 
     hide();
-    admincatalogue = new adminCatalogue(this);
-    connect(admincatalogue, SIGNAL(openadminCatalogue()), this, SLOT(openMainWindow())); //connect(pointerName, SIGNAL(openWindowYouWantToOpen()), this, SLOT(openWindowUrOpeningFrom()));
-    admincatalogue->show();
+//    admincatalogue = new adminCatalogue(this);
+//    connect(admincatalogue, SIGNAL(openadminCatalogue()), this, SLOT(openMainWindow())); //connect(pointerName, SIGNAL(openWindowYouWantToOpen()), this, SLOT(openWindowUrOpeningFrom()));
+//    admincatalogue->show();
 }
 
 MainWindow::~MainWindow()
@@ -46,9 +46,9 @@ void MainWindow::on_loginPushButton_clicked()
         //qDebug() << subString;
         if(username.left(3) == "210"){
             //qDebug() << "admin has logged in";
-            admineditcatalogue = new adminEditCatalogue(this);
-            connect(admineditcatalogue, SIGNAL(openadminEditCatalogue()), this, SLOT(openMainWindow())); //connect(pointerName, SIGNAL(openWindowYouWantToOpen()), this, SLOT(openWindowUrOpeningFrom()));
-            admineditcatalogue->show();
+            admincatalogue = new adminCatalogue(this);
+            connect(admincatalogue, SIGNAL(openadminCatalogue()), this, SLOT(openMainWindow())); //connect(pointerName, SIGNAL(openWindowYouWantToOpen()), this, SLOT(openWindowUrOpeningFrom()));
+            admincatalogue->show();
 
         }else if(username.left(3) == "220"){
             qDebug() << "member has logged in";

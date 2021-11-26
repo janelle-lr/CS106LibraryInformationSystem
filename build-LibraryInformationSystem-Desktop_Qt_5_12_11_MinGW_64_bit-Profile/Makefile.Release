@@ -194,16 +194,26 @@ compiler_rcc_clean:
 	-$(DEL_FILE) release\qrc_resources.cpp
 release/qrc_resources.cpp: ../LibraryInformationSystem/resources.qrc \
 		D:/QT/5.12.11/5.12.11/mingw73_64/bin/rcc.exe \
-		../LibraryInformationSystem/images/gold\ cats.png \
-		../LibraryInformationSystem/images/pomegranates.png \
 		../LibraryInformationSystem/images/testImage2.jpg \
-		../LibraryInformationSystem/images/bblLogo.png \
-		../LibraryInformationSystem/images/duneBookCover.png \
-		../LibraryInformationSystem/images/50shadesofGray.png \
+		../LibraryInformationSystem/images/uis_signout.png \
 		../LibraryInformationSystem/images/another50shadesofgray.png \
+		../LibraryInformationSystem/images/addBook.png \
+		../LibraryInformationSystem/images/signOut.png \
+		../LibraryInformationSystem/images/currentLoanBook.png \
+		../LibraryInformationSystem/images/account.png \
+		../LibraryInformationSystem/images/50shadesofGray.png \
+		../LibraryInformationSystem/images/addMember.png \
+		../LibraryInformationSystem/images/reserveBook.png \
+		../LibraryInformationSystem/images/bblLogo.png \
+		../LibraryInformationSystem/images/miniLogo.png \
 		../LibraryInformationSystem/images/bloodCottage.png \
+		../LibraryInformationSystem/images/duneBookCover.png \
 		../LibraryInformationSystem/images/testImage3.jfif \
-		../LibraryInformationSystem/images/testImage.jpg
+		../LibraryInformationSystem/images/gold\ cats.png \
+		../LibraryInformationSystem/images/testImage.jpg \
+		../LibraryInformationSystem/images/catalogue.png \
+		../LibraryInformationSystem/images/pomegranates.png \
+		../LibraryInformationSystem/images/viewMembers.png
 	D:\QT\5.12.11\5.12.11\mingw73_64\bin\rcc.exe -name resources ..\LibraryInformationSystem\resources.qrc -o release\qrc_resources.cpp
 
 compiler_qmlcache_make_all:

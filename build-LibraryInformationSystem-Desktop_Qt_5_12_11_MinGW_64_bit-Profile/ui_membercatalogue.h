@@ -21,7 +21,6 @@
 #include <QtWidgets/QMenuBar>
 #include <QtWidgets/QPushButton>
 #include <QtWidgets/QScrollArea>
-#include <QtWidgets/QStatusBar>
 #include <QtWidgets/QWidget>
 
 QT_BEGIN_NAMESPACE
@@ -44,15 +43,14 @@ public:
     QMenuBar *menubar;
     QMenu *menuCatalogue;
     QMenu *menuAccount;
-    QStatusBar *statusbar;
 
     void setupUi(QMainWindow *memberCatalogue)
     {
         if (memberCatalogue->objectName().isEmpty())
             memberCatalogue->setObjectName(QString::fromUtf8("memberCatalogue"));
-        memberCatalogue->resize(1080, 640);
-        memberCatalogue->setMinimumSize(QSize(1080, 640));
-        memberCatalogue->setMaximumSize(QSize(1080, 640));
+        memberCatalogue->resize(1280, 640);
+        memberCatalogue->setMinimumSize(QSize(1280, 640));
+        memberCatalogue->setMaximumSize(QSize(1280, 640));
         memberCatalogue->setStyleSheet(QString::fromUtf8("QMenuBar {\n"
 "    background-color: qlineargradient(x1:0, y1:0, x2:0, y2:1,\n"
 "                                      stop:0 lightgray, stop:1 darkgray);\n"
@@ -84,10 +82,26 @@ public:
         centralwidget->setObjectName(QString::fromUtf8("centralwidget"));
         centralwidget->setStyleSheet(QString::fromUtf8("QWidget{\n"
 "	background: #FFE5D0;\n"
+"	font-family: Montserrat;\n"
+"}\n"
+"\n"
+"QLineEdit {\n"
+"	border: 1px solid;\n"
+"	border-radius: 15px;\n"
+"	border-color: #e5e5e5;\n"
+"	background-color: palette(base);\n"
+"	padding: 0px 5px;\n"
+"	font-size: 13px;\n"
+"}\n"
+"\n"
+"QPushButton {\n"
+"	border-radius: 15px; \n"
+"	font-size: 13px;\n"
+"	height: 31px; \n"
 "}"));
         logoImage = new QLabel(centralwidget);
         logoImage->setObjectName(QString::fromUtf8("logoImage"));
-        logoImage->setGeometry(QRect(30, 20, 441, 61));
+        logoImage->setGeometry(QRect(200, 30, 441, 61));
         logoImage->setPixmap(QPixmap(QString::fromUtf8(":/resources/images/bblLogo.png")));
         comboBox = new QComboBox(centralwidget);
         comboBox->addItem(QString());
@@ -96,13 +110,13 @@ public:
         comboBox->addItem(QString());
         comboBox->addItem(QString());
         comboBox->setObjectName(QString::fromUtf8("comboBox"));
-        comboBox->setGeometry(QRect(880, 30, 131, 22));
+        comboBox->setGeometry(QRect(1100, 70, 131, 22));
         pushButton = new QPushButton(centralwidget);
         pushButton->setObjectName(QString::fromUtf8("pushButton"));
-        pushButton->setGeometry(QRect(650, 30, 75, 23));
+        pushButton->setGeometry(QRect(1000, 70, 75, 23));
         scrollArea = new QScrollArea(centralwidget);
         scrollArea->setObjectName(QString::fromUtf8("scrollArea"));
-        scrollArea->setGeometry(QRect(0, 90, 1081, 461));
+        scrollArea->setGeometry(QRect(230, 110, 1051, 511));
         scrollArea->setStyleSheet(QString::fromUtf8("QScrollArea {\n"
 "	border: none;\n"
 "}\n"
@@ -110,7 +124,7 @@ public:
         scrollArea->setWidgetResizable(true);
         scrollAreaWidgetContents = new QWidget();
         scrollAreaWidgetContents->setObjectName(QString::fromUtf8("scrollAreaWidgetContents"));
-        scrollAreaWidgetContents->setGeometry(QRect(0, 0, 1081, 461));
+        scrollAreaWidgetContents->setGeometry(QRect(0, 0, 1051, 511));
         scrollAreaWidgetContents->setStyleSheet(QString::fromUtf8("QWidget {\n"
 "	background-color: #FFE5D0;\n"
 "	/*border: none;*/\n"
@@ -137,15 +151,12 @@ public:
         memberCatalogue->setCentralWidget(centralwidget);
         menubar = new QMenuBar(memberCatalogue);
         menubar->setObjectName(QString::fromUtf8("menubar"));
-        menubar->setGeometry(QRect(0, 0, 1080, 18));
+        menubar->setGeometry(QRect(0, 0, 1280, 18));
         menuCatalogue = new QMenu(menubar);
         menuCatalogue->setObjectName(QString::fromUtf8("menuCatalogue"));
         menuAccount = new QMenu(menubar);
         menuAccount->setObjectName(QString::fromUtf8("menuAccount"));
         memberCatalogue->setMenuBar(menubar);
-        statusbar = new QStatusBar(memberCatalogue);
-        statusbar->setObjectName(QString::fromUtf8("statusbar"));
-        memberCatalogue->setStatusBar(statusbar);
 
         menubar->addAction(menuAccount->menuAction());
         menubar->addAction(menuCatalogue->menuAction());

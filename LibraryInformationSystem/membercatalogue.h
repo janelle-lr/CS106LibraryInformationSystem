@@ -10,6 +10,7 @@
 #include <QGroupBox>
 #include "systemlibrary.h"
 #include "memberaccountview.h"
+#include "bookdetails.h"
 
 namespace Ui {
 class memberCatalogue;
@@ -28,12 +29,12 @@ public:
 
 private slots:
     void issueButtonClicked();
-
+    void viewButtonClicked();
 
 private:
     Ui::memberCatalogue *ui;
     memberAccountView *memberaccountview;
-    void createWidgets(int, int, QString, QString, QPixmap bookCover, QString);
+    void createWidgets(int, int, QString, QString, QPixmap bookCover, QString, QString);
     void addRecords();
     void deleteRecords();
     QPushButton* button;
@@ -45,6 +46,7 @@ private:
     void setBookItem_MemberID(QString);
     void setBookItem_BookID(QString);
     QString userId;
+    BookDetails *bookdetails;
 };
 
 #endif // MEMBERCATALOGUE_H

@@ -10,15 +10,13 @@
 #define UI_BOOKDETAILS_H
 
 #include <QtCore/QVariant>
-#include <QtWidgets/QAction>
 #include <QtWidgets/QApplication>
 #include <QtWidgets/QFrame>
+#include <QtWidgets/QGridLayout>
 #include <QtWidgets/QLabel>
 #include <QtWidgets/QMainWindow>
-#include <QtWidgets/QMenu>
-#include <QtWidgets/QMenuBar>
 #include <QtWidgets/QPushButton>
-#include <QtWidgets/QStatusBar>
+#include <QtWidgets/QScrollArea>
 #include <QtWidgets/QWidget>
 
 QT_BEGIN_NAMESPACE
@@ -27,32 +25,31 @@ class Ui_BookDetails
 {
 public:
     QWidget *centralwidget;
-    QLabel *logoImage;
+    QScrollArea *scrollArea;
+    QWidget *scrollAreaWidgetContents_3;
+    QGridLayout *gridLayout_2;
+    QFrame *frame_2;
     QLabel *bookImage;
+    QPushButton *issueButton;
+    QLabel *availabilityLabel;
+    QLabel *publisherLabel_3;
+    QLabel *descriptionLabel_2;
+    QLabel *genreLabel_3;
+    QPushButton *savePushButton_5;
     QLabel *titleLabel;
-    QLabel *authorLabel_2;
-    QLabel *availabilityLabel_3;
-    QPushButton *reservePushButton;
-    QPushButton *pushButton;
-    QFrame *line;
-    QLabel *availabilityLabel_4;
-    QLabel *authorLabel_3;
-    QLabel *availabilityLabel_5;
-    QLabel *authorLabel_4;
-    QLabel *availabilityLabel_6;
-    QLabel *authorLabel_5;
-    QMenuBar *menubar;
-    QMenu *menuAccount;
-    QMenu *menuCatalogue;
-    QStatusBar *statusbar;
+    QLabel *authorLabel;
+    QLabel *stockLabel;
+    QLabel *publisher;
+    QLabel *genre;
+    QLabel *description;
 
     void setupUi(QMainWindow *BookDetails)
     {
         if (BookDetails->objectName().isEmpty())
             BookDetails->setObjectName(QString::fromUtf8("BookDetails"));
-        BookDetails->resize(1052, 634);
-        BookDetails->setMinimumSize(QSize(1052, 634));
-        BookDetails->setMaximumSize(QSize(1052, 634));
+        BookDetails->resize(1280, 640);
+        BookDetails->setMinimumSize(QSize(1280, 640));
+        BookDetails->setMaximumSize(QSize(1280, 640));
         centralwidget = new QWidget(BookDetails);
         centralwidget->setObjectName(QString::fromUtf8("centralwidget"));
         centralwidget->setStyleSheet(QString::fromUtf8("QWidget {\n"
@@ -64,52 +61,34 @@ public:
 "border-radius: 15px; \n"
 "font-size: 13px;\n"
 "}"));
-        logoImage = new QLabel(centralwidget);
-        logoImage->setObjectName(QString::fromUtf8("logoImage"));
-        logoImage->setGeometry(QRect(30, 20, 441, 61));
-        logoImage->setPixmap(QPixmap(QString::fromUtf8(":/resources/images/bblLogo.png")));
-        bookImage = new QLabel(centralwidget);
+        scrollArea = new QScrollArea(centralwidget);
+        scrollArea->setObjectName(QString::fromUtf8("scrollArea"));
+        scrollArea->setGeometry(QRect(0, 60, 1271, 581));
+        scrollArea->setStyleSheet(QString::fromUtf8("QScrollArea {\n"
+"	border: none;\n"
+"}"));
+        scrollArea->setWidgetResizable(true);
+        scrollAreaWidgetContents_3 = new QWidget();
+        scrollAreaWidgetContents_3->setObjectName(QString::fromUtf8("scrollAreaWidgetContents_3"));
+        scrollAreaWidgetContents_3->setGeometry(QRect(0, -282, 1254, 918));
+        gridLayout_2 = new QGridLayout(scrollAreaWidgetContents_3);
+        gridLayout_2->setObjectName(QString::fromUtf8("gridLayout_2"));
+        frame_2 = new QFrame(scrollAreaWidgetContents_3);
+        frame_2->setObjectName(QString::fromUtf8("frame_2"));
+        frame_2->setMinimumSize(QSize(0, 900));
+        frame_2->setStyleSheet(QString::fromUtf8("QFrame {\n"
+"	border: none;\n"
+"}"));
+        frame_2->setFrameShape(QFrame::StyledPanel);
+        frame_2->setFrameShadow(QFrame::Raised);
+        bookImage = new QLabel(frame_2);
         bookImage->setObjectName(QString::fromUtf8("bookImage"));
-        bookImage->setGeometry(QRect(110, 110, 161, 211));
+        bookImage->setGeometry(QRect(100, 100, 161, 211));
         bookImage->setPixmap(QPixmap(QString::fromUtf8(":/resources/images/bblLogo.png")));
-        titleLabel = new QLabel(centralwidget);
-        titleLabel->setObjectName(QString::fromUtf8("titleLabel"));
-        titleLabel->setGeometry(QRect(310, 110, 331, 21));
-        QFont font;
-        font.setFamily(QString::fromUtf8("Montserrat Medium"));
-        font.setBold(false);
-        font.setItalic(false);
-        font.setWeight(50);
-        titleLabel->setFont(font);
-        titleLabel->setStyleSheet(QString::fromUtf8("QLabel {\n"
-"font: 24px \"Montserrat Medium\";\n"
-"}"));
-        titleLabel->setAlignment(Qt::AlignLeading|Qt::AlignLeft|Qt::AlignVCenter);
-        authorLabel_2 = new QLabel(centralwidget);
-        authorLabel_2->setObjectName(QString::fromUtf8("authorLabel_2"));
-        authorLabel_2->setGeometry(QRect(310, 160, 331, 16));
-        QFont font1;
-        font1.setFamily(QString::fromUtf8("Montserrat"));
-        font1.setBold(false);
-        font1.setItalic(false);
-        font1.setWeight(50);
-        authorLabel_2->setFont(font1);
-        authorLabel_2->setStyleSheet(QString::fromUtf8("QLabel {\n"
-"font: 13px \"Montserrat\";\n"
-"}"));
-        authorLabel_2->setAlignment(Qt::AlignLeading|Qt::AlignLeft|Qt::AlignVCenter);
-        availabilityLabel_3 = new QLabel(centralwidget);
-        availabilityLabel_3->setObjectName(QString::fromUtf8("availabilityLabel_3"));
-        availabilityLabel_3->setGeometry(QRect(310, 240, 331, 21));
-        availabilityLabel_3->setFont(font);
-        availabilityLabel_3->setStyleSheet(QString::fromUtf8("QLabel {\n"
-"font: 16px \"Montserrat Medium\";\n"
-"}"));
-        availabilityLabel_3->setAlignment(Qt::AlignLeading|Qt::AlignLeft|Qt::AlignVCenter);
-        reservePushButton = new QPushButton(centralwidget);
-        reservePushButton->setObjectName(QString::fromUtf8("reservePushButton"));
-        reservePushButton->setGeometry(QRect(310, 291, 171, 31));
-        reservePushButton->setStyleSheet(QString::fromUtf8("QPushButton {\n"
+        issueButton = new QPushButton(frame_2);
+        issueButton->setObjectName(QString::fromUtf8("issueButton"));
+        issueButton->setGeometry(QRect(300, 281, 171, 31));
+        issueButton->setStyleSheet(QString::fromUtf8("QPushButton {\n"
 "background-color: #E78A6B;\n"
 "color:  #fff;\n"
 "font-weight: 500;\n"
@@ -117,88 +96,110 @@ public:
 "\n"
 "QPushButton:hover {\n"
 "background-color: rgba(231, 138, 107, 0.8);\n"
-"}"));
-        pushButton = new QPushButton(centralwidget);
-        pushButton->setObjectName(QString::fromUtf8("pushButton"));
-        pushButton->setGeometry(QRect(500, 290, 171, 31));
-        pushButton->setStyleSheet(QString::fromUtf8("QPushButton {\n"
-"border: 1px solid;\n"
-"border-color: #E78A6B;\n"
-"color:  #E78A6B;\n"
-"font-weight: 500;\n"
 "}\n"
 "\n"
-"QPushButton:hover {\n"
-"background-color: rgba(231, 138, 107, 0.2);\n"
+"QPushButton:pressed {\n"
+"background-color: rgb(196, 116, 90);\n"
 "}"));
-        line = new QFrame(centralwidget);
-        line->setObjectName(QString::fromUtf8("line"));
-        line->setGeometry(QRect(50, 350, 941, 16));
-        line->setFrameShape(QFrame::HLine);
-        line->setFrameShadow(QFrame::Sunken);
-        availabilityLabel_4 = new QLabel(centralwidget);
-        availabilityLabel_4->setObjectName(QString::fromUtf8("availabilityLabel_4"));
-        availabilityLabel_4->setGeometry(QRect(50, 380, 331, 21));
-        availabilityLabel_4->setFont(font);
-        availabilityLabel_4->setStyleSheet(QString::fromUtf8("QLabel {\n"
+        availabilityLabel = new QLabel(frame_2);
+        availabilityLabel->setObjectName(QString::fromUtf8("availabilityLabel"));
+        availabilityLabel->setGeometry(QRect(300, 230, 141, 21));
+        QFont font;
+        font.setFamily(QString::fromUtf8("Montserrat Medium"));
+        font.setBold(false);
+        font.setItalic(false);
+        font.setWeight(50);
+        availabilityLabel->setFont(font);
+        availabilityLabel->setStyleSheet(QString::fromUtf8("QLabel {\n"
 "font: 16px \"Montserrat Medium\";\n"
 "}"));
-        availabilityLabel_4->setAlignment(Qt::AlignLeading|Qt::AlignLeft|Qt::AlignVCenter);
-        authorLabel_3 = new QLabel(centralwidget);
-        authorLabel_3->setObjectName(QString::fromUtf8("authorLabel_3"));
-        authorLabel_3->setGeometry(QRect(50, 410, 941, 16));
-        authorLabel_3->setFont(font1);
-        authorLabel_3->setStyleSheet(QString::fromUtf8("QLabel {\n"
-"font: 13px \"Montserrat\";\n"
-"}"));
-        authorLabel_3->setAlignment(Qt::AlignLeading|Qt::AlignLeft|Qt::AlignVCenter);
-        availabilityLabel_5 = new QLabel(centralwidget);
-        availabilityLabel_5->setObjectName(QString::fromUtf8("availabilityLabel_5"));
-        availabilityLabel_5->setGeometry(QRect(50, 450, 331, 21));
-        availabilityLabel_5->setFont(font);
-        availabilityLabel_5->setStyleSheet(QString::fromUtf8("QLabel {\n"
+        availabilityLabel->setAlignment(Qt::AlignLeading|Qt::AlignLeft|Qt::AlignVCenter);
+        publisherLabel_3 = new QLabel(frame_2);
+        publisherLabel_3->setObjectName(QString::fromUtf8("publisherLabel_3"));
+        publisherLabel_3->setGeometry(QRect(40, 370, 331, 21));
+        publisherLabel_3->setFont(font);
+        publisherLabel_3->setStyleSheet(QString::fromUtf8("QLabel {\n"
 "font: 16px \"Montserrat Medium\";\n"
 "}"));
-        availabilityLabel_5->setAlignment(Qt::AlignLeading|Qt::AlignLeft|Qt::AlignVCenter);
-        authorLabel_4 = new QLabel(centralwidget);
-        authorLabel_4->setObjectName(QString::fromUtf8("authorLabel_4"));
-        authorLabel_4->setGeometry(QRect(50, 480, 941, 16));
-        authorLabel_4->setFont(font1);
-        authorLabel_4->setStyleSheet(QString::fromUtf8("QLabel {\n"
-"font: 13px \"Montserrat\";\n"
-"}"));
-        authorLabel_4->setAlignment(Qt::AlignLeading|Qt::AlignLeft|Qt::AlignVCenter);
-        availabilityLabel_6 = new QLabel(centralwidget);
-        availabilityLabel_6->setObjectName(QString::fromUtf8("availabilityLabel_6"));
-        availabilityLabel_6->setGeometry(QRect(50, 520, 331, 21));
-        availabilityLabel_6->setFont(font);
-        availabilityLabel_6->setStyleSheet(QString::fromUtf8("QLabel {\n"
+        publisherLabel_3->setAlignment(Qt::AlignLeading|Qt::AlignLeft|Qt::AlignVCenter);
+        descriptionLabel_2 = new QLabel(frame_2);
+        descriptionLabel_2->setObjectName(QString::fromUtf8("descriptionLabel_2"));
+        descriptionLabel_2->setGeometry(QRect(40, 560, 331, 21));
+        descriptionLabel_2->setFont(font);
+        descriptionLabel_2->setStyleSheet(QString::fromUtf8("QLabel {\n"
 "font: 16px \"Montserrat Medium\";\n"
 "}"));
-        availabilityLabel_6->setAlignment(Qt::AlignLeading|Qt::AlignLeft|Qt::AlignVCenter);
-        authorLabel_5 = new QLabel(centralwidget);
-        authorLabel_5->setObjectName(QString::fromUtf8("authorLabel_5"));
-        authorLabel_5->setGeometry(QRect(50, 550, 941, 16));
-        authorLabel_5->setFont(font1);
-        authorLabel_5->setStyleSheet(QString::fromUtf8("QLabel {\n"
+        descriptionLabel_2->setAlignment(Qt::AlignLeading|Qt::AlignLeft|Qt::AlignVCenter);
+        genreLabel_3 = new QLabel(frame_2);
+        genreLabel_3->setObjectName(QString::fromUtf8("genreLabel_3"));
+        genreLabel_3->setGeometry(QRect(40, 460, 331, 21));
+        genreLabel_3->setFont(font);
+        genreLabel_3->setStyleSheet(QString::fromUtf8("QLabel {\n"
+"font: 16px \"Montserrat Medium\";\n"
+"}"));
+        genreLabel_3->setAlignment(Qt::AlignLeading|Qt::AlignLeft|Qt::AlignVCenter);
+        savePushButton_5 = new QPushButton(frame_2);
+        savePushButton_5->setObjectName(QString::fromUtf8("savePushButton_5"));
+        savePushButton_5->setGeometry(QRect(40, 340, 941, 2));
+        savePushButton_5->setStyleSheet(QString::fromUtf8("QPushButton {\n"
+"background-color: #FF886C;\n"
+"border-radius: 1px;\n"
+"}"));
+        titleLabel = new QLabel(frame_2);
+        titleLabel->setObjectName(QString::fromUtf8("titleLabel"));
+        titleLabel->setGeometry(QRect(300, 100, 101, 21));
+        QFont font1;
+        font1.setFamily(QString::fromUtf8("Montserrat"));
+        font1.setPointSize(12);
+        font1.setBold(true);
+        font1.setWeight(75);
+        titleLabel->setFont(font1);
+        authorLabel = new QLabel(frame_2);
+        authorLabel->setObjectName(QString::fromUtf8("authorLabel"));
+        authorLabel->setGeometry(QRect(300, 150, 101, 21));
+        authorLabel->setFont(font1);
+        stockLabel = new QLabel(frame_2);
+        stockLabel->setObjectName(QString::fromUtf8("stockLabel"));
+        stockLabel->setGeometry(QRect(450, 230, 141, 21));
+        stockLabel->setFont(font);
+        stockLabel->setStyleSheet(QString::fromUtf8("QLabel {\n"
+"font: 16px \"Montserrat Medium\";\n"
+"}"));
+        stockLabel->setAlignment(Qt::AlignLeading|Qt::AlignLeft|Qt::AlignVCenter);
+        publisher = new QLabel(frame_2);
+        publisher->setObjectName(QString::fromUtf8("publisher"));
+        publisher->setGeometry(QRect(40, 400, 941, 21));
+        QFont font2;
+        font2.setFamily(QString::fromUtf8("Montserrat"));
+        font2.setBold(false);
+        font2.setItalic(false);
+        font2.setWeight(50);
+        publisher->setFont(font2);
+        publisher->setStyleSheet(QString::fromUtf8("QLabel {\n"
 "font: 13px \"Montserrat\";\n"
 "}"));
-        authorLabel_5->setAlignment(Qt::AlignLeading|Qt::AlignLeft|Qt::AlignVCenter);
-        BookDetails->setCentralWidget(centralwidget);
-        menubar = new QMenuBar(BookDetails);
-        menubar->setObjectName(QString::fromUtf8("menubar"));
-        menubar->setGeometry(QRect(0, 0, 1052, 21));
-        menuAccount = new QMenu(menubar);
-        menuAccount->setObjectName(QString::fromUtf8("menuAccount"));
-        menuCatalogue = new QMenu(menubar);
-        menuCatalogue->setObjectName(QString::fromUtf8("menuCatalogue"));
-        BookDetails->setMenuBar(menubar);
-        statusbar = new QStatusBar(BookDetails);
-        statusbar->setObjectName(QString::fromUtf8("statusbar"));
-        BookDetails->setStatusBar(statusbar);
+        publisher->setAlignment(Qt::AlignLeading|Qt::AlignLeft|Qt::AlignTop);
+        genre = new QLabel(frame_2);
+        genre->setObjectName(QString::fromUtf8("genre"));
+        genre->setGeometry(QRect(40, 490, 941, 21));
+        genre->setFont(font2);
+        genre->setStyleSheet(QString::fromUtf8("QLabel {\n"
+"font: 13px \"Montserrat\";\n"
+"}"));
+        genre->setAlignment(Qt::AlignLeading|Qt::AlignLeft|Qt::AlignTop);
+        description = new QLabel(frame_2);
+        description->setObjectName(QString::fromUtf8("description"));
+        description->setGeometry(QRect(40, 590, 941, 21));
+        description->setFont(font2);
+        description->setStyleSheet(QString::fromUtf8("QLabel {\n"
+"font: 13px \"Montserrat\";\n"
+"}"));
+        description->setAlignment(Qt::AlignLeading|Qt::AlignLeft|Qt::AlignTop);
 
-        menubar->addAction(menuAccount->menuAction());
-        menubar->addAction(menuCatalogue->menuAction());
+        gridLayout_2->addWidget(frame_2, 0, 0, 1, 1);
+
+        scrollArea->setWidget(scrollAreaWidgetContents_3);
+        BookDetails->setCentralWidget(centralwidget);
 
         retranslateUi(BookDetails);
 
@@ -208,21 +209,19 @@ public:
     void retranslateUi(QMainWindow *BookDetails)
     {
         BookDetails->setWindowTitle(QApplication::translate("BookDetails", "MainWindow", nullptr));
-        logoImage->setText(QString());
         bookImage->setText(QString());
-        titleLabel->setText(QApplication::translate("BookDetails", "Book Title", nullptr));
-        authorLabel_2->setText(QApplication::translate("BookDetails", "Book Author", nullptr));
-        availabilityLabel_3->setText(QApplication::translate("BookDetails", "Availability", nullptr));
-        reservePushButton->setText(QApplication::translate("BookDetails", "Reserve", nullptr));
-        pushButton->setText(QApplication::translate("BookDetails", "Other Button for admin", nullptr));
-        availabilityLabel_4->setText(QApplication::translate("BookDetails", "Summary", nullptr));
-        authorLabel_3->setText(QApplication::translate("BookDetails", "Lorem Ipsum", nullptr));
-        availabilityLabel_5->setText(QApplication::translate("BookDetails", "Publisher", nullptr));
-        authorLabel_4->setText(QApplication::translate("BookDetails", "Lorem Ipsum", nullptr));
-        availabilityLabel_6->setText(QApplication::translate("BookDetails", "Genre(s)", nullptr));
-        authorLabel_5->setText(QApplication::translate("BookDetails", "Lorem Ipsum", nullptr));
-        menuAccount->setTitle(QApplication::translate("BookDetails", "Account", nullptr));
-        menuCatalogue->setTitle(QApplication::translate("BookDetails", "Catalogue", nullptr));
+        issueButton->setText(QApplication::translate("BookDetails", "Issue", nullptr));
+        availabilityLabel->setText(QApplication::translate("BookDetails", "Copies available:", nullptr));
+        publisherLabel_3->setText(QApplication::translate("BookDetails", "Publisher", nullptr));
+        descriptionLabel_2->setText(QApplication::translate("BookDetails", "Description", nullptr));
+        genreLabel_3->setText(QApplication::translate("BookDetails", "Genre(s)", nullptr));
+        savePushButton_5->setText(QString());
+        titleLabel->setText(QApplication::translate("BookDetails", "Title", nullptr));
+        authorLabel->setText(QApplication::translate("BookDetails", "Author", nullptr));
+        stockLabel->setText(QApplication::translate("BookDetails", "0", nullptr));
+        publisher->setText(QApplication::translate("BookDetails", "Publisher", nullptr));
+        genre->setText(QApplication::translate("BookDetails", "Genre", nullptr));
+        description->setText(QApplication::translate("BookDetails", "Description", nullptr));
     } // retranslateUi
 
 };

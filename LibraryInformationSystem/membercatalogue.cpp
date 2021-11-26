@@ -29,7 +29,7 @@ void memberCatalogue::setAccID(QString username) {
     addRecords();
 }
 
-void memberCatalogue::createWidgets(int row, int col, QString title, QString author, QPixmap bookCover, QString bookId){
+void memberCatalogue::createWidgets(int row, int col, QString title, QString author, QPixmap bookCover, QString bookId, QString bookStock){
     //Creating a gridlayout
     QHBoxLayout* group = new QHBoxLayout();
 
@@ -45,11 +45,22 @@ void memberCatalogue::createWidgets(int row, int col, QString title, QString aut
     if (sysLib.isLoaned(userId, bookId)) {
             button = new QPushButton("Return");
            //break;
+    }
+    else if (!sysLib.isPreBook(userId, bookId)) {
+        for (int k = 0; k < book.size(); k++){
+            if (book[k].getStock() == 0 && book[k].getAvailStatus() == 0 && book[k].getBookId() == bookId) {
+                button = new QPushButton("Reserve");
+                break;
+            }
+            else
+                button = new QPushButton("Loan");
         }
-         else {
-            button = new QPushButton("Loans");
-           //break;
-        }
+
+    }
+    else {
+            button = new QPushButton("Loan");
+       //break;
+    }
     //}
     button2 = new QPushButton("View");
 
@@ -57,7 +68,7 @@ void memberCatalogue::createWidgets(int row, int col, QString title, QString aut
     QLabel* label = new QLabel("image");
     QLabel* label2 = new QLabel(title);
     QLabel* label3 = new QLabel(author);
-    QLabel* label4 = new QLabel("Copies Available: ");
+    QLabel* label4 = new QLabel("Copies Available: " + bookStock);
 
     //Styling buttons and labels
     //label->setStyleSheet("QLabel{background: white;}");
@@ -127,26 +138,33 @@ void memberCatalogue::addRecords(){
     QVector<Book> book;
     book = sysLib.getAllBooks();
 
+    QString stockString = "";
+
     for(int i = 0; i < book.size(); i++) {
         qDebug() << book[i].getBookId() << "\n" << book[i].getBookName() << "\n" << book[i].getAuthorName();//prints in application output
         QString title = book[i].getBookName();
         QString author = book[i].getAuthorName();
         QPixmap image = book[i].getBookImageFilePath();
-
-
+        int stock = book[i].getStock();
+        stockString = QString::number(stock);
 
         if (i % 2 == 0) {
-            createWidgets(i,0,title,author,image, book[i].getBookId());
+            createWidgets(i,0,title,author,image, book[i].getBookId(), stockString);
         }
         else {
-            createWidgets(i - 1,1,title,author,image, book[i].getBookId());
+            createWidgets(i - 1,1,title,author,image, book[i].getBookId(), stockString);
         }
     }
 
     //looping through button vector to make buttons work
     for(int i = 0; i < btn.size(); i++){
             connect(btn[i],SIGNAL(released()),this,SLOT(issueButtonClicked()));
-        }
+    }
+
+    for(int i = 0; i < btn2.size(); i++){
+            connect(btn2[i],SIGNAL(released()),this,SLOT(viewButtonClicked()));
+    }
+
 }
 
 void memberCatalogue::issueButtonClicked(){
@@ -165,18 +183,53 @@ void memberCatalogue::issueButtonClicked(){
             break;
         }
     }
+
     if (sysLib.isLoaned(userId, book[num].getBookId())) {
         sysLib.returnBook(userId, book[num].getBookId());
         QMessageBox::information(this, "Book Returned", book[num].getBookName() + " has been successfully returned!");
-    }else {
+    } else if (!sysLib.isPreBook(userId, book[num].getBookId()) && book[num].getStock() == 0 && book[num].getAvailStatus() == 0) {
+        PreOrderBook preOrder;
+
+        preOrder.setPreBookID(sysLib.generateID(8));
+        preOrder.setPreBook_BookID(book[num].getBookId());
+        preOrder.setPreBook_MemberID(userId);
+
+        sysLib.preOrderBook(preOrder);
+
+        QMessageBox::information(this, "Reserve Book", "You have successfully reserved " + book[num].getBookName());
+    } else {
+        if (book[num].getAvailStatus() != 0 && book[num].getStock() > 0) {
         bookItem.setBookItemID(sysLib.generateID(7));
         bookItem.setBookItem_MemberID(userId);
         bookItem.setBookItem_BookID(book[num].getBookId());
         sysLib.loanBook(bookItem);
         QMessageBox::information(this, "Loaned", "You have loaned " + book[num].getBookName() + " for 7 days.");
+        }
     }
 
     deleteRecords();
+}
+
+void memberCatalogue::viewButtonClicked(){
+    SystemLibrary sysLib;
+
+    QVector<Book> book;
+    book = sysLib.getAllBooks();
+
+    int num = 8;
+    QPushButton *button = (QPushButton *)sender();
+    for(int i = 0; i < btn2.size(); i++){
+        if(btn2[i] == button){
+            num = i;
+            break;
+        }
+    }
+    QMessageBox::information(this,"Button",QString::number(num) + " From button 2");
+
+    bookdetails = new BookDetails(this);
+    connect(bookdetails, SIGNAL(showBookDetails()), this, SLOT(show()));
+    bookdetails->show();
+    bookdetails->setNum(num,userId);
 }
 
 void memberCatalogue::deleteRecords(){
@@ -186,15 +239,6 @@ void memberCatalogue::deleteRecords(){
     book = sysLib.getAllBooks();
 
     int num = 7;
-//    QPushButton *button = (QPushButton *)sender();
-//    for(int i = 0; i < btn.size(); i++){
-//        if(btn[i] == button){
-//            num = i;
-//            break;
-//        }
-//    }
-    //QMessageBox::information(this,"Button",QString::number(num) + " From button 2");
-    //QMessageBox::question(this,"Delete Book", "Are you sure you want to permanently delete " + book[num].getBookName() + " from library records?");
 
     while ( QLayoutItem* item = ui->gridLayout_3->layout()->takeAt( 0 ) )
     {

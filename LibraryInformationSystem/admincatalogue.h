@@ -7,8 +7,12 @@
 #include <QGridLayout>
 #include <QLabel>
 #include <QGroupBox>
-#include "admineditbook.h"
 #include "systemlibrary.h"
+#include "admineditbook.h"
+#include "admineditcatalogue.h"
+#include "adminaddmember.h"
+#include "adminmembercatalogue.h"
+#include "mainwindow.h"
 
 namespace Ui {
 class adminCatalogue;
@@ -30,6 +34,9 @@ private slots:
     void editButtonClicked();
     void deleteButtonClicked();
 
+    void on_memberBtn_clicked();
+
+    void on_signoutBtn_clicked();
 
 private:
     Ui::adminCatalogue *ui;
@@ -37,8 +44,11 @@ private:
     void addRecords();
     QPushButton* button;
     QPushButton* button2;
-    adminEditBook* admineditbook;
     SystemLibrary* systemlibrary;
+    adminEditBook* admineditbook;
+    //for nav bar connections
+    adminCatalogue *admincatalogue;
+    adminMemberCatalogue *adminmembercatalogue;
 };
 
 #endif // ADMINCATALOGUE_H
