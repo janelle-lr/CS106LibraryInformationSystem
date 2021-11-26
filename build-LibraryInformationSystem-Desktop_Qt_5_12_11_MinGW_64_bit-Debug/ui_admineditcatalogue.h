@@ -12,13 +12,13 @@
 #include <QtCore/QVariant>
 #include <QtWidgets/QApplication>
 #include <QtWidgets/QComboBox>
-#include <QtWidgets/QFrame>
-#include <QtWidgets/QGroupBox>
+#include <QtWidgets/QFormLayout>
+#include <QtWidgets/QGridLayout>
 #include <QtWidgets/QLabel>
 #include <QtWidgets/QLineEdit>
 #include <QtWidgets/QMainWindow>
 #include <QtWidgets/QPushButton>
-#include <QtWidgets/QSpacerItem>
+#include <QtWidgets/QTabWidget>
 #include <QtWidgets/QVBoxLayout>
 #include <QtWidgets/QWidget>
 
@@ -29,39 +29,40 @@ class Ui_adminEditCatalogue
 public:
     QWidget *centralwidget;
     QLabel *logoImage;
-    QFrame *line;
-    QWidget *layoutWidget;
-    QVBoxLayout *verticalLayout_5;
-    QLabel *backIcon_2;
-    QPushButton *backBtn_2;
-    QSpacerItem *verticalSpacer_3;
-    QGroupBox *groupBox;
+    QTabWidget *tabWidget;
+    QWidget *tab;
+    QPushButton *pushButton;
+    QWidget *verticalLayoutWidget;
+    QVBoxLayout *verticalLayout;
+    QLabel *label_6;
+    QFormLayout *formLayout;
+    QLabel *label_4;
+    QLineEdit *bookTitle;
+    QLabel *label_5;
+    QLineEdit *bookGenre;
+    QLabel *label_13;
+    QLineEdit *bookCopies;
+    QLabel *label_14;
+    QComboBox *selectedImage;
+    QLabel *label_20;
+    QLineEdit *bookAuthor;
+    QLabel *label_21;
+    QLineEdit *bookPublisher;
+    QLabel *label_16;
+    QLineEdit *bookDescription;
+    QLabel *label;
     QPushButton *confirmBookDetails;
-    QLabel *label_32;
-    QLabel *label_39;
-    QLineEdit *bookDescription_3;
-    QLabel *label_34;
-    QLineEdit *bookGenre_3;
-    QLabel *label_35;
-    QLineEdit *bookCopies_3;
-    QLabel *label_36;
-    QComboBox *selectedImage_3;
-    QLabel *label_33;
-    QLineEdit *bookTitle_3;
-    QLineEdit *bookAuthor_3;
-    QLabel *label_38;
-    QLineEdit *bookPublisher_3;
-    QLabel *label_37;
-    QLabel *pageTitle;
-    QLabel *pageDesc;
+    QWidget *gridLayoutWidget;
+    QGridLayout *gridLayout;
+    QWidget *tab_2;
 
     void setupUi(QMainWindow *adminEditCatalogue)
     {
         if (adminEditCatalogue->objectName().isEmpty())
             adminEditCatalogue->setObjectName(QString::fromUtf8("adminEditCatalogue"));
-        adminEditCatalogue->resize(1280, 640);
-        adminEditCatalogue->setMinimumSize(QSize(1280, 640));
-        adminEditCatalogue->setMaximumSize(QSize(16777215, 16777215));
+        adminEditCatalogue->resize(1080, 640);
+        adminEditCatalogue->setMinimumSize(QSize(1080, 640));
+        adminEditCatalogue->setMaximumSize(QSize(1080, 640));
         adminEditCatalogue->setStyleSheet(QString::fromUtf8("QMenuBar {\n"
 "    background-color: qlineargradient(x1:0, y1:0, x2:0, y2:1,\n"
 "                                      stop:0 lightgray, stop:1 darkgray);\n"
@@ -103,94 +104,169 @@ public:
 "}"));
         logoImage = new QLabel(centralwidget);
         logoImage->setObjectName(QString::fromUtf8("logoImage"));
-        logoImage->setGeometry(QRect(10, 20, 221, 71));
+        logoImage->setGeometry(QRect(30, 20, 441, 61));
         logoImage->setPixmap(QPixmap(QString::fromUtf8(":/resources/images/bblLogo.png")));
-        line = new QFrame(centralwidget);
-        line->setObjectName(QString::fromUtf8("line"));
-        line->setGeometry(QRect(210, 110, 21, 481));
-        line->setStyleSheet(QString::fromUtf8("Line{\n"
-"	color:rgb(221, 46, 68);\n"
+        tabWidget = new QTabWidget(centralwidget);
+        tabWidget->setObjectName(QString::fromUtf8("tabWidget"));
+        tabWidget->setGeometry(QRect(0, 70, 1051, 501));
+        tabWidget->setTabShape(QTabWidget::Triangular);
+        tab = new QWidget();
+        tab->setObjectName(QString::fromUtf8("tab"));
+        pushButton = new QPushButton(tab);
+        pushButton->setObjectName(QString::fromUtf8("pushButton"));
+        pushButton->setGeometry(QRect(460, 410, 171, 41));
+        pushButton->setStyleSheet(QString::fromUtf8("QPushButton{\n"
+"	\n"
 "}"));
-        line->setFrameShape(QFrame::VLine);
-        line->setFrameShadow(QFrame::Sunken);
-        layoutWidget = new QWidget(centralwidget);
-        layoutWidget->setObjectName(QString::fromUtf8("layoutWidget"));
-        layoutWidget->setGeometry(QRect(20, 120, 191, 471));
-        verticalLayout_5 = new QVBoxLayout(layoutWidget);
-        verticalLayout_5->setObjectName(QString::fromUtf8("verticalLayout_5"));
-        verticalLayout_5->setContentsMargins(0, 0, 0, 0);
-        backIcon_2 = new QLabel(layoutWidget);
-        backIcon_2->setObjectName(QString::fromUtf8("backIcon_2"));
-        backIcon_2->setStyleSheet(QString::fromUtf8("QLabel{\n"
-"	color: rgb(231, 138, 107);\n"
-"}"));
-        backIcon_2->setAlignment(Qt::AlignCenter);
-
-        verticalLayout_5->addWidget(backIcon_2);
-
-        backBtn_2 = new QPushButton(layoutWidget);
-        backBtn_2->setObjectName(QString::fromUtf8("backBtn_2"));
-        backBtn_2->setStyleSheet(QString::fromUtf8("QPushButton{\n"
-"	border-radius:15px;\n"
-"	font: 14px \"Montserrat\";\n"
-"}\n"
-"\n"
-"QPushButton:hover {\n"
-"	text-decoration: underline;\n"
-"}"));
-
-        verticalLayout_5->addWidget(backBtn_2);
-
-        verticalSpacer_3 = new QSpacerItem(20, 40, QSizePolicy::Minimum, QSizePolicy::Expanding);
-
-        verticalLayout_5->addItem(verticalSpacer_3);
-
-        groupBox = new QGroupBox(centralwidget);
-        groupBox->setObjectName(QString::fromUtf8("groupBox"));
-        groupBox->setGeometry(QRect(290, 170, 931, 401));
-        groupBox->setStyleSheet(QString::fromUtf8("QGroupBox{\n"
-"	border-radius: 25px;\n"
-"	background: rgb(255, 255, 255);\n"
-"}\n"
-"\n"
-"QLabel{\n"
-"	background: rgb(255, 255, 255);\n"
-"	font-size: 14px;\n"
+        verticalLayoutWidget = new QWidget(tab);
+        verticalLayoutWidget->setObjectName(QString::fromUtf8("verticalLayoutWidget"));
+        verticalLayoutWidget->setGeometry(QRect(10, 70, 1021, 349));
+        verticalLayout = new QVBoxLayout(verticalLayoutWidget);
+        verticalLayout->setObjectName(QString::fromUtf8("verticalLayout"));
+        verticalLayout->setContentsMargins(0, 0, 0, 0);
+        label_6 = new QLabel(verticalLayoutWidget);
+        label_6->setObjectName(QString::fromUtf8("label_6"));
+        QSizePolicy sizePolicy(QSizePolicy::Preferred, QSizePolicy::Fixed);
+        sizePolicy.setHorizontalStretch(0);
+        sizePolicy.setVerticalStretch(0);
+        sizePolicy.setHeightForWidth(label_6->sizePolicy().hasHeightForWidth());
+        label_6->setSizePolicy(sizePolicy);
+        label_6->setStyleSheet(QString::fromUtf8("QLabel{\n"
 "	font-weight: bold;\n"
+"	font-size: 14px;\n"
 "\n"
-"}\n"
-"\n"
-"QLineEdit {\n"
-"	background:rgb(255, 229, 208);\n"
-"	border: 1px solid;\n"
-"	border-radius: 15px;\n"
-"	border-color: #e5e5e5;\n"
-"	background-color: palette(base);\n"
-"	padding: 0px 5px;\n"
-"}\n"
-"\n"
-"QComboBox{\n"
-"	background:rgb(255, 229, 208);\n"
-"	border: 1px solid;\n"
-"	border-radius: 15px;\n"
-"	border-color: #e5e5e5;\n"
-"	background-color: palette(base);\n"
-"	padding: 0px 5px;\n"
-"}\n"
-"\n"
-"QFormLayout{\n"
-"	color: rgb(255, 255, 255);\n"
-"}\n"
-"\n"
-"\n"
-"QPushButton {\n"
-"	border-radius: 15px; \n"
-"	font-size: 13px;\n"
+"}"));
+
+        verticalLayout->addWidget(label_6);
+
+        formLayout = new QFormLayout();
+        formLayout->setObjectName(QString::fromUtf8("formLayout"));
+        label_4 = new QLabel(verticalLayoutWidget);
+        label_4->setObjectName(QString::fromUtf8("label_4"));
+
+        formLayout->setWidget(0, QFormLayout::LabelRole, label_4);
+
+        bookTitle = new QLineEdit(verticalLayoutWidget);
+        bookTitle->setObjectName(QString::fromUtf8("bookTitle"));
+        bookTitle->setMinimumSize(QSize(0, 31));
+
+        formLayout->setWidget(0, QFormLayout::FieldRole, bookTitle);
+
+        label_5 = new QLabel(verticalLayoutWidget);
+        label_5->setObjectName(QString::fromUtf8("label_5"));
+
+        formLayout->setWidget(1, QFormLayout::LabelRole, label_5);
+
+        bookGenre = new QLineEdit(verticalLayoutWidget);
+        bookGenre->setObjectName(QString::fromUtf8("bookGenre"));
+        bookGenre->setMinimumSize(QSize(0, 31));
+
+        formLayout->setWidget(1, QFormLayout::FieldRole, bookGenre);
+
+        label_13 = new QLabel(verticalLayoutWidget);
+        label_13->setObjectName(QString::fromUtf8("label_13"));
+
+        formLayout->setWidget(2, QFormLayout::LabelRole, label_13);
+
+        bookCopies = new QLineEdit(verticalLayoutWidget);
+        bookCopies->setObjectName(QString::fromUtf8("bookCopies"));
+        bookCopies->setMinimumSize(QSize(0, 31));
+
+        formLayout->setWidget(2, QFormLayout::FieldRole, bookCopies);
+
+        label_14 = new QLabel(verticalLayoutWidget);
+        label_14->setObjectName(QString::fromUtf8("label_14"));
+        QSizePolicy sizePolicy1(QSizePolicy::Fixed, QSizePolicy::Fixed);
+        sizePolicy1.setHorizontalStretch(0);
+        sizePolicy1.setVerticalStretch(0);
+        sizePolicy1.setHeightForWidth(label_14->sizePolicy().hasHeightForWidth());
+        label_14->setSizePolicy(sizePolicy1);
+        label_14->setMaximumSize(QSize(73, 16777215));
+
+        formLayout->setWidget(3, QFormLayout::LabelRole, label_14);
+
+        selectedImage = new QComboBox(verticalLayoutWidget);
+        selectedImage->addItem(QString());
+        selectedImage->addItem(QString());
+        selectedImage->addItem(QString());
+        selectedImage->setObjectName(QString::fromUtf8("selectedImage"));
+        selectedImage->setMinimumSize(QSize(0, 31));
+        selectedImage->setStyleSheet(QString::fromUtf8("QComboBox {\n"
+"border-radius: 15px;\n"
+"background-color: palette(base);\n"
+"font-size: 13px;\n"
 "}\n"
 ""));
-        confirmBookDetails = new QPushButton(groupBox);
+
+        formLayout->setWidget(3, QFormLayout::FieldRole, selectedImage);
+
+        label_20 = new QLabel(verticalLayoutWidget);
+        label_20->setObjectName(QString::fromUtf8("label_20"));
+        QSizePolicy sizePolicy2(QSizePolicy::Preferred, QSizePolicy::Preferred);
+        sizePolicy2.setHorizontalStretch(0);
+        sizePolicy2.setVerticalStretch(0);
+        sizePolicy2.setHeightForWidth(label_20->sizePolicy().hasHeightForWidth());
+        label_20->setSizePolicy(sizePolicy2);
+        label_20->setMinimumSize(QSize(0, 0));
+        label_20->setMaximumSize(QSize(16777185, 16777215));
+
+        formLayout->setWidget(4, QFormLayout::LabelRole, label_20);
+
+        bookAuthor = new QLineEdit(verticalLayoutWidget);
+        bookAuthor->setObjectName(QString::fromUtf8("bookAuthor"));
+        sizePolicy2.setHeightForWidth(bookAuthor->sizePolicy().hasHeightForWidth());
+        bookAuthor->setSizePolicy(sizePolicy2);
+        bookAuthor->setMinimumSize(QSize(0, 31));
+
+        formLayout->setWidget(4, QFormLayout::FieldRole, bookAuthor);
+
+        label_21 = new QLabel(verticalLayoutWidget);
+        label_21->setObjectName(QString::fromUtf8("label_21"));
+        sizePolicy2.setHeightForWidth(label_21->sizePolicy().hasHeightForWidth());
+        label_21->setSizePolicy(sizePolicy2);
+        label_21->setMinimumSize(QSize(0, 0));
+        label_21->setMaximumSize(QSize(16777185, 16777215));
+
+        formLayout->setWidget(5, QFormLayout::LabelRole, label_21);
+
+        bookPublisher = new QLineEdit(verticalLayoutWidget);
+        bookPublisher->setObjectName(QString::fromUtf8("bookPublisher"));
+        sizePolicy2.setHeightForWidth(bookPublisher->sizePolicy().hasHeightForWidth());
+        bookPublisher->setSizePolicy(sizePolicy2);
+        bookPublisher->setMinimumSize(QSize(0, 31));
+
+        formLayout->setWidget(5, QFormLayout::FieldRole, bookPublisher);
+
+        label_16 = new QLabel(verticalLayoutWidget);
+        label_16->setObjectName(QString::fromUtf8("label_16"));
+        sizePolicy2.setHeightForWidth(label_16->sizePolicy().hasHeightForWidth());
+        label_16->setSizePolicy(sizePolicy2);
+        label_16->setMinimumSize(QSize(0, 0));
+        label_16->setMaximumSize(QSize(16777185, 16777215));
+
+        formLayout->setWidget(6, QFormLayout::LabelRole, label_16);
+
+        bookDescription = new QLineEdit(verticalLayoutWidget);
+        bookDescription->setObjectName(QString::fromUtf8("bookDescription"));
+        sizePolicy2.setHeightForWidth(bookDescription->sizePolicy().hasHeightForWidth());
+        bookDescription->setSizePolicy(sizePolicy2);
+        bookDescription->setMinimumSize(QSize(0, 60));
+        bookDescription->setStyleSheet(QString::fromUtf8("QLineEdit {\n"
+"	padding: 5px;\n"
+"}"));
+        bookDescription->setAlignment(Qt::AlignLeading|Qt::AlignLeft|Qt::AlignTop);
+
+        formLayout->setWidget(6, QFormLayout::FieldRole, bookDescription);
+
+
+        verticalLayout->addLayout(formLayout);
+
+        label = new QLabel(tab);
+        label->setObjectName(QString::fromUtf8("label"));
+        label->setGeometry(QRect(20, 10, 47, 13));
+        confirmBookDetails = new QPushButton(tab);
         confirmBookDetails->setObjectName(QString::fromUtf8("confirmBookDetails"));
-        confirmBookDetails->setGeometry(QRect(370, 350, 241, 31));
+        confirmBookDetails->setGeometry(QRect(260, 410, 141, 31));
         confirmBookDetails->setStyleSheet(QString::fromUtf8("QPushButton {\n"
 "background-color: #E78A6B;\n"
 "color:  #fff;\n"
@@ -204,121 +280,22 @@ public:
 "QPushButton:pressed {\n"
 "background-color: rgb(196, 116, 90);\n"
 "}"));
-        label_32 = new QLabel(groupBox);
-        label_32->setObjectName(QString::fromUtf8("label_32"));
-        label_32->setGeometry(QRect(41, 20, 131, 31));
-        QSizePolicy sizePolicy(QSizePolicy::Preferred, QSizePolicy::Fixed);
-        sizePolicy.setHorizontalStretch(0);
-        sizePolicy.setVerticalStretch(0);
-        sizePolicy.setHeightForWidth(label_32->sizePolicy().hasHeightForWidth());
-        label_32->setSizePolicy(sizePolicy);
-        label_32->setStyleSheet(QString::fromUtf8("QLabel{\n"
-"	font-weight: bold;\n"
-"	font-size: 18px;\n"
-"\n"
-"}"));
-        label_39 = new QLabel(groupBox);
-        label_39->setObjectName(QString::fromUtf8("label_39"));
-        label_39->setGeometry(QRect(42, 282, 151, 51));
-        QSizePolicy sizePolicy1(QSizePolicy::Preferred, QSizePolicy::Preferred);
-        sizePolicy1.setHorizontalStretch(0);
-        sizePolicy1.setVerticalStretch(0);
-        sizePolicy1.setHeightForWidth(label_39->sizePolicy().hasHeightForWidth());
-        label_39->setSizePolicy(sizePolicy1);
-        label_39->setMinimumSize(QSize(0, 0));
-        label_39->setMaximumSize(QSize(16777185, 16777215));
-        bookDescription_3 = new QLineEdit(groupBox);
-        bookDescription_3->setObjectName(QString::fromUtf8("bookDescription_3"));
-        bookDescription_3->setGeometry(QRect(280, 282, 601, 60));
-        sizePolicy1.setHeightForWidth(bookDescription_3->sizePolicy().hasHeightForWidth());
-        bookDescription_3->setSizePolicy(sizePolicy1);
-        bookDescription_3->setMinimumSize(QSize(0, 60));
-        bookDescription_3->setStyleSheet(QString::fromUtf8("QLineEdit {\n"
-"	padding: 5px;\n"
-"}"));
-        bookDescription_3->setAlignment(Qt::AlignLeading|Qt::AlignLeft|Qt::AlignTop);
-        label_34 = new QLabel(groupBox);
-        label_34->setObjectName(QString::fromUtf8("label_34"));
-        label_34->setGeometry(QRect(42, 97, 151, 16));
-        bookGenre_3 = new QLineEdit(groupBox);
-        bookGenre_3->setObjectName(QString::fromUtf8("bookGenre_3"));
-        bookGenre_3->setGeometry(QRect(280, 97, 601, 31));
-        bookGenre_3->setMinimumSize(QSize(0, 31));
-        label_35 = new QLabel(groupBox);
-        label_35->setObjectName(QString::fromUtf8("label_35"));
-        label_35->setGeometry(QRect(42, 134, 161, 16));
-        bookCopies_3 = new QLineEdit(groupBox);
-        bookCopies_3->setObjectName(QString::fromUtf8("bookCopies_3"));
-        bookCopies_3->setGeometry(QRect(280, 134, 601, 31));
-        bookCopies_3->setMinimumSize(QSize(0, 31));
-        label_36 = new QLabel(groupBox);
-        label_36->setObjectName(QString::fromUtf8("label_36"));
-        label_36->setGeometry(QRect(42, 171, 111, 16));
-        QSizePolicy sizePolicy2(QSizePolicy::Fixed, QSizePolicy::Fixed);
-        sizePolicy2.setHorizontalStretch(0);
-        sizePolicy2.setVerticalStretch(0);
-        sizePolicy2.setHeightForWidth(label_36->sizePolicy().hasHeightForWidth());
-        label_36->setSizePolicy(sizePolicy2);
-        label_36->setMaximumSize(QSize(16777215, 16777215));
-        selectedImage_3 = new QComboBox(groupBox);
-        selectedImage_3->addItem(QString());
-        selectedImage_3->addItem(QString());
-        selectedImage_3->addItem(QString());
-        selectedImage_3->setObjectName(QString::fromUtf8("selectedImage_3"));
-        selectedImage_3->setGeometry(QRect(280, 171, 121, 31));
-        selectedImage_3->setMinimumSize(QSize(0, 31));
-        selectedImage_3->setStyleSheet(QString::fromUtf8("QComboBox {\n"
-"border-radius: 15px;\n"
-"background-color: palette(base);\n"
-"font-size: 13px;\n"
-"}\n"
-""));
-        label_33 = new QLabel(groupBox);
-        label_33->setObjectName(QString::fromUtf8("label_33"));
-        label_33->setGeometry(QRect(42, 60, 161, 16));
-        bookTitle_3 = new QLineEdit(groupBox);
-        bookTitle_3->setObjectName(QString::fromUtf8("bookTitle_3"));
-        bookTitle_3->setGeometry(QRect(280, 60, 601, 31));
-        bookTitle_3->setMinimumSize(QSize(0, 31));
-        bookAuthor_3 = new QLineEdit(groupBox);
-        bookAuthor_3->setObjectName(QString::fromUtf8("bookAuthor_3"));
-        bookAuthor_3->setGeometry(QRect(280, 208, 601, 31));
-        sizePolicy1.setHeightForWidth(bookAuthor_3->sizePolicy().hasHeightForWidth());
-        bookAuthor_3->setSizePolicy(sizePolicy1);
-        bookAuthor_3->setMinimumSize(QSize(0, 31));
-        label_38 = new QLabel(groupBox);
-        label_38->setObjectName(QString::fromUtf8("label_38"));
-        label_38->setGeometry(QRect(42, 245, 181, 16));
-        sizePolicy1.setHeightForWidth(label_38->sizePolicy().hasHeightForWidth());
-        label_38->setSizePolicy(sizePolicy1);
-        label_38->setMinimumSize(QSize(0, 0));
-        label_38->setMaximumSize(QSize(16777185, 16777215));
-        bookPublisher_3 = new QLineEdit(groupBox);
-        bookPublisher_3->setObjectName(QString::fromUtf8("bookPublisher_3"));
-        bookPublisher_3->setGeometry(QRect(280, 245, 601, 31));
-        sizePolicy1.setHeightForWidth(bookPublisher_3->sizePolicy().hasHeightForWidth());
-        bookPublisher_3->setSizePolicy(sizePolicy1);
-        bookPublisher_3->setMinimumSize(QSize(0, 31));
-        label_37 = new QLabel(groupBox);
-        label_37->setObjectName(QString::fromUtf8("label_37"));
-        label_37->setGeometry(QRect(42, 208, 171, 16));
-        sizePolicy1.setHeightForWidth(label_37->sizePolicy().hasHeightForWidth());
-        label_37->setSizePolicy(sizePolicy1);
-        label_37->setMinimumSize(QSize(0, 0));
-        label_37->setMaximumSize(QSize(16777185, 16777215));
-        pageTitle = new QLabel(centralwidget);
-        pageTitle->setObjectName(QString::fromUtf8("pageTitle"));
-        pageTitle->setGeometry(QRect(290, 50, 331, 51));
-        pageTitle->setStyleSheet(QString::fromUtf8("QLabel{\n"
-"	font-size: 24px;\n"
-"	font-weight: bold;\n"
-"}"));
-        pageDesc = new QLabel(centralwidget);
-        pageDesc->setObjectName(QString::fromUtf8("pageDesc"));
-        pageDesc->setGeometry(QRect(290, 90, 971, 51));
+        gridLayoutWidget = new QWidget(tab);
+        gridLayoutWidget->setObjectName(QString::fromUtf8("gridLayoutWidget"));
+        gridLayoutWidget->setGeometry(QRect(730, 390, 160, 80));
+        gridLayout = new QGridLayout(gridLayoutWidget);
+        gridLayout->setObjectName(QString::fromUtf8("gridLayout"));
+        gridLayout->setContentsMargins(0, 0, 0, 0);
+        tabWidget->addTab(tab, QString());
+        tab_2 = new QWidget();
+        tab_2->setObjectName(QString::fromUtf8("tab_2"));
+        tabWidget->addTab(tab_2, QString());
         adminEditCatalogue->setCentralWidget(centralwidget);
 
         retranslateUi(adminEditCatalogue);
+
+        tabWidget->setCurrentIndex(0);
+
 
         QMetaObject::connectSlotsByName(adminEditCatalogue);
     } // setupUi
@@ -327,27 +304,25 @@ public:
     {
         adminEditCatalogue->setWindowTitle(QApplication::translate("adminEditCatalogue", "MainWindow", nullptr));
         logoImage->setText(QString());
-        backIcon_2->setText(QApplication::translate("adminEditCatalogue", "go back", nullptr));
-        backBtn_2->setText(QApplication::translate("adminEditCatalogue", "Go Back", nullptr));
-        groupBox->setTitle(QString());
-        confirmBookDetails->setText(QApplication::translate("adminEditCatalogue", "Add Book", nullptr));
-        label_32->setText(QApplication::translate("adminEditCatalogue", "Book Details", nullptr));
-        label_39->setText(QApplication::translate("adminEditCatalogue", "Enter book \n"
-" description", nullptr));
-        label_34->setText(QApplication::translate("adminEditCatalogue", "Enter Genre", nullptr));
-        label_35->setText(QApplication::translate("adminEditCatalogue", "Amount of Copies", nullptr));
-        label_36->setText(QApplication::translate("adminEditCatalogue", "Select Image", nullptr));
-        selectedImage_3->setItemText(0, QApplication::translate("adminEditCatalogue", "Image 1", nullptr));
-        selectedImage_3->setItemText(1, QApplication::translate("adminEditCatalogue", "Image 2", nullptr));
-        selectedImage_3->setItemText(2, QApplication::translate("adminEditCatalogue", "Image 3", nullptr));
+        pushButton->setText(QApplication::translate("adminEditCatalogue", "Add Book", nullptr));
+        label_6->setText(QApplication::translate("adminEditCatalogue", "Book Details", nullptr));
+        label_4->setText(QApplication::translate("adminEditCatalogue", "Enter Book TItle", nullptr));
+        bookTitle->setText(QString());
+        label_5->setText(QApplication::translate("adminEditCatalogue", "Enter Genre", nullptr));
+        label_13->setText(QApplication::translate("adminEditCatalogue", "Amount of Copies", nullptr));
+        label_14->setText(QApplication::translate("adminEditCatalogue", "Select Image", nullptr));
+        selectedImage->setItemText(0, QApplication::translate("adminEditCatalogue", "Image 1", nullptr));
+        selectedImage->setItemText(1, QApplication::translate("adminEditCatalogue", "Image 2", nullptr));
+        selectedImage->setItemText(2, QApplication::translate("adminEditCatalogue", "Image 3", nullptr));
 
-        label_33->setText(QApplication::translate("adminEditCatalogue", "Enter Book TItle", nullptr));
-        bookTitle_3->setText(QString());
-        label_38->setText(QApplication::translate("adminEditCatalogue", "Enter Publisher Name", nullptr));
-        label_37->setText(QApplication::translate("adminEditCatalogue", "Enter Author Name", nullptr));
-        pageTitle->setText(QApplication::translate("adminEditCatalogue", "Add New Book", nullptr));
-        pageDesc->setText(QApplication::translate("adminEditCatalogue", "Enter the details of the new book you want to add to the library catalogue. a;owiehfaowieharotharuhaera \n"
-"loremupsunmm or osmething", nullptr));
+        label_20->setText(QApplication::translate("adminEditCatalogue", "Enter Author Name", nullptr));
+        label_21->setText(QApplication::translate("adminEditCatalogue", "Enter Publisher Name", nullptr));
+        label_16->setText(QApplication::translate("adminEditCatalogue", "Enter book \n"
+" desription", nullptr));
+        label->setText(QApplication::translate("adminEditCatalogue", "TextLabel", nullptr));
+        confirmBookDetails->setText(QApplication::translate("adminEditCatalogue", "Add Book", nullptr));
+        tabWidget->setTabText(tabWidget->indexOf(tab), QApplication::translate("adminEditCatalogue", "Add Books", nullptr));
+        tabWidget->setTabText(tabWidget->indexOf(tab_2), QApplication::translate("adminEditCatalogue", "Book Catalogue", nullptr));
     } // retranslateUi
 
 };

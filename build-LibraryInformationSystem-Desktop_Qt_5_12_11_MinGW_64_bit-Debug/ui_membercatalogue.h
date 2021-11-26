@@ -40,7 +40,6 @@ public:
     QScrollArea *scrollArea;
     QWidget *scrollAreaWidgetContents;
     QHBoxLayout *horizontalLayout;
-    QWidget *widget;
     QGridLayout *gridLayout_3;
     QMenuBar *menubar;
     QMenu *menuCatalogue;
@@ -51,9 +50,9 @@ public:
     {
         if (memberCatalogue->objectName().isEmpty())
             memberCatalogue->setObjectName(QString::fromUtf8("memberCatalogue"));
-        memberCatalogue->resize(1280, 640);
+        memberCatalogue->resize(1080, 640);
         memberCatalogue->setMinimumSize(QSize(1080, 640));
-        memberCatalogue->setMaximumSize(QSize(1280, 640));
+        memberCatalogue->setMaximumSize(QSize(1080, 640));
         memberCatalogue->setStyleSheet(QString::fromUtf8("QMenuBar {\n"
 "    background-color: qlineargradient(x1:0, y1:0, x2:0, y2:1,\n"
 "                                      stop:0 lightgray, stop:1 darkgray);\n"
@@ -88,7 +87,7 @@ public:
 "}"));
         logoImage = new QLabel(centralwidget);
         logoImage->setObjectName(QString::fromUtf8("logoImage"));
-        logoImage->setGeometry(QRect(200, 30, 441, 61));
+        logoImage->setGeometry(QRect(30, 20, 441, 61));
         logoImage->setPixmap(QPixmap(QString::fromUtf8(":/resources/images/bblLogo.png")));
         comboBox = new QComboBox(centralwidget);
         comboBox->addItem(QString());
@@ -97,10 +96,10 @@ public:
         comboBox->addItem(QString());
         comboBox->addItem(QString());
         comboBox->setObjectName(QString::fromUtf8("comboBox"));
-        comboBox->setGeometry(QRect(1100, 70, 131, 22));
+        comboBox->setGeometry(QRect(880, 30, 131, 22));
         pushButton = new QPushButton(centralwidget);
         pushButton->setObjectName(QString::fromUtf8("pushButton"));
-        pushButton->setGeometry(QRect(1000, 70, 75, 23));
+        pushButton->setGeometry(QRect(650, 30, 75, 23));
         scrollArea = new QScrollArea(centralwidget);
         scrollArea->setObjectName(QString::fromUtf8("scrollArea"));
         scrollArea->setGeometry(QRect(0, 90, 1081, 461));
@@ -129,17 +128,16 @@ public:
 ""));
         horizontalLayout = new QHBoxLayout(scrollAreaWidgetContents);
         horizontalLayout->setObjectName(QString::fromUtf8("horizontalLayout"));
-        scrollArea->setWidget(scrollAreaWidgetContents);
-        widget = new QWidget(centralwidget);
-        widget->setObjectName(QString::fromUtf8("widget"));
-        widget->setGeometry(QRect(179, 109, 1063, 443));
-        gridLayout_3 = new QGridLayout(widget);
+        gridLayout_3 = new QGridLayout();
         gridLayout_3->setObjectName(QString::fromUtf8("gridLayout_3"));
-        gridLayout_3->setContentsMargins(0, 0, 0, 0);
+
+        horizontalLayout->addLayout(gridLayout_3);
+
+        scrollArea->setWidget(scrollAreaWidgetContents);
         memberCatalogue->setCentralWidget(centralwidget);
         menubar = new QMenuBar(memberCatalogue);
         menubar->setObjectName(QString::fromUtf8("menubar"));
-        menubar->setGeometry(QRect(0, 0, 1280, 18));
+        menubar->setGeometry(QRect(0, 0, 1080, 18));
         menuCatalogue = new QMenu(menubar);
         menuCatalogue->setObjectName(QString::fromUtf8("menuCatalogue"));
         menuAccount = new QMenu(menubar);
