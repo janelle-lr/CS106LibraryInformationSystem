@@ -719,6 +719,7 @@ void LibraryDatabase::loanBook(BookItem bookItem){
 }
 //This function lets member pre order a book(Note: only requires the bookitem id, member id and book id to be passed)
 void LibraryDatabase::preOrderBook(PreOrderBook preOrder){
+    bool isTrue = true;
     QFile file("LibraryDB/PreBook.csv");
     //if the file is not open
     if(!file.open(QFile::Append | QFile::Text)){
@@ -730,25 +731,90 @@ void LibraryDatabase::preOrderBook(PreOrderBook preOrder){
     //Check which loaned book is near due date and set that as the book date of the preorder
     QVector<BookItem> bookItem;
     bookItem = getAllBookItem();
-    QDate preOrderDate = QDate(2077,12,25);//year, month, day
+    QDate preOrderDate = QDate(1993,10,20);//year, month, day
     QDate compareDate;
-    for(int i = 0; i < bookItem.size(); i++){
-        if(preOrder.getPreBook_BookID() == bookItem[i].getBookItem_BookID()){
-            QString loanedDate = bookItem[i].getExpiryDate();
-            QStringList date =(loanedDate.split("/"));
-            compareDate = QDate(date[2].toInt(),date[1].toInt(),date[0].toInt());
-            if(preOrderDate > compareDate)
-                preOrderDate = compareDate;
+
+    do{
+        isTrue = false;
+        for(int i = 0; i < bookItem.size(); i++){
+            if(preOrder.getPreBook_BookID() == bookItem[i].getBookItem_BookID()){
+                QString loanedDate = bookItem[i].getExpiryDate();
+                QStringList date =(loanedDate.split("/"));
+                compareDate = QDate(date[2].toInt(),date[1].toInt(),date[0].toInt());
+                if(preOrderDate > compareDate)
+                    preOrderDate = compareDate;
+            }
+
         }
+    }while(isTrue);
 
-    }
+    //check if any user has also pre-booked the item
+    QVector<PreOrderBook> preBook = getAllPreOrders();
+    do{
+        isTrue = false;
+        for(int i = 0; i < preBook.size(); i++){
+            if(preOrder.getPreBook_BookID() == preBook[i].getPreBook_BookID()){
+                QString loanedDate = preBook[i].getPreBookDate();
+                QStringList date =(loanedDate.split("/"));
+                compareDate = QDate(date[2].toInt(),date[1].toInt(),date[0].toInt());
+                if(preOrderDate < compareDate)
+                    preOrderDate = compareDate;
+            }
 
+        }
+    }while(isTrue);
     //"PreBookID" << "," << "MemberID" << "," << "BookID" << "," << "Book Date" << "," << "isLoaned" << "\n";
     out << preOrder.getPreBookID() << "," << preOrder.getPreBook_MemberID() << "," << preOrder.getPreBook_BookID() << "," << preOrderDate.toString("dd/MM/yyyy") << "," << 0 << "\n";
 
     //flush the file after and close
     file.flush();
     file.close();
+}
+//This function returns the date when the book will be available
+QString LibraryDatabase::getAvailPreBookDate(QString bookID){
+    bool isTrue = true;
+
+    //Check which loaned book is near due date and set that as the book date of the preorder
+    QVector<BookItem> bookItem;
+    bookItem = getAllBookItem();
+    QDate preOrderDate = QDate(1993,10,20);//year, month, day
+    QDate compareDate;
+
+    do{
+        isTrue = false;
+        for(int i = 0; i < bookItem.size(); i++){
+            if(bookID == bookItem[i].getBookItem_BookID()){
+                QString loanedDate = bookItem[i].getExpiryDate();
+                QStringList date =(loanedDate.split("/"));
+                compareDate = QDate(date[2].toInt(),date[1].toInt(),date[0].toInt());
+                if(preOrderDate < compareDate)
+                    preOrderDate = compareDate;
+            }
+
+        }
+    }while(isTrue);
+
+    do{
+        isTrue = false;
+        //check if any user has also pre-booked the item
+        QVector<PreOrderBook> preBook = getAllPreOrders();
+        for(int i = 0; i < preBook.size(); i++){
+        //for(int x = 0; x < preBook.size(); x++){
+            if(bookID == preBook[i].getPreBook_BookID()){
+                QString loanedDate = preBook[i].getPreBookDate();
+                QStringList date =(loanedDate.split("/"));
+                compareDate = QDate(date[2].toInt(),date[1].toInt(),date[0].toInt());
+                if(preOrderDate < compareDate){
+                    preOrderDate = compareDate;
+                    isTrue = true;
+                }
+            }
+       // }
+        }
+    }while(isTrue);
+
+
+    return preOrderDate.toString();
 }
 //This function returns all records from BookItem.csv
 QVector<BookItem> LibraryDatabase::getAllBookItem(){

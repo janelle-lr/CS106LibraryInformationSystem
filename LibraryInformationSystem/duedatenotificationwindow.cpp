@@ -27,6 +27,7 @@ DuedateNotificationWindow::DuedateNotificationWindow(QWidget *parent) :
             }
         }
     }
+    ui->listWidget->addItem(sysLib.getAvailPreBookDate("123"));
 }
 
 DuedateNotificationWindow::~DuedateNotificationWindow()
