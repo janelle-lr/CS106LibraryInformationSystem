@@ -18,7 +18,7 @@ public:
     void setNum (int);
 
 private slots:
-    void on_savePushButton_2_clicked();
+    void on_savePushButton_clicked();
 
 private:
     Ui::adminEditBook *ui;

@@ -192,27 +192,28 @@ void memberCatalogue::issueButtonClicked(){
     }
 
     if (sysLib.isLoaned(userId, book[num].getBookId())) {
-        sysLib.returnBook(userId, book[num].getBookId());
-        QMessageBox::information(this, "Book Returned", book[num].getBookName() + " has been successfully returned!");
-    } else if (!sysLib.isPreBook(userId, book[num].getBookId()) && book[num].getStock() == 0 && book[num].getAvailStatus() == 0) {
-        PreOrderBook preOrder;
+            sysLib.returnBook(userId, book[num].getBookId());
+            QMessageBox::information(this, "Book Returned", book[num].getBookName() + " has been successfully returned!");
+        } else if (!sysLib.isPreBook(userId, book[num].getBookId()) && book[num].getStock() == 0 && book[num].getAvailStatus() == 0) {
+            PreOrderBook preOrder;
 
-        preOrder.setPreBookID(sysLib.generateID(8));
-        preOrder.setPreBook_BookID(book[num].getBookId());
-        preOrder.setPreBook_MemberID(userId);
+            preOrder.setPreBookID(sysLib.generateID(8));
+            preOrder.setPreBook_BookID(book[num].getBookId());
+            preOrder.setPreBook_MemberID(userId);
 
-        sysLib.preOrderBook(preOrder);
+            sysLib.preOrderBook(preOrder);
 
-        QMessageBox::information(this, "Reserve Book", "You have successfully reserved " + book[num].getBookName());
-    } else {
-        if (book[num].getAvailStatus() != 0 && book[num].getStock() > 0) {
-            bookItem.setBookItemID(sysLib.generateID(7));
-            bookItem.setBookItem_MemberID(userId);
-            bookItem.setBookItem_BookID(book[num].getBookId());
-            sysLib.loanBook(bookItem);
-            QMessageBox::information(this, "Loaned", "You have loaned " + book[num].getBookName() + " for 7 days.");
+            QMessageBox::information(this, "Reserve Book", "You have successfully reserved " + book[num].getBookName() +
+                                     " it will be available on " + sysLib.getAvailPreBookDate(book[num].getBookId(),userId));
+        } else {
+            if (book[num].getAvailStatus() != 0 && book[num].getStock() > 0 && !sysLib.isPreBook(userId, book[num].getBookId())) {
+                bookItem.setBookItemID(sysLib.generateID(7));
+                bookItem.setBookItem_MemberID(userId);
+                bookItem.setBookItem_BookID(book[num].getBookId());
+                sysLib.loanBook(bookItem);
+                QMessageBox::information(this, "Loaned", "You have loaned " + book[num].getBookName() + " for 7 days.");
+            }
         }
-    }
 
     deleteRecords();
 }

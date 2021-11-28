@@ -27,7 +27,7 @@ void adminEditCatalogue::on_pushButton_clicked()
 }
 
 
-void adminEditCatalogue::on_selectedImage_activated(const QString &arg1)
+void adminEditCatalogue::on_selectedImage_3_activated(const QString &arg1)
 {
     if(arg1 == "Image 1"){
         //qDebug() << "Image 1 has been selected";

@@ -1,6 +1,16 @@
 #ifndef LIBRARYDATABASE_H
 #define LIBRARYDATABASE_H
 
+/*
+    Hey again, its me. Your friendly neighborhood optimus prime.
+    I added in the header file from the teams chat that jay posted.
+    I hope everything is in the right place, if its not.
+
+    If it's not, please contact a therapist.
+    thanks,
+    Optimus Prime
+*/
+
 #include <QString>
 #include <QDebug>
 #include <QDate>
@@ -45,7 +55,7 @@ public:
     bool isLoaned(QString,QString);
     bool isPreBook(QString, QString);
     QStringList getNearbyDueDateBooks();
-    QString getAvailPreBookDate(QString);
+    QString getAvailPreBookDate(QString,QString);
 };
 
 #endif // LIBRARYDATABASE_H

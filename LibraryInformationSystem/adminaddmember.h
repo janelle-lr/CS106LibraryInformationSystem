@@ -18,9 +18,13 @@ public:
     ~adminAddMember();
 
 private slots:
-    void on_adddMemberButton_clicked(QString);
+    //void on_addMemberButton_clicked(QString);
 
     void on_catalogueBtn_clicked();
+
+
+
+    void on_addMemberButton_clicked(QString);
 
 private:
     Ui::adminAddMember *ui;

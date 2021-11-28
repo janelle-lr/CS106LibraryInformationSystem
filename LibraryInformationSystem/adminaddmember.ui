@@ -498,7 +498,7 @@ background-color: rgba(231, 138, 107, 0.8);
      <enum>Qt::Vertical</enum>
     </property>
    </widget>
-   <widget class="QWidget" name="">
+   <widget class="QWidget" name="layoutWidget">
     <property name="geometry">
      <rect>
       <x>20</x>
@@ -563,34 +563,7 @@ QPushButton:hover {
 }</string>
        </property>
        <property name="text">
-        <string>Member</string>
-       </property>
-      </widget>
-     </item>
-     <item>
-      <widget class="QLabel" name="accountIcon">
-       <property name="text">
-        <string>account</string>
-       </property>
-       <property name="alignment">
-        <set>Qt::AlignCenter</set>
-       </property>
-      </widget>
-     </item>
-     <item>
-      <widget class="QPushButton" name="accountBtn">
-       <property name="styleSheet">
-        <string notr="true">QPushButton{
-	border-radius:15px;
-	font: 14px &quot;Montserrat&quot;;
-}
-
-QPushButton:hover {
-	text-decoration: underline;
-}</string>
-       </property>
-       <property name="text">
-        <string>Account</string>
+        <string>Members</string>
        </property>
       </widget>
      </item>
@@ -636,18 +609,11 @@ QPushButton:hover {
      </item>
     </layout>
    </widget>
+   <zorder>layoutWidget</zorder>
    <zorder>logoImage</zorder>
    <zorder>pageTitle</zorder>
    <zorder>pageDesc</zorder>
-   <zorder>memberIcon</zorder>
-   <zorder>accountIcon</zorder>
-   <zorder>signoutIcon</zorder>
    <zorder>groupBox</zorder>
-   <zorder>catalogueIcon</zorder>
-   <zorder>catalogueBtn</zorder>
-   <zorder>memberBtn</zorder>
-   <zorder>accountBtn</zorder>
-   <zorder>signoutBtn</zorder>
    <zorder>line</zorder>
   </widget>
   <widget class="QMenuBar" name="menubar">

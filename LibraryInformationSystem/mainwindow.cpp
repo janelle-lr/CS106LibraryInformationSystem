@@ -12,6 +12,8 @@ MainWindow::MainWindow(QWidget *parent)
 
     //for database
     sysLib->buildDatabase();
+    sysLib->checkLoanedBooks();
+    sysLib->checkPreorders();
 
     //for logo in UI
     QPixmap logo(":/resources/images/bblLogo.png");
@@ -20,10 +22,43 @@ MainWindow::MainWindow(QWidget *parent)
     ui->usernameLineEdit->setText("220199UF");
     ui->passwordLineEdit->setText("kimkardashian");
 
+
+    //comment or delete after, this is only for testing
+    //  thanks, Megatron
     hide();
-//    admincatalogue = new adminCatalogue(this);
-//    connect(admincatalogue, SIGNAL(openadminCatalogue()), this, SLOT(openMainWindow())); //connect(pointerName, SIGNAL(openWindowYouWantToOpen()), this, SLOT(openWindowUrOpeningFrom()));
-//    admincatalogue->show();
+    admineditcatalogue = new adminEditCatalogue(this);
+    connect(admineditcatalogue, SIGNAL(openadminEditCatalogue()), this, SLOT(openMainWindow())); //connect(pointerName, SIGNAL(openWindowYouWantToOpen()), this, SLOT(openWindowUrOpeningFrom()));
+    admineditcatalogue->show();
+
+    hide();
+    adminaddmember = new adminAddMember(this);
+    connect(adminaddmember, SIGNAL(openadminAddMember()), this, SLOT(openMainWindow())); //connect(pointerName, SIGNAL(openWindowYouWantToOpen()), this, SLOT(openWindowUrOpeningFrom()));
+    adminaddmember->show();
+
+    hide();
+    admincatalogue = new adminCatalogue(this);
+    connect(admincatalogue, SIGNAL(openadminCatalogue()), this, SLOT(openMainWindow())); //connect(pointerName, SIGNAL(openWindowYouWantToOpen()), this, SLOT(openWindowUrOpeningFrom()));
+    admincatalogue->show();
+
+    hide();
+    admineditbook = new adminEditBook(this);
+    connect(admineditbook, SIGNAL(openadminEditBook()), this, SLOT(openMainWindow())); //connect(pointerName, SIGNAL(openWindowYouWantToOpen()), this, SLOT(openWindowUrOpeningFrom()));
+    admineditbook->show();
+
+    hide();
+    adminmembercatalogue = new adminMemberCatalogue(this);
+    connect(adminmembercatalogue, SIGNAL(openadminMemberCatalogue()), this, SLOT(openMainWindow())); //connect(pointerName, SIGNAL(openWindowYouWantToOpen()), this, SLOT(openWindowUrOpeningFrom()));
+    adminmembercatalogue->show();
+
+//    hide();
+//    adminmemberedit = new adminMemberEdit(this);
+//    connect(adminmemberedit, SIGNAL(openadminMemberEdit()), this, SLOT(openMainWindow())); //connect(pointerName, SIGNAL(openWindowYouWantToOpen()), this, SLOT(openWindowUrOpeningFrom()));
+//    adminmemberedit->show();
+
+
+
+
+
 }
 
 MainWindow::~MainWindow()

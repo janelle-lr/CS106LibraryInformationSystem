@@ -165,7 +165,8 @@ void adminCatalogue::editButtonClicked(){
     connect(admineditbook, SIGNAL(showadminEditBook()), this, SLOT(show()));
     admineditbook->show();
     admineditbook->setNum(num);
-    //hide();
+    //deleteButtonClicked();
+
 }
 
 void adminCatalogue::deleteButtonClicked(){
@@ -203,14 +204,10 @@ void adminCatalogue::deleteButtonClicked(){
     addRecords();//reprints updated catalogue
 }
 
-
-
-
 void adminCatalogue::on_pushButton_clicked()
 {
     addRecords();
 }
-
 
 void adminCatalogue::on_pushButton_2_clicked()
 {

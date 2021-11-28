@@ -23,16 +23,16 @@ void adminEditBook::setNum(int num) {
     book = sysLib.getAllBooks();
 
     QPixmap bookImage(book[num].getBookImageFilePath());
-    ui->bookImage_2->setPixmap(bookImage.scaled(161, 211, Qt::KeepAspectRatio));
-    ui->titleLineEdit_2->setText(book[num].getBookName());
-    ui->authorLineEdit_2->setText(book[num].getAuthorName());
-    ui->genreLineEdit_2->setText(book[num].getGenre());
-    ui->publisherLineEdit_2->setText(book[num].getPubName());
-    ui->descriptionLineEdit->setText(book[num].getBookDescription());
+    ui->bookImage_8->setPixmap(bookImage.scaled(161, 211, Qt::KeepAspectRatio));
+    ui->titleLineEdit_8->setText(book[num].getBookName());
+    ui->authorLineEdit_8->setText(book[num].getAuthorName());
+    ui->genreLineEdit_8->setText(book[num].getGenre());
+    ui->publisherLineEdit_8->setText(book[num].getPubName());
+    ui->descriptionLineEdit_7->setText(book[num].getBookDescription());
 }
 
 //when save is clicked the edits will be saved
-void adminEditBook::on_savePushButton_2_clicked()
+void adminEditBook::on_savePushButton_clicked()
 {
     SystemLibrary sysLib;
 
@@ -41,11 +41,11 @@ void adminEditBook::on_savePushButton_2_clicked()
 
     for (int i = 0; i < book.size(); i++) {
         if(numId == i) {
-        book[i].setBookName(ui->titleLineEdit_2->text());
-        book[i].setGenre(ui->genreLineEdit_2->text());
-        book[i].setAuthorName(ui->authorLineEdit_2->text());
-        book[i].setPubName(ui->publisherLineEdit_2->text());
-        book[i].setBookDescription(ui->descriptionLineEdit->text());
+        book[i].setBookName(ui->titleLineEdit_8->text());
+        book[i].setGenre(ui->genreLineEdit_8->text());
+        book[i].setAuthorName(ui->authorLineEdit_8->text());
+        book[i].setPubName(ui->publisherLineEdit_8->text());
+        book[i].setBookDescription(ui->descriptionLineEdit_7->text());
         break;
         }
     }

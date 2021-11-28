@@ -118,7 +118,7 @@ QPushButton:hover {
 }</string>
        </property>
        <property name="text">
-        <string>Member</string>
+        <string>Members</string>
        </property>
       </widget>
      </item>

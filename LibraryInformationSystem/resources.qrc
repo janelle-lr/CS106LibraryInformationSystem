@@ -20,5 +20,6 @@
         <file>images/reserveBook.png</file>
         <file>images/signOut.png</file>
         <file>images/uis_signout.png</file>
+        <file>images/backIcon.png</file>
     </qresource>
 </RCC>

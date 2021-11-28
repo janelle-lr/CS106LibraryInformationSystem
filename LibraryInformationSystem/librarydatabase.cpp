@@ -1,5 +1,16 @@
 #include "librarydatabase.h"
 
+/*
+    ADDED IN ON SUNDAY 28TH NOV
+
+    YO HEY THIS IS KEITH. I ADDED IN THE NEW " libraryDatabase.cpp " from
+    the teams chat. I hope I put it in the right place.
+
+    thanks,
+    YaBoiSkinnyPen1s
+
+*/
+
 LibraryDatabase::LibraryDatabase(){}
 //This function creates the database
 void LibraryDatabase::buildDatabase(){
@@ -741,8 +752,10 @@ void LibraryDatabase::preOrderBook(PreOrderBook preOrder){
                 QString loanedDate = bookItem[i].getExpiryDate();
                 QStringList date =(loanedDate.split("/"));
                 compareDate = QDate(date[2].toInt(),date[1].toInt(),date[0].toInt());
-                if(preOrderDate > compareDate)
+                if(preOrderDate < compareDate)
                     preOrderDate = compareDate;
+                else if(preOrderDate == compareDate)
+                    preOrderDate = compareDate.addDays(1);
             }
 
         }
@@ -759,6 +772,8 @@ void LibraryDatabase::preOrderBook(PreOrderBook preOrder){
                 compareDate = QDate(date[2].toInt(),date[1].toInt(),date[0].toInt());
                 if(preOrderDate < compareDate)
                     preOrderDate = compareDate;
+                else if(preOrderDate == compareDate)
+                    preOrderDate = compareDate.addDays(1);
             }
 
         }
@@ -771,48 +786,16 @@ void LibraryDatabase::preOrderBook(PreOrderBook preOrder){
     file.close();
 }
 //This function returns the date when the book will be available
-QString LibraryDatabase::getAvailPreBookDate(QString bookID){
-    bool isTrue = true;
-
-    //Check which loaned book is near due date and set that as the book date of the preorder
-    QVector<BookItem> bookItem;
-    bookItem = getAllBookItem();
-    QDate preOrderDate = QDate(1993,10,20);//year, month, day
-    QDate compareDate;
-
-    do{
-        isTrue = false;
-        for(int i = 0; i < bookItem.size(); i++){
-            if(bookID == bookItem[i].getBookItem_BookID()){
-                QString loanedDate = bookItem[i].getExpiryDate();
-                QStringList date =(loanedDate.split("/"));
-                compareDate = QDate(date[2].toInt(),date[1].toInt(),date[0].toInt());
-                if(preOrderDate < compareDate)
-                    preOrderDate = compareDate;
-            }
-
+QString LibraryDatabase::getAvailPreBookDate(QString bookID,QString userId){
+    QDate preOrderDate;//year, month, day
+    QVector<PreOrderBook>preOrder = getAllPreOrders();
+    for(auto element: preOrder){
+        if(element.getPreBook_BookID() == bookID && element.getPreBook_MemberID() == userId && element.getPreOrderStatus() == 0){
+            QString loanedDate = element.getPreBookDate();
+            QStringList date =(loanedDate.split("/"));
+            preOrderDate = QDate(date[2].toInt(),date[1].toInt(),date[0].toInt());
         }
-    }while(isTrue);
-
-    do{
-        isTrue = false;
-        //check if any user has also pre-booked the item
-        QVector<PreOrderBook> preBook = getAllPreOrders();
-        for(int i = 0; i < preBook.size(); i++){
-        //for(int x = 0; x < preBook.size(); x++){
-            if(bookID == preBook[i].getPreBook_BookID()){
-                QString loanedDate = preBook[i].getPreBookDate();
-                QStringList date =(loanedDate.split("/"));
-                compareDate = QDate(date[2].toInt(),date[1].toInt(),date[0].toInt());
-                if(preOrderDate < compareDate){
-                    preOrderDate = compareDate;
-                    isTrue = true;
-                }
-            }
-       // }
-        }
-    }while(isTrue);
-
+    }
 
     return preOrderDate.toString();
 }
@@ -1005,6 +988,7 @@ void LibraryDatabase::checkLoanedBooks(){
 }
 //This function checks if the pre order book is now available
 void LibraryDatabase::checkPreorders(){
+    bool isTrue = true;
     QVector<PreOrderBook> preOrder;
     QVector<Book> book;
     preOrder = getAllPreOrders();
@@ -1012,8 +996,11 @@ void LibraryDatabase::checkPreorders(){
 
     QDate date = QDate::currentDate();
     QString currentDate = date.toString("dd/MM/yyyy");
-    for(int i = 0; i < preOrder.size(); i++){
-        if(preOrder[i].getPreBookDate() == currentDate){
+
+    do{
+        isTrue = false;
+        for(int i = 0; i < preOrder.size(); i++){
+            //if(preOrder[i].getPreBookDate() == currentDate){
             for(int x = 0; x < book.size(); x++){
                 if(preOrder[i].getPreBook_BookID() == book[x].getBookId() && preOrder[i].getPreOrderStatus() == false){//if id matches and if book has not been loaned
                     if(book[x].getStock() > 0 && book[x].getAvailStatus() == true){//if we have stock and book is available
@@ -1035,12 +1022,14 @@ void LibraryDatabase::checkPreorders(){
                         loanBook(bookItem);
                         preOrder[i].setPreOrderStatus(1); //book has been loaned
                         updateAllPreOrderDetails(preOrder);//update Database
+                        isTrue = true;
                     }
                     break;
                 }
             }
+            //}
         }
-    }
+    }while(isTrue);
 }
 //This function checks if the member has already loaned the book.
 bool LibraryDatabase::isLoaned(QString memberID, QString bookID){
