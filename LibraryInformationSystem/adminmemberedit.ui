@@ -254,7 +254,7 @@ QPushButton {
       </rect>
      </property>
      <property name="text">
-      <string>Add Memeber</string>
+      <string>Save Changes</string>
      </property>
     </widget>
     <widget class="QLineEdit" name="emailLineEdit">

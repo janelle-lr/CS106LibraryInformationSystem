@@ -7,6 +7,13 @@ adminEditBook::adminEditBook(QWidget *parent) :
     ui(new Ui::adminEditBook)
 {
     ui->setupUi(this);
+
+    //for logo in UI
+    QPixmap logo(":/resources/images/miniLogo.png");
+    ui->logoImage->setPixmap(logo.scaled(300, 75, Qt::KeepAspectRatio));
+
+    QPixmap back(":/resources/images/backIcon.png");
+    ui->backIcon_7->setPixmap(back.scaled(40, 40, Qt::KeepAspectRatio));
 }
 
 adminEditBook::~adminEditBook()

@@ -6,6 +6,13 @@ adminMemberEdit::adminMemberEdit(QWidget *parent) :
     ui(new Ui::adminMemberEdit)
 {
     ui->setupUi(this);
+
+    //for logo in UI
+    QPixmap logo(":/resources/images/miniLogo.png");
+    ui->logoImage->setPixmap(logo.scaled(300, 75, Qt::KeepAspectRatio));
+
+    QPixmap img4(":/resources/images/uis_signout.png");
+    ui->signoutIcon->setPixmap(img4.scaled(40, 40, Qt::KeepAspectRatio));
 }
 
 adminMemberEdit::~adminMemberEdit()
@@ -26,7 +33,6 @@ void adminMemberEdit::setNum(int num) {
     ui->emailLineEdit->setText(member[num].getEmail());
     ui->usernameLineEdit->setText(member[num].getAccId());
     ui->passwordLineEdit->setText(member[num].getPassword());
-
 }
 
 //when save is clicked the edits will be saved

@@ -68,30 +68,24 @@ QPushButton {
 	height: 31px; 
 }</string>
    </property>
-   <widget class="QLabel" name="logoImage">
-    <property name="geometry">
-     <rect>
-      <x>200</x>
-      <y>30</y>
-      <width>441</width>
-      <height>61</height>
-     </rect>
-    </property>
-    <property name="text">
-     <string/>
-    </property>
-    <property name="pixmap">
-     <pixmap resource="resources.qrc">:/resources/images/bblLogo.png</pixmap>
-    </property>
-   </widget>
    <widget class="QComboBox" name="comboBox">
     <property name="geometry">
      <rect>
       <x>1100</x>
       <y>70</y>
       <width>131</width>
-      <height>22</height>
+      <height>31</height>
      </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">QComboBox{
+	background:rgb(255, 229, 208);
+	border: 1px solid;
+	border-radius: 15px;
+	border-color: #e5e5e5;
+	background-color: palette(base);
+	padding: 0px 5px;
+}</string>
     </property>
     <item>
      <property name="text">
@@ -182,6 +176,151 @@ QPushButton {
       </item>
      </layout>
     </widget>
+   </widget>
+   <widget class="QWidget" name="layoutWidget">
+    <property name="geometry">
+     <rect>
+      <x>20</x>
+      <y>120</y>
+      <width>191</width>
+      <height>471</height>
+     </rect>
+    </property>
+    <layout class="QVBoxLayout" name="verticalLayout_10">
+     <item>
+      <widget class="QLabel" name="catalogueIcon">
+       <property name="styleSheet">
+        <string notr="true">QLabel{
+	color: rgb(231, 138, 107);
+}</string>
+       </property>
+       <property name="text">
+        <string>Catalogue</string>
+       </property>
+       <property name="alignment">
+        <set>Qt::AlignCenter</set>
+       </property>
+      </widget>
+     </item>
+     <item>
+      <widget class="QPushButton" name="catalogueBtn">
+       <property name="styleSheet">
+        <string notr="true">QPushButton{
+	border-radius:15px;
+	font: 14px &quot;Montserrat&quot;;
+}
+
+QPushButton:hover {
+	text-decoration: underline;
+}</string>
+       </property>
+       <property name="text">
+        <string>Catalogue</string>
+       </property>
+      </widget>
+     </item>
+     <item>
+      <widget class="QLabel" name="accountIcon">
+       <property name="text">
+        <string>account</string>
+       </property>
+       <property name="alignment">
+        <set>Qt::AlignCenter</set>
+       </property>
+      </widget>
+     </item>
+     <item>
+      <widget class="QPushButton" name="accountBtn">
+       <property name="styleSheet">
+        <string notr="true">QPushButton{
+	border-radius:15px;
+	font: 14px &quot;Montserrat&quot;;
+}
+
+QPushButton:hover {
+	text-decoration: underline;
+}</string>
+       </property>
+       <property name="text">
+        <string>acount</string>
+       </property>
+      </widget>
+     </item>
+     <item>
+      <spacer name="verticalSpacer_3">
+       <property name="orientation">
+        <enum>Qt::Vertical</enum>
+       </property>
+       <property name="sizeHint" stdset="0">
+        <size>
+         <width>20</width>
+         <height>40</height>
+        </size>
+       </property>
+      </spacer>
+     </item>
+     <item>
+      <widget class="QLabel" name="signoutIcon">
+       <property name="text">
+        <string>signOut</string>
+       </property>
+       <property name="alignment">
+        <set>Qt::AlignCenter</set>
+       </property>
+      </widget>
+     </item>
+     <item>
+      <widget class="QPushButton" name="signoutBtn">
+       <property name="styleSheet">
+        <string notr="true">QPushButton{
+	border-radius:15px;
+	font: 14px &quot;Montserrat&quot;;
+}
+
+QPushButton:hover {
+	text-decoration: underline;
+}</string>
+       </property>
+       <property name="text">
+        <string>Sign Out</string>
+       </property>
+      </widget>
+     </item>
+    </layout>
+   </widget>
+   <widget class="Line" name="line">
+    <property name="geometry">
+     <rect>
+      <x>210</x>
+      <y>110</y>
+      <width>21</width>
+      <height>481</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">Line{
+	color:rgb(221, 46, 68);
+}</string>
+    </property>
+    <property name="orientation">
+     <enum>Qt::Vertical</enum>
+    </property>
+   </widget>
+   <widget class="QLabel" name="logoImage">
+    <property name="geometry">
+     <rect>
+      <x>10</x>
+      <y>20</y>
+      <width>221</width>
+      <height>71</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string/>
+    </property>
+    <property name="pixmap">
+     <pixmap resource="resources.qrc">:/resources/images/bblLogo.png</pixmap>
+    </property>
    </widget>
   </widget>
   <widget class="QMenuBar" name="menubar">

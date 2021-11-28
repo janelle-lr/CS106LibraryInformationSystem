@@ -13,8 +13,14 @@ memberCatalogue::memberCatalogue(QWidget *parent) :
     systemlibrary->buildDatabase();
 
     //for logo in UI
-    QPixmap logo(":/resources/images/bblLogo.png");
+    QPixmap logo(":/resources/images/miniLogo.png");
     ui->logoImage->setPixmap(logo.scaled(450, 74, Qt::KeepAspectRatio));
+
+    QPixmap img(":/resources/images/catalogue.png");
+    ui->catalogueIcon->setPixmap(img.scaled(40, 40, Qt::KeepAspectRatio));
+
+    QPixmap img2(":/resources/images/account.png");
+    ui->accountIcon->setPixmap(img2.scaled(40, 40, Qt::KeepAspectRatio));
 }
 
 memberCatalogue::~memberCatalogue()

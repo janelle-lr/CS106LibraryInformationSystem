@@ -9,11 +9,14 @@ adminEditCatalogue::adminEditCatalogue(QWidget *parent) :
     ui(new Ui::adminEditCatalogue)
 {
     ui->setupUi(this);
-    setWindowTitle("BiblioThicc Libraries - Admin Page");
+    setWindowTitle("BiblioThicc Libraries - Add Book Page");
 
     //for logo in UI
-    QPixmap logo(":/resources/images/bblLogo.png");
-    ui->logoImage->setPixmap(logo.scaled(450, 74, Qt::KeepAspectRatio));
+    QPixmap logo(":/resources/images/miniLogo.png");
+    ui->logoImage->setPixmap(logo.scaled(300, 75, Qt::KeepAspectRatio));
+
+    QPixmap back(":/resources/images/backIcon.png");
+    ui->backIcon->setPixmap(back.scaled(40, 40, Qt::KeepAspectRatio));
 }
 
 adminEditCatalogue::~adminEditCatalogue()

@@ -101,8 +101,8 @@ QPushButton {
    <widget class="QPushButton" name="pushButton">
     <property name="geometry">
      <rect>
-      <x>910</x>
-      <y>40</y>
+      <x>1150</x>
+      <y>20</y>
       <width>75</width>
       <height>23</height>
      </rect>
@@ -280,7 +280,7 @@ QPushButton:hover {
      <rect>
       <x>290</x>
       <y>80</y>
-      <width>971</width>
+      <width>771</width>
       <height>51</height>
      </rect>
     </property>
@@ -288,6 +288,37 @@ QPushButton:hover {
      <string>Here admin can view all books that exist in the catalogue. You can choose to view, edit, and delete books. 
  You can also choose to add books if you want to. You literally have all the power in the world as an admin. 
 DONT ABUSE IT  OR YOU USE LOSE YOUR PIZZA EATING PRIVLLAGES</string>
+    </property>
+   </widget>
+   <widget class="QLabel" name="addMemberIcon">
+    <property name="geometry">
+     <rect>
+      <x>1110</x>
+      <y>80</y>
+      <width>47</width>
+      <height>31</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>TextLabel</string>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="addMemberBtn">
+    <property name="geometry">
+     <rect>
+      <x>1150</x>
+      <y>80</y>
+      <width>111</width>
+      <height>31</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">QPushButton:hover {
+	text-decoration: underline;
+}</string>
+    </property>
+    <property name="text">
+     <string>Add New Member</string>
     </property>
    </widget>
   </widget>

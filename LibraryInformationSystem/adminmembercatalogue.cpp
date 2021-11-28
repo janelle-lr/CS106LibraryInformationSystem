@@ -7,6 +7,23 @@ adminMemberCatalogue::adminMemberCatalogue(QWidget *parent) :
 {
     ui->setupUi(this);
 
+    //for logo in UI
+    QPixmap logo(":/resources/images/miniLogo.png");
+    ui->logoImage->setPixmap(logo.scaled(300, 75, Qt::KeepAspectRatio));
+
+    //for icons in UI
+    QPixmap img(":/resources/images/catalogue.png");
+    ui->catalogueIcon_2->setPixmap(img.scaled(40, 40, Qt::KeepAspectRatio));
+
+    QPixmap img2(":/resources/images/viewMembers.png");
+    ui->memberIcon_2->setPixmap(img2.scaled(40, 40, Qt::KeepAspectRatio));
+
+    QPixmap img4(":/resources/images/uis_signout.png");
+    ui->signoutIcon_2->setPixmap(img4.scaled(40, 40, Qt::KeepAspectRatio));
+
+    QPixmap img5(":/resources/images/addMember.png");
+    ui->addMemberIcon->setPixmap(img5.scaled(40, 40, Qt::KeepAspectRatio));
+
     addRecords();
 }
 

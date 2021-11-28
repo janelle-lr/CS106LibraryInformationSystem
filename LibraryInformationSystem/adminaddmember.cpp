@@ -66,7 +66,8 @@ adminAddMember::~adminAddMember()
 
 //}
 
-// yeah dawg hold up just use this for now cuz idk why it aint working
+// !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!! ATTENTION !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+//yeah dawg hold up just use this for now cuz idk why it aint working
 // fix this when you get home - keith
 void adminAddMember::on_addMemberButton_clicked(QString accId)
 {

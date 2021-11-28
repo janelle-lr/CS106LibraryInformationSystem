@@ -24,6 +24,9 @@ adminCatalogue::adminCatalogue(QWidget *parent) :
     QPixmap img4(":/resources/images/uis_signout.png");
     ui->signoutIcon->setPixmap(img4.scaled(40, 40, Qt::KeepAspectRatio));
 
+    QPixmap img5(":/resources/images/addBook.png");
+    ui->addBookIcon->setPixmap(img5.scaled(40, 40, Qt::KeepAspectRatio));
+
     addRecords();
 }
 

@@ -22,40 +22,45 @@ MainWindow::MainWindow(QWidget *parent)
     ui->usernameLineEdit->setText("220199UF");
     ui->passwordLineEdit->setText("kimkardashian");
 
-
+    // VVVVVVVVVVVVVVVVVVVVV ADMIN SCREENS VVVVVVVVVVVVVVVVVVVVVVVVVV
     //comment or delete after, this is only for testing
     //  thanks, Megatron
-    hide();
-    admineditcatalogue = new adminEditCatalogue(this);
-    connect(admineditcatalogue, SIGNAL(openadminEditCatalogue()), this, SLOT(openMainWindow())); //connect(pointerName, SIGNAL(openWindowYouWantToOpen()), this, SLOT(openWindowUrOpeningFrom()));
-    admineditcatalogue->show();
+    //    hide();
+    //    admineditcatalogue = new adminEditCatalogue(this);
+    //    connect(admineditcatalogue, SIGNAL(openadminEditCatalogue()), this, SLOT(openMainWindow())); //connect(pointerName, SIGNAL(openWindowYouWantToOpen()), this, SLOT(openWindowUrOpeningFrom()));
+    //    admineditcatalogue->show();
 
-    hide();
-    adminaddmember = new adminAddMember(this);
-    connect(adminaddmember, SIGNAL(openadminAddMember()), this, SLOT(openMainWindow())); //connect(pointerName, SIGNAL(openWindowYouWantToOpen()), this, SLOT(openWindowUrOpeningFrom()));
-    adminaddmember->show();
+    //    hide();
+    //    adminaddmember = new adminAddMember(this);
+    //    connect(adminaddmember, SIGNAL(openadminAddMember()), this, SLOT(openMainWindow())); //connect(pointerName, SIGNAL(openWindowYouWantToOpen()), this, SLOT(openWindowUrOpeningFrom()));
+    //    adminaddmember->show();
 
     hide();
     admincatalogue = new adminCatalogue(this);
     connect(admincatalogue, SIGNAL(openadminCatalogue()), this, SLOT(openMainWindow())); //connect(pointerName, SIGNAL(openWindowYouWantToOpen()), this, SLOT(openWindowUrOpeningFrom()));
     admincatalogue->show();
 
-    hide();
-    admineditbook = new adminEditBook(this);
-    connect(admineditbook, SIGNAL(openadminEditBook()), this, SLOT(openMainWindow())); //connect(pointerName, SIGNAL(openWindowYouWantToOpen()), this, SLOT(openWindowUrOpeningFrom()));
-    admineditbook->show();
+    //    hide();
+    //    admineditbook = new adminEditBook(this);
+    //    connect(admineditbook, SIGNAL(openadminEditBook()), this, SLOT(openMainWindow())); //connect(pointerName, SIGNAL(openWindowYouWantToOpen()), this, SLOT(openWindowUrOpeningFrom()));
+    //    admineditbook->show();
+
+        hide();
+        adminmembercatalogue = new adminMemberCatalogue(this);
+        connect(adminmembercatalogue, SIGNAL(openadminMemberCatalogue()), this, SLOT(openMainWindow())); //connect(pointerName, SIGNAL(openWindowYouWantToOpen()), this, SLOT(openWindowUrOpeningFrom()));
+        adminmembercatalogue->show();
+
+    //    hide();
+    //    adminmemberedit = new adminMemberEdit(this);
+    //    connect(adminmemberedit, SIGNAL(openadminMemberEdit()), this, SLOT(openMainWindow())); //connect(pointerName, SIGNAL(openWindowYouWantToOpen()), this, SLOT(openWindowUrOpeningFrom()));
+    //    adminmemberedit->show();
+
+    // VVVVVVVVVVVVVVVVVVVVV MEMBER SCREENS VVVVVVVVVVVVVVVVVVVVVVVVVV
 
     hide();
-    adminmembercatalogue = new adminMemberCatalogue(this);
-    connect(adminmembercatalogue, SIGNAL(openadminMemberCatalogue()), this, SLOT(openMainWindow())); //connect(pointerName, SIGNAL(openWindowYouWantToOpen()), this, SLOT(openWindowUrOpeningFrom()));
-    adminmembercatalogue->show();
-
-//    hide();
-//    adminmemberedit = new adminMemberEdit(this);
-//    connect(adminmemberedit, SIGNAL(openadminMemberEdit()), this, SLOT(openMainWindow())); //connect(pointerName, SIGNAL(openWindowYouWantToOpen()), this, SLOT(openWindowUrOpeningFrom()));
-//    adminmemberedit->show();
-
-
+    memberaccountview = new memberAccountView(this);
+    connect(memberaccountview, SIGNAL(openmemberAccountView()), this, SLOT(openMainWindow())); //connect(pointerName, SIGNAL(openWindowYouWantToOpen()), this, SLOT(openWindowUrOpeningFrom()));
+    memberaccountview->show();
 
 
 
