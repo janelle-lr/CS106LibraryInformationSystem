@@ -7,7 +7,6 @@ adminAddMember::adminAddMember(QWidget *parent) :
     ui(new Ui::adminAddMember)
 {
     ui->setupUi(this);
-    setWindowTitle("BiblioThicc Libraries - Add New Member Page");
 
     //for logo in UI
     QPixmap logo(":/resources/images/miniLogo.png");

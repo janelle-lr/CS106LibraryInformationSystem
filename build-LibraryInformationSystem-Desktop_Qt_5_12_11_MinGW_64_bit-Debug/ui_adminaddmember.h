@@ -210,7 +210,7 @@ public:
         lastNameLineEdit->setMinimumSize(QSize(0, 31));
         dateEdit = new QDateEdit(groupBox);
         dateEdit->setObjectName(QString::fromUtf8("dateEdit"));
-        dateEdit->setGeometry(QRect(290, 183, 250, 31));
+        dateEdit->setGeometry(QRect(290, 183, 551, 31));
         dateEdit->setMinimumSize(QSize(0, 31));
         dateEdit->setMaximumSize(QSize(16777215, 0));
         label_20 = new QLabel(groupBox);

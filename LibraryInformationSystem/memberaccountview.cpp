@@ -6,8 +6,6 @@ memberAccountView::memberAccountView(QWidget *parent) :
     ui(new Ui::memberAccountView)
 {
     ui->setupUi(this);
-    setWindowTitle("BiblioThicc Libraries - View Account Details Page");
-
     //for logo in UI
     QPixmap logo(":/resources/images/miniLogo.png");
     ui->logoImage->setPixmap(logo.scaled(450, 74, Qt::KeepAspectRatio));

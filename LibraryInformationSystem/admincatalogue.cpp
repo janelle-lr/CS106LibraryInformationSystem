@@ -9,7 +9,6 @@ adminCatalogue::adminCatalogue(QWidget *parent) :
     ui(new Ui::adminCatalogue)
 {
     ui->setupUi(this);
-    setWindowTitle("BiblioThicc Libraries - View Admin Book Catalogue Page");
 
     //for logo in UI
     QPixmap logo(":/resources/images/miniLogo.png");

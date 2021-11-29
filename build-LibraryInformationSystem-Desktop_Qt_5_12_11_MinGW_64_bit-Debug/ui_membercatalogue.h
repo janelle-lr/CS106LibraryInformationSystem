@@ -13,7 +13,6 @@
 #include <QtWidgets/QAction>
 #include <QtWidgets/QApplication>
 #include <QtWidgets/QComboBox>
-#include <QtWidgets/QFrame>
 #include <QtWidgets/QGridLayout>
 #include <QtWidgets/QHBoxLayout>
 #include <QtWidgets/QLabel>
@@ -22,8 +21,6 @@
 #include <QtWidgets/QMenuBar>
 #include <QtWidgets/QPushButton>
 #include <QtWidgets/QScrollArea>
-#include <QtWidgets/QSpacerItem>
-#include <QtWidgets/QVBoxLayout>
 #include <QtWidgets/QWidget>
 
 QT_BEGIN_NAMESPACE
@@ -36,23 +33,13 @@ public:
     QAction *actiontest_3;
     QAction *actionView_Catalogue;
     QWidget *centralwidget;
+    QLabel *logoImage;
     QComboBox *comboBox;
     QPushButton *pushButton;
     QScrollArea *scrollArea;
     QWidget *scrollAreaWidgetContents;
     QHBoxLayout *horizontalLayout;
     QGridLayout *gridLayout_3;
-    QWidget *layoutWidget;
-    QVBoxLayout *verticalLayout_10;
-    QLabel *catalogueIcon;
-    QPushButton *catalogueBtn;
-    QLabel *accountIcon;
-    QPushButton *accountBtn;
-    QSpacerItem *verticalSpacer_3;
-    QLabel *signoutIcon;
-    QPushButton *signoutBtn;
-    QFrame *line;
-    QLabel *logoImage;
     QMenuBar *menubar;
     QMenu *menuCatalogue;
     QMenu *menuAccount;
@@ -112,6 +99,10 @@ public:
 "	font-size: 13px;\n"
 "	height: 31px; \n"
 "}"));
+        logoImage = new QLabel(centralwidget);
+        logoImage->setObjectName(QString::fromUtf8("logoImage"));
+        logoImage->setGeometry(QRect(200, 30, 441, 61));
+        logoImage->setPixmap(QPixmap(QString::fromUtf8(":/resources/images/bblLogo.png")));
         comboBox = new QComboBox(centralwidget);
         comboBox->addItem(QString());
         comboBox->addItem(QString());
@@ -119,15 +110,7 @@ public:
         comboBox->addItem(QString());
         comboBox->addItem(QString());
         comboBox->setObjectName(QString::fromUtf8("comboBox"));
-        comboBox->setGeometry(QRect(1100, 70, 131, 31));
-        comboBox->setStyleSheet(QString::fromUtf8("QComboBox{\n"
-"	background:rgb(255, 229, 208);\n"
-"	border: 1px solid;\n"
-"	border-radius: 15px;\n"
-"	border-color: #e5e5e5;\n"
-"	background-color: palette(base);\n"
-"	padding: 0px 5px;\n"
-"}"));
+        comboBox->setGeometry(QRect(1100, 70, 131, 22));
         pushButton = new QPushButton(centralwidget);
         pushButton->setObjectName(QString::fromUtf8("pushButton"));
         pushButton->setGeometry(QRect(1000, 70, 75, 23));
@@ -165,88 +148,6 @@ public:
         horizontalLayout->addLayout(gridLayout_3);
 
         scrollArea->setWidget(scrollAreaWidgetContents);
-        layoutWidget = new QWidget(centralwidget);
-        layoutWidget->setObjectName(QString::fromUtf8("layoutWidget"));
-        layoutWidget->setGeometry(QRect(20, 120, 191, 471));
-        verticalLayout_10 = new QVBoxLayout(layoutWidget);
-        verticalLayout_10->setObjectName(QString::fromUtf8("verticalLayout_10"));
-        verticalLayout_10->setContentsMargins(0, 0, 0, 0);
-        catalogueIcon = new QLabel(layoutWidget);
-        catalogueIcon->setObjectName(QString::fromUtf8("catalogueIcon"));
-        catalogueIcon->setStyleSheet(QString::fromUtf8("QLabel{\n"
-"	color: rgb(231, 138, 107);\n"
-"}"));
-        catalogueIcon->setAlignment(Qt::AlignCenter);
-
-        verticalLayout_10->addWidget(catalogueIcon);
-
-        catalogueBtn = new QPushButton(layoutWidget);
-        catalogueBtn->setObjectName(QString::fromUtf8("catalogueBtn"));
-        catalogueBtn->setStyleSheet(QString::fromUtf8("QPushButton{\n"
-"	border-radius:15px;\n"
-"	font: 14px \"Montserrat\";\n"
-"}\n"
-"\n"
-"QPushButton:hover {\n"
-"	text-decoration: underline;\n"
-"}"));
-
-        verticalLayout_10->addWidget(catalogueBtn);
-
-        accountIcon = new QLabel(layoutWidget);
-        accountIcon->setObjectName(QString::fromUtf8("accountIcon"));
-        accountIcon->setAlignment(Qt::AlignCenter);
-
-        verticalLayout_10->addWidget(accountIcon);
-
-        accountBtn = new QPushButton(layoutWidget);
-        accountBtn->setObjectName(QString::fromUtf8("accountBtn"));
-        accountBtn->setStyleSheet(QString::fromUtf8("QPushButton{\n"
-"	border-radius:15px;\n"
-"	font: 14px \"Montserrat\";\n"
-"}\n"
-"\n"
-"QPushButton:hover {\n"
-"	text-decoration: underline;\n"
-"}"));
-
-        verticalLayout_10->addWidget(accountBtn);
-
-        verticalSpacer_3 = new QSpacerItem(20, 40, QSizePolicy::Minimum, QSizePolicy::Expanding);
-
-        verticalLayout_10->addItem(verticalSpacer_3);
-
-        signoutIcon = new QLabel(layoutWidget);
-        signoutIcon->setObjectName(QString::fromUtf8("signoutIcon"));
-        signoutIcon->setAlignment(Qt::AlignCenter);
-
-        verticalLayout_10->addWidget(signoutIcon);
-
-        signoutBtn = new QPushButton(layoutWidget);
-        signoutBtn->setObjectName(QString::fromUtf8("signoutBtn"));
-        signoutBtn->setStyleSheet(QString::fromUtf8("QPushButton{\n"
-"	border-radius:15px;\n"
-"	font: 14px \"Montserrat\";\n"
-"}\n"
-"\n"
-"QPushButton:hover {\n"
-"	text-decoration: underline;\n"
-"}"));
-
-        verticalLayout_10->addWidget(signoutBtn);
-
-        line = new QFrame(centralwidget);
-        line->setObjectName(QString::fromUtf8("line"));
-        line->setGeometry(QRect(210, 110, 21, 481));
-        line->setStyleSheet(QString::fromUtf8("Line{\n"
-"	color:rgb(221, 46, 68);\n"
-"}"));
-        line->setFrameShape(QFrame::VLine);
-        line->setFrameShadow(QFrame::Sunken);
-        logoImage = new QLabel(centralwidget);
-        logoImage->setObjectName(QString::fromUtf8("logoImage"));
-        logoImage->setGeometry(QRect(10, 20, 221, 71));
-        logoImage->setPixmap(QPixmap(QString::fromUtf8(":/resources/images/bblLogo.png")));
         memberCatalogue->setCentralWidget(centralwidget);
         menubar = new QMenuBar(memberCatalogue);
         menubar->setObjectName(QString::fromUtf8("menubar"));
@@ -277,6 +178,7 @@ public:
         actiontest_2->setText(QApplication::translate("memberCatalogue", "test 2", nullptr));
         actiontest_3->setText(QApplication::translate("memberCatalogue", "Log-Out", nullptr));
         actionView_Catalogue->setText(QApplication::translate("memberCatalogue", "View Catalogue", nullptr));
+        logoImage->setText(QString());
         comboBox->setItemText(0, QApplication::translate("memberCatalogue", "Sort By", nullptr));
         comboBox->setItemText(1, QApplication::translate("memberCatalogue", "Title", nullptr));
         comboBox->setItemText(2, QApplication::translate("memberCatalogue", "Author", nullptr));
@@ -284,13 +186,6 @@ public:
         comboBox->setItemText(4, QApplication::translate("memberCatalogue", "Release date", nullptr));
 
         pushButton->setText(QApplication::translate("memberCatalogue", "PushButton", nullptr));
-        catalogueIcon->setText(QApplication::translate("memberCatalogue", "Catalogue", nullptr));
-        catalogueBtn->setText(QApplication::translate("memberCatalogue", "Catalogue", nullptr));
-        accountIcon->setText(QApplication::translate("memberCatalogue", "account", nullptr));
-        accountBtn->setText(QApplication::translate("memberCatalogue", "acount", nullptr));
-        signoutIcon->setText(QApplication::translate("memberCatalogue", "signOut", nullptr));
-        signoutBtn->setText(QApplication::translate("memberCatalogue", "Sign Out", nullptr));
-        logoImage->setText(QString());
         menuCatalogue->setTitle(QApplication::translate("memberCatalogue", "Catalogue", nullptr));
         menuAccount->setTitle(QApplication::translate("memberCatalogue", "Account", nullptr));
     } // retranslateUi
