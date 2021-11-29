@@ -12,7 +12,6 @@
 #include "admineditcatalogue.h"
 #include "adminaddmember.h"
 #include "adminmembercatalogue.h"
-//#include "mainwindow.h"
 
 namespace Ui {
 class adminCatalogue;
@@ -28,26 +27,28 @@ public:
     QVector<QPushButton *>btn;
     QVector<QPushButton *>btn2;
 
+signals:
+    void showMainWindow();
+
 private slots:
     void on_pushButton_clicked();
-    void on_pushButton_2_clicked();
     void editButtonClicked();
     void deleteButtonClicked();
-
+    void deleteAllRecords();
     void on_memberBtn_clicked();
-
     void on_signoutBtn_clicked();
-
+    void signOutBtn();
 private:
     Ui::adminCatalogue *ui;
     void createWidgets(int, int, QString, QString, QPixmap bookCover);
     void addRecords();
     void deleteRecords();
-    void deleteAllRecords();
+
     QPushButton* button;
     QPushButton* button2;
     SystemLibrary* systemlibrary;
     adminEditBook* admineditbook;
+    adminEditCatalogue* admineditcatalogue;
     //for nav bar connections
     adminCatalogue *admincatalogue;
     adminMemberCatalogue *adminmembercatalogue;

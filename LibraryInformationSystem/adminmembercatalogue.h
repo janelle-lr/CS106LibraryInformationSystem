@@ -10,6 +10,7 @@
 #include <QGroupBox>
 #include "systemlibrary.h"
 #include "adminmemberedit.h"
+#include "adminaddmember.h"
 
 namespace Ui {
 class adminMemberCatalogue;
@@ -25,11 +26,22 @@ public:
     QVector<QPushButton *>btn;
     QVector<QPushButton *>btn2;
 
+signals:
+    void showAdmin();
+    void getMainWindow();
+
 private slots:
     void editButtonClicked();
     void deleteButtonClicked();
 
     void on_pushButton_clicked();
+
+    void on_catalogueBtn_2_clicked();
+
+    void on_signoutBtn_2_clicked();
+
+    void on_addMemberBtn_clicked();
+    void deleteAllRecords();
 
 private:
     Ui::adminMemberCatalogue *ui;
@@ -39,6 +51,7 @@ private:
     QPushButton* button;
     QPushButton* button2;
     adminMemberEdit* adminmemberedit;
+    adminAddMember* adminaddmember;
 };
 
 #endif // ADMINMEMBERCATALOGUE_H

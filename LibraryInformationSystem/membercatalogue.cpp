@@ -269,3 +269,9 @@ void memberCatalogue::deleteRecords(){
     btn2.clear();
     addRecords();//reprints updated catalogue
 }
+
+void memberCatalogue::on_comboBox_activated(const QString &arg1)
+{
+
+}
+

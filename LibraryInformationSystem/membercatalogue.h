@@ -31,6 +31,8 @@ private slots:
     void issueButtonClicked();
     void viewButtonClicked();
 
+    void on_comboBox_activated(const QString &arg1);
+
 private:
     Ui::memberCatalogue *ui;
     memberAccountView *memberaccountview;

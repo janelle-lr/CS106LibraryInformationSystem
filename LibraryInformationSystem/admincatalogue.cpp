@@ -39,14 +39,18 @@ adminCatalogue::~adminCatalogue()
 void adminCatalogue::on_memberBtn_clicked()
 {
     adminmembercatalogue = new adminMemberCatalogue(this);
-    connect(adminmembercatalogue, SIGNAL(adminMemberCatalogue()), this, SLOT(show()));
+    connect(adminmembercatalogue, SIGNAL(showAdmin()), this, SLOT(show()));
+    connect(adminmembercatalogue, SIGNAL(getMainWindow()), this, SLOT(signOutBtn()));
     adminmembercatalogue->show();
     hide();
 }
-
+void adminCatalogue::signOutBtn(){
+    emit showMainWindow();
+}
 void adminCatalogue::on_signoutBtn_clicked()
 {
-    close();
+    emit showMainWindow();
+    hide();
 }
 //NAV BAR CONNECTION END
 
@@ -166,12 +170,11 @@ void adminCatalogue::editButtonClicked(){
     }
     QMessageBox::information(this,"Button",QString::number(num));
     admineditbook = new adminEditBook(this);
-    connect(admineditbook, SIGNAL(showadminEditBook()), this, SLOT(adminCatalogue::deleteAllRecords()));
+    connect(admineditbook, SIGNAL(showadminEditBook()), this, SLOT(deleteAllRecords()));
     admineditbook->show();
     admineditbook->setNum(num);
-    //deleteAllRecords();
-    //close();
 }
+
 void adminCatalogue::deleteAllRecords(){
     qDebug() << "Delete recs";
     SystemLibrary sysLib;
@@ -200,6 +203,7 @@ void adminCatalogue::deleteAllRecords(){
     btn2.clear();
     addRecords();//reprints updated catalogue
 }
+
 void adminCatalogue::deleteRecords() {
     qDebug() << "Delete recs";
     SystemLibrary sysLib;
@@ -242,19 +246,8 @@ void adminCatalogue::deleteButtonClicked(){
 
 void adminCatalogue::on_pushButton_clicked()
 {
-    addRecords();
-}
-
-void adminCatalogue::on_pushButton_2_clicked()
-{
-    while ( QLayoutItem* item = ui->gridLayout_3->layout()->takeAt( 0 ) )
-    {
-        Q_ASSERT( ! item->layout() );
-        delete item->widget();
-        delete item;
-    }
-
-    btn.clear();
-    btn2.clear();
+    admineditcatalogue = new adminEditCatalogue(this);
+    connect(admineditcatalogue, SIGNAL(openadminEditCatalogue()), this, SLOT(deleteAllRecords())); //connect(pointerName, SIGNAL(openWindowYouWantToOpen()), this, SLOT(openWindowUrOpeningFrom()));
+    admineditcatalogue->show();
 }
 

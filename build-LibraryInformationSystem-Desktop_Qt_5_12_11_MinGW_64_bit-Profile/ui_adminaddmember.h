@@ -33,7 +33,7 @@ public:
     QLabel *pageTitle;
     QLabel *pageDesc;
     QGroupBox *groupBox;
-    QPushButton *addMemberButton;
+    QPushButton *addMember;
     QLabel *label_5;
     QLabel *label_13;
     QLabel *label_16;
@@ -49,14 +49,12 @@ public:
     QLabel *label_21;
     QLabel *label;
     QFrame *line;
-    QWidget *widget;
+    QWidget *layoutWidget;
     QVBoxLayout *verticalLayout;
     QLabel *catalogueIcon;
     QPushButton *catalogueBtn;
     QLabel *memberIcon;
     QPushButton *memberBtn;
-    QLabel *accountIcon;
-    QPushButton *accountBtn;
     QSpacerItem *verticalSpacer;
     QLabel *signoutIcon;
     QPushButton *signoutBtn;
@@ -140,10 +138,10 @@ public:
 "	font-size: 13px;\n"
 "}\n"
 ""));
-        addMemberButton = new QPushButton(groupBox);
-        addMemberButton->setObjectName(QString::fromUtf8("addMemberButton"));
-        addMemberButton->setGeometry(QRect(380, 320, 241, 31));
-        addMemberButton->setStyleSheet(QString::fromUtf8("QPushButton {\n"
+        addMember = new QPushButton(groupBox);
+        addMember->setObjectName(QString::fromUtf8("addMember"));
+        addMember->setGeometry(QRect(380, 320, 241, 31));
+        addMember->setStyleSheet(QString::fromUtf8("QPushButton {\n"
 "/*background-color: palette(base);*/\n"
 "background-color: #E78A6B;\n"
 "color:  #fff;\n"
@@ -212,7 +210,7 @@ public:
         lastNameLineEdit->setMinimumSize(QSize(0, 31));
         dateEdit = new QDateEdit(groupBox);
         dateEdit->setObjectName(QString::fromUtf8("dateEdit"));
-        dateEdit->setGeometry(QRect(290, 183, 551, 31));
+        dateEdit->setGeometry(QRect(290, 183, 250, 31));
         dateEdit->setMinimumSize(QSize(0, 31));
         dateEdit->setMaximumSize(QSize(16777215, 0));
         label_20 = new QLabel(groupBox);
@@ -240,13 +238,13 @@ public:
 "}"));
         line->setFrameShape(QFrame::VLine);
         line->setFrameShadow(QFrame::Sunken);
-        widget = new QWidget(centralwidget);
-        widget->setObjectName(QString::fromUtf8("widget"));
-        widget->setGeometry(QRect(20, 120, 191, 471));
-        verticalLayout = new QVBoxLayout(widget);
+        layoutWidget = new QWidget(centralwidget);
+        layoutWidget->setObjectName(QString::fromUtf8("layoutWidget"));
+        layoutWidget->setGeometry(QRect(20, 120, 191, 471));
+        verticalLayout = new QVBoxLayout(layoutWidget);
         verticalLayout->setObjectName(QString::fromUtf8("verticalLayout"));
         verticalLayout->setContentsMargins(0, 0, 0, 0);
-        catalogueIcon = new QLabel(widget);
+        catalogueIcon = new QLabel(layoutWidget);
         catalogueIcon->setObjectName(QString::fromUtf8("catalogueIcon"));
         catalogueIcon->setStyleSheet(QString::fromUtf8("QLabel{\n"
 "	color: rgb(231, 138, 107);\n"
@@ -255,7 +253,7 @@ public:
 
         verticalLayout->addWidget(catalogueIcon);
 
-        catalogueBtn = new QPushButton(widget);
+        catalogueBtn = new QPushButton(layoutWidget);
         catalogueBtn->setObjectName(QString::fromUtf8("catalogueBtn"));
         catalogueBtn->setStyleSheet(QString::fromUtf8("QPushButton{\n"
 "	border-radius:15px;\n"
@@ -268,13 +266,13 @@ public:
 
         verticalLayout->addWidget(catalogueBtn);
 
-        memberIcon = new QLabel(widget);
+        memberIcon = new QLabel(layoutWidget);
         memberIcon->setObjectName(QString::fromUtf8("memberIcon"));
         memberIcon->setAlignment(Qt::AlignCenter);
 
         verticalLayout->addWidget(memberIcon);
 
-        memberBtn = new QPushButton(widget);
+        memberBtn = new QPushButton(layoutWidget);
         memberBtn->setObjectName(QString::fromUtf8("memberBtn"));
         memberBtn->setStyleSheet(QString::fromUtf8("QPushButton{\n"
 "	border-radius:15px;\n"
@@ -287,36 +285,17 @@ public:
 
         verticalLayout->addWidget(memberBtn);
 
-        accountIcon = new QLabel(widget);
-        accountIcon->setObjectName(QString::fromUtf8("accountIcon"));
-        accountIcon->setAlignment(Qt::AlignCenter);
-
-        verticalLayout->addWidget(accountIcon);
-
-        accountBtn = new QPushButton(widget);
-        accountBtn->setObjectName(QString::fromUtf8("accountBtn"));
-        accountBtn->setStyleSheet(QString::fromUtf8("QPushButton{\n"
-"	border-radius:15px;\n"
-"	font: 14px \"Montserrat\";\n"
-"}\n"
-"\n"
-"QPushButton:hover {\n"
-"	text-decoration: underline;\n"
-"}"));
-
-        verticalLayout->addWidget(accountBtn);
-
         verticalSpacer = new QSpacerItem(20, 40, QSizePolicy::Minimum, QSizePolicy::Expanding);
 
         verticalLayout->addItem(verticalSpacer);
 
-        signoutIcon = new QLabel(widget);
+        signoutIcon = new QLabel(layoutWidget);
         signoutIcon->setObjectName(QString::fromUtf8("signoutIcon"));
         signoutIcon->setAlignment(Qt::AlignCenter);
 
         verticalLayout->addWidget(signoutIcon);
 
-        signoutBtn = new QPushButton(widget);
+        signoutBtn = new QPushButton(layoutWidget);
         signoutBtn->setObjectName(QString::fromUtf8("signoutBtn"));
         signoutBtn->setStyleSheet(QString::fromUtf8("QPushButton{\n"
 "	border-radius:15px;\n"
@@ -330,18 +309,11 @@ public:
         verticalLayout->addWidget(signoutBtn);
 
         adminAddMember->setCentralWidget(centralwidget);
+        layoutWidget->raise();
         logoImage->raise();
         pageTitle->raise();
         pageDesc->raise();
-        memberIcon->raise();
-        accountIcon->raise();
-        signoutIcon->raise();
         groupBox->raise();
-        catalogueIcon->raise();
-        catalogueBtn->raise();
-        memberBtn->raise();
-        accountBtn->raise();
-        signoutBtn->raise();
         line->raise();
         menubar = new QMenuBar(adminAddMember);
         menubar->setObjectName(QString::fromUtf8("menubar"));
@@ -361,7 +333,7 @@ public:
         pageDesc->setText(QApplication::translate("adminAddMember", "Create a new member account with a predetermined username. This shit is honestly so wildin I'm shocked \n"
 " that I still have my sanity", nullptr));
         groupBox->setTitle(QString());
-        addMemberButton->setText(QApplication::translate("adminAddMember", "Add Member", nullptr));
+        addMember->setText(QApplication::translate("adminAddMember", "Add Member", nullptr));
         label_5->setText(QApplication::translate("adminAddMember", "Last Name", nullptr));
         label_13->setText(QApplication::translate("adminAddMember", "Email", nullptr));
         label_16->setText(QApplication::translate("adminAddMember", "Password", nullptr));
@@ -374,9 +346,7 @@ public:
         catalogueIcon->setText(QApplication::translate("adminAddMember", "Catalogue", nullptr));
         catalogueBtn->setText(QApplication::translate("adminAddMember", "Catalogue", nullptr));
         memberIcon->setText(QApplication::translate("adminAddMember", "member", nullptr));
-        memberBtn->setText(QApplication::translate("adminAddMember", "Member", nullptr));
-        accountIcon->setText(QApplication::translate("adminAddMember", "account", nullptr));
-        accountBtn->setText(QApplication::translate("adminAddMember", "Account", nullptr));
+        memberBtn->setText(QApplication::translate("adminAddMember", "Members", nullptr));
         signoutIcon->setText(QApplication::translate("adminAddMember", "signOut", nullptr));
         signoutBtn->setText(QApplication::translate("adminAddMember", "Sign Out", nullptr));
     } // retranslateUi

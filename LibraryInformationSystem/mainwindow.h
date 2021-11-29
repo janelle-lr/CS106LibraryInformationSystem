@@ -25,6 +25,9 @@ public:
     MainWindow(QWidget *parent = nullptr);
     ~MainWindow();
 
+signals:
+   void showLogin();
+
 private slots:
     void on_loginPushButton_clicked();
 

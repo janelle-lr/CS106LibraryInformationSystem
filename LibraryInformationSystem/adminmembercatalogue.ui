@@ -293,7 +293,7 @@ DONT ABUSE IT  OR YOU USE LOSE YOUR PIZZA EATING PRIVLLAGES</string>
    <widget class="QLabel" name="addMemberIcon">
     <property name="geometry">
      <rect>
-      <x>1110</x>
+      <x>1080</x>
       <y>80</y>
       <width>47</width>
       <height>31</height>
@@ -306,9 +306,9 @@ DONT ABUSE IT  OR YOU USE LOSE YOUR PIZZA EATING PRIVLLAGES</string>
    <widget class="QPushButton" name="addMemberBtn">
     <property name="geometry">
      <rect>
-      <x>1150</x>
+      <x>1140</x>
       <y>80</y>
-      <width>111</width>
+      <width>121</width>
       <height>31</height>
      </rect>
     </property>

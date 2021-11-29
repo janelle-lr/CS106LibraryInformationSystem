@@ -63,4 +63,6 @@ void adminAddMember::addMember(QString accId) {
 void adminAddMember::on_addMember_clicked()
 {
        addMember(accId);
+       emit openadminAddMember();
+       hide();
 }

@@ -21,6 +21,9 @@ class adminEditCatalogue : public QMainWindow
 public:
     explicit adminEditCatalogue(QWidget *parent = nullptr);
     ~adminEditCatalogue();
+signals:
+    void openadminEditCatalogue();
+    void showadminMemberEdit();
 
 private slots:
     void on_pushButton_clicked();

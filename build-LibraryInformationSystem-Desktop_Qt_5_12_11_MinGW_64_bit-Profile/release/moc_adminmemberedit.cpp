@@ -6,7 +6,7 @@
 ** WARNING! All changes made in this file will be lost!
 *****************************************************************************/
 
-#include "../../LibraryInformationSystem/adminmemberedit.h"
+#include "../../../libraryInformationSystem/LibraryInformationSystem/adminmemberedit.h"
 #include <QtCore/qbytearray.h>
 #include <QtCore/qmetatype.h>
 #if !defined(Q_MOC_OUTPUT_REVISION)
@@ -21,8 +21,8 @@ QT_BEGIN_MOC_NAMESPACE
 QT_WARNING_PUSH
 QT_WARNING_DISABLE_DEPRECATED
 struct qt_meta_stringdata_adminMemberEdit_t {
-    QByteArrayData data[3];
-    char stringdata0[47];
+    QByteArrayData data[4];
+    char stringdata0[67];
 };
 #define QT_MOC_LITERAL(idx, ofs, len) \
     Q_STATIC_BYTE_ARRAY_DATA_HEADER_INITIALIZER_WITH_OFFSET(len, \
@@ -32,12 +32,13 @@ struct qt_meta_stringdata_adminMemberEdit_t {
 static const qt_meta_stringdata_adminMemberEdit_t qt_meta_stringdata_adminMemberEdit = {
     {
 QT_MOC_LITERAL(0, 0, 15), // "adminMemberEdit"
-QT_MOC_LITERAL(1, 16, 29), // "on_updateMemberButton_clicked"
-QT_MOC_LITERAL(2, 46, 0) // ""
+QT_MOC_LITERAL(1, 16, 19), // "showadminMemberEdit"
+QT_MOC_LITERAL(2, 36, 0), // ""
+QT_MOC_LITERAL(3, 37, 29) // "on_updateMemberButton_clicked"
 
     },
-    "adminMemberEdit\0on_updateMemberButton_clicked\0"
-    ""
+    "adminMemberEdit\0showadminMemberEdit\0"
+    "\0on_updateMemberButton_clicked"
 };
 #undef QT_MOC_LITERAL
 
@@ -47,15 +48,21 @@ static const uint qt_meta_data_adminMemberEdit[] = {
        8,       // revision
        0,       // classname
        0,    0, // classinfo
-       1,   14, // methods
+       2,   14, // methods
        0,    0, // properties
        0,    0, // enums/sets
        0,    0, // constructors
        0,       // flags
-       0,       // signalCount
+       1,       // signalCount
+
+ // signals: name, argc, parameters, tag, flags
+       1,    0,   24,    2, 0x06 /* Public */,
 
  // slots: name, argc, parameters, tag, flags
-       1,    0,   19,    2, 0x08 /* Private */,
+       3,    0,   25,    2, 0x08 /* Private */,
+
+ // signals: parameters
+    QMetaType::Void,
 
  // slots: parameters
     QMetaType::Void,
@@ -69,8 +76,18 @@ void adminMemberEdit::qt_static_metacall(QObject *_o, QMetaObject::Call _c, int 
         auto *_t = static_cast<adminMemberEdit *>(_o);
         Q_UNUSED(_t)
         switch (_id) {
-        case 0: _t->on_updateMemberButton_clicked(); break;
+        case 0: _t->showadminMemberEdit(); break;
+        case 1: _t->on_updateMemberButton_clicked(); break;
         default: ;
+        }
+    } else if (_c == QMetaObject::IndexOfMethod) {
+        int *result = reinterpret_cast<int *>(_a[0]);
+        {
+            using _t = void (adminMemberEdit::*)();
+            if (*reinterpret_cast<_t *>(_a[1]) == static_cast<_t>(&adminMemberEdit::showadminMemberEdit)) {
+                *result = 0;
+                return;
+            }
         }
     }
     Q_UNUSED(_a);
@@ -105,15 +122,21 @@ int adminMemberEdit::qt_metacall(QMetaObject::Call _c, int _id, void **_a)
     if (_id < 0)
         return _id;
     if (_c == QMetaObject::InvokeMetaMethod) {
-        if (_id < 1)
+        if (_id < 2)
             qt_static_metacall(this, _c, _id, _a);
-        _id -= 1;
+        _id -= 2;
     } else if (_c == QMetaObject::RegisterMethodArgumentMetaType) {
-        if (_id < 1)
+        if (_id < 2)
             *reinterpret_cast<int*>(_a[0]) = -1;
-        _id -= 1;
+        _id -= 2;
     }
     return _id;
+}
+
+// SIGNAL 0
+void adminMemberEdit::showadminMemberEdit()
+{
+    QMetaObject::activate(this, &staticMetaObject, 0, nullptr);
 }
 QT_WARNING_POP
 QT_END_MOC_NAMESPACE

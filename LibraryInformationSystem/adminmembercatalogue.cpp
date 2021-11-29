@@ -32,6 +32,27 @@ adminMemberCatalogue::~adminMemberCatalogue()
     delete ui;
 }
 
+//NAV BAR CONNECTION START
+void adminMemberCatalogue::on_catalogueBtn_2_clicked()
+{
+    emit showAdmin();
+    hide();
+}
+
+void adminMemberCatalogue::on_signoutBtn_2_clicked()
+{
+    emit getMainWindow();
+    hide();
+}
+//NAV BAR CONNECTION END
+
+void adminMemberCatalogue::on_addMemberBtn_clicked()
+{
+    adminaddmember = new adminAddMember(this);
+    connect(adminaddmember, SIGNAL(openadminAddMember()), this, SLOT(deleteAllRecords())); //connect(pointerName, SIGNAL(openWindowYouWantToOpen()), this, SLOT(openWindowUrOpeningFrom()));
+    adminaddmember->show();
+}
+
 void adminMemberCatalogue::createWidgets(int row, int col, QString name, QString userId, int i){
     SystemLibrary sysLib;
 
@@ -65,7 +86,7 @@ void adminMemberCatalogue::createWidgets(int row, int col, QString name, QString
 
     buttonGroup->setMaximumHeight(50);
     buttonGroup->setMinimumHeight(50);
-    buttonGroup->setStyleSheet("QFrame{background: white; /*border:none;*/}");
+    buttonGroup->setStyleSheet("QFrame{border:none;}");
 
     buttonRow->addWidget(button,0);
     buttonRow->addWidget(button2,1);
@@ -82,7 +103,7 @@ void adminMemberCatalogue::createWidgets(int row, int col, QString name, QString
     //styling groupBox
     groupBox->setMaximumSize(QSize(450,170));//QSize(width, height)
     groupBox->setMinimumSize(QSize(450,170));
-    groupBox->setStyleSheet("QGroupBox{margin-bottom: 10px; margin-left: 10px;/*border:none;*/}");
+    groupBox->setStyleSheet("QGroupBox{margin-bottom: 10px; margin-left: 10px; border:none;}");
 
 
     if(member[i].getAccStatus() == true) {
@@ -110,7 +131,7 @@ void adminMemberCatalogue::addRecords(){
         }
 
         if (activeUserIndex % 2 == 0) {
-             createWidgets(activeUserIndex,0,member[i].getName(),member[i].getAccId(), i);
+            createWidgets(activeUserIndex,0,member[i].getName(),member[i].getAccId(), i);
         }
         else {
             createWidgets(activeUserIndex - 1,1,member[i].getName(),member[i].getAccId(), i);
@@ -119,11 +140,11 @@ void adminMemberCatalogue::addRecords(){
 
     //looping through button vector to make buttons work
     for(int i = 0; i < btn.size(); i++){
-            connect(btn[i],SIGNAL(released()),this,SLOT(editButtonClicked()));
-        }
+        connect(btn[i],SIGNAL(released()),this,SLOT(editButtonClicked()));
+    }
 
     for(int i = 0; i < btn2.size(); i++){
-            connect(btn2[i],SIGNAL(released()),this,SLOT(deleteButtonClicked()));
+        connect(btn2[i],SIGNAL(released()),this,SLOT(deleteButtonClicked()));
     }
 }
 
@@ -138,7 +159,7 @@ void adminMemberCatalogue::editButtonClicked(){
     }
     QMessageBox::information(this,"Button",QString::number(num));
     adminmemberedit = new adminMemberEdit(this);
-    connect(adminmemberedit, SIGNAL(showadminMemberEdit()), this, SLOT(show()));
+    connect(adminmemberedit, SIGNAL(showadminMemberEdit()), this, SLOT(deleteAllRecords()));
     adminmemberedit->show();
     adminmemberedit->setNum(num);
 }
@@ -178,17 +199,45 @@ void adminMemberCatalogue::deleteButtonClicked(){
     addRecords();//reprints updated catalogue
 }
 
+void adminMemberCatalogue::deleteAllRecords(){
+    qDebug() << "Delete recs";
+    SystemLibrary sysLib;
+
+    QVector<Book> book;
+    book = sysLib.getAllBooks();
+
+    int num = 8;
+    QPushButton *button = (QPushButton *)sender();
+    for(int i = 0; i < btn.size(); i++){
+        if(btn2[i] == button){
+            num = i;
+            break;
+        }
+    }
+    QMessageBox::information(this,"Button",QString::number(num) + " From button 2");
+    //QMessageBox::question(this,"Delete Book", "Are you sure you want to permanently delete " + book[num].getBookName() + " from library records?");
+
+    while ( QLayoutItem* item = ui->gridLayout_3->layout()->takeAt( 0 ) )
+    {
+        Q_ASSERT( ! item->layout() );
+        delete item->widget();//clears whole widget like a 'refresh' of page
+        delete item;
+    }
+    btn.clear();
+    btn2.clear();
+    addRecords();//reprints updated catalogue
+}
+
 void adminMemberCatalogue::on_pushButton_clicked()
 {
     while ( QLayoutItem* item = ui->gridLayout_3->layout()->takeAt( 0 ) )
-        {
-            Q_ASSERT( ! item->layout() );
-            delete item->widget();
-            delete item;
-        }
+    {
+        Q_ASSERT( ! item->layout() );
+        delete item->widget();
+        delete item;
+    }
 
     btn.clear();
     btn2.clear();
     addRecords();
 }
-

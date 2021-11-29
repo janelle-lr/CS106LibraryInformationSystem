@@ -16,7 +16,8 @@ class adminAddMember : public QMainWindow
 public:
     explicit adminAddMember(QWidget *parent = nullptr);
     ~adminAddMember();
-
+signals:
+    void openadminAddMember();
 private slots:
     void on_catalogueBtn_clicked();
     void on_addMember_clicked();

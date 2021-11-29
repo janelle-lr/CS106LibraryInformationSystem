@@ -18,14 +18,19 @@ public:
     ~adminMemberEdit();
     void setNum (int);
 
+signals:
+    void showadminMemberEdit();
+
 private slots:
     void on_updateMemberButton_clicked();
+//    void showadminMemberEdit();
 
 private:
     Ui::adminMemberEdit *ui;
     SystemLibrary sysLib;
     void updateAllBookDetails(QVector<Book>);
     int numId;
+
 };
 
 #endif // ADMINMEMBEREDIT_H

@@ -55,6 +55,7 @@ void adminMemberEdit::on_updateMemberButton_clicked()
     }
     sysLib.updateAllMemberDetails(member);//passing edited book details to csv file
     QMessageBox::information(this,"Edit Book Details", "Book edits have been successfully saved.");
+    emit showadminMemberEdit();
     hide();
 }
 

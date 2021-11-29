@@ -57,10 +57,10 @@ MainWindow::MainWindow(QWidget *parent)
 
     // VVVVVVVVVVVVVVVVVVVVV MEMBER SCREENS VVVVVVVVVVVVVVVVVVVVVVVVVV
 
-    hide();
-    memberaccountview = new memberAccountView(this);
-    connect(memberaccountview, SIGNAL(openmemberAccountView()), this, SLOT(openMainWindow())); //connect(pointerName, SIGNAL(openWindowYouWantToOpen()), this, SLOT(openWindowUrOpeningFrom()));
-    memberaccountview->show();
+//    hide();
+//    memberaccountview = new memberAccountView(this);
+//    connect(memberaccountview, SIGNAL(openmemberAccountView()), this, SLOT(openMainWindow())); //connect(pointerName, SIGNAL(openWindowYouWantToOpen()), this, SLOT(openWindowUrOpeningFrom()));
+//    memberaccountview->show();
 
 
 
@@ -87,7 +87,7 @@ void MainWindow::on_loginPushButton_clicked()
         if(username.left(3) == "210"){
             //qDebug() << "admin has logged in";
             admincatalogue = new adminCatalogue(this);
-            connect(admincatalogue, SIGNAL(openadminCatalogue()), this, SLOT(openMainWindow())); //connect(pointerName, SIGNAL(openWindowYouWantToOpen()), this, SLOT(openWindowUrOpeningFrom()));
+            connect(admincatalogue, SIGNAL(showMainWindow()), this, SLOT(show())); //connect(pointerName, SIGNAL(openWindowYouWantToOpen()), this, SLOT(openWindowUrOpeningFrom()));
             admincatalogue->show();
 
         }else if(username.left(3) == "220"){
@@ -102,6 +102,8 @@ void MainWindow::on_loginPushButton_clicked()
         QMessageBox::warning(this,"Failed Log in Attempt","Sorry wrong username or password");
     }
 
+    ui->usernameLineEdit->setText("");
+    ui->passwordLineEdit->setText("");
 }
 
 // this is to change 'view password'
