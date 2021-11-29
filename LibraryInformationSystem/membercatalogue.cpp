@@ -1,13 +1,12 @@
 #include "membercatalogue.h"
 #include "ui_membercatalogue.h"
 
-
 memberCatalogue::memberCatalogue(QWidget *parent) :
     QMainWindow(parent),
     ui(new Ui::memberCatalogue)
 {
     ui->setupUi(this);
-    setWindowTitle("Catalogue");
+    setWindowTitle("BiblioThicc Libraries - Catalogue Page");
 
     //for database
     systemlibrary->buildDatabase();

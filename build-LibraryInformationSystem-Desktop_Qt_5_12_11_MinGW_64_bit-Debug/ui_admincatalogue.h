@@ -44,6 +44,8 @@ public:
     QWidget *scrollAreaWidgetContents;
     QHBoxLayout *horizontalLayout;
     QGridLayout *gridLayout_3;
+    QPushButton *pushButton;
+    QLabel *addBookIcon;
     QMenuBar *menubar;
 
     void setupUi(QMainWindow *adminCatalogue)
@@ -159,7 +161,7 @@ public:
         line->setFrameShadow(QFrame::Sunken);
         scrollArea = new QScrollArea(centralwidget);
         scrollArea->setObjectName(QString::fromUtf8("scrollArea"));
-        scrollArea->setGeometry(QRect(230, 10, 1051, 591));
+        scrollArea->setGeometry(QRect(230, 100, 1051, 501));
         scrollArea->setStyleSheet(QString::fromUtf8("QScrollArea {\n"
 "	border: none;\n"
 "}\n"
@@ -167,7 +169,7 @@ public:
         scrollArea->setWidgetResizable(true);
         scrollAreaWidgetContents = new QWidget();
         scrollAreaWidgetContents->setObjectName(QString::fromUtf8("scrollAreaWidgetContents"));
-        scrollAreaWidgetContents->setGeometry(QRect(0, 0, 1051, 591));
+        scrollAreaWidgetContents->setGeometry(QRect(0, 0, 1051, 501));
         scrollAreaWidgetContents->setStyleSheet(QString::fromUtf8("QWidget {\n"
 "	background-color: #FFE5D0;\n"
 "	/*border: none;*/\n"
@@ -191,6 +193,15 @@ public:
         horizontalLayout->addLayout(gridLayout_3);
 
         scrollArea->setWidget(scrollAreaWidgetContents);
+        pushButton = new QPushButton(centralwidget);
+        pushButton->setObjectName(QString::fromUtf8("pushButton"));
+        pushButton->setGeometry(QRect(1160, 40, 71, 31));
+        pushButton->setStyleSheet(QString::fromUtf8("QPushButton:hover {\n"
+"	text-decoration: underline;\n"
+"}"));
+        addBookIcon = new QLabel(centralwidget);
+        addBookIcon->setObjectName(QString::fromUtf8("addBookIcon"));
+        addBookIcon->setGeometry(QRect(1120, 40, 47, 31));
         adminCatalogue->setCentralWidget(centralwidget);
         menubar = new QMenuBar(adminCatalogue);
         menubar->setObjectName(QString::fromUtf8("menubar"));
@@ -212,6 +223,8 @@ public:
         signoutIcon->setText(QApplication::translate("adminCatalogue", "signOut", nullptr));
         signoutBtn->setText(QApplication::translate("adminCatalogue", "Sign Out", nullptr));
         logoImage->setText(QString());
+        pushButton->setText(QApplication::translate("adminCatalogue", "Add Book", nullptr));
+        addBookIcon->setText(QApplication::translate("adminCatalogue", "TextLabel", nullptr));
     } // retranslateUi
 
 };

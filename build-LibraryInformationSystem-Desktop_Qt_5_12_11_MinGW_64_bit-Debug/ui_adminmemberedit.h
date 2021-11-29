@@ -315,7 +315,7 @@ public:
         signoutIcon->setText(QApplication::translate("adminMemberEdit", "signOut", nullptr));
         signoutBtn->setText(QApplication::translate("adminMemberEdit", "Sign Out", nullptr));
         groupBox->setTitle(QString());
-        updateMemberButton->setText(QApplication::translate("adminMemberEdit", "Add Memeber", nullptr));
+        updateMemberButton->setText(QApplication::translate("adminMemberEdit", "Save Changes", nullptr));
         mobileNumLineEdit->setText(QString());
         label_20->setText(QApplication::translate("adminMemberEdit", "Date of Birth (DD/MM/YYYY)", nullptr));
         label->setText(QApplication::translate("adminMemberEdit", "Mobile Number", nullptr));

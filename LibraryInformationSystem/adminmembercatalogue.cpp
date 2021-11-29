@@ -7,6 +7,8 @@ adminMemberCatalogue::adminMemberCatalogue(QWidget *parent) :
 {
     ui->setupUi(this);
 
+    setWindowTitle("BiblioThicc Libraries - Admin View Existing Members Page");
+
     //for logo in UI
     QPixmap logo(":/resources/images/miniLogo.png");
     ui->logoImage->setPixmap(logo.scaled(300, 75, Qt::KeepAspectRatio));

@@ -6,10 +6,17 @@ adminMemberEdit::adminMemberEdit(QWidget *parent) :
     ui(new Ui::adminMemberEdit)
 {
     ui->setupUi(this);
+    setWindowTitle("BiblioThicc Libraries - Admin Edit Accounts Page");
 
     //for logo in UI
     QPixmap logo(":/resources/images/miniLogo.png");
     ui->logoImage->setPixmap(logo.scaled(300, 75, Qt::KeepAspectRatio));
+
+    QPixmap img2(":/resources/images/catalogue.png");
+    ui->catalogueIcon->setPixmap(img2.scaled(40, 40, Qt::KeepAspectRatio));
+
+    QPixmap img3(":/resources/images/viewMembers.png");
+    ui->memberIcon->setPixmap(img3.scaled(40, 40, Qt::KeepAspectRatio));
 
     QPixmap img4(":/resources/images/uis_signout.png");
     ui->signoutIcon->setPixmap(img4.scaled(40, 40, Qt::KeepAspectRatio));

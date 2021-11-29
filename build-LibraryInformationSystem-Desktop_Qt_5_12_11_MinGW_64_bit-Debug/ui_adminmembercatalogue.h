@@ -47,6 +47,8 @@ public:
     QFrame *line;
     QLabel *pageTitle;
     QLabel *pageDesc;
+    QLabel *addMemberIcon;
+    QPushButton *addMemberBtn;
     QMenuBar *menubar;
 
     void setupUi(QMainWindow *adminMemberCatalogue)
@@ -113,7 +115,7 @@ public:
         scrollArea->setWidget(scrollAreaWidgetContents);
         pushButton = new QPushButton(centralwidget);
         pushButton->setObjectName(QString::fromUtf8("pushButton"));
-        pushButton->setGeometry(QRect(910, 40, 75, 23));
+        pushButton->setGeometry(QRect(1150, 20, 75, 23));
         layoutWidget = new QWidget(centralwidget);
         layoutWidget->setObjectName(QString::fromUtf8("layoutWidget"));
         layoutWidget->setGeometry(QRect(20, 120, 191, 471));
@@ -205,7 +207,16 @@ public:
 "}"));
         pageDesc = new QLabel(centralwidget);
         pageDesc->setObjectName(QString::fromUtf8("pageDesc"));
-        pageDesc->setGeometry(QRect(290, 80, 971, 51));
+        pageDesc->setGeometry(QRect(290, 80, 771, 51));
+        addMemberIcon = new QLabel(centralwidget);
+        addMemberIcon->setObjectName(QString::fromUtf8("addMemberIcon"));
+        addMemberIcon->setGeometry(QRect(1110, 80, 47, 31));
+        addMemberBtn = new QPushButton(centralwidget);
+        addMemberBtn->setObjectName(QString::fromUtf8("addMemberBtn"));
+        addMemberBtn->setGeometry(QRect(1150, 80, 111, 31));
+        addMemberBtn->setStyleSheet(QString::fromUtf8("QPushButton:hover {\n"
+"	text-decoration: underline;\n"
+"}"));
         adminMemberCatalogue->setCentralWidget(centralwidget);
         menubar = new QMenuBar(adminMemberCatalogue);
         menubar->setObjectName(QString::fromUtf8("menubar"));
@@ -232,6 +243,8 @@ public:
         pageDesc->setText(QApplication::translate("adminMemberCatalogue", "Here admin can view all books that exist in the catalogue. You can choose to view, edit, and delete books. \n"
 " You can also choose to add books if you want to. You literally have all the power in the world as an admin. \n"
 "DONT ABUSE IT  OR YOU USE LOSE YOUR PIZZA EATING PRIVLLAGES", nullptr));
+        addMemberIcon->setText(QApplication::translate("adminMemberCatalogue", "TextLabel", nullptr));
+        addMemberBtn->setText(QApplication::translate("adminMemberCatalogue", "Add New Member", nullptr));
     } // retranslateUi
 
 };
