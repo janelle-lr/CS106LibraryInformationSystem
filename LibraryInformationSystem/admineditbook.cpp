@@ -7,7 +7,6 @@ adminEditBook::adminEditBook(QWidget *parent) :
     ui(new Ui::adminEditBook)
 {
     ui->setupUi(this);
-    setWindowTitle("BiblioThicc Libraries -  Admin Edit Book Details Page");
 
     //for logo in UI
     QPixmap logo(":/resources/images/miniLogo.png");
