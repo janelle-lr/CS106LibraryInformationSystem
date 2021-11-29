@@ -18,24 +18,21 @@ public:
     ~adminAddMember();
 
 private slots:
-    //void on_addMemberButton_clicked(QString);
-
     void on_catalogueBtn_clicked();
-
-
-
-    void on_addMemberButton_clicked(QString);
+    void on_addMember_clicked();
 
 private:
     Ui::adminAddMember *ui;
     Member *member;
     SystemLibrary *sysLib;
+    void addMember(QString);
     void setMemberId(QString);
     void setName(QString);
     void setEmail(QString);
     void setAccId(QString);
     void setAccType(QString);
     void setPassword(QString);
+    QString accId;
 };
 
 #endif // ADMINADDMEMBER_H

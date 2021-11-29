@@ -17,6 +17,8 @@ public:
     ~adminEditBook();
     void setNum (int);
 
+signals:
+    void showadminEditBook();
 private slots:
     void on_savePushButton_clicked();
 

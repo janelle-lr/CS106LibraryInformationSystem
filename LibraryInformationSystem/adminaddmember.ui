@@ -135,7 +135,7 @@ QPushButton {
     <property name="title">
      <string/>
     </property>
-    <widget class="QPushButton" name="addMemberButton">
+    <widget class="QPushButton" name="addMember">
      <property name="geometry">
       <rect>
        <x>380</x>

@@ -59,7 +59,7 @@ void adminEditBook::on_savePushButton_clicked()
     }
     sysLib.updateAllBookDetails(book);//passing edited book details to csv file
     QMessageBox::information(this,"Edit Book Details", "Book edits have been successfully saved.");
+    emit showadminEditBook();
     hide();
-
 }
 

@@ -42,6 +42,8 @@ private:
     Ui::adminCatalogue *ui;
     void createWidgets(int, int, QString, QString, QPixmap bookCover);
     void addRecords();
+    void deleteRecords();
+    void deleteAllRecords();
     QPushButton* button;
     QPushButton* button2;
     SystemLibrary* systemlibrary;

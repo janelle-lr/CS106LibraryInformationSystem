@@ -27,7 +27,7 @@ adminAddMember::adminAddMember(QWidget *parent) :
     ui->signoutIcon->setPixmap(img4.scaled(40, 40, Qt::KeepAspectRatio));
 
 
-    QString accId = sysLib->generateID(3);
+    accId = sysLib->generateID(3);
     ui->usernameLineEdit->setText(accId);
 }
 
@@ -37,44 +37,14 @@ adminAddMember::~adminAddMember()
 }
 
 
-//void adminAddMember::on_addMemberButton_clicked(QString accId)
-//{
-//    Member member;
-
-////    QString accId = sysLib->generateID(3);
-
-//    member.setMemberID(sysLib->generateID(2));
-//    member.setAccId(accId);
-//    member.setName(ui->firstNameLineEdit->text() + " " + ui->lastNameLineEdit->text());
-//    int age = sysLib->calculateAge((ui->dateEdit->date()));
-//    member.setDob(ui->dateEdit->text());
-//    member.setAge(age);
-//    member.setMobileNum(ui->mobileNumLineEdit->text());
-//    member.setEmail(ui->emailLineEdit->text());
-//    member.setPassword(ui->passwordLineEdit->text());
-
-//    sysLib->createMember(member);
-
-//    QMessageBox::information(this,"Member Created","You have now created User " + ui->firstNameLineEdit->text() + " " + ui->lastNameLineEdit->text());
-
-//    //setting line edits back to blank
-////    ui->bookTitle->setText("");
-////    ui->bookGenre->setText("");
-////    ui->bookCopies->setText("");
-////    ui->bookAuthor->setText("");
-////    ui->bookPublisher->setText("");
-////    ui->bookDescription->setText("");
-
-//}
-
-// !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!! ATTENTION !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
-//yeah dawg hold up just use this for now cuz idk why it aint working
-// fix this when you get home - keith
-void adminAddMember::on_addMemberButton_clicked(QString accId)
+void adminAddMember::on_catalogueBtn_clicked()
 {
-    Member member;
 
-//    QString accId = sysLib->generateID(3);
+}
+
+void adminAddMember::addMember(QString accId) {
+    qDebug() << "iam in on_addMember_clicked";
+    Member member;
 
     member.setMemberID(sysLib->generateID(2));
     member.setAccId(accId);
@@ -89,14 +59,9 @@ void adminAddMember::on_addMemberButton_clicked(QString accId)
     sysLib->createMember(member);
 
     QMessageBox::information(this,"Member Created","You have now created User " + ui->firstNameLineEdit->text() + " " + ui->lastNameLineEdit->text());
-
 }
 
-
-void adminAddMember::on_catalogueBtn_clicked()
+void adminAddMember::on_addMember_clicked()
 {
-
+       addMember(accId);
 }
-
-
-
