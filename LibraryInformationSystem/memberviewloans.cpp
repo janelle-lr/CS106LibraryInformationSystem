@@ -1,41 +1,26 @@
-#include "membercatalogue.h"
-#include "ui_membercatalogue.h"
+#include "memberviewloans.h"
+#include "ui_memberviewloans.h"
 
-
-memberCatalogue::memberCatalogue(QWidget *parent) :
+memberViewLoans::memberViewLoans(QWidget *parent) :
     QMainWindow(parent),
-    ui(new Ui::memberCatalogue)
+    ui(new Ui::memberViewLoans)
 {
     ui->setupUi(this);
-    setWindowTitle("Catalogue");
-
-    //for database
-    systemlibrary->buildDatabase();
-
-    //for logo in UI
-    QPixmap logo(":/resources/images/miniLogo.png");
-    ui->logoImage->setPixmap(logo.scaled(450, 74, Qt::KeepAspectRatio));
-
-    QPixmap img(":/resources/images/catalogue.png");
-    ui->catalogueIcon->setPixmap(img.scaled(40, 40, Qt::KeepAspectRatio));
-
-    QPixmap img2(":/resources/images/account.png");
-    ui->accountIcon->setPixmap(img2.scaled(40, 40, Qt::KeepAspectRatio));
 }
 
-memberCatalogue::~memberCatalogue()
+memberViewLoans::~memberViewLoans()
 {
     delete ui;
 }
 
-void memberCatalogue::setAccID(QString username) {
+void memberViewLoans::setAccID(QString username) {
     this->userId = username;
 
     qDebug() << "userId ==" << userId;
     addRecords();
 }
 
-void memberCatalogue::createWidgets(int row, int col, QString title, QString author, QPixmap bookCover, QString bookId, QString bookStock){
+void memberViewLoans::createWidgets(int row, int col, QString title, QString author, QPixmap bookCover, QString bookId, QString bookStock){
     //Creating a gridlayout
     QHBoxLayout* group = new QHBoxLayout();
     //creating buttons
@@ -145,13 +130,23 @@ void memberCatalogue::createWidgets(int row, int col, QString title, QString aut
     btn2.push_back(button2);
 }
 
-void memberCatalogue::addRecords(){
+void memberViewLoans::addRecords(){
     SystemLibrary sysLib;
 
     QVector<Book> book;
     book = sysLib.getAllBooks();
 
     QString stockString = "";
+    QStringList loanedBooks;
+    loanedBooks = sysLib.getAllMemberLoanedBooks(userId);
+
+    for (int i = 0; i < loanedBooks.size(); i++) {
+        for (int j = 0; j < book.size(); j++) {
+            if (loanedBooks[i] == book[j].getBookId()) {
+                qDebug() << "\nbook issued: " << book[j].getBookName();
+            }
+        }
+    }
 
     for(int i = 0; i < book.size(); i++) {
         //qDebug() << book[i].getBookId() << "\n" << book[i].getBookName() << "\n" << book[i].getAuthorName();//prints in application output
@@ -160,6 +155,7 @@ void memberCatalogue::addRecords(){
         QPixmap image = book[i].getBookImageFilePath();
         int stock = book[i].getStock();
         stockString = QString::number(stock);
+
 
         if (i % 2 == 0) {
             createWidgets(i,0,title,author,image, book[i].getBookId(), stockString);
@@ -180,7 +176,7 @@ void memberCatalogue::addRecords(){
 
 }
 
-void memberCatalogue::issueButtonClicked(){
+void memberViewLoans::returnButtonClicked(){
     int num = 7;
     SystemLibrary sysLib;
     BookItem bookItem;
@@ -224,7 +220,7 @@ void memberCatalogue::issueButtonClicked(){
     deleteRecords();
 }
 
-void memberCatalogue::viewButtonClicked(){
+void memberViewLoans::viewButtonClicked(){
     SystemLibrary sysLib;
 
     QVector<Book> book;
@@ -246,7 +242,7 @@ void memberCatalogue::viewButtonClicked(){
     bookdetails->setNum(num,userId);
 }
 
-void memberCatalogue::deleteRecords(){
+void memberViewLoans::deleteRecords(){
     SystemLibrary sysLib;
 
     QVector<Book> book;
@@ -269,18 +265,3 @@ void memberCatalogue::deleteRecords(){
     btn2.clear();
     addRecords();//reprints updated catalogue
 }
-
-void memberCatalogue::on_comboBox_activated(const QString &arg1)
-{
-
-}
-
-
-void memberCatalogue::on_accountBtn_clicked()
-{
-    memberaccountview = new memberAccountView(this);
-    memberaccountview->setAccID(userId);
-    connect(memberaccountview, SIGNAL(openmemberAccountView()), this, SLOT(show())); //connect(pointerName, SIGNAL(openWindowYouWantToOpen()), this, SLOT(openWindowUrOpeningFrom()));
-    memberaccountview->show();
-}
-

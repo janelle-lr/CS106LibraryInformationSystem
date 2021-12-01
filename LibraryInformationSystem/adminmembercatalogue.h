@@ -33,13 +33,8 @@ signals:
 private slots:
     void editButtonClicked();
     void deleteButtonClicked();
-
-    void on_pushButton_clicked();
-
     void on_catalogueBtn_2_clicked();
-
     void on_signoutBtn_2_clicked();
-
     void on_addMemberBtn_clicked();
     void deleteAllRecords();
 

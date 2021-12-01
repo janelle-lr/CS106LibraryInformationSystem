@@ -242,7 +242,7 @@ QPushButton:hover {
 }</string>
        </property>
        <property name="text">
-        <string>acount</string>
+        <string>Account</string>
        </property>
       </widget>
      </item>
@@ -322,33 +322,6 @@ QPushButton:hover {
      <pixmap resource="resources.qrc">:/resources/images/bblLogo.png</pixmap>
     </property>
    </widget>
-  </widget>
-  <widget class="QMenuBar" name="menubar">
-   <property name="geometry">
-    <rect>
-     <x>0</x>
-     <y>0</y>
-     <width>1280</width>
-     <height>18</height>
-    </rect>
-   </property>
-   <widget class="QMenu" name="menuCatalogue">
-    <property name="title">
-     <string>Catalogue</string>
-    </property>
-    <addaction name="actionView_Catalogue"/>
-   </widget>
-   <widget class="QMenu" name="menuAccount">
-    <property name="title">
-     <string>Account</string>
-    </property>
-    <addaction name="viewAccount"/>
-    <addaction name="actiontest_2"/>
-    <addaction name="separator"/>
-    <addaction name="actiontest_3"/>
-   </widget>
-   <addaction name="menuAccount"/>
-   <addaction name="menuCatalogue"/>
   </widget>
   <action name="viewAccount">
    <property name="text">

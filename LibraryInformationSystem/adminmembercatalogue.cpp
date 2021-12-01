@@ -227,17 +227,3 @@ void adminMemberCatalogue::deleteAllRecords(){
     btn2.clear();
     addRecords();//reprints updated catalogue
 }
-
-void adminMemberCatalogue::on_pushButton_clicked()
-{
-    while ( QLayoutItem* item = ui->gridLayout_3->layout()->takeAt( 0 ) )
-    {
-        Q_ASSERT( ! item->layout() );
-        delete item->widget();
-        delete item;
-    }
-
-    btn.clear();
-    btn2.clear();
-    addRecords();
-}

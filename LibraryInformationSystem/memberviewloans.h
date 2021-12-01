@@ -1,5 +1,5 @@
-#ifndef MEMBERCATALOGUE_H
-#define MEMBERCATALOGUE_H
+#ifndef MEMBERVIEWLOANS_H
+#define MEMBERVIEWLOANS_H
 
 #include <QMainWindow>
 #include <QPushButton>
@@ -8,48 +8,37 @@
 #include <QLabel>
 #include <QGroupBox>
 #include "systemlibrary.h"
-#include "memberaccountview.h"
 #include "bookdetails.h"
 
 namespace Ui {
-class memberCatalogue;
+class memberViewLoans;
 }
 
-class memberCatalogue : public QMainWindow
+class memberViewLoans : public QMainWindow
 {
     Q_OBJECT
 
 public:
-    explicit memberCatalogue(QWidget *parent = nullptr);
-    ~memberCatalogue();
+    explicit memberViewLoans(QWidget *parent = nullptr);
+    ~memberViewLoans();
     QVector<QPushButton *>btn;
     QVector<QPushButton *>btn2;
     void setAccID (QString);
 
 private slots:
-    void issueButtonClicked();
+    void returnButtonClicked();
     void viewButtonClicked();
 
-    void on_comboBox_activated(const QString &arg1);
-
-    void on_accountBtn_clicked();
-
 private:
-    Ui::memberCatalogue *ui;
-    memberAccountView *memberaccountview;
+    Ui::memberViewLoans *ui;
     void createWidgets(int, int, QString, QString, QPixmap bookCover, QString, QString);
     void addRecords();
     void deleteRecords();
     QPushButton* button;
     QPushButton* button2;
     SystemLibrary* systemlibrary;
-//    void loanBook(BookItem bookItem);
-//    bool isLoaned(QString,QString);
-//    void setBookItemID(QString);
-//    void setBookItem_MemberID(QString);
-//    void setBookItem_BookID(QString);
     QString userId;
     BookDetails *bookdetails;
 };
 
-#endif // MEMBERCATALOGUE_H
+#endif // MEMBERVIEWLOANS_H

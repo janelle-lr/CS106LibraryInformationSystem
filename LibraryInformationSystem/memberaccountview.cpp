@@ -28,3 +28,19 @@ memberAccountView::~memberAccountView()
 {
     delete ui;
 }
+
+void memberAccountView::setAccID(QString username) {
+    this->userId = username;
+
+    qDebug() << "userId ==" << userId;
+}
+
+void memberAccountView::on_loanedBooksBtn_clicked()
+{
+    memberviewloans = new memberViewLoans(this);
+    memberviewloans->setAccID(userId);
+    connect(memberviewloans, SIGNAL(openmemberViewLoans()), this, SLOT(show())); //connect(pointerName, SIGNAL(openWindowYouWantToOpen()), this, SLOT(openWindowUrOpeningFrom()));
+    memberviewloans->show();
+    hide();
+}
+

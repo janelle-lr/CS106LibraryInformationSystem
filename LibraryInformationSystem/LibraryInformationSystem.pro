@@ -27,6 +27,7 @@ SOURCES += \
     member.cpp \
     memberaccountview.cpp \
     membercatalogue.cpp \
+    memberviewloans.cpp \
     preorderbook.cpp \
     publisher.cpp \
     systemlibrary.cpp
@@ -49,6 +50,7 @@ HEADERS += \
     member.h \
     memberaccountview.h \
     membercatalogue.h \
+    memberviewloans.h \
     preorderbook.h \
     publisher.h \
     systemlibrary.h
@@ -63,7 +65,8 @@ FORMS += \
     bookdetails.ui \
     mainwindow.ui \
     memberaccountview.ui \
-    membercatalogue.ui
+    membercatalogue.ui \
+    memberviewloans.ui
 
 # Default rules for deployment.
 qnx: target.path = /tmp/$${TARGET}/bin
