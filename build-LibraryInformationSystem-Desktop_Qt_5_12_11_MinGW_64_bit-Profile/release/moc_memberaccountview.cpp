@@ -21,8 +21,8 @@ QT_BEGIN_MOC_NAMESPACE
 QT_WARNING_PUSH
 QT_WARNING_DISABLE_DEPRECATED
 struct qt_meta_stringdata_memberAccountView_t {
-    QByteArrayData data[1];
-    char stringdata0[18];
+    QByteArrayData data[10];
+    char stringdata0[208];
 };
 #define QT_MOC_LITERAL(idx, ofs, len) \
     Q_STATIC_BYTE_ARRAY_DATA_HEADER_INITIALIZER_WITH_OFFSET(len, \
@@ -31,10 +31,24 @@ struct qt_meta_stringdata_memberAccountView_t {
     )
 static const qt_meta_stringdata_memberAccountView_t qt_meta_stringdata_memberAccountView = {
     {
-QT_MOC_LITERAL(0, 0, 17) // "memberAccountView"
+QT_MOC_LITERAL(0, 0, 17), // "memberAccountView"
+QT_MOC_LITERAL(1, 18, 25), // "on_loanedBooksBtn_clicked"
+QT_MOC_LITERAL(2, 44, 0), // ""
+QT_MOC_LITERAL(3, 45, 24), // "on_memberPass_textEdited"
+QT_MOC_LITERAL(4, 70, 4), // "arg1"
+QT_MOC_LITERAL(5, 75, 29), // "on_memberFirstName_textEdited"
+QT_MOC_LITERAL(6, 105, 26), // "on_memberMobile_textEdited"
+QT_MOC_LITERAL(7, 132, 25), // "on_memberEmail_textEdited"
+QT_MOC_LITERAL(8, 158, 21), // "on_pushButton_clicked"
+QT_MOC_LITERAL(9, 180, 27) // "on_reservedBooksBtn_clicked"
 
     },
-    "memberAccountView"
+    "memberAccountView\0on_loanedBooksBtn_clicked\0"
+    "\0on_memberPass_textEdited\0arg1\0"
+    "on_memberFirstName_textEdited\0"
+    "on_memberMobile_textEdited\0"
+    "on_memberEmail_textEdited\0"
+    "on_pushButton_clicked\0on_reservedBooksBtn_clicked"
 };
 #undef QT_MOC_LITERAL
 
@@ -44,22 +58,50 @@ static const uint qt_meta_data_memberAccountView[] = {
        8,       // revision
        0,       // classname
        0,    0, // classinfo
-       0,    0, // methods
+       7,   14, // methods
        0,    0, // properties
        0,    0, // enums/sets
        0,    0, // constructors
        0,       // flags
        0,       // signalCount
 
+ // slots: name, argc, parameters, tag, flags
+       1,    0,   49,    2, 0x08 /* Private */,
+       3,    1,   50,    2, 0x08 /* Private */,
+       5,    1,   53,    2, 0x08 /* Private */,
+       6,    1,   56,    2, 0x08 /* Private */,
+       7,    1,   59,    2, 0x08 /* Private */,
+       8,    0,   62,    2, 0x08 /* Private */,
+       9,    0,   63,    2, 0x08 /* Private */,
+
+ // slots: parameters
+    QMetaType::Void,
+    QMetaType::Void, QMetaType::QString,    4,
+    QMetaType::Void, QMetaType::QString,    4,
+    QMetaType::Void, QMetaType::QString,    4,
+    QMetaType::Void, QMetaType::QString,    4,
+    QMetaType::Void,
+    QMetaType::Void,
+
        0        // eod
 };
 
 void memberAccountView::qt_static_metacall(QObject *_o, QMetaObject::Call _c, int _id, void **_a)
 {
-    Q_UNUSED(_o);
-    Q_UNUSED(_id);
-    Q_UNUSED(_c);
-    Q_UNUSED(_a);
+    if (_c == QMetaObject::InvokeMetaMethod) {
+        auto *_t = static_cast<memberAccountView *>(_o);
+        Q_UNUSED(_t)
+        switch (_id) {
+        case 0: _t->on_loanedBooksBtn_clicked(); break;
+        case 1: _t->on_memberPass_textEdited((*reinterpret_cast< const QString(*)>(_a[1]))); break;
+        case 2: _t->on_memberFirstName_textEdited((*reinterpret_cast< const QString(*)>(_a[1]))); break;
+        case 3: _t->on_memberMobile_textEdited((*reinterpret_cast< const QString(*)>(_a[1]))); break;
+        case 4: _t->on_memberEmail_textEdited((*reinterpret_cast< const QString(*)>(_a[1]))); break;
+        case 5: _t->on_pushButton_clicked(); break;
+        case 6: _t->on_reservedBooksBtn_clicked(); break;
+        default: ;
+        }
+    }
 }
 
 QT_INIT_METAOBJECT const QMetaObject memberAccountView::staticMetaObject = { {
@@ -88,6 +130,17 @@ void *memberAccountView::qt_metacast(const char *_clname)
 int memberAccountView::qt_metacall(QMetaObject::Call _c, int _id, void **_a)
 {
     _id = QMainWindow::qt_metacall(_c, _id, _a);
+    if (_id < 0)
+        return _id;
+    if (_c == QMetaObject::InvokeMetaMethod) {
+        if (_id < 7)
+            qt_static_metacall(this, _c, _id, _a);
+        _id -= 7;
+    } else if (_c == QMetaObject::RegisterMethodArgumentMetaType) {
+        if (_id < 7)
+            *reinterpret_cast<int*>(_a[0]) = -1;
+        _id -= 7;
+    }
     return _id;
 }
 QT_WARNING_POP

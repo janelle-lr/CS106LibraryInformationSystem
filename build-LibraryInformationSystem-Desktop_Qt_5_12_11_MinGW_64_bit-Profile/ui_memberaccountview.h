@@ -47,15 +47,14 @@ public:
     QGroupBox *groupBox;
     QPushButton *pushButton;
     QLabel *label_6;
-    QLabel *label_12;
     QLabel *userName;
     QLineEdit *memberUser;
     QLabel *pass;
     QLineEdit *memberPass;
     QLabel *email;
     QLineEdit *memberEmail;
-    QLabel *lastName;
-    QLineEdit *memberLastName;
+    QLabel *mobileNumber;
+    QLineEdit *memberMobile;
     QLabel *dob;
     QDateEdit *memberDOB;
     QLabel *firstName;
@@ -248,6 +247,11 @@ public:
         pushButton = new QPushButton(groupBox);
         pushButton->setObjectName(QString::fromUtf8("pushButton"));
         pushButton->setGeometry(QRect(310, 340, 281, 31));
+        pushButton->setStyleSheet(QString::fromUtf8("QPushButton {\n"
+"background-color: rgba(231, 138, 107, 0.5);\n"
+"color:  #fff;\n"
+"font-weight: 500;\n"
+"}"));
         label_6 = new QLabel(groupBox);
         label_6->setObjectName(QString::fromUtf8("label_6"));
         label_6->setGeometry(QRect(50, 20, 141, 31));
@@ -257,16 +261,6 @@ public:
         sizePolicy.setHeightForWidth(label_6->sizePolicy().hasHeightForWidth());
         label_6->setSizePolicy(sizePolicy);
         label_6->setStyleSheet(QString::fromUtf8("QLabel{\n"
-"	font-weight: bold;\n"
-"	font-size: 18px;\n"
-"\n"
-"}"));
-        label_12 = new QLabel(groupBox);
-        label_12->setObjectName(QString::fromUtf8("label_12"));
-        label_12->setGeometry(QRect(50, 120, 181, 31));
-        sizePolicy.setHeightForWidth(label_12->sizePolicy().hasHeightForWidth());
-        label_12->setSizePolicy(sizePolicy);
-        label_12->setStyleSheet(QString::fromUtf8("QLabel{\n"
 "	font-weight: bold;\n"
 "	font-size: 18px;\n"
 "\n"
@@ -299,17 +293,18 @@ public:
         memberEmail->setGeometry(QRect(290, 273, 551, 31));
         sizePolicy.setHeightForWidth(memberEmail->sizePolicy().hasHeightForWidth());
         memberEmail->setSizePolicy(sizePolicy);
-        lastName = new QLabel(groupBox);
-        lastName->setObjectName(QString::fromUtf8("lastName"));
-        lastName->setGeometry(QRect(50, 190, 81, 31));
-        memberLastName = new QLineEdit(groupBox);
-        memberLastName->setObjectName(QString::fromUtf8("memberLastName"));
-        memberLastName->setGeometry(QRect(290, 190, 551, 31));
+        mobileNumber = new QLabel(groupBox);
+        mobileNumber->setObjectName(QString::fromUtf8("mobileNumber"));
+        mobileNumber->setGeometry(QRect(50, 190, 111, 31));
+        memberMobile = new QLineEdit(groupBox);
+        memberMobile->setObjectName(QString::fromUtf8("memberMobile"));
+        memberMobile->setGeometry(QRect(290, 190, 551, 31));
         dob = new QLabel(groupBox);
         dob->setObjectName(QString::fromUtf8("dob"));
         dob->setGeometry(QRect(50, 230, 121, 31));
         memberDOB = new QDateEdit(groupBox);
         memberDOB->setObjectName(QString::fromUtf8("memberDOB"));
+        memberDOB->setEnabled(false);
         memberDOB->setGeometry(QRect(290, 230, 250, 31));
         firstName = new QLabel(groupBox);
         firstName->setObjectName(QString::fromUtf8("firstName"));
@@ -349,15 +344,14 @@ public:
         signoutBtn->setText(QApplication::translate("memberAccountView", "Sign Out", nullptr));
         logoImage->setText(QString());
         groupBox->setTitle(QString());
-        pushButton->setText(QApplication::translate("memberAccountView", "DONE", nullptr));
+        pushButton->setText(QApplication::translate("memberAccountView", "Save Changes", nullptr));
         label_6->setText(QApplication::translate("memberAccountView", "Log-in Details", nullptr));
-        label_12->setText(QApplication::translate("memberAccountView", "Full Name", nullptr));
         userName->setText(QApplication::translate("memberAccountView", "Username", nullptr));
         pass->setText(QApplication::translate("memberAccountView", "Password", nullptr));
         email->setText(QApplication::translate("memberAccountView", "Email", nullptr));
-        lastName->setText(QApplication::translate("memberAccountView", "Last name", nullptr));
+        mobileNumber->setText(QApplication::translate("memberAccountView", "Mobile Number", nullptr));
         dob->setText(QApplication::translate("memberAccountView", "Date of Birth", nullptr));
-        firstName->setText(QApplication::translate("memberAccountView", "First Name", nullptr));
+        firstName->setText(QApplication::translate("memberAccountView", "Full Name", nullptr));
         pageTitle->setText(QApplication::translate("memberAccountView", "Edit Account Details", nullptr));
         pageDesc->setText(QApplication::translate("memberAccountView", "Hey user, chnage your shit here. If you don't like it then yikes \n"
 " if you have any complaints, please DM the admin or something.", nullptr));

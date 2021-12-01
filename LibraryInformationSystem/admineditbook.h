@@ -22,6 +22,8 @@ signals:
 private slots:
     void on_savePushButton_clicked();
 
+    void on_cancelPushButton_8_clicked();
+
 private:
     Ui::adminEditBook *ui;
     int numId;

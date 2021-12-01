@@ -33,7 +33,6 @@ public:
     QWidget *scrollAreaWidgetContents;
     QHBoxLayout *horizontalLayout;
     QGridLayout *gridLayout_3;
-    QPushButton *pushButton;
     QWidget *layoutWidget;
     QVBoxLayout *verticalLayout_2;
     QLabel *catalogueIcon_2;
@@ -113,9 +112,6 @@ public:
         horizontalLayout->addLayout(gridLayout_3);
 
         scrollArea->setWidget(scrollAreaWidgetContents);
-        pushButton = new QPushButton(centralwidget);
-        pushButton->setObjectName(QString::fromUtf8("pushButton"));
-        pushButton->setGeometry(QRect(1150, 20, 75, 23));
         layoutWidget = new QWidget(centralwidget);
         layoutWidget->setObjectName(QString::fromUtf8("layoutWidget"));
         layoutWidget->setGeometry(QRect(20, 120, 191, 471));
@@ -231,7 +227,6 @@ public:
     void retranslateUi(QMainWindow *adminMemberCatalogue)
     {
         adminMemberCatalogue->setWindowTitle(QApplication::translate("adminMemberCatalogue", "MainWindow", nullptr));
-        pushButton->setText(QApplication::translate("adminMemberCatalogue", "PushButton", nullptr));
         catalogueIcon_2->setText(QApplication::translate("adminMemberCatalogue", "Catalogue", nullptr));
         catalogueBtn_2->setText(QApplication::translate("adminMemberCatalogue", "Catalogue", nullptr));
         memberIcon_2->setText(QApplication::translate("adminMemberCatalogue", "member", nullptr));

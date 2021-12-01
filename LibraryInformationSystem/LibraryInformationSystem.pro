@@ -28,8 +28,11 @@ SOURCES += \
     memberaccountview.cpp \
     membercatalogue.cpp \
     memberviewloans.cpp \
+    memberviewreserves.cpp \
+    overduenotification.cpp \
     preorderbook.cpp \
     publisher.cpp \
+    returnbooksnotification.cpp \
     systemlibrary.cpp
 
 HEADERS += \
@@ -51,8 +54,11 @@ HEADERS += \
     memberaccountview.h \
     membercatalogue.h \
     memberviewloans.h \
+    memberviewreserves.h \
+    overduenotification.h \
     preorderbook.h \
     publisher.h \
+    returnbooksnotification.h \
     systemlibrary.h
 
 FORMS += \
@@ -66,7 +72,10 @@ FORMS += \
     mainwindow.ui \
     memberaccountview.ui \
     membercatalogue.ui \
-    memberviewloans.ui
+    memberviewloans.ui \
+    memberviewreserves.ui \
+    overduenotification.ui \
+    returnbooksnotification.ui
 
 # Default rules for deployment.
 qnx: target.path = /tmp/$${TARGET}/bin

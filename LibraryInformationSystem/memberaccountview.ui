@@ -280,8 +280,15 @@ QPushButton {
        <height>31</height>
       </rect>
      </property>
+     <property name="styleSheet">
+      <string notr="true">QPushButton {
+background-color: rgba(231, 138, 107, 0.5);
+color:  #fff;
+font-weight: 500;
+}</string>
+     </property>
      <property name="text">
-      <string>DONE</string>
+      <string>Save Changes</string>
      </property>
     </widget>
     <widget class="QLabel" name="label_6">
@@ -308,32 +315,6 @@ QPushButton {
      </property>
      <property name="text">
       <string>Log-in Details</string>
-     </property>
-    </widget>
-    <widget class="QLabel" name="label_12">
-     <property name="geometry">
-      <rect>
-       <x>50</x>
-       <y>120</y>
-       <width>181</width>
-       <height>31</height>
-      </rect>
-     </property>
-     <property name="sizePolicy">
-      <sizepolicy hsizetype="Preferred" vsizetype="Fixed">
-       <horstretch>0</horstretch>
-       <verstretch>0</verstretch>
-      </sizepolicy>
-     </property>
-     <property name="styleSheet">
-      <string notr="true">QLabel{
-	font-weight: bold;
-	font-size: 18px;
-
-}</string>
-     </property>
-     <property name="text">
-      <string>Full Name</string>
      </property>
     </widget>
     <widget class="QLabel" name="userName">
@@ -429,20 +410,20 @@ QPushButton {
       </sizepolicy>
      </property>
     </widget>
-    <widget class="QLabel" name="lastName">
+    <widget class="QLabel" name="mobileNumber">
      <property name="geometry">
       <rect>
        <x>50</x>
        <y>190</y>
-       <width>81</width>
+       <width>111</width>
        <height>31</height>
       </rect>
      </property>
      <property name="text">
-      <string>Last name</string>
+      <string>Mobile Number</string>
      </property>
     </widget>
-    <widget class="QLineEdit" name="memberLastName">
+    <widget class="QLineEdit" name="memberMobile">
      <property name="geometry">
       <rect>
        <x>290</x>
@@ -466,6 +447,9 @@ QPushButton {
      </property>
     </widget>
     <widget class="QDateEdit" name="memberDOB">
+     <property name="enabled">
+      <bool>false</bool>
+     </property>
      <property name="geometry">
       <rect>
        <x>290</x>
@@ -485,7 +469,7 @@ QPushButton {
       </rect>
      </property>
      <property name="text">
-      <string>First Name</string>
+      <string>Full Name</string>
      </property>
     </widget>
     <widget class="QLineEdit" name="memberFirstName">

@@ -24,12 +24,16 @@ void adminMemberEdit::setNum(int num) {
     this->numId = num;
 
     SystemLibrary sysLib;
-
     QVector<Member> member;
     member = sysLib.getAllMemberDetails();
+    QString date = member[num].getDob();
+    QStringList dob = date.split("/");
+    qDebug() << dob.size();
+    QDate birthday = QDate (dob[2].toInt(), dob[1].toInt(), dob[0].toInt());
+
     ui->firstNameLineEdit->setText(member[num].getName());
-    //ui->dateEdit->setText(member[num].getDob());
-    //ui->mobileNumLineEdit->setText(member[num].getMobileNum());
+    ui->dateEdit->setDate(birthday);
+    ui->mobileNumLineEdit->setText(member[num].getMobileNum());
     ui->emailLineEdit->setText(member[num].getEmail());
     ui->usernameLineEdit->setText(member[num].getAccId());
     ui->passwordLineEdit->setText(member[num].getPassword());
@@ -46,8 +50,8 @@ void adminMemberEdit::on_updateMemberButton_clicked()
     for (int i = 0; i < member.size(); i++) {
         if(numId == i) {
         member[i].setName(ui->firstNameLineEdit->text());
-        //member[i].setDob(ui->dateEdit->text());
-        //member[i].setMobileNum(ui->mobileNumLineEdit->text());
+        member[i].setDob(ui->dateEdit->text());
+        member[i].setMobileNum(ui->mobileNumLineEdit->text());
         member[i].setEmail(ui->emailLineEdit->text());
         member[i].setPassword(ui->passwordLineEdit->text());
         break;

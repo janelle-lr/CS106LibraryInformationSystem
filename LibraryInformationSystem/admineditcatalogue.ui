@@ -387,7 +387,7 @@ font-size: 13px;
       </rect>
      </property>
      <property name="text">
-      <string>Enter Book TItle</string>
+      <string>Enter Book Title</string>
      </property>
     </widget>
     <widget class="QLineEdit" name="bookTitle">

@@ -346,7 +346,7 @@ public:
         selectedImage_3->setItemText(1, QApplication::translate("adminEditCatalogue", "Image 2", nullptr));
         selectedImage_3->setItemText(2, QApplication::translate("adminEditCatalogue", "Image 3", nullptr));
 
-        label_33->setText(QApplication::translate("adminEditCatalogue", "Enter Book TItle", nullptr));
+        label_33->setText(QApplication::translate("adminEditCatalogue", "Enter Book Title", nullptr));
         bookTitle->setText(QString());
         label_38->setText(QApplication::translate("adminEditCatalogue", "Enter Publisher Name", nullptr));
         label_37->setText(QApplication::translate("adminEditCatalogue", "Enter Author Name", nullptr));

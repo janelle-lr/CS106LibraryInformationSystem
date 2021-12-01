@@ -150,6 +150,7 @@ void adminMemberCatalogue::addRecords(){
 
 void adminMemberCatalogue::editButtonClicked(){
     int num = 7;
+    qDebug() << btn.size();
     QPushButton *button = (QPushButton *)sender();
     for(int i = 0; i < btn.size(); i++){
         if(btn[i] == button){

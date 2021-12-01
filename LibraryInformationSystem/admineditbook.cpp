@@ -64,3 +64,9 @@ void adminEditBook::on_savePushButton_clicked()
     hide();
 }
 
+
+void adminEditBook::on_cancelPushButton_8_clicked()
+{
+    hide();
+}
+

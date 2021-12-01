@@ -16,6 +16,8 @@ debug/mainwindow.o
 debug/member.o
 debug/memberaccountview.o
 debug/membercatalogue.o
+debug/memberviewloans.o
+debug/memberviewreserves.o
 debug/preorderbook.o
 debug/publisher.o
 debug/systemlibrary.o
@@ -30,3 +32,5 @@ debug/moc_bookdetails.o
 debug/moc_mainwindow.o
 debug/moc_memberaccountview.o
 debug/moc_membercatalogue.o
+debug/moc_memberviewloans.o
+debug/moc_memberviewreserves.o

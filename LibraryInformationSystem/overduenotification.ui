@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>OverdueNotification</class>
+ <widget class="QDialog" name="OverdueNotification">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>600</width>
+    <height>400</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>Dialog</string>
+  </property>
+  <property name="styleSheet">
+   <string notr="true">QDialog{
+	background: #FFE5D0;
+	font-family: Montserrat;
+}
+
+QLineEdit {
+	border: 1px solid;
+	border-radius: 15px;
+	border-color: #e5e5e5;
+	background-color: palette(base);
+	padding: 0px 5px;
+	font-size: 13px;
+}
+
+QPushButton {
+	border-radius: 15px; 
+	font-size: 13px;
+	height: 31px; 
+}</string>
+  </property>
+  <widget class="QLabel" name="pageTitle">
+   <property name="geometry">
+    <rect>
+     <x>20</x>
+     <y>20</y>
+     <width>441</width>
+     <height>51</height>
+    </rect>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">QLabel{
+	font-size: 24px;
+	font-weight: bold;
+}</string>
+   </property>
+   <property name="text">
+    <string>Hey! You have overdue books!</string>
+   </property>
+  </widget>
+  <widget class="QLabel" name="pageDesc">
+   <property name="geometry">
+    <rect>
+     <x>20</x>
+     <y>60</y>
+     <width>511</width>
+     <height>51</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string>Here's a list of overdue books you have:</string>
+   </property>
+  </widget>
+  <widget class="QListWidget" name="listWidget">
+   <property name="geometry">
+    <rect>
+     <x>20</x>
+     <y>110</y>
+     <width>551</width>
+     <height>261</height>
+    </rect>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">QListWidget{
+	border-radius: 25px;
+	background: rgb(255, 255, 255);
+}</string>
+   </property>
+  </widget>
+ </widget>
+ <resources/>
+ <connections/>
+</ui>

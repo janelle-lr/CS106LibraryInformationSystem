@@ -18,8 +18,6 @@
 #include <QtWidgets/QHBoxLayout>
 #include <QtWidgets/QLabel>
 #include <QtWidgets/QMainWindow>
-#include <QtWidgets/QMenu>
-#include <QtWidgets/QMenuBar>
 #include <QtWidgets/QPushButton>
 #include <QtWidgets/QScrollArea>
 #include <QtWidgets/QSpacerItem>
@@ -53,9 +51,6 @@ public:
     QPushButton *signoutBtn;
     QFrame *line;
     QLabel *logoImage;
-    QMenuBar *menubar;
-    QMenu *menuCatalogue;
-    QMenu *menuAccount;
 
     void setupUi(QMainWindow *memberCatalogue)
     {
@@ -248,22 +243,6 @@ public:
         logoImage->setGeometry(QRect(10, 20, 221, 71));
         logoImage->setPixmap(QPixmap(QString::fromUtf8(":/resources/images/bblLogo.png")));
         memberCatalogue->setCentralWidget(centralwidget);
-        menubar = new QMenuBar(memberCatalogue);
-        menubar->setObjectName(QString::fromUtf8("menubar"));
-        menubar->setGeometry(QRect(0, 0, 1280, 18));
-        menuCatalogue = new QMenu(menubar);
-        menuCatalogue->setObjectName(QString::fromUtf8("menuCatalogue"));
-        menuAccount = new QMenu(menubar);
-        menuAccount->setObjectName(QString::fromUtf8("menuAccount"));
-        memberCatalogue->setMenuBar(menubar);
-
-        menubar->addAction(menuAccount->menuAction());
-        menubar->addAction(menuCatalogue->menuAction());
-        menuCatalogue->addAction(actionView_Catalogue);
-        menuAccount->addAction(viewAccount);
-        menuAccount->addAction(actiontest_2);
-        menuAccount->addSeparator();
-        menuAccount->addAction(actiontest_3);
 
         retranslateUi(memberCatalogue);
 
@@ -287,12 +266,10 @@ public:
         catalogueIcon->setText(QApplication::translate("memberCatalogue", "Catalogue", nullptr));
         catalogueBtn->setText(QApplication::translate("memberCatalogue", "Catalogue", nullptr));
         accountIcon->setText(QApplication::translate("memberCatalogue", "account", nullptr));
-        accountBtn->setText(QApplication::translate("memberCatalogue", "acount", nullptr));
+        accountBtn->setText(QApplication::translate("memberCatalogue", "Account", nullptr));
         signoutIcon->setText(QApplication::translate("memberCatalogue", "signOut", nullptr));
         signoutBtn->setText(QApplication::translate("memberCatalogue", "Sign Out", nullptr));
         logoImage->setText(QString());
-        menuCatalogue->setTitle(QApplication::translate("memberCatalogue", "Catalogue", nullptr));
-        menuAccount->setTitle(QApplication::translate("memberCatalogue", "Account", nullptr));
     } // retranslateUi
 
 };

@@ -16,6 +16,8 @@ release/mainwindow.o
 release/member.o
 release/memberaccountview.o
 release/membercatalogue.o
+release/memberviewloans.o
+release/memberviewreserves.o
 release/preorderbook.o
 release/publisher.o
 release/systemlibrary.o
@@ -30,3 +32,5 @@ release/moc_bookdetails.o
 release/moc_mainwindow.o
 release/moc_memberaccountview.o
 release/moc_membercatalogue.o
+release/moc_memberviewloans.o
+release/moc_memberviewreserves.o

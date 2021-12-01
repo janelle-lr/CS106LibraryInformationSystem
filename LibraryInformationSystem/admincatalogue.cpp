@@ -44,9 +44,11 @@ void adminCatalogue::on_memberBtn_clicked()
     adminmembercatalogue->show();
     hide();
 }
+
 void adminCatalogue::signOutBtn(){
     emit showMainWindow();
 }
+
 void adminCatalogue::on_signoutBtn_clicked()
 {
     emit showMainWindow();
