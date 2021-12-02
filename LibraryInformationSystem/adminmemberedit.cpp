@@ -7,6 +7,8 @@ adminMemberEdit::adminMemberEdit(QWidget *parent) :
 {
     ui->setupUi(this);
 
+    setWindowTitle("BiblioThicc Libraries - Edit Member");
+
     //for logo in UI
     QPixmap logo(":/resources/images/miniLogo.png");
     ui->logoImage->setPixmap(logo.scaled(300, 75, Qt::KeepAspectRatio));
@@ -58,7 +60,7 @@ void adminMemberEdit::on_updateMemberButton_clicked()
         }
     }
     sysLib.updateAllMemberDetails(member);//passing edited book details to csv file
-    QMessageBox::information(this,"Edit Book Details", "Book edits have been successfully saved.");
+    QMessageBox::information(this,"Edit Member Details", "Changes have been successfully saved.");
     emit showadminMemberEdit();
     hide();
 }

@@ -112,7 +112,7 @@ QPushButton:hover {
      <item>
       <widget class="QLabel" name="editAccountIcon">
        <property name="text">
-        <string>Reserved Books</string>
+        <string>back to catalogue</string>
        </property>
        <property name="alignment">
         <set>Qt::AlignCenter</set>
@@ -132,7 +132,34 @@ QPushButton:hover {
 }</string>
        </property>
        <property name="text">
-        <string>Account Details</string>
+        <string>Edit Account</string>
+       </property>
+      </widget>
+     </item>
+     <item>
+      <widget class="QLabel" name="bcktoCatologueIcon">
+       <property name="text">
+        <string>back to catalogue</string>
+       </property>
+       <property name="alignment">
+        <set>Qt::AlignCenter</set>
+       </property>
+      </widget>
+     </item>
+     <item>
+      <widget class="QPushButton" name="bcktoCatologueBtn">
+       <property name="styleSheet">
+        <string notr="true">QPushButton{
+	border-radius:15px;
+	font: 14px &quot;Montserrat&quot;;
+}
+
+QPushButton:hover {
+	text-decoration: underline;
+}</string>
+       </property>
+       <property name="text">
+        <string>Back to Catologue</string>
        </property>
       </widget>
      </item>
@@ -512,7 +539,7 @@ font-weight: 500;
      </rect>
     </property>
     <property name="text">
-     <string>Hey user, chnage your shit here. If you don't like it then yikes 
+     <string>Hey user, change your stuff here. If you don't like it then yikes 
  if you have any complaints, please DM the admin or something.</string>
     </property>
    </widget>

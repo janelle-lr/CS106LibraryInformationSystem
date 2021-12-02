@@ -138,7 +138,7 @@ QPushButton:hover {
      <property name="geometry">
       <rect>
        <x>0</x>
-       <y>0</y>
+       <y>-197</y>
        <width>994</width>
        <height>668</height>
       </rect>
@@ -454,32 +454,6 @@ font-size: 13px;
           <set>Qt::AlignLeading|Qt::AlignLeft|Qt::AlignTop</set>
          </property>
         </widget>
-        <widget class="QLineEdit" name="descriptionLineEdit_7">
-         <property name="geometry">
-          <rect>
-           <x>20</x>
-           <y>500</y>
-           <width>941</width>
-           <height>121</height>
-          </rect>
-         </property>
-         <property name="styleSheet">
-          <string notr="true">QLineEdit {
-border: 1px solid;
-border-radius: 15px;
-border-color: #e5e5e5;
-background-color: palette(base);
-padding: 5px;
-font-size: 13px;
-}</string>
-         </property>
-         <property name="text">
-          <string/>
-         </property>
-         <property name="alignment">
-          <set>Qt::AlignLeading|Qt::AlignLeft|Qt::AlignTop</set>
-         </property>
-        </widget>
         <widget class="QPushButton" name="savePushButton_15">
          <property name="geometry">
           <rect>
@@ -557,6 +531,26 @@ font: 16px &quot;Montserrat Medium&quot;;
          </property>
          <property name="alignment">
           <set>Qt::AlignLeading|Qt::AlignLeft|Qt::AlignVCenter</set>
+         </property>
+        </widget>
+        <widget class="QTextEdit" name="textEdit">
+         <property name="geometry">
+          <rect>
+           <x>20</x>
+           <y>500</y>
+           <width>941</width>
+           <height>121</height>
+          </rect>
+         </property>
+         <property name="styleSheet">
+          <string notr="true">QTextEdit {
+border: 1px solid;
+border-radius: 15px;
+border-color: #e5e5e5;
+background-color: palette(base);
+padding: 5px;
+font-size: 13px;
+}</string>
          </property>
         </widget>
        </widget>

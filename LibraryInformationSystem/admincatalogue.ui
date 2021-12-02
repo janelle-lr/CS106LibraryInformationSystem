@@ -280,6 +280,25 @@ QPushButton {
      <string>TextLabel</string>
     </property>
    </widget>
+   <widget class="QLabel" name="pageTitle">
+    <property name="geometry">
+     <rect>
+      <x>270</x>
+      <y>30</y>
+      <width>331</width>
+      <height>51</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">QLabel{
+	font-size: 24px;
+	font-weight: bold;
+}</string>
+    </property>
+    <property name="text">
+     <string>Catalogue</string>
+    </property>
+   </widget>
   </widget>
   <widget class="QMenuBar" name="menubar">
    <property name="geometry">

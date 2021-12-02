@@ -139,6 +139,22 @@ void LibraryDatabase::buildDatabase(){
         preBookFile.close();
     }else
         qDebug() << "File already exists";
+
+    //create Notification table
+    QFile notification("LibraryDB/NotificationLog.csv");
+    if(!QFileInfo::exists("LibraryDB/NotificationLog.csv")){
+        //if the file is not open
+        if(!notification.open(QFile::WriteOnly | QFile::Text)){
+           qDebug() << "Error cant open file";
+        }
+        //reference to your file
+        QTextStream out(&notification);
+        out << "MemberID" << "," << "BookID" << "," << "Notification Type" << "," << "Status" << "\n";
+        //flush the file after and close
+        notification.flush();
+        notification.close();
+    }else
+        qDebug() << "File already exists";
 }
 //This functions creates the defautl Admin and the test member
 void LibraryDatabase::createTestAccount(){
@@ -179,7 +195,7 @@ void LibraryDatabase::createTestAccount(){
     //reference to your file
     QTextStream memOut(&memFile);
     memOut << "MemberID" << "," << "Name" << "," << "Age" << "," << "Date of Birth" << "," << "Email" << "," << "Mobile number" << "\n";
-    memOut << "TestMember" << "," << "Giga Chad" << "," << "25" << "," << "20/10/1996" << "," << "@gmail.com" << "," << "0223038032" << "\n";
+    memOut << "220Member" << "," << "Giga Chad" << "," << "25" << "," << "20/10/1996" << "," << "@gmail.com" << "," << "0223038032" << "\n";
 
     memFile.flush();
     memFile.close();
@@ -707,7 +723,7 @@ void LibraryDatabase::loanBook(BookItem bookItem){
     //reference to your file
     QTextStream out(&file);
     QDate date = QDate::currentDate();
-    QDate expiryDate = date.addDays(1);
+    QDate expiryDate = date.addDays(7);
     out << bookItem.getBookItem_ID() << "," << bookItem.getBookItem_MemberID() << "," << bookItem.getBookItem_BookID() << "," << date.toString("dd/MM/yyyy") << "," << expiryDate.toString("dd/MM/yyyy") << "," << bookItem.getBookReturnedDate() << "," << 1 << "\n";
     //flush the file after and close
     file.flush();
@@ -977,12 +993,24 @@ QStringList LibraryDatabase::getAllMemberLoanedBooks(QString memberID){
 void LibraryDatabase::checkLoanedBooks(){
     QVector<BookItem> bookItem;
     bookItem = getAllBookItem();
+    NotificationLog log;
 
     QDate date = QDate::currentDate();
-    QString currentDate = date.toString("dd/MM/yyyy");
+    QString currentDate = date.toString("d/MM/yyyy");
+
     for(auto element: bookItem){
-        if(element.getExpiryDate() == currentDate && element.getUserAccess() == true){
+        QString d = element.getExpiryDate();
+        QStringList dateExp = d.split("/");
+        QDate expDate = QDate(dateExp[2].toInt(), dateExp[1].toInt(),dateExp[0].toInt());
+        qDebug() << element.getExpiryDate() << " " << currentDate << "\n";
+        if((element.getExpiryDate() == currentDate && element.getUserAccess() == true) || (expDate < date && element.getUserAccess() == true)){
             returnBook(element.getBookItem_MemberID(),element.getBookItem_BookID());
+
+            log.setMemberID(element.getBookItem_MemberID());
+            log.setbookID(element.getBookItem_BookID());
+            log.setnotificationType("@Returned");
+            log.setstatus(0);
+            log_Returned_Loaned_Books(log);
         }
     }
 }
@@ -991,12 +1019,13 @@ void LibraryDatabase::checkPreorders(){
     bool isTrue = true;
     QVector<PreOrderBook> preOrder;
     QVector<Book> book;
+    NotificationLog log;
+
     preOrder = getAllPreOrders();
     book = getAllBooks();
 
     QDate date = QDate::currentDate();
     QString currentDate = date.toString("dd/MM/yyyy");
-
     do{
         isTrue = false;
         for(int i = 0; i < preOrder.size(); i++){
@@ -1022,9 +1051,15 @@ void LibraryDatabase::checkPreorders(){
                         loanBook(bookItem);
                         preOrder[i].setPreOrderStatus(1); //book has been loaned
                         updateAllPreOrderDetails(preOrder);//update Database
+
+                        log.setMemberID(preOrder[i].getPreBook_MemberID());
+                        log.setbookID(preOrder[i].getPreBook_BookID());
+                        log.setnotificationType("@Loaned");
+                        log.setstatus(0);
+                        log_Returned_Loaned_Books(log);
                         isTrue = true;
                     }
-                    break;
+                    //break;
                 }
             }
             //}
@@ -1068,14 +1103,16 @@ bool LibraryDatabase::isPreBook(QString memberID, QString bookID){
     return isPreBook;
 }
 //This function returns books that are near due date
-QStringList LibraryDatabase::getNearbyDueDateBooks(){
+QStringList LibraryDatabase::getNearbyDueDateBooks(QString memberID){
     QStringList nearbyDueDateBook;
-    QStringList bookedList = getAllMemberLoanedBooks("220189JU");
+    QStringList bookedList = getAllMemberLoanedBooks(memberID);
     QDate date(QDate::currentDate());
     QVector<BookItem> bookitem = getAllBookItem();
+
+    qDebug() << bookedList.size();
     for(int i = 0; i < bookedList.size(); i++){
         for(int x = 0; x < bookitem.size(); x++){
-            if(bookitem[x].getBookItem_BookID() == bookedList[i]){
+            if(bookitem[x].getBookItem_BookID() == bookedList[i] && bookitem[x].getUserAccess() == 1){
                 QString expiry = bookitem[x].getExpiryDate();
                 QStringList expDate = (expiry.split("/"));
                 QDate compareDate = QDate(expDate[2].toInt(), expDate[1].toInt(), expDate[0].toInt());
@@ -1085,5 +1122,74 @@ QStringList LibraryDatabase::getNearbyDueDateBooks(){
             }
         }
     }
+
     return nearbyDueDateBook;
+}
+//This function logs all automatically returned and loaned books
+void LibraryDatabase::log_Returned_Loaned_Books(NotificationLog log){
+    QFile file("LibraryDB/NotificationLog.csv");
+    //if the file is not open
+    if(!file.open(QFile::Append | QFile::Text)){
+       qDebug() << "Error cant open file";
+    }
+    //reference to your file
+    QTextStream out(&file);
+    out << log.getMemberID() << "," << log.getbookID() << "," << log.getnotificationType() << "," << log.getstatus() << "\n";
+
+    //flush the file after and close
+    file.flush();
+    file.close();
+}
+//This function returns all logs
+QVector<NotificationLog> LibraryDatabase::getNotificationLog(){
+    QVector<NotificationLog> logList;
+    NotificationLog log;
+
+    //get all data from Member.csv and store it in Qvector
+    QFile file("LibraryDB/NotificationLog.csv");
+    //if the file is not open
+    if(!file.open(QFile::ReadOnly | QFile::Text)){
+        qDebug() << "Error cant open file";
+    }else{
+        //reference to your file
+        QTextStream in(&file);
+        QStringList list;
+        QString line;
+        //loop through csv data
+        while(!in.atEnd()){
+            line = file.readLine().replace("\n","");
+            list.append(line.split(","));
+            if(list[0] != "MemberID" && list[0] != ""){
+                log.setMemberID(list[0]);
+                log.setbookID(list[1]);
+                log.setnotificationType(list[2]);
+                log.setstatus(list[3].toInt());
+                logList.push_back(log);
+            }
+            list.clear();
+        }
+        //we dont need to flush bec we are only reading
+        file.close();
+    }
+
+    return logList;
+}
+void LibraryDatabase::updateLogs(QVector<NotificationLog> log){
+    QFile file("LibraryDB/NotificationLog.csv");
+    if(QFileInfo::exists("LibraryDB/NotificationLog.csv")){
+        //if the file is not open
+        if(!file.open(QFile::WriteOnly | QFile::Text)){
+           qDebug() << "Error cant open file";
+        }
+        //reference to your file
+        QTextStream out(&file);
+        out << "MemberID" << "," << "BookID" << "," << "Notification Type" << "," << "Status" << "\n";
+        for(int i = 0; i < log.size(); i++){
+            out << log[i].getMemberID() << "," << log[i].getbookID() << "," << log[i].getnotificationType() << "," << log[i].getstatus() << "\n";
+        }
+        //flush the file after and close
+        file.flush();
+        file.close();
+    }else
+        qDebug() << "File doesn't exists";
 }

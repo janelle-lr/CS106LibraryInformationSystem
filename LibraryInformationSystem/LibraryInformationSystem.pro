@@ -22,6 +22,7 @@ SOURCES += \
     bookdetails.cpp \
     bookitem.cpp \
     librarydatabase.cpp \
+    loanedbooknotification.cpp \
     main.cpp \
     mainwindow.cpp \
     member.cpp \
@@ -29,6 +30,7 @@ SOURCES += \
     membercatalogue.cpp \
     memberviewloans.cpp \
     memberviewreserves.cpp \
+    notificationlog.cpp \
     overduenotification.cpp \
     preorderbook.cpp \
     publisher.cpp \
@@ -49,12 +51,14 @@ HEADERS += \
     bookdetails.h \
     bookitem.h \
     librarydatabase.h \
+    loanedbooknotification.h \
     mainwindow.h \
     member.h \
     memberaccountview.h \
     membercatalogue.h \
     memberviewloans.h \
     memberviewreserves.h \
+    notificationlog.h \
     overduenotification.h \
     preorderbook.h \
     publisher.h \
@@ -69,6 +73,7 @@ FORMS += \
     adminmembercatalogue.ui \
     adminmemberedit.ui \
     bookdetails.ui \
+    loanedbooknotification.ui \
     mainwindow.ui \
     memberaccountview.ui \
     membercatalogue.ui \

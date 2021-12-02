@@ -27,9 +27,11 @@
   </property>
   <widget class="QWidget" name="centralwidget">
    <property name="styleSheet">
-    <string notr="true">QWidget {
-background: #fff;
-font-family: Montserrat;
+    <string notr="true">
+
+QWidget{
+	background: #FFE5D0;
+	font-family: Montserrat;
 }
 
 QPushButton {
@@ -40,9 +42,9 @@ font-size: 13px;
    <widget class="QScrollArea" name="scrollArea">
     <property name="geometry">
      <rect>
-      <x>0</x>
+      <x>230</x>
       <y>60</y>
-      <width>1271</width>
+      <width>1041</width>
       <height>581</height>
      </rect>
     </property>
@@ -58,58 +60,64 @@ font-size: 13px;
      <property name="geometry">
       <rect>
        <x>0</x>
-       <y>-282</y>
-       <width>1254</width>
-       <height>918</height>
+       <y>0</y>
+       <width>1041</width>
+       <height>581</height>
       </rect>
      </property>
-     <layout class="QGridLayout" name="gridLayout_2">
-      <item row="0" column="0">
-       <widget class="QFrame" name="frame_2">
-        <property name="minimumSize">
-         <size>
-          <width>0</width>
-          <height>900</height>
-         </size>
-        </property>
-        <property name="styleSheet">
-         <string notr="true">QFrame {
+     <widget class="QFrame" name="frame_2">
+      <property name="geometry">
+       <rect>
+        <x>20</x>
+        <y>-20</y>
+        <width>991</width>
+        <height>581</height>
+       </rect>
+      </property>
+      <property name="minimumSize">
+       <size>
+        <width>0</width>
+        <height>0</height>
+       </size>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">QFrame {
 	border: none;
 }</string>
-        </property>
-        <property name="frameShape">
-         <enum>QFrame::StyledPanel</enum>
-        </property>
-        <property name="frameShadow">
-         <enum>QFrame::Raised</enum>
-        </property>
-        <widget class="QLabel" name="bookImage">
-         <property name="geometry">
-          <rect>
-           <x>100</x>
-           <y>100</y>
-           <width>161</width>
-           <height>211</height>
-          </rect>
-         </property>
-         <property name="text">
-          <string/>
-         </property>
-         <property name="pixmap">
-          <pixmap resource="resources.qrc">:/resources/images/bblLogo.png</pixmap>
-         </property>
-        </widget>
-        <widget class="QPushButton" name="issueButton">
-         <property name="geometry">
-          <rect>
-           <x>300</x>
-           <y>281</y>
-           <width>171</width>
-           <height>31</height>
-          </rect>
-         </property>
-         <property name="styleSheet">
-          <string notr="true">QPushButton {
+      </property>
+      <property name="frameShape">
+       <enum>QFrame::StyledPanel</enum>
+      </property>
+      <property name="frameShadow">
+       <enum>QFrame::Raised</enum>
+      </property>
+      <widget class="QLabel" name="bookImage">
+       <property name="geometry">
+        <rect>
+         <x>90</x>
+         <y>50</y>
+         <width>161</width>
+         <height>211</height>
+        </rect>
+       </property>
+       <property name="text">
+        <string/>
+       </property>
+       <property name="pixmap">
+        <pixmap resource="resources.qrc">:/resources/images/bblLogo.png</pixmap>
+       </property>
+      </widget>
+      <widget class="QPushButton" name="issueButton">
+       <property name="geometry">
+        <rect>
+         <x>290</x>
+         <y>231</y>
+         <width>171</width>
+         <height>31</height>
+        </rect>
+       </property>
+       <property name="styleSheet">
+        <string notr="true">QPushButton {
 background-color: #E78A6B;
 color:  #fff;
 font-weight: 500;
@@ -122,316 +130,405 @@ background-color: rgba(231, 138, 107, 0.8);
 QPushButton:pressed {
 background-color: rgb(196, 116, 90);
 }</string>
-         </property>
-         <property name="text">
-          <string>Issue</string>
-         </property>
-        </widget>
-        <widget class="QLabel" name="availabilityLabel">
-         <property name="geometry">
-          <rect>
-           <x>300</x>
-           <y>230</y>
-           <width>141</width>
-           <height>21</height>
-          </rect>
-         </property>
-         <property name="font">
-          <font>
-           <family>Montserrat Medium</family>
-           <pointsize>-1</pointsize>
-           <weight>50</weight>
-           <italic>false</italic>
-           <bold>false</bold>
-          </font>
-         </property>
-         <property name="styleSheet">
-          <string notr="true">QLabel {
+       </property>
+       <property name="text">
+        <string>Issue</string>
+       </property>
+      </widget>
+      <widget class="QLabel" name="availabilityLabel">
+       <property name="geometry">
+        <rect>
+         <x>290</x>
+         <y>180</y>
+         <width>141</width>
+         <height>21</height>
+        </rect>
+       </property>
+       <property name="font">
+        <font>
+         <family>Montserrat Medium</family>
+         <pointsize>-1</pointsize>
+         <weight>50</weight>
+         <italic>false</italic>
+         <bold>false</bold>
+        </font>
+       </property>
+       <property name="styleSheet">
+        <string notr="true">QLabel {
 font: 16px &quot;Montserrat Medium&quot;;
 }</string>
-         </property>
-         <property name="text">
-          <string>Copies available:</string>
-         </property>
-         <property name="alignment">
-          <set>Qt::AlignLeading|Qt::AlignLeft|Qt::AlignVCenter</set>
-         </property>
-        </widget>
-        <widget class="QLabel" name="publisherLabel_3">
-         <property name="geometry">
-          <rect>
-           <x>40</x>
-           <y>370</y>
-           <width>331</width>
-           <height>21</height>
-          </rect>
-         </property>
-         <property name="font">
-          <font>
-           <family>Montserrat Medium</family>
-           <pointsize>-1</pointsize>
-           <weight>50</weight>
-           <italic>false</italic>
-           <bold>false</bold>
-          </font>
-         </property>
-         <property name="styleSheet">
-          <string notr="true">QLabel {
+       </property>
+       <property name="text">
+        <string>Copies available:</string>
+       </property>
+       <property name="alignment">
+        <set>Qt::AlignLeading|Qt::AlignLeft|Qt::AlignVCenter</set>
+       </property>
+      </widget>
+      <widget class="QLabel" name="publisherLabel_3">
+       <property name="geometry">
+        <rect>
+         <x>30</x>
+         <y>320</y>
+         <width>331</width>
+         <height>21</height>
+        </rect>
+       </property>
+       <property name="font">
+        <font>
+         <family>Montserrat Medium</family>
+         <pointsize>-1</pointsize>
+         <weight>50</weight>
+         <italic>false</italic>
+         <bold>false</bold>
+        </font>
+       </property>
+       <property name="styleSheet">
+        <string notr="true">QLabel {
 font: 16px &quot;Montserrat Medium&quot;;
 }</string>
-         </property>
-         <property name="text">
-          <string>Publisher</string>
-         </property>
-         <property name="alignment">
-          <set>Qt::AlignLeading|Qt::AlignLeft|Qt::AlignVCenter</set>
-         </property>
-        </widget>
-        <widget class="QLabel" name="descriptionLabel_2">
-         <property name="geometry">
-          <rect>
-           <x>40</x>
-           <y>560</y>
-           <width>331</width>
-           <height>21</height>
-          </rect>
-         </property>
-         <property name="font">
-          <font>
-           <family>Montserrat Medium</family>
-           <pointsize>-1</pointsize>
-           <weight>50</weight>
-           <italic>false</italic>
-           <bold>false</bold>
-          </font>
-         </property>
-         <property name="styleSheet">
-          <string notr="true">QLabel {
+       </property>
+       <property name="text">
+        <string>Publisher</string>
+       </property>
+       <property name="alignment">
+        <set>Qt::AlignLeading|Qt::AlignLeft|Qt::AlignVCenter</set>
+       </property>
+      </widget>
+      <widget class="QLabel" name="descriptionLabel_2">
+       <property name="geometry">
+        <rect>
+         <x>30</x>
+         <y>450</y>
+         <width>331</width>
+         <height>21</height>
+        </rect>
+       </property>
+       <property name="font">
+        <font>
+         <family>Montserrat Medium</family>
+         <pointsize>-1</pointsize>
+         <weight>50</weight>
+         <italic>false</italic>
+         <bold>false</bold>
+        </font>
+       </property>
+       <property name="styleSheet">
+        <string notr="true">QLabel {
 font: 16px &quot;Montserrat Medium&quot;;
 }</string>
-         </property>
-         <property name="text">
-          <string>Description</string>
-         </property>
-         <property name="alignment">
-          <set>Qt::AlignLeading|Qt::AlignLeft|Qt::AlignVCenter</set>
-         </property>
-        </widget>
-        <widget class="QLabel" name="genreLabel_3">
-         <property name="geometry">
-          <rect>
-           <x>40</x>
-           <y>460</y>
-           <width>331</width>
-           <height>21</height>
-          </rect>
-         </property>
-         <property name="font">
-          <font>
-           <family>Montserrat Medium</family>
-           <pointsize>-1</pointsize>
-           <weight>50</weight>
-           <italic>false</italic>
-           <bold>false</bold>
-          </font>
-         </property>
-         <property name="styleSheet">
-          <string notr="true">QLabel {
+       </property>
+       <property name="text">
+        <string>Description</string>
+       </property>
+       <property name="alignment">
+        <set>Qt::AlignLeading|Qt::AlignLeft|Qt::AlignVCenter</set>
+       </property>
+      </widget>
+      <widget class="QLabel" name="genreLabel_3">
+       <property name="geometry">
+        <rect>
+         <x>30</x>
+         <y>380</y>
+         <width>331</width>
+         <height>21</height>
+        </rect>
+       </property>
+       <property name="font">
+        <font>
+         <family>Montserrat Medium</family>
+         <pointsize>-1</pointsize>
+         <weight>50</weight>
+         <italic>false</italic>
+         <bold>false</bold>
+        </font>
+       </property>
+       <property name="styleSheet">
+        <string notr="true">QLabel {
 font: 16px &quot;Montserrat Medium&quot;;
 }</string>
-         </property>
-         <property name="text">
-          <string>Genre(s)</string>
-         </property>
-         <property name="alignment">
-          <set>Qt::AlignLeading|Qt::AlignLeft|Qt::AlignVCenter</set>
-         </property>
-        </widget>
-        <widget class="QPushButton" name="savePushButton_5">
-         <property name="geometry">
-          <rect>
-           <x>40</x>
-           <y>340</y>
-           <width>941</width>
-           <height>2</height>
-          </rect>
-         </property>
-         <property name="styleSheet">
-          <string notr="true">QPushButton {
+       </property>
+       <property name="text">
+        <string>Genre(s)</string>
+       </property>
+       <property name="alignment">
+        <set>Qt::AlignLeading|Qt::AlignLeft|Qt::AlignVCenter</set>
+       </property>
+      </widget>
+      <widget class="QPushButton" name="savePushButton_5">
+       <property name="geometry">
+        <rect>
+         <x>30</x>
+         <y>290</y>
+         <width>941</width>
+         <height>2</height>
+        </rect>
+       </property>
+       <property name="styleSheet">
+        <string notr="true">QPushButton {
 background-color: #FF886C;
 border-radius: 1px;
 }</string>
-         </property>
-         <property name="text">
-          <string/>
-         </property>
-        </widget>
-        <widget class="QLabel" name="titleLabel">
-         <property name="geometry">
-          <rect>
-           <x>300</x>
-           <y>100</y>
-           <width>101</width>
-           <height>21</height>
-          </rect>
-         </property>
-         <property name="font">
-          <font>
-           <family>Montserrat</family>
-           <pointsize>12</pointsize>
-           <weight>75</weight>
-           <bold>true</bold>
-          </font>
-         </property>
-         <property name="text">
-          <string>Title</string>
-         </property>
-        </widget>
-        <widget class="QLabel" name="authorLabel">
-         <property name="geometry">
-          <rect>
-           <x>300</x>
-           <y>150</y>
-           <width>101</width>
-           <height>21</height>
-          </rect>
-         </property>
-         <property name="font">
-          <font>
-           <family>Montserrat</family>
-           <pointsize>12</pointsize>
-           <weight>75</weight>
-           <bold>true</bold>
-          </font>
-         </property>
-         <property name="text">
-          <string>Author</string>
-         </property>
-        </widget>
-        <widget class="QLabel" name="stockLabel">
-         <property name="geometry">
-          <rect>
-           <x>450</x>
-           <y>230</y>
-           <width>141</width>
-           <height>21</height>
-          </rect>
-         </property>
-         <property name="font">
-          <font>
-           <family>Montserrat Medium</family>
-           <pointsize>-1</pointsize>
-           <weight>50</weight>
-           <italic>false</italic>
-           <bold>false</bold>
-          </font>
-         </property>
-         <property name="styleSheet">
-          <string notr="true">QLabel {
+       </property>
+       <property name="text">
+        <string/>
+       </property>
+      </widget>
+      <widget class="QLabel" name="titleLabel">
+       <property name="geometry">
+        <rect>
+         <x>290</x>
+         <y>50</y>
+         <width>691</width>
+         <height>21</height>
+        </rect>
+       </property>
+       <property name="font">
+        <font>
+         <family>Montserrat</family>
+         <pointsize>12</pointsize>
+         <weight>75</weight>
+         <bold>true</bold>
+        </font>
+       </property>
+       <property name="text">
+        <string>Title</string>
+       </property>
+      </widget>
+      <widget class="QLabel" name="authorLabel">
+       <property name="geometry">
+        <rect>
+         <x>290</x>
+         <y>100</y>
+         <width>691</width>
+         <height>21</height>
+        </rect>
+       </property>
+       <property name="font">
+        <font>
+         <family>Montserrat</family>
+         <pointsize>12</pointsize>
+         <weight>75</weight>
+         <bold>true</bold>
+        </font>
+       </property>
+       <property name="text">
+        <string>Author</string>
+       </property>
+      </widget>
+      <widget class="QLabel" name="stockLabel">
+       <property name="geometry">
+        <rect>
+         <x>440</x>
+         <y>180</y>
+         <width>141</width>
+         <height>21</height>
+        </rect>
+       </property>
+       <property name="font">
+        <font>
+         <family>Montserrat Medium</family>
+         <pointsize>-1</pointsize>
+         <weight>50</weight>
+         <italic>false</italic>
+         <bold>false</bold>
+        </font>
+       </property>
+       <property name="styleSheet">
+        <string notr="true">QLabel {
 font: 16px &quot;Montserrat Medium&quot;;
 }</string>
-         </property>
-         <property name="text">
-          <string>0</string>
-         </property>
-         <property name="alignment">
-          <set>Qt::AlignLeading|Qt::AlignLeft|Qt::AlignVCenter</set>
-         </property>
-        </widget>
-        <widget class="QLabel" name="publisher">
-         <property name="geometry">
-          <rect>
-           <x>40</x>
-           <y>400</y>
-           <width>941</width>
-           <height>21</height>
-          </rect>
-         </property>
-         <property name="font">
-          <font>
-           <family>Montserrat</family>
-           <pointsize>-1</pointsize>
-           <weight>50</weight>
-           <italic>false</italic>
-           <bold>false</bold>
-          </font>
-         </property>
-         <property name="styleSheet">
-          <string notr="true">QLabel {
+       </property>
+       <property name="text">
+        <string>0</string>
+       </property>
+       <property name="alignment">
+        <set>Qt::AlignLeading|Qt::AlignLeft|Qt::AlignVCenter</set>
+       </property>
+      </widget>
+      <widget class="QLabel" name="publisher">
+       <property name="geometry">
+        <rect>
+         <x>30</x>
+         <y>350</y>
+         <width>941</width>
+         <height>21</height>
+        </rect>
+       </property>
+       <property name="font">
+        <font>
+         <family>Montserrat</family>
+         <pointsize>-1</pointsize>
+         <weight>50</weight>
+         <italic>false</italic>
+         <bold>false</bold>
+        </font>
+       </property>
+       <property name="styleSheet">
+        <string notr="true">QLabel {
 font: 13px &quot;Montserrat&quot;;
 }</string>
-         </property>
-         <property name="text">
-          <string>Publisher</string>
-         </property>
-         <property name="alignment">
-          <set>Qt::AlignLeading|Qt::AlignLeft|Qt::AlignTop</set>
-         </property>
-        </widget>
-        <widget class="QLabel" name="genre">
-         <property name="geometry">
-          <rect>
-           <x>40</x>
-           <y>490</y>
-           <width>941</width>
-           <height>21</height>
-          </rect>
-         </property>
-         <property name="font">
-          <font>
-           <family>Montserrat</family>
-           <pointsize>-1</pointsize>
-           <weight>50</weight>
-           <italic>false</italic>
-           <bold>false</bold>
-          </font>
-         </property>
-         <property name="styleSheet">
-          <string notr="true">QLabel {
+       </property>
+       <property name="text">
+        <string>Publisher</string>
+       </property>
+       <property name="alignment">
+        <set>Qt::AlignLeading|Qt::AlignLeft|Qt::AlignTop</set>
+       </property>
+      </widget>
+      <widget class="QLabel" name="genre">
+       <property name="geometry">
+        <rect>
+         <x>30</x>
+         <y>410</y>
+         <width>941</width>
+         <height>21</height>
+        </rect>
+       </property>
+       <property name="font">
+        <font>
+         <family>Montserrat</family>
+         <pointsize>-1</pointsize>
+         <weight>50</weight>
+         <italic>false</italic>
+         <bold>false</bold>
+        </font>
+       </property>
+       <property name="styleSheet">
+        <string notr="true">QLabel {
 font: 13px &quot;Montserrat&quot;;
 }</string>
-         </property>
-         <property name="text">
-          <string>Genre</string>
-         </property>
-         <property name="alignment">
-          <set>Qt::AlignLeading|Qt::AlignLeft|Qt::AlignTop</set>
-         </property>
-        </widget>
-        <widget class="QLabel" name="description">
-         <property name="geometry">
-          <rect>
-           <x>40</x>
-           <y>590</y>
-           <width>941</width>
-           <height>21</height>
-          </rect>
-         </property>
-         <property name="font">
-          <font>
-           <family>Montserrat</family>
-           <pointsize>-1</pointsize>
-           <weight>50</weight>
-           <italic>false</italic>
-           <bold>false</bold>
-          </font>
-         </property>
-         <property name="styleSheet">
-          <string notr="true">QLabel {
+       </property>
+       <property name="text">
+        <string>Genre</string>
+       </property>
+       <property name="alignment">
+        <set>Qt::AlignLeading|Qt::AlignLeft|Qt::AlignTop</set>
+       </property>
+      </widget>
+      <widget class="QLabel" name="description">
+       <property name="geometry">
+        <rect>
+         <x>30</x>
+         <y>480</y>
+         <width>941</width>
+         <height>71</height>
+        </rect>
+       </property>
+       <property name="font">
+        <font>
+         <family>Montserrat</family>
+         <pointsize>-1</pointsize>
+         <weight>50</weight>
+         <italic>false</italic>
+         <bold>false</bold>
+        </font>
+       </property>
+       <property name="styleSheet">
+        <string notr="true">QLabel {
 font: 13px &quot;Montserrat&quot;;
 }</string>
-         </property>
-         <property name="text">
-          <string>Description</string>
-         </property>
-         <property name="alignment">
-          <set>Qt::AlignLeading|Qt::AlignLeft|Qt::AlignTop</set>
-         </property>
-        </widget>
-       </widget>
-      </item>
-     </layout>
+       </property>
+       <property name="text">
+        <string>Description</string>
+       </property>
+       <property name="alignment">
+        <set>Qt::AlignLeading|Qt::AlignLeft|Qt::AlignTop</set>
+       </property>
+      </widget>
+     </widget>
     </widget>
+   </widget>
+   <widget class="Line" name="line">
+    <property name="geometry">
+     <rect>
+      <x>210</x>
+      <y>120</y>
+      <width>21</width>
+      <height>481</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">Line{
+	color:rgb(221, 46, 68);
+}</string>
+    </property>
+    <property name="orientation">
+     <enum>Qt::Vertical</enum>
+    </property>
+   </widget>
+   <widget class="QWidget" name="layoutWidget">
+    <property name="geometry">
+     <rect>
+      <x>20</x>
+      <y>130</y>
+      <width>191</width>
+      <height>471</height>
+     </rect>
+    </property>
+    <layout class="QVBoxLayout" name="verticalLayout_5">
+     <item>
+      <widget class="QLabel" name="backIcon">
+       <property name="styleSheet">
+        <string notr="true">QLabel{
+	color: rgb(231, 138, 107);
+}</string>
+       </property>
+       <property name="text">
+        <string>go back</string>
+       </property>
+       <property name="alignment">
+        <set>Qt::AlignCenter</set>
+       </property>
+      </widget>
+     </item>
+     <item>
+      <widget class="QPushButton" name="backBtn">
+       <property name="styleSheet">
+        <string notr="true">QPushButton{
+	border-radius:15px;
+	font: 14px &quot;Montserrat&quot;;
+}
+
+QPushButton:hover {
+	text-decoration: underline;
+}</string>
+       </property>
+       <property name="text">
+        <string>Go Back</string>
+       </property>
+      </widget>
+     </item>
+     <item>
+      <spacer name="verticalSpacer_3">
+       <property name="orientation">
+        <enum>Qt::Vertical</enum>
+       </property>
+       <property name="sizeHint" stdset="0">
+        <size>
+         <width>20</width>
+         <height>40</height>
+        </size>
+       </property>
+      </spacer>
+     </item>
+    </layout>
+   </widget>
+   <widget class="QLabel" name="logoImage">
+    <property name="geometry">
+     <rect>
+      <x>10</x>
+      <y>30</y>
+      <width>221</width>
+      <height>71</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string/>
+    </property>
+    <property name="pixmap">
+     <pixmap resource="resources.qrc">:/resources/images/bblLogo.png</pixmap>
+    </property>
    </widget>
   </widget>
  </widget>

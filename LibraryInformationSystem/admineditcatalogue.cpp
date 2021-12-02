@@ -9,7 +9,7 @@ adminEditCatalogue::adminEditCatalogue(QWidget *parent) :
     ui(new Ui::adminEditCatalogue)
 {
     ui->setupUi(this);
-    setWindowTitle("BiblioThicc Libraries - Add Book Page");
+    setWindowTitle("BiblioThicc Libraries - Add Book");
 
     //for logo in UI
     QPixmap logo(":/resources/images/miniLogo.png");
@@ -33,18 +33,13 @@ void adminEditCatalogue::on_pushButton_clicked()
 void adminEditCatalogue::on_selectedImage_3_activated(const QString &arg1)
 {
     if(arg1 == "Image 1"){
-        //qDebug() << "Image 1 has been selected";
-        filePath = ":/resources/images/testImage.jpg";
-        qDebug() << filePath;
+        filePath = ":/resources/images/placeholderImg1.jpg";
     }
     else if(arg1 == "Image 2"){
-        //qDebug() << "Image 2 has been selected";
-        filePath = ":/resources/images/testImage2.jpg";
-        qDebug() << filePath;
+        filePath = ":/resources/images/placeholderImg2.jpg";
     }
     else if (arg1 == "Image 3"){
         filePath = ":/resources/images/testImage3.jfif";
-        qDebug() << filePath;
     }
 }
 
@@ -59,7 +54,7 @@ void adminEditCatalogue::on_confirmBookDetails_clicked()
     book.setBookImageFilePath(filePath);
     book.setAuthorName(ui->bookAuthor->text());
     book.setPubName(ui->bookPublisher->text());
-    book.setBookDescription(ui->bookDescription->text());
+    book.setBookDescription(ui->textEdit->toPlainText());
     book.setBookid(systemlibrary.generateID(4));
 
     systemlibrary.addBook(book);
@@ -72,7 +67,7 @@ void adminEditCatalogue::on_confirmBookDetails_clicked()
     ui->bookCopies->setText("");
     ui->bookAuthor->setText("");
     ui->bookPublisher->setText("");
-    ui->bookDescription->setText("");
+    ui->textEdit->setText("");
     emit openadminEditCatalogue();
     hide();
 }

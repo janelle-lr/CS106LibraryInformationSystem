@@ -10,7 +10,10 @@
 #include "systemlibrary.h"
 #include "memberaccountview.h"
 #include "bookdetails.h"
-
+#include "overduenotification.h"
+#include "returnbooksnotification.h"
+#include "notificationlog.h"
+#include "loanedbooknotification.h"
 namespace Ui {
 class memberCatalogue;
 }
@@ -26,13 +29,16 @@ public:
     QVector<QPushButton *>btn2;
     void setAccID (QString);
 
+signals:
+    void showMainWindow();
+
 private slots:
     void issueButtonClicked();
     void viewButtonClicked();
-
-    void on_comboBox_activated(const QString &arg1);
-
     void on_accountBtn_clicked();
+    void on_signoutBtn_clicked();
+    void signOutAcc();
+    void on_comboBox_activated(int index);
 
 private:
     Ui::memberCatalogue *ui;
@@ -43,13 +49,12 @@ private:
     QPushButton* button;
     QPushButton* button2;
     SystemLibrary* systemlibrary;
-//    void loanBook(BookItem bookItem);
-//    bool isLoaned(QString,QString);
-//    void setBookItemID(QString);
-//    void setBookItem_MemberID(QString);
-//    void setBookItem_BookID(QString);
     QString userId;
     BookDetails *bookdetails;
+    OverdueNotification *overDueNotification;
+    ReturnBooksNotification *returnBookNotification;
+    LoanedBookNotification * loanedBookNotificatio;
+    QVector<QGroupBox*> gBoxAZ;
 };
 
 #endif // MEMBERCATALOGUE_H

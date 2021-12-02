@@ -25,9 +25,21 @@ public:
     QVector<QPushButton *>btn2;
     void setAccID (QString);
 
+signals:
+    void showAccountView();
+    void showLoanWindow();
+    void signOut();
+    void showCatalogue();
+
 private slots:
     void viewButtonClicked();
     void cancelReserveButtonClicked();
+
+    void on_editAccountBtn_clicked();
+
+    void on_loanedBooksBtn_clicked();
+
+    void on_signoutBtn_clicked();
 
 private:
     Ui::memberViewReserves *ui;

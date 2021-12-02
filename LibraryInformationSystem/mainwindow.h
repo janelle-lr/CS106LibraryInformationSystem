@@ -11,8 +11,6 @@
 #include "adminmembercatalogue.h"
 #include "adminmemberedit.h"
 
-#include "memberaccountview.h"
-
 QT_BEGIN_NAMESPACE
 namespace Ui { class MainWindow; }
 QT_END_NAMESPACE
@@ -35,7 +33,6 @@ private slots:
 
 private:
     Ui::MainWindow *ui;
-
     SystemLibrary *sysLib;
     memberCatalogue *membercatalogue;
     adminEditCatalogue *admineditcatalogue;
@@ -44,7 +41,5 @@ private:
     adminMemberCatalogue *adminmembercatalogue;
     adminEditBook *admineditbook;
     adminMemberEdit *adminmemberedit;
-
-    memberAccountView *memberaccountview;
 };
 #endif // MAINWINDOW_H

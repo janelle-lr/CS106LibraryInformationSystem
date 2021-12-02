@@ -17,8 +17,12 @@ public:
     ~BookDetails();
     void setNum (int, QString);
 
+signals:
+    void showCatalogue();
 private slots:
     void on_issueButton_clicked();
+
+    void on_backBtn_clicked();
 
 private:
     Ui::BookDetails *ui;

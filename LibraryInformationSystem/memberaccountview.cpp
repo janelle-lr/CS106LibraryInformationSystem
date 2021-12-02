@@ -6,6 +6,9 @@ memberAccountView::memberAccountView(QWidget *parent) :
     ui(new Ui::memberAccountView)
 {
     ui->setupUi(this);
+
+    setWindowTitle("BiblioThicc Libraries - View Account");
+
     //for logo in UI
     QPixmap logo(":/resources/images/miniLogo.png");
     ui->logoImage->setPixmap(logo.scaled(450, 74, Qt::KeepAspectRatio));
@@ -22,6 +25,24 @@ memberAccountView::memberAccountView(QWidget *parent) :
 
     QPixmap img4(":/resources/images/account.png");
     ui->editAccountIcon->setPixmap(img4.scaled(40, 40, Qt::KeepAspectRatio));
+
+    QPixmap img5(":/resources/images/backIcon.png");
+    ui->bcktoCatologueIcon->setPixmap(img5.scaled(40, 40, Qt::KeepAspectRatio));
+
+    memberviewloans = new memberViewLoans(this);
+    memberviewloans->setAccID(userId);
+    connect(memberviewloans, SIGNAL(showAccountView()), this, SLOT(show())); //connect(pointerName, SIGNAL(openWindowYouWantToOpen()), this, SLOT(openWindowUrOpeningFrom()));
+    connect(memberviewloans, SIGNAL(showReservesWindow()), this, SLOT(showReservedWindow())); //connect(pointerName, SIGNAL(openWindowYouWantToOpen()), this, SLOT(openWindowUrOpeningFrom()));
+    connect(memberviewloans, SIGNAL(signOut()), this, SLOT(signOutAcc()));
+    connect(memberviewloans, SIGNAL(showCatalogue()), this, SLOT(showCatalogueWindow()));
+
+
+    memberviewreserves = new memberViewReserves(this);
+    memberviewreserves->setAccID(userId);
+    connect(memberviewreserves, SIGNAL(showAccountView()), this, SLOT(show())); //connect(pointerName, SIGNAL(openWindowYouWantToOpen()), this, SLOT(openWindowUrOpeningFrom()));
+    connect(memberviewreserves, SIGNAL(showLoanWindow()), this, SLOT(showLoanedWindow())); //connect(pointerName, SIGNAL(openWindowYouWantToOpen()), this, SLOT(openWindowUrOpeningFrom()));
+    connect(memberviewreserves, SIGNAL(signOut()), this, SLOT(signOutAcc()));
+    connect(memberviewreserves, SIGNAL(showCatalogue()), this, SLOT(showCatalogueWindow()));
 }
 
 memberAccountView::~memberAccountView()
@@ -31,8 +52,6 @@ memberAccountView::~memberAccountView()
 
 void memberAccountView::setAccID(QString username) {
     this->userId = username;
-
-    qDebug() << "userId ==" << userId;
 
     SystemLibrary sysLib;
     QVector<Member> member;
@@ -56,18 +75,12 @@ void memberAccountView::setAccID(QString username) {
 
 void memberAccountView::on_loanedBooksBtn_clicked()
 {
-    memberviewloans = new memberViewLoans(this);
-    memberviewloans->setAccID(userId);
-    connect(memberviewloans, SIGNAL(openmemberViewLoans()), this, SLOT(show())); //connect(pointerName, SIGNAL(openWindowYouWantToOpen()), this, SLOT(openWindowUrOpeningFrom()));
     memberviewloans->show();
     hide();
 }
 
 void memberAccountView::on_reservedBooksBtn_clicked()
 {
-    memberviewreserves = new memberViewReserves(this);
-    memberviewreserves->setAccID(userId);
-    connect(memberviewreserves, SIGNAL(openmemberViewReserves()), this, SLOT(show())); //connect(pointerName, SIGNAL(openWindowYouWantToOpen()), this, SLOT(openWindowUrOpeningFrom()));
     memberviewreserves->show();
     hide();
 }
@@ -119,3 +132,34 @@ void memberAccountView::on_pushButton_clicked()
     sysLib.updateAllMemberDetails(member);//passing edited member details to csv file
     QMessageBox::information(this,"Edit Account Details", "Account changes successfully saved.");
 }
+
+void memberAccountView::on_bcktoCatologueBtn_clicked()
+{
+    emit showCatalogue();
+    hide();
+}
+
+void memberAccountView::signOutAcc(){
+    emit signOut();
+    close();
+}
+
+void memberAccountView::showCatalogueWindow(){
+    emit showCatalogue();
+    hide();
+}
+
+void memberAccountView::showReservedWindow(){
+    memberviewreserves->show();
+}
+
+void memberAccountView::showLoanedWindow(){
+    memberviewloans->show();
+}
+
+void memberAccountView::on_signoutBtn_clicked()
+{
+    emit signOut();
+    close();
+}
+

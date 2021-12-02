@@ -8,6 +8,8 @@ adminAddMember::adminAddMember(QWidget *parent) :
 {
     ui->setupUi(this);
 
+    setWindowTitle("BiblioThicc Libraries - Add New Member");
+
     //for logo in UI
     QPixmap logo(":/resources/images/miniLogo.png");
     ui->logoImage->setPixmap(logo.scaled(300, 75, Qt::KeepAspectRatio));
@@ -33,12 +35,6 @@ adminAddMember::adminAddMember(QWidget *parent) :
 adminAddMember::~adminAddMember()
 {
     delete ui;
-}
-
-
-void adminAddMember::on_catalogueBtn_clicked()
-{
-
 }
 
 void adminAddMember::addMember(QString accId) {

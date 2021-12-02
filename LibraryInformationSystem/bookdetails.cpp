@@ -6,6 +6,16 @@ BookDetails::BookDetails(QWidget *parent) :
     ui(new Ui::BookDetails)
 {
     ui->setupUi(this);
+
+    //for logo in UI
+    QPixmap logo(":/resources/images/miniLogo.png");
+    ui->logoImage->setPixmap(logo.scaled(300, 75, Qt::KeepAspectRatio));
+
+    QPixmap back(":/resources/images/backIcon.png");
+    ui->backIcon->setPixmap(back.scaled(40, 40, Qt::KeepAspectRatio));
+
+    ui->description->setWordWrap(true);
+    ui->titleLabel->setWordWrap(true);
 }
 
 BookDetails::~BookDetails()
@@ -61,5 +71,12 @@ void BookDetails::setNum(int num, QString userId) {
 void BookDetails::on_issueButton_clicked()
 {
 
+}
+
+
+void BookDetails::on_backBtn_clicked()
+{
+    emit showCatalogue();
+    hide();
 }
 

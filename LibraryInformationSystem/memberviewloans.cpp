@@ -6,6 +6,24 @@ memberViewLoans::memberViewLoans(QWidget *parent) :
     ui(new Ui::memberViewLoans)
 {
     ui->setupUi(this);
+    setWindowTitle("BiblioThicc Libraries - View Loans");
+
+    //for logo in UI
+    QPixmap logo(":/resources/images/miniLogo.png");
+    ui->logoImage->setPixmap(logo.scaled(450, 74, Qt::KeepAspectRatio));
+
+    //for nav bar icons
+    QPixmap img(":/resources/images/uis_signout.png");
+    ui->signoutIcon->setPixmap(img.scaled(40, 40, Qt::KeepAspectRatio));
+
+    QPixmap img2(":/resources/images/currentLoanBook.png");
+    ui->loanedBooksIcon->setPixmap(img2.scaled(40, 40, Qt::KeepAspectRatio));
+
+    QPixmap img3(":/resources/images/reserveBook.png");
+    ui->reservedBooksIcon->setPixmap(img3.scaled(40, 40, Qt::KeepAspectRatio));
+
+    QPixmap img4(":/resources/images/account.png");
+    ui->editAccountIcon->setPixmap(img4.scaled(40, 40, Qt::KeepAspectRatio));
 }
 
 memberViewLoans::~memberViewLoans()
@@ -34,7 +52,7 @@ void memberViewLoans::createWidgets(int row, int col, QString title, QString aut
     QLabel* label4 = new QLabel("Expiring on: " + dueDate);
 
     //Styling buttons and labels
-    //label->setStyleSheet("QLabel{background: white;}");
+    label2->setWordWrap(true);
     label2->setStyleSheet("QLabel{font-size: 18px; font-weight: 500; margin-left: 5px;}");
     label3->setStyleSheet("QLabel{font-size: 15px; margin-bottom: 40px; margin-left: 5px;}");
     label4->setStyleSheet("QLabel{font-size: 15px; /*margin-bottom: 65px;*/ margin-left: 5px;}");
@@ -178,7 +196,7 @@ void memberViewLoans::viewButtonClicked(){
             break;
         }
     }
-    QMessageBox::information(this,"Button",QString::number(num) + " From button 2");
+   // QMessageBox::information(this,"Button",QString::number(num) + " From button 2");
 
     bookdetails = new BookDetails(this);
     connect(bookdetails, SIGNAL(showBookDetails()), this, SLOT(show()));
@@ -209,3 +227,24 @@ void memberViewLoans::deleteRecords(){
     btn2.clear();
     addRecords();//reprints updated catalogue
 }
+
+void memberViewLoans::on_editAccountBtn_clicked()
+{
+    emit showAccountView();
+    close();
+}
+
+
+void memberViewLoans::on_reservedBooksBtn_clicked()
+{
+    emit showReservesWindow();
+    hide();
+}
+
+
+void memberViewLoans::on_signoutBtn_clicked()
+{
+    emit signOut();
+    close();
+}
+

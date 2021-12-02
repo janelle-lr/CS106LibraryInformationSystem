@@ -21,5 +21,7 @@
         <file>images/signOut.png</file>
         <file>images/uis_signout.png</file>
         <file>images/backIcon.png</file>
+        <file>images/placeholderImg1.jpg</file>
+        <file>images/placeholderImg2.jpg</file>
     </qresource>
 </RCC>

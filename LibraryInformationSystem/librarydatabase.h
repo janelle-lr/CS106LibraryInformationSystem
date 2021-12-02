@@ -22,6 +22,7 @@
 #include "book.h"
 #include "bookitem.h"
 #include "preorderbook.h"
+#include "notificationlog.h"
 class LibraryDatabase
 {
 private:
@@ -54,8 +55,12 @@ public:
     void checkLoanedBooks();
     bool isLoaned(QString,QString);
     bool isPreBook(QString, QString);
-    QStringList getNearbyDueDateBooks();
+    QStringList getNearbyDueDateBooks(QString);
     QString getAvailPreBookDate(QString,QString);
+    void log_Returned_Loaned_Books(NotificationLog);
+    //void logLoanedBooks(NotificationLog);
+    QVector<NotificationLog> getNotificationLog();
+    void updateLogs(QVector<NotificationLog>);
 };
 
 #endif // LIBRARYDATABASE_H

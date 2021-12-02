@@ -19,7 +19,6 @@ public:
 signals:
     void openadminAddMember();
 private slots:
-    void on_catalogueBtn_clicked();
     void on_addMember_clicked();
 
 private:

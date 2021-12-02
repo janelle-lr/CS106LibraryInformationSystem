@@ -10,6 +10,8 @@ adminCatalogue::adminCatalogue(QWidget *parent) :
 {   
     ui->setupUi(this);
 
+    setWindowTitle("BiblioThicc Libraries - Catalogue");
+
     //for logo in UI
     QPixmap logo(":/resources/images/miniLogo.png");
     ui->logoImage->setPixmap(logo.scaled(300, 75, Qt::KeepAspectRatio));
@@ -70,12 +72,10 @@ void adminCatalogue::createWidgets(int row, int col, QString title, QString auth
     QLabel* label3 = new QLabel(author);
 
     //Styling buttons and labels
-    //label->setStyleSheet("QLabel{background: white;}");
+    label2->setWordWrap(true);
     label2->setStyleSheet("QLabel{font-size: 18px; font-weight: 500; margin-left: 5px;}");
     label3->setStyleSheet("QLabel{font-size: 15px; margin-bottom: 55px; margin-left: 5px;}");
     button->setStyleSheet("QPushButton{max-width: 105px; background-color: #E78A6B; color:  #fff; font-weight: 500;}");
-    //button->setMaximumWidth(160);
-    //button2->setMaximumWidth(140);
     button2->setStyleSheet("QPushButton{max-width: 100px; border: 1px solid; border-color: #E78A6B; color:  #E78A6B; font-weight: 500;}");
 
     QPixmap image(bookCover);
@@ -83,10 +83,6 @@ void adminCatalogue::createWidgets(int row, int col, QString title, QString auth
 
     //adding widgets to horizontal layout
     group->addWidget(label,0);//widget, row, col
-    //group->addWidget(label2,0);
-    //group->addWidget(label3,1);
-    //group->addWidget(button,2);
-    //group->addWidget(button2,2);
 
     QFrame* buttonGroup = new QFrame();
     QFrame* labelGroup = new QFrame();
@@ -95,8 +91,6 @@ void adminCatalogue::createWidgets(int row, int col, QString title, QString auth
 
     labelGroup->setMaximumHeight(235);
     labelGroup->setMinimumHeight(235);
-    //buttonGroup->setMaximumHeight(50);
-    //buttonGroup->setMinimumHeight(50);
     labelGroup->setStyleSheet("QFrame{margin-right: 10px; border:none;}");
     buttonGroup->setStyleSheet("QFrame{border:none;}");
 
@@ -110,7 +104,6 @@ void adminCatalogue::createWidgets(int row, int col, QString title, QString auth
     buttonGroup->setLayout(buttonRow);
 
     group->addWidget(labelGroup, 1);
-    //group->addWidget(buttonGroup,2);
 
     //creating group box widget
     QGroupBox* groupBox = new QGroupBox();
@@ -170,7 +163,7 @@ void adminCatalogue::editButtonClicked(){
             break;
         }
     }
-    QMessageBox::information(this,"Button",QString::number(num));
+    //QMessageBox::information(this,"Button",QString::number(num));
     admineditbook = new adminEditBook(this);
     connect(admineditbook, SIGNAL(showadminEditBook()), this, SLOT(deleteAllRecords()));
     admineditbook->show();
@@ -192,8 +185,7 @@ void adminCatalogue::deleteAllRecords(){
             break;
         }
     }
-    QMessageBox::information(this,"Button",QString::number(num) + " From button 2");
-    //QMessageBox::question(this,"Delete Book", "Are you sure you want to permanently delete " + book[num].getBookName() + " from library records?");
+    //QMessageBox::information(this,"Button",QString::number(num) + " From button 2");
 
     while ( QLayoutItem* item = ui->gridLayout_3->layout()->takeAt( 0 ) )
     {
@@ -207,7 +199,6 @@ void adminCatalogue::deleteAllRecords(){
 }
 
 void adminCatalogue::deleteRecords() {
-    qDebug() << "Delete recs";
     SystemLibrary sysLib;
 
     QVector<Book> book;
@@ -221,8 +212,7 @@ void adminCatalogue::deleteRecords() {
             break;
         }
     }
-    QMessageBox::information(this,"Button",QString::number(num) + " From button 2");
-    //QMessageBox::question(this,"Delete Book", "Are you sure you want to permanently delete " + book[num].getBookName() + " from library records?");
+    //QMessageBox::information(this,"Button",QString::number(num) + " From button 2");
 
     while ( QLayoutItem* item = ui->gridLayout_3->layout()->takeAt( 0 ) )
     {

@@ -7,6 +7,8 @@ adminMemberCatalogue::adminMemberCatalogue(QWidget *parent) :
 {
     ui->setupUi(this);
 
+    setWindowTitle("BiblioThicc Libraries - Existing Members");
+
     //for logo in UI
     QPixmap logo(":/resources/images/miniLogo.png");
     ui->logoImage->setPixmap(logo.scaled(300, 75, Qt::KeepAspectRatio));
@@ -108,7 +110,6 @@ void adminMemberCatalogue::createWidgets(int row, int col, QString name, QString
 
     if(member[i].getAccStatus() == true) {
         ui->gridLayout_3->addWidget(groupBox,row,col);
-        qDebug() << i << " " << member[i].getAccStatus();
     }
     //ui->scrollArea->addWidget(groupBox,row,col);
     btn.push_back(button);
@@ -121,10 +122,10 @@ void adminMemberCatalogue::addRecords(){
     QVector<Member> member;
     member = sysLib.getAllMemberDetails();
     int activeUserIndex = 1;
-    qDebug() << member.size();
+    //qDebug() << member.size();
 
     for(int i = 0; i < member.size(); i++) {
-        qDebug() << member[i].getMemberId() << "\n" << member[i].getName();//prints in application output
+        //qDebug() << member[i].getMemberId() << "\n" << member[i].getName();//prints in application output
 
         if(member[i].getAccStatus() == true) {
             activeUserIndex++;
@@ -158,7 +159,7 @@ void adminMemberCatalogue::editButtonClicked(){
             break;
         }
     }
-    QMessageBox::information(this,"Button",QString::number(num));
+    //QMessageBox::information(this,"Button",QString::number(num));
     adminmemberedit = new adminMemberEdit(this);
     connect(adminmemberedit, SIGNAL(showadminMemberEdit()), this, SLOT(deleteAllRecords()));
     adminmemberedit->show();
@@ -179,8 +180,7 @@ void adminMemberCatalogue::deleteButtonClicked(){
             break;
         }
     }
-    QMessageBox::information(this,"Button",QString::number(num) + " From button 2");
-    //QMessageBox::question(this,"Delete Member", "Are you sure you want to permanently delete " + book[num].getBookName() + " from library records?");
+    //QMessageBox::information(this,"Button",QString::number(num) + " From button 2");
 
     while ( QLayoutItem* item = ui->gridLayout_3->layout()->takeAt( 0 ) )
     {
@@ -215,8 +215,7 @@ void adminMemberCatalogue::deleteAllRecords(){
             break;
         }
     }
-    QMessageBox::information(this,"Button",QString::number(num) + " From button 2");
-    //QMessageBox::question(this,"Delete Book", "Are you sure you want to permanently delete " + book[num].getBookName() + " from library records?");
+    //QMessageBox::information(this,"Button",QString::number(num) + " From button 2");
 
     while ( QLayoutItem* item = ui->gridLayout_3->layout()->takeAt( 0 ) )
     {

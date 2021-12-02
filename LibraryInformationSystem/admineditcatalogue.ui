@@ -116,6 +116,15 @@ QLineEdit {
 	padding: 0px 5px;
 }
 
+QTextEdit {
+	background:rgb(255, 229, 208);
+	border: 1px solid;
+	border-radius: 15px;
+	border-color: #e5e5e5;
+	background-color: palette(base);
+	padding: 0px 5px;
+}
+
 QComboBox{
 	background:rgb(255, 229, 208);
 	border: 1px solid;
@@ -223,36 +232,6 @@ background-color: rgb(196, 116, 90);
      <property name="text">
       <string>Enter book 
  description</string>
-     </property>
-    </widget>
-    <widget class="QLineEdit" name="bookDescription">
-     <property name="geometry">
-      <rect>
-       <x>280</x>
-       <y>282</y>
-       <width>601</width>
-       <height>60</height>
-      </rect>
-     </property>
-     <property name="sizePolicy">
-      <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
-       <horstretch>0</horstretch>
-       <verstretch>0</verstretch>
-      </sizepolicy>
-     </property>
-     <property name="minimumSize">
-      <size>
-       <width>0</width>
-       <height>60</height>
-      </size>
-     </property>
-     <property name="styleSheet">
-      <string notr="true">QLineEdit {
-	padding: 5px;
-}</string>
-     </property>
-     <property name="alignment">
-      <set>Qt::AlignLeading|Qt::AlignLeft|Qt::AlignTop</set>
      </property>
     </widget>
     <widget class="QLabel" name="label_34">
@@ -515,6 +494,21 @@ font-size: 13px;
       <string>Enter Author Name</string>
      </property>
     </widget>
+    <widget class="QTextEdit" name="textEdit">
+     <property name="geometry">
+      <rect>
+       <x>280</x>
+       <y>282</y>
+       <width>601</width>
+       <height>60</height>
+      </rect>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">QTextEdit {
+	padding: 5px;
+}</string>
+     </property>
+    </widget>
    </widget>
    <widget class="QWidget" name="layoutWidget">
     <property name="geometry">
@@ -631,7 +625,6 @@ loremupsunmm or osmething</string>
   <tabstop>selectedImage_3</tabstop>
   <tabstop>bookAuthor</tabstop>
   <tabstop>bookPublisher</tabstop>
-  <tabstop>bookDescription</tabstop>
   <tabstop>confirmBookDetails</tabstop>
   <tabstop>backBtn</tabstop>
  </tabstops>

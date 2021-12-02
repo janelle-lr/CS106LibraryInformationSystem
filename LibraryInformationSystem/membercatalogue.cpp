@@ -7,7 +7,7 @@ memberCatalogue::memberCatalogue(QWidget *parent) :
     ui(new Ui::memberCatalogue)
 {
     ui->setupUi(this);
-    setWindowTitle("Catalogue");
+    setWindowTitle("BiblioThicc Libraries - Catalogue");
 
     //for database
     systemlibrary->buildDatabase();
@@ -21,6 +21,9 @@ memberCatalogue::memberCatalogue(QWidget *parent) :
 
     QPixmap img2(":/resources/images/account.png");
     ui->accountIcon->setPixmap(img2.scaled(40, 40, Qt::KeepAspectRatio));
+
+    QPixmap img3(":/resources/images/uis_signout.png");
+    ui->signoutIcon->setPixmap(img3.scaled(40, 40, Qt::KeepAspectRatio));
 }
 
 memberCatalogue::~memberCatalogue()
@@ -33,6 +36,38 @@ void memberCatalogue::setAccID(QString username) {
 
     qDebug() << "userId ==" << userId;
     addRecords();
+
+    QVector<NotificationLog> log = systemlibrary->getNotificationLog();
+    QStringList dueList = systemlibrary->getNearbyDueDateBooks(userId);
+    int count = 0;
+
+    //check if user needs to be notified for any nearby expired books
+    overDueNotification = new OverdueNotification(this);
+    overDueNotification->setMemberID(userId);
+    if(dueList.size() != 0)
+        overDueNotification->show();
+
+
+    //check if user needs to be notified for any returned book
+    for(int i = 0; i < log.size(); i++){
+        if(log[i].getMemberID() == userId && log[i].getstatus() == false && log[i].getnotificationType() == "@Returned")
+            count++;
+    }
+    returnBookNotification = new ReturnBooksNotification(this);
+    returnBookNotification->setMemberID(userId);
+    if(count != 0)
+        returnBookNotification->show();
+
+    count = 0;
+    //check if user needs to be notified for any Loaned book
+    for(int i = 0; i < log.size(); i++){
+        if(log[i].getMemberID() == userId && log[i].getstatus() == false && log[i].getnotificationType() == "@Loaned")
+            count++;
+    }
+    loanedBookNotificatio = new LoanedBookNotification(this);
+    loanedBookNotificatio->setMemberID(userId);
+    if(count != 0)
+        loanedBookNotificatio->show();
 }
 
 void memberCatalogue::createWidgets(int row, int col, QString title, QString author, QPixmap bookCover, QString bookId, QString bookStock){
@@ -46,11 +81,9 @@ void memberCatalogue::createWidgets(int row, int col, QString title, QString aut
     QVector<Book> book;
     book = sysLib.getAllBooks();
 
-    //for (int k = 0; k < book.size(); k++) {
     if (sysLib.isLoaned(userId, bookId)) {
         button = new QPushButton("Return");
         button->setStyleSheet("QPushButton{max-width: 105px; background-color: #E78A6B; color:  #fff; font-weight: 500;}");
-        //break;
     }
     else if (!sysLib.isPreBook(userId, bookId)) {
         for (int k = 0; k < book.size(); k++){
@@ -72,9 +105,7 @@ void memberCatalogue::createWidgets(int row, int col, QString title, QString aut
     else {
         button = new QPushButton("Loan");
         button->setStyleSheet("QPushButton{max-width: 105px; background-color: #E78A6B; color:  #fff; font-weight: 500;}");
-        //break;
     }
-    //}
     button2 = new QPushButton("View");
 
     //creating labels
@@ -84,13 +115,11 @@ void memberCatalogue::createWidgets(int row, int col, QString title, QString aut
     QLabel* label4 = new QLabel("Copies Available: " + bookStock);
 
     //Styling buttons and labels
-    //label->setStyleSheet("QLabel{background: white;}");
+    label2->setWordWrap(true);
     label2->setStyleSheet("QLabel{font-size: 18px; font-weight: 500; margin-left: 5px;}");
     label3->setStyleSheet("QLabel{font-size: 15px; margin-bottom: 40px; margin-left: 5px;}");
     label4->setStyleSheet("QLabel{font-size: 15px; /*margin-bottom: 65px;*/ margin-left: 5px;}");
 
-    //button->setMaximumWidth(160);
-    //button2->setMaximumWidth(140);
     button2->setStyleSheet("QPushButton{max-width: 100px; border: 1px solid; border-color: #E78A6B; color:  #E78A6B; font-weight: 500;}");
 
     QPixmap image(bookCover);
@@ -98,10 +127,6 @@ void memberCatalogue::createWidgets(int row, int col, QString title, QString aut
 
     //adding widgets to horizontal layout
     group->addWidget(label,0);//widget, row, col
-    //group->addWidget(label2,0);
-    //group->addWidget(label3,1);
-    //group->addWidget(button,2);
-    //group->addWidget(button2,2);
 
     QFrame* buttonGroup = new QFrame();
     QFrame* labelGroup = new QFrame();
@@ -110,8 +135,6 @@ void memberCatalogue::createWidgets(int row, int col, QString title, QString aut
 
     labelGroup->setMaximumHeight(215);
     labelGroup->setMinimumHeight(215);
-    //buttonGroup->setMaximumHeight(50);
-    //buttonGroup->setMinimumHeight(50);
     labelGroup->setStyleSheet("QFrame{margin-right: 10px; border:none;}");
     buttonGroup->setStyleSheet("QFrame{border:none;}");
 
@@ -126,7 +149,6 @@ void memberCatalogue::createWidgets(int row, int col, QString title, QString aut
     buttonGroup->setLayout(buttonRow);
 
     group->addWidget(labelGroup, 1);
-    //group->addWidget(buttonGroup,2);
 
     //creating group box widget
     QGroupBox* groupBox = new QGroupBox();
@@ -139,6 +161,7 @@ void memberCatalogue::createWidgets(int row, int col, QString title, QString aut
     groupBox->setMinimumSize(QSize(450,225));
     groupBox->setStyleSheet("QGroupBox{margin-bottom: 10px; margin-right: 10px;border:none;}");
 
+    gBoxAZ.push_back(groupBox);
     ui->gridLayout_3->addWidget(groupBox,row,col);
     //ui->scrollArea->addWidget(groupBox,row,col);
     btn.push_back(button);
@@ -154,7 +177,6 @@ void memberCatalogue::addRecords(){
     QString stockString = "";
 
     for(int i = 0; i < book.size(); i++) {
-        //qDebug() << book[i].getBookId() << "\n" << book[i].getBookName() << "\n" << book[i].getAuthorName();//prints in application output
         QString title = book[i].getBookName();
         QString author = book[i].getAuthorName();
         QPixmap image = book[i].getBookImageFilePath();
@@ -220,7 +242,7 @@ void memberCatalogue::issueButtonClicked(){
                 QMessageBox::information(this, "Loaned", "You have loaned " + book[num].getBookName() + " for 7 days.");
             }
         }
-
+    ui->comboBox->setCurrentIndex(0);
     deleteRecords();
 }
 
@@ -238,12 +260,13 @@ void memberCatalogue::viewButtonClicked(){
             break;
         }
     }
-    QMessageBox::information(this,"Button",QString::number(num) + " From button 2");
+    //QMessageBox::information(this,"Button",QString::number(num) + " From button 2");
 
     bookdetails = new BookDetails(this);
-    connect(bookdetails, SIGNAL(showBookDetails()), this, SLOT(show()));
+    connect(bookdetails, SIGNAL(showCatalogue()), this, SLOT(show()));
     bookdetails->show();
     bookdetails->setNum(num,userId);
+    hide();
 }
 
 void memberCatalogue::deleteRecords(){
@@ -270,17 +293,114 @@ void memberCatalogue::deleteRecords(){
     addRecords();//reprints updated catalogue
 }
 
-void memberCatalogue::on_comboBox_activated(const QString &arg1)
-{
-
-}
-
-
 void memberCatalogue::on_accountBtn_clicked()
 {
     memberaccountview = new memberAccountView(this);
     memberaccountview->setAccID(userId);
-    connect(memberaccountview, SIGNAL(openmemberAccountView()), this, SLOT(show())); //connect(pointerName, SIGNAL(openWindowYouWantToOpen()), this, SLOT(openWindowUrOpeningFrom()));
+    connect(memberaccountview, SIGNAL(showCatalogue()), this, SLOT(show())); //connect(pointerName, SIGNAL(openWindowYouWantToOpen()), this, SLOT(openWindowUrOpeningFrom()));
+    connect(memberaccountview, SIGNAL(signOut()), this, SLOT(signOutAcc()));
     memberaccountview->show();
+    hide();
+}
+
+void memberCatalogue::signOutAcc(){
+    emit showMainWindow();
+    systemlibrary->checkLoanedBooks();
+    systemlibrary->checkPreorders();
+    close();
+}
+
+void memberCatalogue::on_signoutBtn_clicked()
+{
+    emit showMainWindow();
+    systemlibrary->checkLoanedBooks();
+    systemlibrary->checkPreorders();
+    close();
+}
+
+
+void memberCatalogue::on_comboBox_activated(int index)
+{
+    QVector<Book> book = systemlibrary->getAllBooks();
+    QStringList bookList;
+    QStringList authorList;
+
+    int row = 0, col = 0;
+
+    for(int i = 0; i < book.size(); i++){
+        bookList.append(book[i].getBookName());
+    }
+
+    for(int x = 0; x < book.size(); x++){
+        authorList.append(book[x].getAuthorName());
+    }
+
+    //Title A-Z
+    if(index == 1){
+        bookList.sort();
+        for(int i = 0; i < bookList.size(); i++){
+            for(int x = 0; x < book.size(); x++){
+                if(bookList[i] == book[x].getBookName()){
+                   ui->gridLayout_3->addWidget(gBoxAZ[x],row,col);
+                   col++;
+                }
+                if(col == 2){
+                    col = 0;
+                    row++;
+                }
+            }
+        }
+    }
+
+    //Title Z-A
+    else if(index == 2){
+        bookList.sort();
+        for(int i = bookList.size(); i > 0; i--){
+            for(int x = 0; x < book.size(); x++){
+                if(bookList[i-1] == book[x].getBookName()){
+                   ui->gridLayout_3->addWidget(gBoxAZ[x],row,col);
+                   col++;
+                }
+                if(col == 2){
+                    col = 0;
+                    row++;
+                }
+            }
+        }
+    }
+
+    //Author A-Z
+    if(index == 3){
+        authorList.sort();
+        for(int i = 0; i < bookList.size(); i++){
+            for(int x = 0; x < book.size(); x++){
+                if(authorList[i] == book[x].getAuthorName()){
+                   ui->gridLayout_3->addWidget(gBoxAZ[x],row,col);
+                   col++;
+                }
+                if(col == 2){
+                    col = 0;
+                    row++;
+                }
+            }
+        }
+    }
+
+    //Author Z-A
+    else if(index == 4){
+        authorList.sort();
+        for(int i = bookList.size(); i > 0; i--){
+            for(int x = 0; x < book.size(); x++){
+                if(authorList[i-1] == book[x].getAuthorName()){
+                   ui->gridLayout_3->addWidget(gBoxAZ[x],row,col);
+                   col++;
+                }
+                if(col == 2){
+                    col = 0;
+                    row++;
+                }
+            }
+        }
+    }
 }
 

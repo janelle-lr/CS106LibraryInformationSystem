@@ -94,22 +94,27 @@ QPushButton {
     </item>
     <item>
      <property name="text">
-      <string>Title</string>
+      <string>Title ( A - Z )</string>
      </property>
     </item>
     <item>
      <property name="text">
-      <string>Author</string>
+      <string>Title ( Z - A )</string>
      </property>
     </item>
     <item>
      <property name="text">
-      <string>Genre</string>
+      <string>Author ( A - Z )</string>
      </property>
     </item>
     <item>
      <property name="text">
-      <string>Release date</string>
+      <string>Author ( Z - A )</string>
+     </property>
+    </item>
+    <item>
+     <property name="text">
+      <string/>
      </property>
     </item>
    </widget>

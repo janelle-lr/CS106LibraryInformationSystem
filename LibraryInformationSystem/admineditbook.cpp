@@ -9,6 +9,8 @@ adminEditBook::adminEditBook(QWidget *parent) :
 {
     ui->setupUi(this);
 
+    setWindowTitle("BiblioThicc Libraries - Edit Book");
+
     //for logo in UI
     QPixmap logo(":/resources/images/miniLogo.png");
     ui->logoImage->setPixmap(logo.scaled(300, 75, Qt::KeepAspectRatio));
@@ -36,7 +38,7 @@ void adminEditBook::setNum(int num) {
     ui->authorLineEdit_8->setText(book[num].getAuthorName());
     ui->genreLineEdit_8->setText(book[num].getGenre());
     ui->publisherLineEdit_8->setText(book[num].getPubName());
-    ui->descriptionLineEdit_7->setText(book[num].getBookDescription());
+    ui->textEdit->setText(book[num].getBookDescription());
 }
 
 //when save is clicked the edits will be saved
@@ -53,13 +55,12 @@ void adminEditBook::on_savePushButton_clicked()
         book[i].setGenre(ui->genreLineEdit_8->text());
         book[i].setAuthorName(ui->authorLineEdit_8->text());
         book[i].setPubName(ui->publisherLineEdit_8->text());
-        book[i].setBookDescription(ui->descriptionLineEdit_7->text());
+        book[i].setBookDescription(ui->textEdit->toPlainText());
         break;
         }
     }
     sysLib.updateAllBookDetails(book);//passing edited book details to csv file
     QMessageBox::information(this,"Edit Book Details", "Book edits have been successfully saved.");
-    qDebug() << "hit";
     emit showadminEditBook();
     hide();
 }

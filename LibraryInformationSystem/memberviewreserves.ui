@@ -14,6 +14,27 @@
    <string>MainWindow</string>
   </property>
   <widget class="QWidget" name="centralwidget">
+   <property name="styleSheet">
+    <string notr="true">QWidget{
+	background: #FFE5D0;
+	font-family: Montserrat;
+}
+
+QLineEdit {
+	border: 1px solid;
+	border-radius: 15px;
+	border-color: #e5e5e5;
+	background-color: palette(base);
+	padding: 0px 5px;
+	font-size: 13px;
+}
+
+QPushButton {
+	border-radius: 15px; 
+	font-size: 13px;
+	height: 31px; 
+}</string>
+   </property>
    <widget class="QLabel" name="pageTitle">
     <property name="geometry">
      <rect>
@@ -44,7 +65,7 @@
     </property>
     <layout class="QVBoxLayout" name="verticalLayout_11">
      <item>
-      <widget class="QLabel" name="loanedBooksIcon_2">
+      <widget class="QLabel" name="loanedBooksIcon">
        <property name="styleSheet">
         <string notr="true">QLabel{
 	color: rgb(231, 138, 107);
@@ -59,7 +80,7 @@
       </widget>
      </item>
      <item>
-      <widget class="QPushButton" name="loanedBooksBtn_2">
+      <widget class="QPushButton" name="loanedBooksBtn">
        <property name="styleSheet">
         <string notr="true">QPushButton{
 	border-radius:15px;
@@ -76,7 +97,7 @@ QPushButton:hover {
       </widget>
      </item>
      <item>
-      <widget class="QLabel" name="reservedBooksIcon_2">
+      <widget class="QLabel" name="reservedBooksIcon">
        <property name="text">
         <string>member</string>
        </property>
@@ -86,7 +107,7 @@ QPushButton:hover {
       </widget>
      </item>
      <item>
-      <widget class="QPushButton" name="reservedBooksBtn_2">
+      <widget class="QPushButton" name="reservedBooksBtn">
        <property name="styleSheet">
         <string notr="true">QPushButton{
 	border-radius:15px;
@@ -103,7 +124,7 @@ QPushButton:hover {
       </widget>
      </item>
      <item>
-      <widget class="QLabel" name="editAccountIcon_2">
+      <widget class="QLabel" name="editAccountIcon">
        <property name="text">
         <string>Reserved Books</string>
        </property>
@@ -113,7 +134,7 @@ QPushButton:hover {
       </widget>
      </item>
      <item>
-      <widget class="QPushButton" name="editAccountBtn_2">
+      <widget class="QPushButton" name="editAccountBtn">
        <property name="styleSheet">
         <string notr="true">QPushButton{
 	border-radius:15px;
@@ -143,7 +164,7 @@ QPushButton:hover {
       </spacer>
      </item>
      <item>
-      <widget class="QLabel" name="signoutIcon_2">
+      <widget class="QLabel" name="signoutIcon">
        <property name="text">
         <string>signOut</string>
        </property>
@@ -153,7 +174,7 @@ QPushButton:hover {
       </widget>
      </item>
      <item>
-      <widget class="QPushButton" name="signoutBtn_2">
+      <widget class="QPushButton" name="signoutBtn">
        <property name="styleSheet">
         <string notr="true">QPushButton{
 	border-radius:15px;
@@ -181,7 +202,7 @@ QPushButton:hover {
      </rect>
     </property>
     <property name="text">
-     <string>LOREM IPSUM LMAO</string>
+     <string>Here are the books reserved under your account!</string>
     </property>
    </widget>
    <widget class="QLabel" name="logoImage">
@@ -250,6 +271,24 @@ QPushButton {
       </item>
      </layout>
     </widget>
+   </widget>
+   <widget class="Line" name="line">
+    <property name="geometry">
+     <rect>
+      <x>210</x>
+      <y>110</y>
+      <width>21</width>
+      <height>481</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">Line{
+	color:rgb(221, 46, 68);
+}</string>
+    </property>
+    <property name="orientation">
+     <enum>Qt::Vertical</enum>
+    </property>
    </widget>
   </widget>
  </widget>
