@@ -1,0 +1,362 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>memberCatalogue</class>
+ <widget class="QMainWindow" name="memberCatalogue">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>1280</width>
+    <height>640</height>
+   </rect>
+  </property>
+  <property name="minimumSize">
+   <size>
+    <width>1280</width>
+    <height>640</height>
+   </size>
+  </property>
+  <property name="maximumSize">
+   <size>
+    <width>1280</width>
+    <height>640</height>
+   </size>
+  </property>
+  <property name="windowTitle">
+   <string>MainWindow</string>
+  </property>
+  <property name="styleSheet">
+   <string notr="true">QMenuBar {
+    background-color: qlineargradient(x1:0, y1:0, x2:0, y2:1,
+                                      stop:0 lightgray, stop:1 darkgray);
+    spacing: 3px; /* spacing between menu bar items */
+}
+
+QMenuBar::item {
+    padding: 1px 4px;
+    background: transparent;
+    border-radius: 4px;
+}
+
+QMenuBar::item:selected { /* when selected using mouse or keyboard */
+    background: #a8a8a8;
+}
+
+QMenuBar::item:pressed {
+    background: #888888;
+}</string>
+  </property>
+  <widget class="QWidget" name="centralwidget">
+   <property name="styleSheet">
+    <string notr="true">QWidget{
+	background: #FFE5D0;
+	font-family: Montserrat;
+}
+
+QLineEdit {
+	border: 1px solid;
+	border-radius: 15px;
+	border-color: #e5e5e5;
+	background-color: palette(base);
+	padding: 0px 5px;
+	font-size: 13px;
+}
+
+QPushButton {
+	border-radius: 15px; 
+	font-size: 13px;
+	height: 31px; 
+}</string>
+   </property>
+   <widget class="QComboBox" name="comboBox">
+    <property name="geometry">
+     <rect>
+      <x>1100</x>
+      <y>70</y>
+      <width>131</width>
+      <height>31</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">QComboBox{
+	background:rgb(255, 229, 208);
+	border: 1px solid;
+	border-radius: 15px;
+	border-color: #e5e5e5;
+	background-color: palette(base);
+	padding: 0px 5px;
+}</string>
+    </property>
+    <item>
+     <property name="text">
+      <string>Sort By</string>
+     </property>
+    </item>
+    <item>
+     <property name="text">
+      <string>Title ( A - Z )</string>
+     </property>
+    </item>
+    <item>
+     <property name="text">
+      <string>Title ( Z - A )</string>
+     </property>
+    </item>
+    <item>
+     <property name="text">
+      <string>Author ( A - Z )</string>
+     </property>
+    </item>
+    <item>
+     <property name="text">
+      <string>Author ( Z - A )</string>
+     </property>
+    </item>
+    <item>
+     <property name="text">
+      <string/>
+     </property>
+    </item>
+   </widget>
+   <widget class="QScrollArea" name="scrollArea">
+    <property name="geometry">
+     <rect>
+      <x>230</x>
+      <y>110</y>
+      <width>1051</width>
+      <height>511</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">QScrollArea {
+	border: none;
+}
+</string>
+    </property>
+    <property name="widgetResizable">
+     <bool>true</bool>
+    </property>
+    <widget class="QWidget" name="scrollAreaWidgetContents">
+     <property name="geometry">
+      <rect>
+       <x>0</x>
+       <y>0</y>
+       <width>1051</width>
+       <height>511</height>
+      </rect>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">QWidget {
+	background-color: #FFE5D0;
+	/*border: none;*/
+}
+
+QGridLayout {
+	/*border: none;*/
+}
+
+QPushButton {
+	margin-right: 10px; 
+	height: 31px; 
+	/*max-width: 100px; */
+}
+</string>
+     </property>
+     <layout class="QHBoxLayout" name="horizontalLayout">
+      <item>
+       <layout class="QGridLayout" name="gridLayout_3"/>
+      </item>
+     </layout>
+    </widget>
+   </widget>
+   <widget class="QWidget" name="layoutWidget">
+    <property name="geometry">
+     <rect>
+      <x>20</x>
+      <y>120</y>
+      <width>191</width>
+      <height>471</height>
+     </rect>
+    </property>
+    <layout class="QVBoxLayout" name="verticalLayout_10">
+     <item>
+      <widget class="QLabel" name="catalogueIcon">
+       <property name="styleSheet">
+        <string notr="true">QLabel{
+	color: rgb(231, 138, 107);
+}</string>
+       </property>
+       <property name="text">
+        <string>Catalogue</string>
+       </property>
+       <property name="alignment">
+        <set>Qt::AlignCenter</set>
+       </property>
+      </widget>
+     </item>
+     <item>
+      <widget class="QPushButton" name="catalogueBtn">
+       <property name="styleSheet">
+        <string notr="true">QPushButton{
+	border-radius:15px;
+	font: 14px &quot;Montserrat&quot;;
+}
+
+QPushButton:hover {
+	text-decoration: underline;
+}</string>
+       </property>
+       <property name="text">
+        <string>Catalogue</string>
+       </property>
+      </widget>
+     </item>
+     <item>
+      <widget class="QLabel" name="accountIcon">
+       <property name="text">
+        <string>account</string>
+       </property>
+       <property name="alignment">
+        <set>Qt::AlignCenter</set>
+       </property>
+      </widget>
+     </item>
+     <item>
+      <widget class="QPushButton" name="accountBtn">
+       <property name="styleSheet">
+        <string notr="true">QPushButton{
+	border-radius:15px;
+	font: 14px &quot;Montserrat&quot;;
+}
+
+QPushButton:hover {
+	text-decoration: underline;
+}</string>
+       </property>
+       <property name="text">
+        <string>Account</string>
+       </property>
+      </widget>
+     </item>
+     <item>
+      <spacer name="verticalSpacer_3">
+       <property name="orientation">
+        <enum>Qt::Vertical</enum>
+       </property>
+       <property name="sizeHint" stdset="0">
+        <size>
+         <width>20</width>
+         <height>40</height>
+        </size>
+       </property>
+      </spacer>
+     </item>
+     <item>
+      <widget class="QLabel" name="signoutIcon">
+       <property name="text">
+        <string>signOut</string>
+       </property>
+       <property name="alignment">
+        <set>Qt::AlignCenter</set>
+       </property>
+      </widget>
+     </item>
+     <item>
+      <widget class="QPushButton" name="signoutBtn">
+       <property name="styleSheet">
+        <string notr="true">QPushButton{
+	border-radius:15px;
+	font: 14px &quot;Montserrat&quot;;
+}
+
+QPushButton:hover {
+	text-decoration: underline;
+}</string>
+       </property>
+       <property name="text">
+        <string>Sign Out</string>
+       </property>
+      </widget>
+     </item>
+    </layout>
+   </widget>
+   <widget class="Line" name="line">
+    <property name="geometry">
+     <rect>
+      <x>210</x>
+      <y>110</y>
+      <width>21</width>
+      <height>481</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">Line{
+	color:rgb(221, 46, 68);
+}</string>
+    </property>
+    <property name="orientation">
+     <enum>Qt::Vertical</enum>
+    </property>
+   </widget>
+   <widget class="QLabel" name="logoImage">
+    <property name="geometry">
+     <rect>
+      <x>10</x>
+      <y>20</y>
+      <width>221</width>
+      <height>71</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string/>
+    </property>
+    <property name="pixmap">
+     <pixmap resource="resources.qrc">:/resources/images/bblLogo.png</pixmap>
+    </property>
+   </widget>
+   <widget class="QLabel" name="pageTitle">
+    <property name="geometry">
+     <rect>
+      <x>270</x>
+      <y>30</y>
+      <width>331</width>
+      <height>51</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">QLabel{
+	font-size: 24px;
+	font-weight: bold;
+}</string>
+    </property>
+    <property name="text">
+     <string>Catalogue</string>
+    </property>
+   </widget>
+  </widget>
+  <action name="viewAccount">
+   <property name="text">
+    <string>View account</string>
+   </property>
+  </action>
+  <action name="actiontest_2">
+   <property name="text">
+    <string>test 2</string>
+   </property>
+  </action>
+  <action name="actiontest_3">
+   <property name="text">
+    <string>Log-Out</string>
+   </property>
+  </action>
+  <action name="actionView_Catalogue">
+   <property name="text">
+    <string>View Catalogue</string>
+   </property>
+  </action>
+ </widget>
+ <resources>
+  <include location="resources.qrc"/>
+ </resources>
+ <connections/>
+</ui>
